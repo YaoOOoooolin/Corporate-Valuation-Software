@@ -1,4 +1,4 @@
-package InputSheet.OtherInputs;
+package InputSheet;
 
 public class OtherInputs {
 

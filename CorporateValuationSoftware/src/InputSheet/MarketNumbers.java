@@ -1,4 +1,4 @@
-package InputSheet.MarketNumbers;
+package InputSheet;
 
 public class MarketNumbers {
 

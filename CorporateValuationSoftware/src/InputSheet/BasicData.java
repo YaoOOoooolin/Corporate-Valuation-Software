@@ -1,4 +1,4 @@
-package InputSheet.BasicData;
+package InputSheet;
 
 public class BasicData {
 
