@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class A5EBITIncome {
 
     ArrayList<Float> ebitIncomeList = new ArrayList<>();
+    public float operatingIncomeGrew=0;
 
 
     public void setEBITIncomeList(A3Revenues revenues, A4EBITMargin ebitMargin) {
@@ -18,13 +19,17 @@ public class A5EBITIncome {
             float temp = revenues.getRevenuesList().get(i) * ebitMargin.getEBITMarginList().get(i);
             ebitIncomeList.add(temp);
         }
-        ebitIncomeList.add(ebitIncomeList.get(11) - ebitIncomeList.get(0));
+
+        operatingIncomeGrew=ebitIncomeList.get(11) - ebitIncomeList.get(0);
+        ebitIncomeList.add(operatingIncomeGrew);
     }
 
     public ArrayList<Float> getEBITIncomeList() {
         return ebitIncomeList;
     }
-
+    public float getOperatingIncomeGrew(){
+        return operatingIncomeGrew;
+    }
 
 }
 
@@ -53,6 +58,7 @@ class TestA5EbitIncome {
         ebitIncome.setEBITIncomeList(revenues, ebitMargin);
 
         System.out.println(ebitIncome.getEBITIncomeList().toString());
+        System.out.println("OperatingIncomeGrew= "+ebitIncome.getOperatingIncomeGrew());
 
 
     }
