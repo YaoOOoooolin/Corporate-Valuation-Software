@@ -1,30 +1,39 @@
-package com.example.OutputSheet;
+package com.example.StoriesToNumbers;
 
+import com.example.OutputSheet.*;
 import com.example.StaticData.CountryEquityRiskPremiums;
 import com.example.StaticData.InputData;
 import com.example.StaticData.OperatingLeaseConverter;
 import com.example.StaticData.RDConverter;
 
-public class A16TerminalCashFlow {
 
-    public float terminalCashFlow;
+public class TerminalValue {
 
 
-    public void setTerminalCashFlow(A7EBIT1t ebit1t, A8Reinvestment reinvestment) {
-        terminalCashFlow = ebit1t.getTerminalEBIT1t() - reinvestment.getTerminalreinvestment();
+    public float terminalvalue;
+
+
+    public void setTerminalvalue(A12CostOfCapital costOfCapital, A16TerminalCashFlow terminalCashFlow, A2RevenueGrowthRate revenueGrowthRate) {
+        terminalvalue = terminalCashFlow.getTerminalCashFlow() / (costOfCapital.terminalostOfCapital - revenueGrowthRate.getTerminalRevenueGrowthRate());
+
     }
 
 
-    public float getTerminalCashFlow() {
-        return terminalCashFlow;
+    public float getTerminalvalue() {
+        return terminalvalue;
     }
-
 
 }
 
-class TestA16TerminalCashFlow {
+class TestTerminalValue {
     public static void main(String[] args) {
-        InputData data = new InputData();
+        InputData data=new InputData();
+        CountryEquityRiskPremiums cerp=new CountryEquityRiskPremiums();
+
+        A12CostOfCapital costOfCapital=new A12CostOfCapital();
+        costOfCapital.setTerminalostOfCapital(data.isB41(),data.getB42(),data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
+        costOfCapital.setCostOfCapitalList(data.getB31());
+
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
         revenueGrowthRate.setTerminalRevenue(data.isB60(), data.getB61(), data.isB57(), data.getB58(), data.getB30());
 
@@ -53,9 +62,7 @@ class TestA16TerminalCashFlow {
 
         ebit1t.setEBIT1tList(ebitIncome, data.getB20(), nol);
 
-        CountryEquityRiskPremiums cerp = new CountryEquityRiskPremiums();
 
-        A12CostOfCapital costOfCapital = new A12CostOfCapital();
         costOfCapital.setTerminalostOfCapital(data.isB41(), data.getB42(), data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
 
 
@@ -69,12 +76,18 @@ class TestA16TerminalCashFlow {
 
         A16TerminalCashFlow terminalCashFlow = new A16TerminalCashFlow();
         terminalCashFlow.setTerminalCashFlow(ebit1t, reinvestment);
+        revenueGrowthRate.setTerminalRevenue(data.isB60(),data.getB61(), data.isB57(), data.getB58(), data.getB30());
+
+        revenueGrowthRate.setRevenueGrowthRateList(data.getB23(), data.getB25(), revenueGrowthRate.getTerminalRevenue());
 
 
-        System.out.println(reinvestment.getReinvestmentList().toString());
-        System.out.println(ebit1t.getEBIT1tList().toString());
-        System.out.println(terminalCashFlow.getTerminalCashFlow());
+      TerminalValue terminalValue=new TerminalValue();
+      terminalValue.setTerminalvalue(costOfCapital,terminalCashFlow,revenueGrowthRate);
+        System.out.println(terminalValue.getTerminalvalue());
+
+
 
 
     }
+
 }
