@@ -1,9 +1,9 @@
 package com.example.OutputSheet;
 
-import com.example.StaticData.CountryEquityRiskPremiums;
-import com.example.StaticData.InputData;
-import com.example.StaticData.OperatingLeaseConverter;
-import com.example.StaticData.RDConverter;
+import com.StaticData.CountryEquityRiskPremiums;
+import com.StaticData.InputData;
+import com.StaticData.OperatingLeaseConverter;
+import com.StaticData.RDConverter;
 
 public class A16TerminalCashFlow {
 

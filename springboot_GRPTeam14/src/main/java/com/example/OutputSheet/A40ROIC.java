@@ -1,7 +1,7 @@
 package com.example.OutputSheet;
 
-import com.example.StaticData.CountryEquityRiskPremiums;
-import com.example.StaticData.InputData;
+import com.StaticData.CountryEquityRiskPremiums;
+import com.StaticData.InputData;
 
 import java.util.ArrayList;
 //todo

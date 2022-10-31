@@ -1,4 +1,4 @@
-package com.example.StaticData;
+package com.StaticData;
 
 public class OperatingLeaseConverter {
 

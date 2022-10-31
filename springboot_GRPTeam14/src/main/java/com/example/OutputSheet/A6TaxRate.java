@@ -1,15 +1,15 @@
 package com.example.OutputSheet;
 
-import com.example.StaticData.InputData;
+import com.StaticData.InputData;
 
 import java.util.ArrayList;
 
 public class A6TaxRate {
     public ArrayList<Float> taxRateList = new ArrayList<>();
 
-    public void setTaxRateList(float B20) {
+    public void setTaxRateList(float inputB20) {
         for (int i = 0; i <=11; i++) {
-        taxRateList.add(B20);
+        taxRateList.add(inputB20);
         }
     }
 

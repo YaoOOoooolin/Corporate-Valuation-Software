@@ -1,4 +1,4 @@
-package com.example.StaticData;
+package com.StaticData;
 
 public class RDConverter {
     public float D39= (float) -271.4;

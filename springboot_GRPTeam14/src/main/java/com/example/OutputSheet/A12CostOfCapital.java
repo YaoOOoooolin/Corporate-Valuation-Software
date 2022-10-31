@@ -1,7 +1,7 @@
 package com.example.OutputSheet;
 
-import com.example.StaticData.CountryEquityRiskPremiums;
-import com.example.StaticData.InputData;
+import com.StaticData.CountryEquityRiskPremiums;
+import com.StaticData.InputData;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class A12CostOfCapital {
         costOfCapitalList.add(B31);
         }
         for (int i = 6; i <=10 ; i++) {
-              float temp=costOfCapitalList.get(i-1)-(( costOfCapitalList.get(i-1) -terminalostOfCapital  )/5);
+              float temp=costOfCapitalList.get(i-1)-(( costOfCapitalList.get(5) -terminalostOfCapital  )/5);
               costOfCapitalList.add(temp);
         }
         costOfCapitalList.add(terminalostOfCapital);

@@ -1,4 +1,4 @@
-package com.example.StaticData;
+package com.StaticData;
 
 
 
@@ -109,7 +109,7 @@ public class InputData {
     boolean B57 =true;
     float B28 = (float) 3.8;
     float B55= 250;
-    boolean B54 =true;
+    boolean B54 =false;
     float B20 = 0.25F;
     float B23 = (float) -0.10;
     float B25 = (float) 0.15;

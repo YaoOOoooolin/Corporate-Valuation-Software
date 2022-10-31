@@ -1,6 +1,6 @@
 package com.example.OutputSheet;
 
-import com.example.StaticData.InputData;
+import com.StaticData.InputData;
 
 import java.util.ArrayList;
 
