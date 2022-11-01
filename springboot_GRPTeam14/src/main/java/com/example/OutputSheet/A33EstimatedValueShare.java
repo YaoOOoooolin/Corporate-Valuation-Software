@@ -7,7 +7,7 @@ public class A33EstimatedValueShare {
         return estimatedValueShare;
     }
 
-    public void setEstimatedValueShare(float numberOfShares, float valueOfEquityInCommonStock) {
-        this.estimatedValueShare = valueOfEquityInCommonStock / numberOfShares;
+    public void setEstimatedValueShare(A32NumberOfShares numberOfShares, A31ValueOfEquityInCommonStock valueOfEquityInCommonStock) {
+        estimatedValueShare =  valueOfEquityInCommonStock.getValueOfEquityInCommonStock()/numberOfShares.getNumberOfShares() ;
     }
 }

@@ -95,18 +95,90 @@ public class InputData {
     }
 
 
-    public  float getB11() {
+    public float getB11() {
         return B11;
     }
 
-    public  float getB12() {
+    public float getB12() {
         return B12;
     }
 
-    public  float getB15() {
+    public float getB15() {
         return B15;
     }
 
+    public boolean isB47() {
+        return B47;
+    }
+
+    public float getB48() {
+        return B48;
+    }
+
+
+    public String getB49() {
+        return B49;
+    }
+
+    public float getB50() {
+        return B50;
+    }
+
+    public float getB21() {
+        return B21;
+    }
+
+
+    public float getB17() {
+        return B17;
+    }
+
+
+
+    public boolean isB63() {
+        return B63;
+    }
+
+    public float getB64() {
+        return B64;
+    }
+
+    public float getB65() {
+        return B65;
+    }
+
+
+    public float getB16() {
+        return B16;
+    }
+
+    public boolean isB33() {
+        return B33;
+    }
+
+
+    public float getB18() {
+        return B18;
+    }
+
+
+    public float getB19() {
+        return B19;
+    }
+
+    float B19= (float) 127.68;
+    float B18=566;
+    boolean B33=false;
+    float B16 =0;
+    boolean B63=false;
+    float B64=140000;
+    float B65= (float) 0.15;
+    float B17=0;
+    static String B49="V";
+    static float B50= 0.5F;
+    static float B21= 0.25F;
+    static boolean B47 = true;
+    static float B48 = (float) 0.2;
     static float B11 = -8617;
     static float B12 = 28532;
     static float B15 = 10030;

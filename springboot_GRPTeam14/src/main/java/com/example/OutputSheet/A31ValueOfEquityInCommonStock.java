@@ -7,7 +7,8 @@ public class A31ValueOfEquityInCommonStock {
         return valueOfEquityInCommonStock;
     }
 
-    public void setValueOfEquityInCommonStock(float valueOfEquity, float valueOfOptions) {
-        this.valueOfEquityInCommonStock = valueOfEquity - valueOfOptions;
+    public void setValueOfEquityInCommonStock(A29ValueOfEquity valueOfEquity, A30ValueOfOptions valueOfOptions) {
+        this.valueOfEquityInCommonStock = valueOfEquity.getValueOfEquity() - valueOfOptions.getValueOfOptions();
     }
+
 }

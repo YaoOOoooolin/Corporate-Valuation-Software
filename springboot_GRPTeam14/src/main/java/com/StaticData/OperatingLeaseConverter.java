@@ -10,6 +10,12 @@ public class OperatingLeaseConverter {
         return F33;
     }
 
+
+    public float getC28() {
+        return C28;
+    }
+
+    public float C28= (float) 1335.31;
     public float F32 = (float) 128.09;
 
 

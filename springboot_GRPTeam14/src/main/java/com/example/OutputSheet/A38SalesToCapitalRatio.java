@@ -20,15 +20,3 @@ public class A38SalesToCapitalRatio {
         return salesToCapitalRatioList;
     }
 }
-
-class TestA38SalesToCapitalRatio{
-    public static void main(String[] args) {
-
-        InputData inputData=new InputData();
-        A38SalesToCapitalRatio salesToCapitalRatio=new A38SalesToCapitalRatio();
-        salesToCapitalRatio.setSalesToCapitalRatioList(inputData.getB28());
-        System.out.println(salesToCapitalRatio.getSalesToCapitalRatioList().toString());
-
-
-    }
-}

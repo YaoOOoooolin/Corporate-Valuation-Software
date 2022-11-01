@@ -36,11 +36,11 @@ public class A12CostOfCapital {
         costOfCapitalList.add((float) 0);
 
         for (int i = 1; i <=5 ; i++) {
-            costOfCapitalList.add(B31);
+        costOfCapitalList.add(B31);
         }
         for (int i = 6; i <=10 ; i++) {
-            float temp=costOfCapitalList.get(i-1)-(( costOfCapitalList.get(5) -terminalostOfCapital  )/5);
-            costOfCapitalList.add(temp);
+              float temp=costOfCapitalList.get(i-1)-(( costOfCapitalList.get(5) -terminalostOfCapital  )/5);
+              costOfCapitalList.add(temp);
         }
         costOfCapitalList.add(terminalostOfCapital);
 
@@ -54,16 +54,3 @@ public class A12CostOfCapital {
 
 }
 
-
-class TestA12CostOfCapital{
-    public static void main(String[] args) {
-        InputData data=new InputData();
-        CountryEquityRiskPremiums cerp=new CountryEquityRiskPremiums();
-
-        A12CostOfCapital costOfCapital=new A12CostOfCapital();
-        costOfCapital.setTerminalostOfCapital(data.isB41(),data.getB42(),data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
-        costOfCapital.setCostOfCapitalList(data.getB31());
-        System.out.println(costOfCapital.getCostOfCapitalList().toString());
-
-    }
-}

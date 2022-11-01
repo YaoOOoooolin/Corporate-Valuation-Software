@@ -49,20 +49,5 @@ public class A2RevenueGrowthRate {
 }
 
 
-class TestA2RevenueGrowthRate {
-    public static void main(String[] args) {
-
-        InputData data = new InputData();
-        A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
-        revenueGrowthRate.setTerminalRevenue(data.isB60(), data.getB61(), data.isB57(), data.getB58(), data.getB30());
-        revenueGrowthRate.setRevenueGrowthRateList(data.getB23(), data.getB25(), revenueGrowthRate.getTerminalRevenue());
-        ArrayList<Float> A2List = revenueGrowthRate.getRevenueGrowthRateList();
-        System.out.println(A2List.toString());
-        System.out.println(revenueGrowthRate.getTerminalRevenueGrowthRate());
-
-    }
-
-
-}
 
 

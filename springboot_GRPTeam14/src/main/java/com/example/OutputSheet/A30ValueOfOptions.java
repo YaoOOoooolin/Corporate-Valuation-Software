@@ -7,8 +7,8 @@ public class A30ValueOfOptions {
         return valueOfOptions;
     }
 
-    public void setValueOfOptions(boolean B33employeeOptionsOutstanding, float OptionValueD27) {
-        if (B33employeeOptionsOutstanding) {
+    public void setValueOfOptions(boolean inputB33, float OptionValueD27) {
+        if (inputB33) {
             this.valueOfOptions = OptionValueD27;
         } else {
             this.valueOfOptions = 0;

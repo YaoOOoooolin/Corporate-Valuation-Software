@@ -7,7 +7,8 @@ public class A26MinorityInterests {
         return minorityInterests;
     }
 
-    public void setMinorityInterests(float minorityInterests) {
-        this.minorityInterests = minorityInterests;
+    public void setMinorityInterests(float inputB17) {
+        this.minorityInterests = inputB17;
     }
+
 }

@@ -7,7 +7,7 @@ public class A34Price {
         return price;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setPrice(float inputB19) {
+        price = inputB19;
     }
 }

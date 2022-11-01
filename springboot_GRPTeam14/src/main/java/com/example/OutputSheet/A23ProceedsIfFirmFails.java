@@ -1,15 +1,16 @@
 package com.example.OutputSheet;
 
 public class A23ProceedsIfFirmFails {
+
     public float getProceedsIfFirmFails() {
         return proceedsIfFirmFails;
     }
 
-    public void setProceedsIfFirmFails(String B49, float B11BookValueOfEquity, float B12BookValueOfDebt, float B50distressProceeds, float B21marginalTaxRate ) {
-        if (B49.equals("V")) {
-            this.proceedsIfFirmFails = (B11BookValueOfEquity + B12BookValueOfDebt) * B50distressProceeds;
+    public void setProceedsIfFirmFails(String inputB49, float inputB11, float inputB12, float inputB50, float inputB21 ) {
+        if (inputB49.equals("V")) {
+            this.proceedsIfFirmFails = (inputB11 + inputB12) * inputB50;
         } else {
-            this.proceedsIfFirmFails = B21marginalTaxRate * B50distressProceeds;
+            this.proceedsIfFirmFails = inputB21* inputB50;
         }
 
     }
