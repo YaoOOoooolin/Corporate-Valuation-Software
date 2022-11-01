@@ -13,16 +13,19 @@ public class A40ROIC {
     public float terminaLROIC;
 
     public void setTerminaLROIC(boolean inputB44,float inputB45,A12CostOfCapital costOfCapital) {
-        if (inputB44){
-            terminaLROIC=inputB45;
-        }else {
-            terminaLROIC=costOfCapital.getTerminalostOfCapital();
+        if (inputB44) {
+            terminaLROIC = inputB45;
+        } else {
+            terminaLROIC = costOfCapital.getTerminalostOfCapital();
         }
     }
 
     public float getTerminaLROIC() {
         return terminaLROIC;
     }
+
+
+
 
 
 }
