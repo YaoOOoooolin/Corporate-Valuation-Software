@@ -36,11 +36,11 @@ public class A12CostOfCapital {
         costOfCapitalList.add((float) 0);
 
         for (int i = 1; i <=5 ; i++) {
-        costOfCapitalList.add(B31);
+            costOfCapitalList.add(B31);
         }
         for (int i = 6; i <=10 ; i++) {
-              float temp=costOfCapitalList.get(i-1)-(( costOfCapitalList.get(5) -terminalostOfCapital  )/5);
-              costOfCapitalList.add(temp);
+            float temp=costOfCapitalList.get(i-1)-(( costOfCapitalList.get(5) -terminalostOfCapital  )/5);
+            costOfCapitalList.add(temp);
         }
         costOfCapitalList.add(terminalostOfCapital);
 

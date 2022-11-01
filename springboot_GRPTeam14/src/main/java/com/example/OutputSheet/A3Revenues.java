@@ -36,7 +36,6 @@ class TestA3Revenues {
 
         revenueGrowthRate.setRevenueGrowthRateList(data.getB23(), data.getB25(), revenueGrowthRate.getTerminalRevenue());
         A3Revenues revenues = new A3Revenues();
-
         revenues.setA3RevenuesList(data.getB8(), revenueGrowthRate);
         ArrayList<Float> A3List = revenues.getRevenuesList();
         System.out.println(A3List.toString());

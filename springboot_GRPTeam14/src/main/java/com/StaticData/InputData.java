@@ -1,9 +1,6 @@
 package com.StaticData;
 
-
-
 public class InputData {
-
 
     public float getB26() {
         return B26;
@@ -12,8 +9,6 @@ public class InputData {
     public float getB27() {
         return B27;
     }
-
-
 
     public float getB23() {
         return B23;
@@ -63,15 +58,14 @@ public class InputData {
         return B24;
     }
 
-
     public float getB20() {
         return B20;
     }
 
-
     public float getB55() {
         return B55;
     }
+
     public boolean isB54() {
         return B54;
     }
@@ -79,7 +73,6 @@ public class InputData {
     public float getB28() {
         return B28;
     }
-
 
     public boolean isB41() {
         return B41;
@@ -101,15 +94,31 @@ public class InputData {
         return B45;
     }
 
-    static boolean  B44=true;
-    static float B45= (float) 0.1;
+
+    public  float getB11() {
+        return B11;
+    }
+
+    public  float getB12() {
+        return B12;
+    }
+
+    public  float getB15() {
+        return B15;
+    }
+
+    static float B11 = -8617;
+    static float B12 = 28532;
+    static float B15 = 10030;
+    static boolean B44 = true;
+    static float B45 = (float) 0.1;
     static float B31 = (float) 0.0925;
-    static boolean B41=true;
-    static float B42= (float) 0.075;
-    static boolean B57 =true;
+    static boolean B41 = true;
+    static float B42 = (float) 0.075;
+    static boolean B57 = true;
     static float B28 = (float) 3.8;
-    static float B55= 250;
-    static boolean B54 =false;
+    static float B55 = 250;
+    static boolean B54 = false;
     static float B20 = 0.25F;
     static float B23 = (float) -0.10;
     static float B25 = (float) 0.15;
@@ -120,14 +129,10 @@ public class InputData {
     static float B8 = 76559;
     static boolean B13 = true;
     static float B9 = -2102;
-    static float B26= (float) 0.096;
-    static float B27=3;
-    static boolean B14=false;
-    static float B24= (float) -0.05;
-
-
-
-
+    static float B26 = (float) 0.096;
+    static float B27 = 3;
+    static boolean B14 = false;
+    static float B24 = (float) -0.05;
 
 
 }

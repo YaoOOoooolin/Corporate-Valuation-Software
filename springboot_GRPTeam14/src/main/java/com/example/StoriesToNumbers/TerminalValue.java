@@ -18,20 +18,19 @@ public class TerminalValue {
 
     }
 
-
     public float getTerminalvalue() {
         return terminalvalue;
     }
-
 }
+
 
 class TestTerminalValue {
     public static void main(String[] args) {
-        InputData data=new InputData();
-        CountryEquityRiskPremiums cerp=new CountryEquityRiskPremiums();
+        InputData data = new InputData();
+        CountryEquityRiskPremiums cerp = new CountryEquityRiskPremiums();
 
-        A12CostOfCapital costOfCapital=new A12CostOfCapital();
-        costOfCapital.setTerminalostOfCapital(data.isB41(),data.getB42(),data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
+        A12CostOfCapital costOfCapital = new A12CostOfCapital();
+        costOfCapital.setTerminalostOfCapital(data.isB41(), data.getB42(), data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
         costOfCapital.setCostOfCapitalList(data.getB31());
 
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
@@ -62,27 +61,22 @@ class TestTerminalValue {
 
         ebit1t.setEBIT1tList(ebitIncome, data.getB20(), nol);
 
-
         costOfCapital.setTerminalostOfCapital(data.isB41(), data.getB42(), data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
 
 
         A40ROIC roic = new A40ROIC();
         roic.setTerminaLROIC(data.isB44(), data.getB45(), costOfCapital);
 
-
         A8Reinvestment reinvestment = new A8Reinvestment();
         reinvestment.setReinvestmentList(revenues, data.getB28(), revenueGrowthRate, roic, ebit1t);
-
 
         A16TerminalCashFlow terminalCashFlow = new A16TerminalCashFlow();
         terminalCashFlow.setTerminalCashFlow(ebit1t, reinvestment);
 
 
-      TerminalValue terminalValue=new TerminalValue();
-      terminalValue.setTerminalvalue(costOfCapital,terminalCashFlow,revenueGrowthRate);
+        TerminalValue terminalValue = new TerminalValue();
+        terminalValue.setTerminalvalue(costOfCapital, terminalCashFlow, revenueGrowthRate);
         System.out.println(terminalValue.getTerminalvalue());
-
-
 
 
     }
