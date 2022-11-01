@@ -1,9 +1,10 @@
-package com.example.OutputSheet;
+package com.example;
 
 import com.StaticData.CountryEquityRiskPremiums;
 import com.StaticData.InputData;
 import com.StaticData.OperatingLeaseConverter;
 import com.StaticData.RDConverter;
+import com.example.OutputSheet.*;
 import com.example.StoriesToNumbers.TerminalValue;
 
 public class TestOutputSheet {
@@ -72,22 +73,22 @@ public class TestOutputSheet {
         A14PVFCFF pvfcff=new A14PVFCFF();
         pvfcff.setPvFcffList(fcff,cumulatedDiscountFactor);
 
-        System.out.println("Revenue growth rate      \t"+revenueGrowthRate.getRevenueGrowthRateList().toString());
-        System.out.println("Revenues                 \t"+revenues.getRevenuesList().toString());
-        System.out.println("EBIT (Operating) margin  \t"+ebitMargin.getEBITMarginList().toString());
-        System.out.println("EBIT (Operating income)  \t"+ebitIncome.getEBITIncomeList().toString());
-        System.out.println("Tax rate                 \t"+taxRate.getTaxRateList().toString());
-        System.out.println("EBIT(1-t)                \t"+ebit1t.getEBIT1tList().toString());
-        System.out.println("Reinvestment             \t"+reinvestment.getReinvestmentList().toString());
-        System.out.println("FCFF                     \t"+fcff.getFcffList().toString());
-        System.out.println("NOL                      \t"+nol.getNolList().toString());
-        System.out.println("Cost of capital          \t"+costOfCapital.getCostOfCapitalList().toString());
-        System.out.println("Cumulated discount factor\t"+cumulatedDiscountFactor.getCumulatedDFList().toString());
-        System.out.println("PV(FCFF)                 \t"+pvfcff.getPvFcffList().toString());
+        System.out.println(" 2 Revenue growth rate      \t"+revenueGrowthRate.getRevenueGrowthRateList().toString());
+        System.out.println(" 3 Revenues                 \t"+revenues.getRevenuesList().toString());
+        System.out.println(" 4 EBIT (Operating) margin  \t"+ebitMargin.getEBITMarginList().toString());
+        System.out.println(" 5 EBIT (Operating income)  \t"+ebitIncome.getEBITIncomeList().toString());
+        System.out.println(" 6 Tax rate                 \t"+taxRate.getTaxRateList().toString());
+        System.out.println(" 7 EBIT(1-t)                \t"+ebit1t.getEBIT1tList().toString());
+        System.out.println(" 8 Reinvestment             \t"+reinvestment.getReinvestmentList().toString());
+        System.out.println(" 9 FCFF                     \t"+fcff.getFcffList().toString());
+        System.out.println("10 NOL                      \t"+nol.getNolList().toString());
+        System.out.println("12 Cost of capital          \t"+costOfCapital.getCostOfCapitalList().toString());
+        System.out.println("13 Cumulated discount factor\t"+cumulatedDiscountFactor.getCumulatedDFList().toString());
+        System.out.println("14 PV(FCFF)                 \t"+pvfcff.getPvFcffList().toString());
 
-        System.out.println("\n\n");
-        System.out.println("Terminal cash flow       \t"+fcff.getTerminalFcff());
-        System.out.println("Terminal cost of capital \t"+costOfCapital.getTerminalostOfCapital());
-        System.out.println("Terminal value           \t"+terminalValue.getTerminalvalue());
+        System.out.println("\n");
+        System.out.println("16 Terminal cash flow       \t"+fcff.getTerminalFcff());
+        System.out.println("17 Terminal cost of capital \t"+costOfCapital.getTerminalostOfCapital());
+        System.out.println("18 Terminal value           \t"+terminalValue.getTerminalvalue());
     }
 }
