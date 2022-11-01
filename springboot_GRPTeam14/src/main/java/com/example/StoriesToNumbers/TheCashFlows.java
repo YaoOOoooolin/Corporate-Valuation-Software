@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class TheCashFlows {
-    static ArrayList<BigDecimal> EBITList = new ArrayList<>();
+//    static ArrayList<BigDecimal> EBITList = new ArrayList<>();
 
     public static void main(String[] args) {
         InputData data = new InputData();
@@ -43,8 +43,12 @@ public class TheCashFlows {
             Float EBITMargin = ebitMarginList.get(i);
             BigDecimal rv = new BigDecimal(revenue);
             BigDecimal multiply = BigDecimal.valueOf(EBITMargin).multiply(rv);
-            EBITList.set(i,multiply);
+//            EBITList.set(i,multiply);
         }
+        //-------------------------------
+        //EBIT(1-t)
+
+
 
     }
 }
