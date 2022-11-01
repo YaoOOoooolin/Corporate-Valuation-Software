@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id = "basicData" class="com.example.InputSheet.BasicData"/>
+    <bean id = "basicInformation" class="com.example.InputSheet.BasicInformation"/>
+    <bean id = "defaultAssumptions" class="com.example.InputSheet.DefaultAssumptions"/>
+    <bean id = "drivers" class="com.example.InputSheet.Drivers"/>
+    <bean id = "marketNumbers" class="com.example.InputSheet.MarketNumbers"/>
+    <bean id = "otherInputs" class="com.example.InputSheet.OtherInputs"/>
+
+</beans>
