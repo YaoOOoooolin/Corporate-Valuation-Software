@@ -7,7 +7,7 @@ public class A28NonOperatingAssets {
         return nonOperatingAssets;
     }
 
-    public void setNonOperatingAssets(float B16nonOperatingAssets) {
-        this.nonOperatingAssets = B16nonOperatingAssets;
+    public void setNonOperatingAssets(float inputB16) {
+        this.nonOperatingAssets = inputB16;
     }
 }

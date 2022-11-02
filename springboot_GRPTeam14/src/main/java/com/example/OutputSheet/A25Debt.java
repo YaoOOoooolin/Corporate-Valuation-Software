@@ -7,12 +7,13 @@ public class A25Debt {
         return debt;
     }
 
-    public void setDebt(boolean B14, float operatingLeaseConverter, float B12bookValueOfDebt) {
-        if(B14){
-            this.debt = B12bookValueOfDebt + operatingLeaseConverter;
+    public void setDebt(boolean inputB14, float olcC28, float inputB12) {
+        if(inputB14){
+            this.debt = inputB12 + olcC28;
         }else {
-            this.debt = B12bookValueOfDebt;
+            this.debt = inputB12;
         }
 
     }
+
 }

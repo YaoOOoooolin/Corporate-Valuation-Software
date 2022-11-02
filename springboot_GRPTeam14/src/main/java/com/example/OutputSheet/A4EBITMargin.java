@@ -57,27 +57,3 @@ public class A4EBITMargin {
     }
 
 }
-
-class TestA4EBITMargin{
-    public static void main(String[] args) {
-        InputData data=new InputData();
-        OperatingLeaseConverter olc=new OperatingLeaseConverter();
-        RDConverter rdc=new RDConverter();
-
-        A4EBITMargin ebitMargin=new A4EBITMargin();
-
-        ebitMargin.setBaseIncome(data.isB14(),data.isB13(), olc.getF32(),rdc.getD39(),data.getB9());
-        ebitMargin.setEBITMarginList(data.getB8(),data.getB24(), data.getB26(), data.getB27());
-
-        System.out.println(ebitMargin.getEBITMarginList().toString());
-        System.out.println(ebitMargin.getTerminalEBITMargin());
-
-    }
-
-
-
-
-
-}
-
-

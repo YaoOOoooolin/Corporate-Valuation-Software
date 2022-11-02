@@ -24,20 +24,3 @@ public class A13CumulatedDiscountFactor {
     }
 
 }
-
-class TestA13CumulatedDiscountFactor {
-    public static void main(String[] args) {
-        InputData data=new InputData();
-        CountryEquityRiskPremiums cerp=new CountryEquityRiskPremiums();
-
-        A12CostOfCapital costOfCapital=new A12CostOfCapital();
-        costOfCapital.setTerminalostOfCapital(data.isB41(),data.getB42(),data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
-        costOfCapital.setCostOfCapitalList(data.getB31());
-        A13CumulatedDiscountFactor cumulatedDF=new A13CumulatedDiscountFactor();
-        cumulatedDF.setCumulatedDFListList(costOfCapital);
-        System.out.println(cumulatedDF.getCumulatedDFList().toString());
-
-    }
-
-
-}

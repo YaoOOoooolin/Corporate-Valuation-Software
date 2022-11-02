@@ -2,9 +2,11 @@ package com.example.OutputSheet;
 
 import com.StaticData.CountryEquityRiskPremiums;
 import com.StaticData.InputData;
+import com.StaticData.OperatingLeaseConverter;
+import com.StaticData.RDConverter;
 
 import java.util.ArrayList;
-//todo
+
 public class A40ROIC {
 
     public ArrayList<Float> roicList=new ArrayList<>();
@@ -20,6 +22,20 @@ public class A40ROIC {
         }
     }
 
+    public void setRoicList(A7EBIT1t ebit1t, A39InvestedCapital investedCapital){
+        for (int i = 0; i <=9; i++) {
+            float temp=ebit1t.getEBIT1tList().get(i)/investedCapital.investedCapitalList.get(i);
+            roicList.add(temp);
+        }
+        roicList.add(terminaLROIC);
+
+    }
+
+
+
+    public ArrayList<Float> getRoicList(){
+        return roicList;
+    }
     public float getTerminaLROIC() {
         return terminaLROIC;
     }
@@ -30,19 +46,3 @@ public class A40ROIC {
 
 }
 
-class TestA40ROIC{
-    public static void main(String[] args) {
-        InputData data=new InputData();
-        CountryEquityRiskPremiums cerp=new CountryEquityRiskPremiums();
-
-        A12CostOfCapital costOfCapital=new A12CostOfCapital();
-        costOfCapital.setTerminalostOfCapital(data.isB41(),data.getB42(),data.isB57(), data.getB58(), cerp.getB1(), data.getB30());
-
-        A40ROIC roic=new A40ROIC();
-        roic.setTerminaLROIC(data.isB44(),data.getB45(),costOfCapital);
-        System.out.println(roic.getTerminaLROIC());
-
-
-
-    }
-}

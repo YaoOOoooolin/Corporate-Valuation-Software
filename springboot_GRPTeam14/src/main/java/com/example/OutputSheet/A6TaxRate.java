@@ -22,14 +22,3 @@ public class A6TaxRate {
     }
 }
 
-
-class TestA6TaxRate{
-    public static void main(String[] args) {
-        InputData date=new InputData();
-
-
-        A6TaxRate taxRate=new A6TaxRate();
-        taxRate.setTaxRateList(date.getB20());
-        System.out.println(taxRate.getTaxRateList().toString());
-    }
-}

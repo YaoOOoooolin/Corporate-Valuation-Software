@@ -7,7 +7,7 @@ public class A32NumberOfShares {
         return numberOfShares;
     }
 
-    public void setNumberOfShares(float numberOfShares) {
-        this.numberOfShares = numberOfShares;
+    public void setNumberOfShares(float inputB18) {
+        this.numberOfShares = inputB18;
     }
 }

@@ -5,10 +5,10 @@ public class A24ValueOfOperatingAssets {
         return valueOfOperatingAssets;
     }
 
-    public void setValueOfOperatingAssets(float sumOfPV, float proceedsIfFirmFails, float probailityOfFailure) {
-        this.valueOfOperatingAssets = (sumOfPV + probailityOfFailure) * probailityOfFailure;
+    public void setValueOfOperatingAssets(A21SumOfPV sumOfPV, A23ProceedsIfFirmFails proceedsIfFirmFails, A22ProbabilityOfFailure probailityOfFailure) {
+
+       valueOfOperatingAssets = (sumOfPV.getSumOfPV() *(1- probailityOfFailure.getProbability_failure()) )+ probailityOfFailure.getProbability_failure() * proceedsIfFirmFails.getProceedsIfFirmFails();
     }
 
     float valueOfOperatingAssets;
-
 }

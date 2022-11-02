@@ -5,11 +5,13 @@ public class A19PVTerminalValue {
         return pVTerminalValue;
     }
 
-    //PV(Terminal Value) = Terminal Value * Cumulated discount factor in year 10
-    public void setpVTerminalValue(float TerminalValue, float discountFactor_in_year10) {
-        this.pVTerminalValue = TerminalValue * discountFactor_in_year10;
+
+    public void setpVTerminalValue(A18TerminalValue terminalValue,A13CumulatedDiscountFactor cumulatedDiscountFactor ) {
+        this.pVTerminalValue = terminalValue.getTerminalvalue()*cumulatedDiscountFactor.getCumulatedDFList().get(10);
     }
 
     float pVTerminalValue;
+
+
 
 }

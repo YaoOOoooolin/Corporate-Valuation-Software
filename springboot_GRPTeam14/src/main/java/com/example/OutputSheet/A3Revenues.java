@@ -26,23 +26,3 @@ public class A3Revenues {
 
 
 }
-
-class TestA3Revenues {
-
-    public static void main(String[] args) {
-        InputData data = new InputData();
-        A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
-        revenueGrowthRate.setTerminalRevenue(data.isB60(), data.getB61(), data.isB57(), data.getB58(), data.getB30());
-
-        revenueGrowthRate.setRevenueGrowthRateList(data.getB23(), data.getB25(), revenueGrowthRate.getTerminalRevenue());
-        A3Revenues revenues = new A3Revenues();
-
-        revenues.setA3RevenuesList(data.getB8(), revenueGrowthRate);
-        ArrayList<Float> A3List = revenues.getRevenuesList();
-        System.out.println(A3List.toString());
-        System.out.println(revenues.getTerminalRevenues());
-
-
-    }
-
-}

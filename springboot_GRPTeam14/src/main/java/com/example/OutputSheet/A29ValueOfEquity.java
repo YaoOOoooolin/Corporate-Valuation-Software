@@ -11,7 +11,9 @@ public class A29ValueOfEquity {
     //B26 =  - Minority interests
     //B27 =  + Cash
     //B28 =  + Non-operating assets
-    public void setValueOfEquity(float B24, float B25, float B26, float B27, float B28) {
-        this.valueOfEquity = B24 - B25 - B26 + B27 + B28;
+    public void setValueOfEquity(A24ValueOfOperatingAssets valueOfOperatingAssets, A25Debt debt, A26MinorityInterests minorityInterests, A27Cash cash, A28NonOperatingAssets nonOperatingAssets) {
+        valueOfEquity = valueOfOperatingAssets.getValueOfOperatingAssets() - debt.getDebt() - minorityInterests.getMinorityInterests() + cash.getCash() + nonOperatingAssets.getNonOperatingAssets();
     }
+
+
 }
