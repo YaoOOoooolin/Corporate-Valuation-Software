@@ -2,12 +2,66 @@ package com.example;
 
 import com.StaticData.*;
 import com.example.OutputSheet.*;
+import com.example.StoriesToNumbers.TerminalValue;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
 
 
 public class TestOutputSheet {
 
+    public static double revenues_a_B9 = 0;
+    public static double revenues_a_C9 = 0;
+    public static double revenues_a_D9 = 0;
+    public static double revenues_a_F9 = 0;
+
+    public static double operatingMargin_b_B10 = 0;
+    public static double operatingMargin_b_C10 = 0;
+    public static double operatingMargin_b_D10 = 0;
+    public static double operatingMargin_b_F10 = 0;
+
+    public static double taxRate_B11 = 0;
+    public static double taxRate_C11 = 0;
+    public static double taxRate_D11 = 0;
+    public static double taxRate_F11 = 0;
+
+    public static double reinvestment_C_D12 = 0;
+    public static BigDecimal reinvestment_C_F12;
+
+    public static double returnOnCapital_B13 = 0;
+    public static double returnOnCapital_D13 = 0;
+    public static double returnOnCapital_F13 = 0;
+
+    public static double costOfCapital_d_C14 = 0;
+    public static double costOfCapital_d_D14 = 0;
+    public static double costOfCapital_d_F14 = 0;
+
+    public static  ArrayList<Float> revenuesList = new ArrayList<>();
+    public static  ArrayList<Float> ebitMarginList = new ArrayList<>();
+    public static  ArrayList<Float> EBIT1_tList = new ArrayList<>();
+    public static  ArrayList<Float> reinvestmentList = new ArrayList<>();
+    public static ArrayList<BigDecimal> EBITList = new ArrayList<>();
+    public static ArrayList<BigDecimal> FCFFList = new ArrayList<>();
+
+    //Terminal value
+    public static double terminalValue_InTheValue = 0;
+    public static double PV_terminalValue_InTheValue = 0;
+    public static double PV_CF_InTheValue = 0;
+    public static double valueOfOperatingAssets_InTheValue = 0;
+    public static double adjustmentForDistress = 0;
+    public static double  _debtAndMnorityInterests = 0;
+    public static double  cashAndOtherNon_operatingAssets = 0;
+    public static double  valueOfEquity_D36 = 0;
+    public static double   _valueOfEquityOptions = 0;
+    public static double   numberOfShares_B32 = 0;
+    public static double   valuePerShare = 0;
+
     public static void main(String[] args) {
         InputData inputData = new InputData();
+        revenues_a_C9 = inputData.getB25();
+        revenues_a_D9 = revenues_a_F9;
+
+        reinvestment_C_D12 = inputData.getB28();
         CountryEquityRiskPremiums cerp = new CountryEquityRiskPremiums();
         OptionValue ov=new OptionValue();
 
@@ -20,8 +74,17 @@ public class TestOutputSheet {
 
         revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
         A3Revenues revenues = new A3Revenues();
+        ArrayList<Float> rvg = revenueGrowthRate.getRevenueGrowthRateList();
+        revenues_a_F9 = rvg.get(rvg.size()-1);
 
         revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
+        //Revenues List
+        revenuesList = revenues.getRevenuesList();
+        //B9 value
+        revenues_a_B9 = revenuesList.get(0);
+//        Float temp = revenuesList.get(reinvestmentList.size() - 1);
+
+
 
 
         OperatingLeaseConverter olc = new OperatingLeaseConverter();
@@ -31,6 +94,22 @@ public class TestOutputSheet {
 
         ebitMargin.setBaseIncome(inputData.isB14(), inputData.isB13(), olc.getF32(), rdc.getD39(), inputData.getB9());
         ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27());
+        //EBIT List
+        ebitMarginList = ebitMargin.getEBITMarginList();
+        operatingMargin_b_B10 = ebitMarginList.get(0);
+        operatingMargin_b_C10 = operatingMargin_b_B10;
+        operatingMargin_b_F10 = ebitMarginList.get(ebitMarginList.size()-1);
+        operatingMargin_b_D10 = operatingMargin_b_F10;
+
+        //-------------------------------
+        //EBIT outputs
+        for (int i = 1; i < revenuesList.size(); i++) {
+            Float revenue = revenuesList.get(i);
+            Float EBITMargin = ebitMarginList.get(i);
+            BigDecimal rv = new BigDecimal(revenue);
+            BigDecimal multiply = BigDecimal.valueOf(EBITMargin).multiply(rv);
+            EBITList.add(i-1,multiply);
+        }
 
         A5EBITIncome ebitIncome = new A5EBITIncome();
         ebitIncome.setEBITIncomeList(revenues, ebitMargin);
@@ -42,26 +121,51 @@ public class TestOutputSheet {
         ebit1t.setTerminalEBIT1t(inputData.getB20(), revenues, ebitMargin);
 
         ebit1t.setEBIT1tList(ebitIncome, inputData.getB20(), nol);
+        //EBIT(1-t) List
+        EBIT1_tList = ebit1t.getEBIT1tList();
 
 
         costOfCapital.setTerminalostOfCapital(inputData.isB41(), inputData.getB42(), inputData.isB57(), inputData.getB58(), cerp.getB1(), inputData.getB30());
 
         A40ROIC roic = new A40ROIC();
         roic.setTerminaLROIC(inputData.isB44(), inputData.getB45(), costOfCapital);
+        ArrayList<Float> cl = costOfCapital.getCostOfCapitalList();
+        costOfCapital_d_C14 = cl.get(0);
+        costOfCapital_d_F14 = cl.get(cl.size()-1);
+        costOfCapital_d_D14 = costOfCapital_d_F14;
 
 
         A8Reinvestment reinvestment = new A8Reinvestment();
         reinvestment.setReinvestmentList(revenues, inputData.getB28(), revenueGrowthRate, roic, ebit1t);
+        //Reinvestment List
+        reinvestmentList = reinvestment.getReinvestmentList();
+
+        //FCFF List
+        for (int i = 0; i < EBIT1_tList.size(); i++) {
+            Float ET = EBIT1_tList.get(i);
+            Float RI = reinvestmentList.get(i);
+            BigDecimal bg = new BigDecimal(RI);
+            BigDecimal sub = BigDecimal.valueOf(ET).subtract(bg);
+            FCFFList.add(sub);
+        }
 
 
         A16TerminalCashFlow terminalCashFlow = new A16TerminalCashFlow();
         terminalCashFlow.setTerminalCashFlow(ebit1t, reinvestment);
 
+        TerminalValue terminalValue=new TerminalValue();
+        terminalValue.setTerminalvalue(costOfCapital,terminalCashFlow,revenueGrowthRate);
+        terminalValue_InTheValue = terminalValue.getTerminalvalue();
 
         A6TaxRate taxRate = new A6TaxRate();
         taxRate.setTaxRateList(inputData.getB20());
         A9FCFF fcff = new A9FCFF();
         fcff.setFcffList(ebit1t, reinvestment);
+        ArrayList<Float> tl = taxRate.getTaxRateList();
+        taxRate_B11 = tl.get(0);
+        taxRate_C11 = taxRate_B11;
+        taxRate_F11 = tl.get(tl.size()-1);
+        taxRate_D11 = taxRate_F11;
 
         A13CumulatedDiscountFactor cumulatedDiscountFactor = new A13CumulatedDiscountFactor();
         cumulatedDiscountFactor.setCumulatedDFListList(costOfCapital);
@@ -73,6 +177,15 @@ public class TestOutputSheet {
         investedCapital.setInvestedCapitalList(inputData.isB14(), inputData.isB13(), inputData.getB12(), inputData.getB15(), inputData.getB11(), olc.getF33(), rdc.getD35(), reinvestment);
 
         roic.setRoicList(ebit1t, investedCapital);
+        ArrayList<Float> roicList = roic.getRoicList();
+
+        Float terminalYear = roicList.get(roicList.size() - 1);
+        Float baseYear = roicList.get(0);
+        returnOnCapital_B13 = baseYear;
+        BigDecimal bg = new BigDecimal(terminalYear);
+        reinvestment_C_F12 = BigDecimal.valueOf(baseYear).divide(bg, RoundingMode.HALF_DOWN);
+        returnOnCapital_F13 = terminalYear;
+
         A14PVFCFF pvfcff = new A14PVFCFF();
         pvfcff.setPvFcffList(fcff, cumulatedDiscountFactor);
 
@@ -81,9 +194,11 @@ public class TestOutputSheet {
 
         A19PVTerminalValue pvTerminalValue = new A19PVTerminalValue();
         pvTerminalValue.setpVTerminalValue(a18terminalValue, cumulatedDiscountFactor);
+        PV_terminalValue_InTheValue = pvTerminalValue.getpVTerminalValue();
 
         A20PVCFOver10Year pvcfOver10Year = new A20PVCFOver10Year();
         pvcfOver10Year.setpVCFOver10Year(pvfcff);
+        PV_CF_InTheValue = pvcfOver10Year.getpVCFOver10Year();
 
         A21SumOfPV sumOfPV = new A21SumOfPV();
         sumOfPV.setSumOfPV(pvcfOver10Year, pvTerminalValue);
@@ -154,17 +269,28 @@ public class TestOutputSheet {
         System.out.println("19 PV (Terminal value)       \t" + pvTerminalValue.getpVTerminalValue());
         System.out.println("20 PV (CF over next 10 years)\t" + pvcfOver10Year.getpVCFOver10Year());
         System.out.println("21 Sum of PV                 \t" + sumOfPV.getSumOfPV());
+//        sumOfPV_B21 = sumOfPV.getSumOfPV();
         System.out.println("22 Probability of failure    \t" + probabilityOfFailure.getProbability_failure());
+//        probabilityOfFailure_B22 = probabilityOfFailure.getProbability_failure();
         System.out.println("23 Proceeds if firm fails    \t" + proceedsIfFirmFails.getProceedsIfFirmFails());
+//        proceedsIfFirmFails_B23 = proceedsIfFirmFails.getProceedsIfFirmFails();
         System.out.println("❌24 Value of operating asset \t"+valueOfOperatingAssets.getValueOfOperatingAssets());
+        valueOfOperatingAssets_InTheValue = sumOfPV.getSumOfPV();
+        adjustmentForDistress = valueOfOperatingAssets_InTheValue - valueOfOperatingAssets.getValueOfOperatingAssets();
         System.out.println("25 Debt                      \t"+debt.getDebt());
         System.out.println("A26 Minority interests       \t"+minorityInterests.getMinorityInterests());
+        _debtAndMnorityInterests = debt.getDebt() + minorityInterests.getMinorityInterests();
         System.out.println("A27 Cach                     \t"+cash.getCash());
         System.out.println("A28 Non-operating assets     \t"+nonOperatingAssets.getNonOperatingAssets());
+        cashAndOtherNon_operatingAssets = cash.getCash() + nonOperatingAssets.getNonOperatingAssets();
+        valueOfEquity_D36 = (valueOfOperatingAssets_InTheValue) - (adjustmentForDistress) - (_debtAndMnorityInterests) + (cashAndOtherNon_operatingAssets);
         System.out.println("♦️A29 Value of equity         \t"+valueOfEquity.getValueOfEquity());
         System.out.println("A30 Value of options         \t"+valueOfOptions.getValueOfOptions());
+        _valueOfEquityOptions = valueOfOptions.getValueOfOptions();
         System.out.println("♦️A31 Value of equity stock   \t"+valueOfEquityInCommonStock.getValueOfEquityInCommonStock());
         System.out.println("A32 Number of shares         \t"+numberOfShares.getNumberOfShares());
+        numberOfShares_B32 = numberOfShares.getNumberOfShares();
+        valuePerShare = (valueOfEquity_D36 - _valueOfEquityOptions) / numberOfShares_B32;
         System.out.println("♦️A33 Estimated value /share  \t"+estimatedValueShare.getEstimatedValueShare());
         System.out.println("A34 Price                    \t"+price.getPrice());
         System.out.println("♦️A35 Price as % of value     \t"+priceAsOfValue.getPriceAsPercentageOfValue());
@@ -172,6 +298,13 @@ public class TestOutputSheet {
         System.out.println("\n");
         System.out.println("38 Sales to capital ratio    \t" + salesToCapitalRatio.getSalesToCapitalRatioList().toString());
         System.out.println("39 Invested capital          \t" + investedCapital.getInvestedCapitalList().toString());
+        Float B39 = investedCapital.getInvestedCapitalList().get(0);
+        Float L39 = investedCapital.getInvestedCapitalList().get(investedCapital.getInvestedCapitalList().size() - 2);
+        Float diagnostics_B4 = L39 - B39;
+        Float B5 = ebitIncome.getEBITIncomeList().get(0);
+        Float L5 = ebitIncome.getEBITIncomeList().get(ebitIncome.getEBITIncomeList().size() - 2);
+        Float diagnostics_B5 = L5 - B5;
+        returnOnCapital_D13 = diagnostics_B5/diagnostics_B4;
         System.out.println("40 ROIC                      \t" + roic.getRoicList().toString());
     }
 }

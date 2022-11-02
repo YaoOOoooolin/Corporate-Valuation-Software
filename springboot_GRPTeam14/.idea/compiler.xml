@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springboot_CorporateValuationSoftware" target="1.8" />
+      <module name="springboot_GRPTeam14" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
