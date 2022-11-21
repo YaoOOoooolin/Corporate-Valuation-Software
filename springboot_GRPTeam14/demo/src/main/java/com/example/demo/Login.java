@@ -62,6 +62,7 @@ public class Login {
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         Scene scene = new Scene(root, 400, 320);
         stage.setScene(scene);
+        stage.setTitle("The Story");
         stage.show();
     }
 
