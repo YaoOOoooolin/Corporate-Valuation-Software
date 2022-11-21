@@ -75,7 +75,7 @@
       </FlowPane>
       <FlowPane layoutX="193.0" layoutY="24.0" prefHeight="775.0" prefWidth="197.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="193.0" AnchorPane.rightAnchor="1127.0" AnchorPane.topAnchor="24.0">
          <children>
-            <TextField>
+            <TextField fx:id="dataOfValuation">
                <FlowPane.margin>
                   <Insets top="10.0" />
                </FlowPane.margin>
