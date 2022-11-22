@@ -12,10 +12,32 @@ public class HelloController {
 
 
     @FXML
+    private Button TPtoInput1;
+
+    @FXML
+    private Button TPtoInput2;
+
+    @FXML
+    private Button TPtoInput3;
+
+    @FXML
+    private Button TPtoInput4;
+
+
+    @FXML
     private Tab tab1;
 
     @FXML
     private Tab tab2;
+
+    @FXML
+    private Tab mainInput2;
+
+    @FXML
+    private Tab mainInput3;
+
+    @FXML
+    private Tab mainInput4;
 
     @FXML
     private TabPane tabPane;
@@ -57,5 +79,25 @@ public class HelloController {
                 "emma.jones@example.com",
                 "michael.brown@example.com");
         RandDYes.setExpanded(false);
+    }
+
+    @FXML
+    void ToTab1(ActionEvent event) {
+        tabPane.getSelectionModel().select(tab1);
+    }
+
+    @FXML
+    void ToTab2(ActionEvent event) {
+        tabPane.getSelectionModel().select(mainInput2);
+    }
+
+    @FXML
+    void ToTab3(ActionEvent event) {
+        tabPane.getSelectionModel().select(mainInput3);
+    }
+
+    @FXML
+    void ToTab4(ActionEvent event) {
+        tabPane.getSelectionModel().select(mainInput4);
     }
 }
