@@ -57,6 +57,17 @@ public class Login {
         }
     }
 
+    @FXML
+    void SignUp(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signUp.fxml"));
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 600, 330);
+        stage.setTitle("SignUp");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
     public void switchToGame(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("view.fxml"));
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -68,5 +79,6 @@ public class Login {
 
     @FXML
         private Label wrongUsernameOrPassword_id;
+
 
 }
