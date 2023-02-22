@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Login">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #59606d;" BorderPane.alignment="CENTER">
          <children>
@@ -41,7 +41,8 @@
                   <Font name="Apple LiGothic Medium" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="SignIn_id" layoutX="204.0" layoutY="288.0" mnemonicParsing="false" onAction="#ToCal" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #59606D;" text="Sign in" textFill="#70abb0">
+            <Button fx:id="SignIn_id" layoutX="204.0" layoutY="288.0" mnemonicParsing="false" onAction="#ToCal" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #59606D;" text="Login
+" textFill="#70abb0">
                <font>
                   <Font name="Apple LiGothic Medium" size="21.0" />
                </font>
