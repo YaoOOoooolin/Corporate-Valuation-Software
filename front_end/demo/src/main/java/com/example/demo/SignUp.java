@@ -11,10 +11,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-
+import java.io.FileInputStream;
 import java.io.IOException;
+
 
 public class SignUp {
     @FXML
@@ -54,35 +55,32 @@ public class SignUp {
     @FXML
     private ImageView code_id;
 
-    String code;
+    String code = "OLOB";
     int num = 0;
     @FXML
-    void ChangeImg() throws  InterruptedException {
+    void ChangeImg() throws IOException {
         num++;
-        if (num >= 10){
+        if (num > 5){
             num = 1;
         }
         String name = "code"+num+".jpg";
-        Image image;
-        try {
-            code = CheckCodeUtil.Image(num,name);
-            Thread.sleep(500);
-            image = new Image(SignUp.class.getResource(name).toString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-
-
+        code = CheckCodeUtil.Image(num);
+        FileInputStream fis = new FileInputStream("front_end/demo/src/main/resources/com/example/demo/" + name);
+        Image image = new Image(fis);
         code_id.setImage(image);
-
+        System.out.println(code);
     }
-
+    @FXML
+    private Text VerificationCodeError_id;
 
     @FXML
     void SignUpCheck(){
-        String code = VerifiCode.getText();
-        if (!code.equals(code)){
+        String inputCode = VerifiCode.getText();
+        inputCode = inputCode.toUpperCase();
+        if (!code.equals(inputCode)){
+            VerificationCodeError_id.setVisible(true);
+        }else {
+            VerificationCodeError_id.setVisible(false);
         }
     }
 }

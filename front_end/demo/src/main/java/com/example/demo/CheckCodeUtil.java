@@ -17,9 +17,9 @@ public class CheckCodeUtil {
     private static Random random = new Random();
 
 
-    public static String Image(int num,String name) throws IOException {
-        num ++;
-        name = "code"+num+".jpg";
+    public static String Image(int num) throws IOException {
+
+        String name = "code"+num+".jpg";
         OutputStream fos = new FileOutputStream("front_end/demo/src/main/resources/com/example/demo/" + name);
         return CheckCodeUtil.outputVerifyImage(100, 50, fos, 4);
     }
