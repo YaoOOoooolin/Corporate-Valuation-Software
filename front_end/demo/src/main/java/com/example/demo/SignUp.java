@@ -9,7 +9,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -46,7 +49,40 @@ public class SignUp {
     }
 
     @FXML
-    void SignUpCheck(){
+    private TextField VerifiCode;
 
+    @FXML
+    private ImageView code_id;
+
+    String code;
+    int num = 0;
+    @FXML
+    void ChangeImg() throws  InterruptedException {
+        num++;
+        if (num >= 10){
+            num = 1;
+        }
+        String name = "code"+num+".jpg";
+        Image image;
+        try {
+            code = CheckCodeUtil.Image(num,name);
+            Thread.sleep(500);
+            image = new Image(SignUp.class.getResource(name).toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+        code_id.setImage(image);
+
+    }
+
+
+    @FXML
+    void SignUpCheck(){
+        String code = VerifiCode.getText();
+        if (!code.equals(code)){
+        }
     }
 }

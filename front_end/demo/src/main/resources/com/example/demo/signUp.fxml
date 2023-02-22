@@ -58,7 +58,10 @@
                   <Font name="Apple LiGothic Medium" size="22.0" />
                </font>
             </Label>
-            <ImageView fitHeight="44.0" fitWidth="80.0" layoutX="156.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="code_id" fitHeight="44.0" fitWidth="80.0" layoutX="163.0" layoutY="199.0" onMouseClicked="#ChangeImg" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@code.jpg" />
+               </image></ImageView>
             <TextField fx:id="VerifiCode" layoutX="267.0" layoutY="205.0" prefHeight="26.0" prefWidth="63.0" />
             <Button fx:id="SignUpCheck_id" layoutX="228.0" layoutY="264.0" mnemonicParsing="false" onAction="#SignUpCheck" prefHeight="50.0" prefWidth="117.0" style="-fx-background-color: #59606D;" text="SingUp" textFill="#70abb0">
                <font>
