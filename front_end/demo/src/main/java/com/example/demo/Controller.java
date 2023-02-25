@@ -2,7 +2,14 @@ package com.example.demo;
 
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
+        import javafx.fxml.FXMLLoader;
+        import javafx.scene.Node;
+        import javafx.scene.Parent;
+        import javafx.scene.Scene;
         import javafx.scene.control.*;
+        import javafx.stage.Stage;
+
+        import java.io.IOException;
         import java.util.Locale;
 
 public class Controller {
@@ -28,6 +35,8 @@ public class Controller {
     private Tab tab5;
 
     @FXML
+    private Tab tab6;
+    @FXML
     private Tab tab3;
     @FXML
     private Tab tab4;
@@ -38,6 +47,9 @@ public class Controller {
 
     @FXML
     private ComboBox<String> comboBox1;
+
+    @FXML
+    private Button submit_id;
 
 
 
@@ -76,5 +88,20 @@ public class Controller {
     }
     @FXML
     void ToTab5(ActionEvent event) {tabPane.getSelectionModel().select(tab5);
+    }
+
+    @FXML
+    void ToTab6(ActionEvent event){
+        tabPane.getSelectionModel().select(tab6);
+    }
+    @FXML
+    void result(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        Scene scene = new Scene(root, 850, 800);
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 }
