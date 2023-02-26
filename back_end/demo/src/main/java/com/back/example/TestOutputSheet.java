@@ -56,6 +56,36 @@ public class TestOutputSheet {
     public static double   _valueOfEquityOptions = 0;
     public static double   numberOfShares_B32 = 0;
     public static double   valuePerShare = 0;
+/*
+* 用方法来传参*/
+    public static double outputB9(){
+        InputData inputData = new InputData();
+        revenues_a_C9 = inputData.getB25();
+        revenues_a_D9 = revenues_a_F9;
+
+        reinvestment_C_D12 = inputData.getB28();
+        CountryEquityRiskPremiums cerp = new CountryEquityRiskPremiums();
+        OptionValue ov=new OptionValue();
+
+        A12CostOfCapital costOfCapital = new A12CostOfCapital();
+        costOfCapital.setTerminalostOfCapital(inputData.isB41(), inputData.getB42(), inputData.isB57(), inputData.getB58(), cerp.getB1(), inputData.getB30());
+        costOfCapital.setCostOfCapitalList(inputData.getB31());
+
+        A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
+        revenueGrowthRate.setTerminalRevenue(inputData.isB60(), inputData.getB61(), inputData.isB57(), inputData.getB58(), inputData.getB30());
+
+        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
+        A3Revenues revenues = new A3Revenues();
+        ArrayList<Double> rvg = revenueGrowthRate.getRevenueGrowthRateList();
+        revenues_a_F9 = rvg.get(rvg.size()-1);
+
+        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
+        //Revenues List
+        revenuesList = revenues.getRevenuesList();
+        //B9 value
+        revenues_a_B9 = revenuesList.get(0);
+        return revenues_a_B9;
+    }
 
     public static void main(String[] args) {
         InputData inputData = new InputData();
@@ -84,8 +114,6 @@ public class TestOutputSheet {
         //B9 value
         revenues_a_B9 = revenuesList.get(0);
 //        double temp = revenuesList.get(reinvestmentList.size() - 1);
-
-
 
 
         OperatingLeaseConverter olc = new OperatingLeaseConverter();

@@ -8,7 +8,6 @@ package com.front;
         import javafx.scene.Scene;
         import javafx.scene.control.*;
         import javafx.stage.Stage;
-
         import java.io.IOException;
         import java.util.Locale;
 
@@ -89,7 +88,6 @@ public class Controller {
     @FXML
     void ToTab5(ActionEvent event) {tabPane.getSelectionModel().select(tab5);
     }
-
     @FXML
     void ToTab6(ActionEvent event){
         tabPane.getSelectionModel().select(tab6);
@@ -104,4 +102,5 @@ public class Controller {
         stage.setResizable(false);
         stage.show();
     }
+
 }
