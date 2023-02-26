@@ -56,7 +56,9 @@ public class TestOutputSheet {
     public static double   _valueOfEquityOptions = 0;
     public static double   numberOfShares_B32 = 0;
     public static double   valuePerShare = 0;
-/*
+
+
+    /*
 * 用方法来传参*/
     public static double outputB9(){
         InputData inputData = new InputData();
@@ -86,6 +88,17 @@ public class TestOutputSheet {
         revenues_a_B9 = revenuesList.get(0);
         return revenues_a_B9;
     }
+
+
+
+
+
+
+
+
+
+
+
 
     public static void main(String[] args) {
         InputData inputData = new InputData();

@@ -1,12 +1,11 @@
 package com.front;
 
+import com.back.example.OutPutMethod;
 import com.back.example.TestOutputSheet;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
 public class Result {
-
-
         public Text F14;
         public Text B11;
         public Text F13;
@@ -21,18 +20,15 @@ public class Result {
         public Text G12;
         public Text G11;
         public Text G10;
-
-
         public Text B10;
         public Text F9;
         public Text C14;
-
         public Text D11;
         public Text C11;
         public Text D10;
         public Text C10;
-        public Text D9;
-        public Text C9;
+        public Text D9; //
+        public Text C9; //
         public Text D13;
         public Text D14;
         public Text G13;
@@ -117,12 +113,127 @@ public class Result {
         public Text G39;
         public Text Story_id;
         public Text CompanyName_id;
+        public Text B9;  //
+        public Text D12;
 
-    public Text B9;
-/*所有的参数按照initialize来填*/
-    @FXML
-    public void initialize() {
-        double outputB9 = TestOutputSheet.outputB9();
-        B9.setText(String.valueOf(outputB9));
-    }
+        /*所有的参数按照initialize来填*/
+        @FXML
+        public void initialize() {
+                double outputB9 = OutPutMethod.outputB9();
+                B9.setText(String.valueOf(outputB9));
+
+                double outputC9 = OutPutMethod.outputC9();
+                C9.setText(String.valueOf(outputC9));
+
+                double outputD9 = OutPutMethod.outputD9();
+                D9.setText(String.valueOf(outputD9));
+
+                double outputF9 = OutPutMethod.outputF9();
+                F9.setText(String.valueOf(outputF9));
+
+
+                double outputB10 = OutPutMethod.outputB10();
+                B10.setText(String.valueOf(outputB10));
+
+                double outputC10 = OutPutMethod.outputC10();
+                C10.setText(String.valueOf(outputC10));
+
+                double outputD10 = OutPutMethod.outputD10();
+                D10.setText(String.valueOf(outputD10));
+
+                double outputF10 = OutPutMethod.outputF10();
+                F10.setText(String.valueOf(outputF10));
+
+
+                double outputB11 = OutPutMethod.outputB11();
+                B11.setText(String.valueOf(outputB11));
+
+                double outputC11 = OutPutMethod.outputC11();
+                C11.setText(String.valueOf(outputC11));
+
+                double outputD11 = OutPutMethod.outputD11();
+                D11.setText(String.valueOf(outputD11));
+
+                double outputF11 = OutPutMethod.outputF11();
+                F11.setText(String.valueOf(outputF11));
+
+
+                double outputD12 = OutPutMethod.outputD12();
+                D12.setText(String.valueOf(outputD12));
+
+                double outputF12 = OutPutMethod.outputF12();
+                F12.setText(String.valueOf(outputF12));
+
+
+
+                double outputB13 = OutPutMethod.outputB13();
+                B13.setText(String.valueOf(outputB13));
+
+                double outputD13 = OutPutMethod.outputD13();
+                D13.setText(String.valueOf(outputD13));
+
+                double outputF13 = OutPutMethod.outputF13();
+                F13.setText(String.valueOf(outputF13));
+
+
+                double outputC14 = OutPutMethod.outputC14();
+                C14.setText(String.valueOf(outputC14));
+
+                double outputD14 = OutPutMethod.outputD14();
+                D14.setText(String.valueOf(outputD14));
+
+                double outputF14 = OutPutMethod.outputF14();
+                F14.setText(String.valueOf(outputF14));
+
+
+                double outputD29 = OutPutMethod.outputD29();
+                D29.setText(String.valueOf(outputD29));
+
+
+                double outputD30 = OutPutMethod.outputD30();
+                D30.setText(String.valueOf(outputD30));
+
+                double outputD31 = OutPutMethod.outputD31();
+                D31.setText(String.valueOf(outputD31));
+
+
+                double outputD32 = OutPutMethod.outputD32();
+                D32.setText(String.valueOf(outputD32));
+
+
+                double outputD33 = OutPutMethod.outputD33();
+                D33.setText(String.valueOf(outputD33));
+
+                double outputD34 = OutPutMethod.outputD34();
+                D34.setText(String.valueOf(outputD34));
+
+
+                double outputD35 = OutPutMethod.outputD35();
+                D35.setText(String.valueOf(outputD35));
+
+                double outputD36 = OutPutMethod.outputD36();
+                D36.setText(String.valueOf(outputD36));
+
+                double outputD37 = OutPutMethod.outputD37();
+                D37.setText(String.valueOf(outputD37));
+
+                double outputD38 = OutPutMethod.outputD38();
+                D38.setText(String.valueOf(outputD38));
+
+                double outputD39 = OutPutMethod.outputD39();
+                D39.setText(String.valueOf(outputD39));
+
+
+                double outputG33 = OutPutMethod.outputG33();
+                G33.setText(String.valueOf(outputG33));
+
+                double outputG39 = OutPutMethod.outputD39();
+                G39.setText(String.valueOf(outputG39));
+
+
+
+
+        }
+
+
 }
