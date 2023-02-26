@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="demo" options="--add-exports java.desktop/sun.lwawt.macosx=com.example.demo" />
+      <module name="demo" options="" />
     </option>
   </component>
 </project>
