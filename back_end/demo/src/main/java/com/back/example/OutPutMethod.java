@@ -960,6 +960,9 @@ public class OutPutMethod {
     }
 
 
+    public static double outputB24() {
+        return 0.0;
+    }
 }
 
 

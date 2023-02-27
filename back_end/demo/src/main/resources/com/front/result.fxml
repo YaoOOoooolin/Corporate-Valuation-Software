@@ -98,9 +98,7 @@
             <Text fx:id="F12" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="4" />
             <Text fx:id="F11" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="3" />
             <Text fx:id="F10" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Text fx:id="B14" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Text fx:id="B13" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Text fx:id="B12" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Revenues (a)" GridPane.rowIndex="1" />
             <Label nodeOrientation="RIGHT_TO_LEFT" prefHeight="17.0" prefWidth="93.0" text="RIR = " GridPane.columnIndex="4" GridPane.rowIndex="4" />
             <Text fx:id="G14" text="Text" GridPane.columnIndex="6" GridPane.rowIndex="6" />

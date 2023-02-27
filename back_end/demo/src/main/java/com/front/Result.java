@@ -5,6 +5,8 @@ import com.back.example.TestOutputSheet;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Result {
@@ -167,7 +169,6 @@ public class Result {
                 F12.setText(String.valueOf(outputF12));
 
 
-
                 double outputB13 = OutPutMethod.outputB13();
                 B13.setText(String.valueOf(outputB13));
 
@@ -203,7 +204,7 @@ public class Result {
                 D32.setText(String.valueOf(outputD32));
 
 
-                double outputD33 = OutPutMethod.outputD33();
+                double outputD33 =  Double.parseDouble(D32.getText()) - OutPutMethod.outputB24();
                 D33.setText(String.valueOf(outputD33));
 
                 double outputD34 = OutPutMethod.outputD34();
@@ -213,7 +214,7 @@ public class Result {
                 double outputD35 = OutPutMethod.outputD35();
                 D35.setText(String.valueOf(outputD35));
 
-                double outputD36 = OutPutMethod.outputD36();
+                double outputD36 = Double.parseDouble(D32.getText()) - Double.parseDouble(D33.getText()) - Double.parseDouble(D34.getText()) + Double.parseDouble(D35.getText());
                 D36.setText(String.valueOf(outputD36));
 
                 double outputD37 = OutPutMethod.outputD37();
@@ -222,8 +223,10 @@ public class Result {
                 double outputD38 = OutPutMethod.outputD38();
                 D38.setText(String.valueOf(outputD38));
 
-                double outputD39 = OutPutMethod.outputD39();
-                D39.setText(String.valueOf(outputD39));
+                double outputD39 = (Double.parseDouble(D36.getText()) - Double.parseDouble(D37.getText())) / Double.parseDouble(D38.getText());
+                BigDecimal bd = new BigDecimal(outputD39);
+                bd = bd.setScale(2, RoundingMode.HALF_UP);
+                D39.setText(String.valueOf(bd));
 
 
                 double outputG33 = OutPutMethod.outputG33();
@@ -232,11 +235,161 @@ public class Result {
                 double outputG39 = OutPutMethod.outputD39();
                 G39.setText(String.valueOf(outputG39));
 
+                ArrayList<Double> outputRevenuesList=OutPutMethod.outputRevenuesList();
+                B17.setText(String.valueOf(outputRevenuesList.get(1)));
+                B18.setText(String.valueOf(outputRevenuesList.get(2)));
+                B19.setText(String.valueOf(outputRevenuesList.get(3)));
+                B20.setText(String.valueOf(outputRevenuesList.get(4)));
+                B21.setText(String.valueOf(outputRevenuesList.get(5)));
+                B22.setText(String.valueOf(outputRevenuesList.get(6)));
+                B23.setText(String.valueOf(outputRevenuesList.get(7)));
+                B24.setText(String.valueOf(outputRevenuesList.get(8)));
+                B25.setText(String.valueOf(outputRevenuesList.get(9)));
+                B26.setText(String.valueOf(outputRevenuesList.get(10)));
+                B27.setText(String.valueOf(outputRevenuesList.get(11)));
 
-                ArrayList<Double> revenues = OutPutMethod.outputRevenuesList();
-                System.out.println(revenues.toString());
-                B17.setText(String.valueOf(revenues.get(0)));
 
+                ArrayList<Double> outputebitMarginList=OutPutMethod.outputebitMarginList();
+                C17.setText(String.valueOf(outputebitMarginList.get(1)));
+                C18.setText(String.valueOf(outputebitMarginList.get(2)));
+                C19.setText(String.valueOf(outputebitMarginList.get(3)));
+                C20.setText(String.valueOf(outputebitMarginList.get(4)));
+                C21.setText(String.valueOf(outputebitMarginList.get(5)));
+                C22.setText(String.valueOf(outputebitMarginList.get(6)));
+                C23.setText(String.valueOf(outputebitMarginList.get(7)));
+                C24.setText(String.valueOf(outputebitMarginList.get(8)));
+                C25.setText(String.valueOf(outputebitMarginList.get(9)));
+                C26.setText(String.valueOf(outputebitMarginList.get(10)));
+                C27.setText(String.valueOf(outputebitMarginList.get(11)));
+
+
+                ArrayList<Double> outputEBIT1_tList=OutPutMethod.outputEBIT1_tList();
+                E17.setText(String.valueOf(outputEBIT1_tList.get(1)));
+                E18.setText(String.valueOf(outputEBIT1_tList.get(2)));
+                E19.setText(String.valueOf(outputEBIT1_tList.get(3)));
+                E20.setText(String.valueOf(outputEBIT1_tList.get(4)));
+                E21.setText(String.valueOf(outputEBIT1_tList.get(5)));
+                E22.setText(String.valueOf(outputEBIT1_tList.get(6)));
+                E23.setText(String.valueOf(outputEBIT1_tList.get(7)));
+                E24.setText(String.valueOf(outputEBIT1_tList.get(8)));
+                E25.setText(String.valueOf(outputEBIT1_tList.get(9)));
+                E26.setText(String.valueOf(outputEBIT1_tList.get(10)));
+                E27.setText(String.valueOf(outputEBIT1_tList.get(11)));
+
+
+                ArrayList<Double> outputreinvestmentList=OutPutMethod.outputReinvestmentList();
+                F17.setText(String.valueOf(outputreinvestmentList.get(1)));
+                F18.setText(String.valueOf(outputreinvestmentList.get(2)));
+                F19.setText(String.valueOf(outputreinvestmentList.get(3)));
+                F20.setText(String.valueOf(outputreinvestmentList.get(4)));
+                F21.setText(String.valueOf(outputreinvestmentList.get(5)));
+                F22.setText(String.valueOf(outputreinvestmentList.get(6)));
+                F23.setText(String.valueOf(outputreinvestmentList.get(7)));
+                F24.setText(String.valueOf(outputreinvestmentList.get(8)));
+                F25.setText(String.valueOf(outputreinvestmentList.get(9)));
+                F26.setText(String.valueOf(outputreinvestmentList.get(10)));
+                F27.setText(String.valueOf(outputreinvestmentList.get(12)));
+
+
+                int dTemp = (int) (Double.parseDouble(B17.getText()) * Double.parseDouble(C17.getText()));
+                String sdTemp = isNegative(dTemp);
+                D17.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B18.getText()) * Double.parseDouble(C18.getText()));
+                sdTemp = isNegative(dTemp);
+                D18.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B19.getText()) * Double.parseDouble(C19.getText()));
+                sdTemp = isNegative(dTemp);
+                D19.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B20.getText()) * Double.parseDouble(C20.getText()));
+                sdTemp = isNegative(dTemp);
+                D20.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B21.getText()) * Double.parseDouble(C21.getText()));
+                sdTemp = isNegative(dTemp);
+                D21.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B22.getText()) * Double.parseDouble(C22.getText()));
+                sdTemp = isNegative(dTemp);
+                D22.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B23.getText()) * Double.parseDouble(C23.getText()));
+                sdTemp = isNegative(dTemp);
+                D23.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B24.getText()) * Double.parseDouble(C24.getText()));
+                sdTemp = isNegative(dTemp);
+                D24.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B25.getText()) * Double.parseDouble(C25.getText()));
+                sdTemp = isNegative(dTemp);
+                D25.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B26.getText()) * Double.parseDouble(C26.getText()));
+                sdTemp = isNegative(dTemp);
+                D26.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(B27.getText()) * Double.parseDouble(C27.getText()));
+                sdTemp = isNegative(dTemp);
+                D27.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E17.getText()) - Double.parseDouble(F17.getText()));
+                sdTemp = isNegative(dTemp);
+                G17.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E18.getText()) - Double.parseDouble(F18.getText()));
+                sdTemp = isNegative(dTemp);
+                G18.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E19.getText()) - Double.parseDouble(F19.getText()));
+                sdTemp = isNegative(dTemp);
+                G19.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E20.getText()) - Double.parseDouble(F20.getText()));
+                sdTemp = isNegative(dTemp);
+                G20.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E21.getText()) - Double.parseDouble(F21.getText()));
+                sdTemp = isNegative(dTemp);
+                G21.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E22.getText()) - Double.parseDouble(F22.getText()));
+                sdTemp = isNegative(dTemp);
+                G22.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E23.getText()) - Double.parseDouble(F23.getText()));
+                sdTemp = isNegative(dTemp);
+                G23.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E24.getText()) - Double.parseDouble(F24.getText()));
+                sdTemp = isNegative(dTemp);
+                G24.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E25.getText()) - Double.parseDouble(F25.getText()));
+                sdTemp = isNegative(dTemp);
+                G25.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E26.getText()) - Double.parseDouble(F26.getText()));
+                sdTemp = isNegative(dTemp);
+                G26.setText(sdTemp);
+
+                dTemp = (int) (Double.parseDouble(E27.getText()) - Double.parseDouble(F27.getText()));
+                sdTemp = isNegative(dTemp);
+                G27.setText(sdTemp);
+
+        }
+
+        private String  isNegative(int value) {
+                String result = "";
+                if (value < 0){
+                        value *= -1;
+                        result = "(" + value +")";
+                }else{
+                        result = value + "";
+                }
+                return result;
         }
 
 
