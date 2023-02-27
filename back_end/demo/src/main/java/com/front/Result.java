@@ -5,6 +5,8 @@ import com.back.example.TestOutputSheet;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
+
 public class Result {
         public Text F14;
         public Text B11;
@@ -231,7 +233,9 @@ public class Result {
                 G39.setText(String.valueOf(outputG39));
 
 
-
+                ArrayList<Double> revenues = OutPutMethod.outputRevenuesList();
+                System.out.println(revenues.toString());
+                B17.setText(String.valueOf(revenues.get(0)));
 
         }
 

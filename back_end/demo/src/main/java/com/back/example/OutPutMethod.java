@@ -510,8 +510,7 @@ public class OutPutMethod {
         revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
         A3Revenues revenues = new A3Revenues();
         revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
-        System.out.println(revenues.getRevenuesList().toString());
-        return revenuesList;
+        return revenues.getRevenuesList();
     }
 
 
