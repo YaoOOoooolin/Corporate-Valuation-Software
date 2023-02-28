@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class SignUpApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signUp.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SignUpApplication.class.getResource("signUp.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 330);
         stage.setTitle("SignUp");
         stage.setScene(scene);

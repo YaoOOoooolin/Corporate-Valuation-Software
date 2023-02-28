@@ -59,7 +59,7 @@ public class Login {
 
     @FXML
     void SignUp(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signUp.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("signUp.fxml"));
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(), 600, 330);
         stage.setTitle("SignUp");

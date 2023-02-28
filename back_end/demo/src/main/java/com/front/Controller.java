@@ -96,7 +96,7 @@ public class Controller {
     void result(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        Scene scene = new Scene(root, 850, 800);
+        Scene scene = new Scene(root, 1094, 800);
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.setResizable(false);
