@@ -175,10 +175,10 @@ public class InputData {
     double B65= (double) 0.15;
     double B17=0;
     static String B49="V";
-    static double B50= 0.5F;
-    static double B21= 0.25F;
+    static double B50= 0.5;
+    static double B21= 0.25;
     static boolean B47 = true;
-    static double B48 = (double) 0.2;
+    static double B48 = 0.2;
     static double B11 = -8617;
     static double B12 = 28532;
     static double B15 = 10030;

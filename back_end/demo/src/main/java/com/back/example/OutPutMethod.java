@@ -8,35 +8,6 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class OutPutMethod {
-
-    public static double revenues_a_B9 = 0;
-    public static double revenues_a_C9 = 0;
-    public static double revenues_a_D9 = 0;
-    public static double revenues_a_F9 = 0;
-
-    public static double operatingMargin_b_B10 = 0;
-    public static double operatingMargin_b_C10 = 0;
-    public static double operatingMargin_b_D10 = 0;
-    public static double operatingMargin_b_F10 = 0;
-
-    public static double taxRate_B11 = 0;
-    public static double taxRate_C11 = 0;
-    public static double taxRate_D11 = 0;
-    public static double taxRate_F11 = 0;
-
-    public static double reinvestment_C_D12 = 0;
-    public static double reinvestment_C_F12;
-
-    public static double returnOnCapital_B13 = 0;
-    public static double returnOnCapital_D13 = 0;
-    public static double returnOnCapital_F13 = 0;
-
-
-    public static double costOfCapital_d_C14 = 0;
-    public static double costOfCapital_d_D14 = 0;
-    public static double costOfCapital_d_F14 = 0;
-
-
     public static ArrayList<Double> revenuesList = new ArrayList<>();
     public static ArrayList<Double> ebitMarginList = new ArrayList<>();
     public static ArrayList<Double> EBIT1_tList = new ArrayList<>();
@@ -44,24 +15,8 @@ public class OutPutMethod {
     public static ArrayList<BigDecimal> EBITList = new ArrayList<>();
     public static ArrayList<BigDecimal> FCFFList = new ArrayList<>();
 
-    //Terminal value
-    public static double terminalValue_InTheValue_D29 = 0;
-    public static double PV_terminalValue_InTheValue_D30 = 0;
-    public static double PV_CF_InTheValue_D31 = 0;
-    public static double valueOfOperatingAssets_InTheValue_D32 = 0;
-    public static double adjustmentForDistress_D33 = 0;
-    public static double _debtAndMnorityInterests_D34 = 0;
-    public static double cashAndOtherNon_operatingAssets_D35 = 0;
-    public static double valueOfEquity_D36 = 0;
-    public static double _valueOfEquityOptions_D37 = 0;
-    public static double numberOfShares_D38 = 0;
-    public static double valuePerShare_D39 = 0;
-    public static double Probability_of_failure_G33;
-    public static double Stock_was_trading_at_G39;
-
-
     //9 ******************************************
-    public static double outputB9() {
+   /* public static double outputB9() {
         InputData inputData = new InputData();
         revenues_a_B9 = inputData.getB8();
         return revenues_a_B9;
@@ -364,6 +319,7 @@ public class OutPutMethod {
         double Diagnostics_B3;
         double Diagnostics_B2;
         double Diagnostics_B6;
+
         InputData inputData = new InputData();
         CountryEquityRiskPremiums cerp = new CountryEquityRiskPremiums();
         OptionValue ov = new OptionValue();
@@ -419,11 +375,11 @@ public class OutPutMethod {
         Diagnostics_B6 = big_B5.divide(big_B4, 20, RoundingMode.HALF_UP).setScale(4, RoundingMode.HALF_UP).doubleValue();
 
 
-        /*System.out.println(Diagnostics_B6);
+        *//*System.out.println(Diagnostics_B6);
         System.out.println(Diagnostics_B4);
         System.out.println(Diagnostics_B5);
         System.out.println(Diagnostics_B3);
-        System.out.println(Diagnostics_B2);*/
+        System.out.println(Diagnostics_B2);*//*
 
         returnOnCapital_D13 = Diagnostics_B6;
         return returnOnCapital_D13;
@@ -500,7 +456,8 @@ public class OutPutMethod {
         //costOfCapital.setCostOfCapitalList(inputData.getB31());
         costOfCapital_d_F14 = costOfCapital.terminalostOfCapital;
         return costOfCapital_d_F14;
-    }
+    }*/
+
 
     //RevenuesList ******************************************
     public static ArrayList<Double> outputRevenuesList() {
@@ -510,7 +467,8 @@ public class OutPutMethod {
         revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
         A3Revenues revenues = new A3Revenues();
         revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
-        return revenues.getRevenuesList();
+        revenuesList=revenues.getRevenuesList();
+        return revenuesList;
     }
 
 
@@ -631,7 +589,7 @@ public class OutPutMethod {
 
 
     // D29******************************************
-    public static double outputD29() {
+   /* public static double outputD29() {
         InputData inputData = new InputData();
         CountryEquityRiskPremiums cerp = new CountryEquityRiskPremiums();
         OperatingLeaseConverter olc = new OperatingLeaseConverter();
@@ -928,7 +886,6 @@ public class OutPutMethod {
         A30ValueOfOptions valueOfOptions=new A30ValueOfOptions();
         valueOfOptions.setValueOfOptions(inputData.isB33(), ov.getD27());
         _valueOfEquityOptions_D37=valueOfOptions.getValueOfOptions();
-
         return _valueOfEquityOptions_D37;
     }
 
@@ -940,9 +897,9 @@ public class OutPutMethod {
     }
 
     //******************************************
-    public static double outputD39() { //todo
+    *//*public static double outputD39() { //todo
         return valuePerShare_D39;
-    }
+    }*//*
 
     //***************************************
     public static double outputG33(){
@@ -962,14 +919,14 @@ public class OutPutMethod {
 
     public static double outputB24() {
         return 0.0;
-    }
+    }*/
 }
 
 
 
 class Test {
     public static void main(String[] args) {
-        System.out.println(OutPutMethod.outputG39());
+        System.out.println(OutPutMethod2.output("G39"));
 
     }
 }
