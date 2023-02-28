@@ -79,4 +79,12 @@ public class SignUp {
             VerificationCodeError_id.setVisible(false);
         }
     }
+    @FXML
+    public void initialize() {
+        try {
+            ChangeImg();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
