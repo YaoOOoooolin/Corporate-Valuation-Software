@@ -12,36 +12,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Result">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Result">
    <children>
-      <Text fx:id="CompanyName_id" layoutX="562.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boeing" wrappingWidth="67.098120088212" AnchorPane.leftAnchor="400.0">
+      <Text fx:id="CompanyName_id" layoutX="408.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boeing" wrappingWidth="67.098120088212" AnchorPane.leftAnchor="520.0">
          <font>
             <Font name="AppleMyungjo Regular" size="22.0" />
          </font>
       </Text>
       <Separator layoutX="80.0" layoutY="58.0" prefHeight="3.0" prefWidth="686.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="60.0" />
-      <Text layoutX="400.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Story" wrappingWidth="67.098120088212" AnchorPane.leftAnchor="400.0">
+      <Text layoutX="400.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Story" wrappingWidth="67.098120088212" AnchorPane.leftAnchor="520.0">
          <font>
             <Font name="AppleMyungjo Regular" size="14.0" />
          </font>
       </Text>
       <Separator layoutX="80.0" layoutY="78.0" prefHeight="3.0" prefWidth="686.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="60.0" />
-      <Text fx:id="Story_id" layoutX="80.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boeing is in deep trouble. Already exposed to significant pain because of its mishandling of the Boeing 737 Max, which caused revenues to plummet in 2019, the company is facing a mountain of pain with the Corona Virus decimating the airline business (Boeing's customers). I assume more pain the year to come, with revenues dropping even with the 737 Max returning to the fold and increased losses. After that, i assume that there will be higher growth, as airlines start playing catch up and buy more aircraft from a duopoly. I assume that margins will revert back to pre-2018 levels over the next 5 years and that during the next year, Boeing is exposed to a risk of failure, not so much because it will go out of business (it is too big to fail) but from needing a bailout from the government that is large enough to wipe out equity (as was the case with GM in 2009)." wrappingWidth="707.7782749643834" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="62.2217250356166">
+      <Text fx:id="Story_id" layoutX="84.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boeing is in deep trouble. Already exposed to significant pain because of its mishandling of the Boeing 737 Max, which caused revenues to plummet in 2019, the company is facing a mountain of pain with the Corona Virus decimating the airline business (Boeing's customers). I assume more pain the year to come, with revenues dropping even with the 737 Max returning to the fold and increased losses. After that, i assume that there will be higher growth, as airlines start playing catch up and buy more aircraft from a duopoly. I assume that margins will revert back to pre-2018 levels over the next 5 years and that during the next year, Boeing is exposed to a risk of failure, not so much because it will go out of business (it is too big to fail) but from needing a bailout from the government that is large enough to wipe out equity (as was the case with GM in 2009)." wrappingWidth="957.1020664682896" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="52.89793353171035">
          <font>
             <Font name="AppleMyungjo Regular" size="11.0" />
          </font></Text>
-      <Separator layoutX="80.0" layoutY="171.0" prefHeight="4.0" prefWidth="684.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="60.0" />
-      <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="540.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Assumptions" wrappingWidth="111.82839965820312" AnchorPane.leftAnchor="380.0">
+      <Separator layoutX="80.0" layoutY="164.0" prefHeight="4.0" prefWidth="684.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="60.0" />
+      <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="505.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Assumptions" wrappingWidth="112.96289062500003" AnchorPane.leftAnchor="505.0">
          <font>
             <Font name="AppleMyungjo Regular" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="537.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Cash Flows" wrappingWidth="104.72221549174265" AnchorPane.leftAnchor="380.0">
+      <Text layoutX="537.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Cash Flows" wrappingWidth="104.72221549174265" AnchorPane.leftAnchor="510.0">
          <font>
             <Font name="AppleMyungjo Regular" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="550.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Value" wrappingWidth="69.10862906596128" AnchorPane.leftAnchor="400.0">
+      <Text layoutX="525.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Value" wrappingWidth="69.10862906596128" AnchorPane.leftAnchor="525.0">
          <font>
             <Font name="AppleMyungjo Regular" size="14.0" />
          </font>
@@ -120,7 +120,7 @@
             <Text fx:id="D13" text="Text" GridPane.columnIndex="3" GridPane.rowIndex="5" />
             <Text fx:id="D14" text="Text" GridPane.columnIndex="3" GridPane.rowIndex="6" />
             <Text fx:id="G13" text="Text" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Label prefHeight="28.0" prefWidth="73.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="24.0" prefWidth="106.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text fx:id="D12" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="3" GridPane.rowIndex="4" />
          </children>
       </GridPane>
@@ -128,7 +128,7 @@
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="235.58822631835938" minWidth="10.0" prefWidth="77.2625732421875" />
             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="226.55226135253906" minWidth="10.0" prefWidth="72.7374267578125" />
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="315.85182189941406" minWidth="10.0" prefWidth="100.5740966796875" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="315.85182189941406" minWidth="10.0" prefWidth="100.5740966796875" />
             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="344.5146484375" minWidth="10.0" prefWidth="86.00698852539062" />
             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="393.30731201171875" minWidth="10.0" prefWidth="95.49301147460938" />
             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="441.2742919921875" minWidth="10.0" prefWidth="90.2777099609375" />
@@ -256,72 +256,61 @@
             <Text fx:id="G25" text="Text" GridPane.columnIndex="6" GridPane.rowIndex="9" />
             <Text fx:id="G26" text="Text" GridPane.columnIndex="6" GridPane.rowIndex="10" />
             <Text fx:id="G27" text="Text" GridPane.columnIndex="6" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="202.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="203.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Label prefHeight="17.0" prefWidth="245.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <Label prefHeight="17.0" prefWidth="237.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="6" />
             <Label prefHeight="17.0" prefWidth="220.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="206.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="200.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="192.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="197.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="127.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Label prefHeight="17.0" prefWidth="106.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <Label prefHeight="17.0" prefWidth="108.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="110.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="107.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="107.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="111.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="113.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-            <Label prefHeight="17.0" prefWidth="111.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <Label prefHeight="17.0" prefWidth="104.0" text="\$" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Label prefHeight="17.0" prefWidth="270.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Label prefHeight="17.0" prefWidth="256.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="242.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="233.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="171.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="181.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+            <Label prefHeight="17.0" prefWidth="172.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+            <Label prefHeight="17.0" prefWidth="168.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <Label prefHeight="17.0" prefWidth="132.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Label prefHeight="17.0" prefWidth="142.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label prefHeight="17.0" prefWidth="148.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label prefHeight="17.0" prefWidth="132.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label prefHeight="17.0" prefWidth="121.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="142.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="130.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="152.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Label prefHeight="17.0" prefWidth="140.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Label prefHeight="17.0" prefWidth="154.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label prefHeight="17.0" prefWidth="164.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="155.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="147.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="192.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <Label prefHeight="17.0" prefWidth="154.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Label prefHeight="17.0" prefWidth="160.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <Label prefHeight="17.0" prefWidth="145.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Label prefHeight="17.0" prefWidth="144.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label prefHeight="17.0" prefWidth="148.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label prefHeight="17.0" prefWidth="187.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="172.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="148.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="145.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <Label prefHeight="17.0" prefWidth="142.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="130.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Label prefHeight="17.0" prefWidth="135.0" text="\$" GridPane.columnIndex="3" GridPane.rowIndex="8" />
             <Label prefHeight="17.0" prefWidth="227.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="216.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-            <Label prefHeight="17.0" prefWidth="188.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+            <Label prefHeight="17.0" prefWidth="244.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="225.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="9" />
             <Label prefHeight="17.0" prefWidth="218.0" text="\$" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="11" />
-            <Label prefHeight="17.0" prefWidth="94.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="208.0" text="\$" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Label prefHeight="17.0" prefWidth="125.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label prefHeight="17.0" prefWidth="158.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="142.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label prefHeight="17.0" prefWidth="154.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label prefHeight="17.0" prefWidth="142.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label prefHeight="17.0" prefWidth="161.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label prefHeight="17.0" prefWidth="137.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label prefHeight="17.0" prefWidth="152.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label prefHeight="17.0" prefWidth="128.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="131.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="145.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="152.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+            <Label prefHeight="17.0" prefWidth="172.0" text="\$" GridPane.columnIndex="4" GridPane.rowIndex="10" />
          </children>
       </GridPane>
       <GridPane gridLinesVisible="true" layoutY="585.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="157.0" prefWidth="678.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="60.0">
@@ -369,21 +358,21 @@
             <Text fx:id="D38" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <Text fx:id="D37" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Text fx:id="D36" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label prefHeight="17.0" prefWidth="109.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="159.0" text="\$" GridPane.columnIndex="1" />
+            <Label prefHeight="17.0" prefWidth="167.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="190.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label prefHeight="17.0" prefWidth="186.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label prefHeight="17.0" prefWidth="190.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label prefHeight="17.0" prefWidth="162.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label prefHeight="17.0" prefWidth="163.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label prefHeight="17.0" prefWidth="200.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="180.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="165.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <Text fx:id="G33" text="Text" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Text fx:id="G39" text="Text" wrappingWidth="226.8583984375" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Text fx:id="G39" text="Text" wrappingWidth="287.28802490234375" GridPane.columnIndex="3" GridPane.rowIndex="10" />
          </children>
       </GridPane>
-      <MenuBar layoutX="1.0" layoutY="-2.0" prefHeight="28.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <MenuBar layoutX="1.0" layoutY="-2.0" prefHeight="28.0" prefWidth="914.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>

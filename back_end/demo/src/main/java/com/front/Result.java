@@ -1,7 +1,6 @@
 package com.front;
 
 import com.back.example.OutPutMethod;
-import com.back.example.TestOutputSheet;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -120,133 +119,165 @@ public class Result {
         public Text B9;  //
         public Text D12;
 
+
         /*所有的参数按照initialize来填*/
         @FXML
         public void initialize() {
+                BigDecimal bd;
+                String v;
+
                 double outputB9 = OutPutMethod.outputB9();
                 B9.setText(String.valueOf(outputB9));
 
                 double outputC9 = OutPutMethod.outputC9();
-                C9.setText(String.valueOf(outputC9));
+                v = isPercentage(outputC9);
+                C9.setText(v);
 
                 double outputD9 = OutPutMethod.outputD9();
-                D9.setText(String.valueOf(outputD9));
+                v = isPercentage(outputD9);
+                D9.setText(v);
 
                 double outputF9 = OutPutMethod.outputF9();
-                F9.setText(String.valueOf(outputF9));
+                v = isPercentage(outputF9);
+                F9.setText(v);
 
 
                 double outputB10 = OutPutMethod.outputB10();
-                B10.setText(String.valueOf(outputB10));
+                v = isPercentage(outputB10);
+                B10.setText(v);
 
                 double outputC10 = OutPutMethod.outputC10();
-                C10.setText(String.valueOf(outputC10));
+                v = isPercentage(outputC10);
+                C10.setText(v);
 
                 double outputD10 = OutPutMethod.outputD10();
-                D10.setText(String.valueOf(outputD10));
+                v = isPercentage(outputD10);
+                D10.setText(v);
 
                 double outputF10 = OutPutMethod.outputF10();
-                F10.setText(String.valueOf(outputF10));
+                v = isPercentage(outputF10);
+                F10.setText(v);
 
 
                 double outputB11 = OutPutMethod.outputB11();
-                B11.setText(String.valueOf(outputB11));
+                v = isPercentage(outputB11);
+                B11.setText(v);
 
                 double outputC11 = OutPutMethod.outputC11();
-                C11.setText(String.valueOf(outputC11));
+                v = isPercentage(outputC11);
+                C11.setText(v);
 
                 double outputD11 = OutPutMethod.outputD11();
-                D11.setText(String.valueOf(outputD11));
+                v = isPercentage(outputD11);
+                D11.setText(v);
 
                 double outputF11 = OutPutMethod.outputF11();
-                F11.setText(String.valueOf(outputF11));
+                v = isPercentage(outputF11);
+                F11.setText(v);
 
 
                 double outputD12 = OutPutMethod.outputD12();
                 D12.setText(String.valueOf(outputD12));
 
                 double outputF12 = OutPutMethod.outputF12();
-                F12.setText(String.valueOf(outputF12));
+                v = isPercentage(outputF12);
+                F12.setText(v);
 
 
                 double outputB13 = OutPutMethod.outputB13();
-                B13.setText(String.valueOf(outputB13));
+                v = isPercentage(outputB13);
+                B13.setText(v);
 
                 double outputD13 = OutPutMethod.outputD13();
-                D13.setText(String.valueOf(outputD13));
+                v = isPercentage(outputD13);
+                D13.setText(v);
 
                 double outputF13 = OutPutMethod.outputF13();
-                F13.setText(String.valueOf(outputF13));
+                v = isPercentage(outputF13);
+                F13.setText(v);
 
 
                 double outputC14 = OutPutMethod.outputC14();
-                C14.setText(String.valueOf(outputC14));
+                v = isPercentage(outputC14);
+                C14.setText(v);
 
                 double outputD14 = OutPutMethod.outputD14();
-                D14.setText(String.valueOf(outputD14));
+                v = isPercentage(outputD14);
+                D14.setText(v);
 
                 double outputF14 = OutPutMethod.outputF14();
-                F14.setText(String.valueOf(outputF14));
+                v = isPercentage(outputF14);
+                F14.setText(v);
 
 
                 double outputD29 = OutPutMethod.outputD29();
-                D29.setText(String.valueOf(outputD29));
+                bd = isRounded(outputD29);
+                D29.setText(String.valueOf(bd));
 
 
                 double outputD30 = OutPutMethod.outputD30();
-                D30.setText(String.valueOf(outputD30));
+                bd = isRounded(outputD30);
+                D30.setText(String.valueOf(bd));
 
                 double outputD31 = OutPutMethod.outputD31();
-                D31.setText(String.valueOf(outputD31));
+                bd = isRounded(outputD31);
+                D31.setText(String.valueOf(bd));
 
 
                 double outputD32 = OutPutMethod.outputD32();
-                D32.setText(String.valueOf(outputD32));
+                bd = isRounded(outputD32);
+                D32.setText(String.valueOf(bd));
 
 
                 double outputD33 =  Double.parseDouble(D32.getText()) - OutPutMethod.outputB24();
-                D33.setText(String.valueOf(outputD33));
+                bd = isRounded(outputD33);
+                D33.setText(String.valueOf(bd));
 
                 double outputD34 = OutPutMethod.outputD34();
-                D34.setText(String.valueOf(outputD34));
+                bd = isRounded(outputD34);
+                D34.setText(String.valueOf(bd));
 
 
                 double outputD35 = OutPutMethod.outputD35();
-                D35.setText(String.valueOf(outputD35));
+                bd = isRounded(outputD35);
+                D35.setText(String.valueOf(bd));
 
                 double outputD36 = Double.parseDouble(D32.getText()) - Double.parseDouble(D33.getText()) - Double.parseDouble(D34.getText()) + Double.parseDouble(D35.getText());
-                D36.setText(String.valueOf(outputD36));
+                bd = isRounded(outputD36);
+                D36.setText(String.valueOf(bd));
 
                 double outputD37 = OutPutMethod.outputD37();
-                D37.setText(String.valueOf(outputD37));
+                bd = isRounded(outputD37);
+                D37.setText(String.valueOf(bd));
 
                 double outputD38 = OutPutMethod.outputD38();
-                D38.setText(String.valueOf(outputD38));
+                bd = isRounded(outputD38);
+                D38.setText(String.valueOf(bd));
 
                 double outputD39 = (Double.parseDouble(D36.getText()) - Double.parseDouble(D37.getText())) / Double.parseDouble(D38.getText());
-                BigDecimal bd = new BigDecimal(outputD39);
-                bd = bd.setScale(2, RoundingMode.HALF_UP);
+                bd = isRounded(outputD39);
                 D39.setText(String.valueOf(bd));
 
 
                 double outputG33 = OutPutMethod.outputG33();
-                G33.setText(String.valueOf(outputG33));
+                v = isPercentage(outputG33);
+                G33.setText(v);
 
                 double outputG39 = OutPutMethod.outputD39();
                 G39.setText(String.valueOf(outputG39));
 
                 ArrayList<Double> outputRevenuesList=OutPutMethod.outputRevenuesList();
-                B17.setText(String.valueOf(outputRevenuesList.get(1)));
-                B18.setText(String.valueOf(outputRevenuesList.get(2)));
-                B19.setText(String.valueOf(outputRevenuesList.get(3)));
-                B20.setText(String.valueOf(outputRevenuesList.get(4)));
-                B21.setText(String.valueOf(outputRevenuesList.get(5)));
-                B22.setText(String.valueOf(outputRevenuesList.get(6)));
-                B23.setText(String.valueOf(outputRevenuesList.get(7)));
-                B24.setText(String.valueOf(outputRevenuesList.get(8)));
-                B25.setText(String.valueOf(outputRevenuesList.get(9)));
-                B26.setText(String.valueOf(outputRevenuesList.get(10)));
-                B27.setText(String.valueOf(outputRevenuesList.get(11)));
+                B17.setText(String.valueOf(isRounded(outputRevenuesList.get(1))));
+                B18.setText(String.valueOf(isRounded(outputRevenuesList.get(2))));
+                B19.setText(String.valueOf(isRounded(outputRevenuesList.get(3))));
+                B20.setText(String.valueOf(isRounded(outputRevenuesList.get(4))));
+                B21.setText(String.valueOf(isRounded(outputRevenuesList.get(5))));
+                B22.setText(String.valueOf(isRounded(outputRevenuesList.get(6))));
+                B23.setText(String.valueOf(isRounded(outputRevenuesList.get(7))));
+                B24.setText(String.valueOf(isRounded(outputRevenuesList.get(8))));
+                B25.setText(String.valueOf(isRounded(outputRevenuesList.get(9))));
+                B26.setText(String.valueOf(isRounded(outputRevenuesList.get(10))));
+                B27.setText(String.valueOf(isRounded(outputRevenuesList.get(11))));
 
 
                 ArrayList<Double> outputebitMarginList=OutPutMethod.outputebitMarginList();
@@ -264,31 +295,32 @@ public class Result {
 
 
                 ArrayList<Double> outputEBIT1_tList=OutPutMethod.outputEBIT1_tList();
-                E17.setText(String.valueOf(outputEBIT1_tList.get(1)));
-                E18.setText(String.valueOf(outputEBIT1_tList.get(2)));
-                E19.setText(String.valueOf(outputEBIT1_tList.get(3)));
-                E20.setText(String.valueOf(outputEBIT1_tList.get(4)));
-                E21.setText(String.valueOf(outputEBIT1_tList.get(5)));
-                E22.setText(String.valueOf(outputEBIT1_tList.get(6)));
-                E23.setText(String.valueOf(outputEBIT1_tList.get(7)));
-                E24.setText(String.valueOf(outputEBIT1_tList.get(8)));
-                E25.setText(String.valueOf(outputEBIT1_tList.get(9)));
-                E26.setText(String.valueOf(outputEBIT1_tList.get(10)));
-                E27.setText(String.valueOf(outputEBIT1_tList.get(11)));
+                E17.setText(String.valueOf(isRounded(outputEBIT1_tList.get(1))));
+                E18.setText(String.valueOf(isRounded(outputEBIT1_tList.get(2))));
+                E19.setText(String.valueOf(isRounded(outputEBIT1_tList.get(3))));
+                E20.setText(String.valueOf(isRounded(outputEBIT1_tList.get(4))));
+                E21.setText(String.valueOf(isRounded(outputEBIT1_tList.get(5))));
+                E22.setText(String.valueOf(isRounded(outputEBIT1_tList.get(6))));
+                E23.setText(String.valueOf(isRounded(outputEBIT1_tList.get(7))));
+                E24.setText(String.valueOf(isRounded(outputEBIT1_tList.get(8))));
+                E25.setText(String.valueOf(isRounded(outputEBIT1_tList.get(9))));
+                E26.setText(String.valueOf(isRounded(outputEBIT1_tList.get(10))));
+                E27.setText(String.valueOf(isRounded(outputEBIT1_tList.get(11))));
 
 
                 ArrayList<Double> outputreinvestmentList=OutPutMethod.outputReinvestmentList();
-                F17.setText(String.valueOf(outputreinvestmentList.get(1)));
-                F18.setText(String.valueOf(outputreinvestmentList.get(2)));
-                F19.setText(String.valueOf(outputreinvestmentList.get(3)));
-                F20.setText(String.valueOf(outputreinvestmentList.get(4)));
-                F21.setText(String.valueOf(outputreinvestmentList.get(5)));
-                F22.setText(String.valueOf(outputreinvestmentList.get(6)));
-                F23.setText(String.valueOf(outputreinvestmentList.get(7)));
-                F24.setText(String.valueOf(outputreinvestmentList.get(8)));
-                F25.setText(String.valueOf(outputreinvestmentList.get(9)));
-                F26.setText(String.valueOf(outputreinvestmentList.get(10)));
-                F27.setText(String.valueOf(outputreinvestmentList.get(12)));
+
+                F17.setText(String.valueOf(isRounded(outputreinvestmentList.get(1))));
+                F18.setText(String.valueOf(isRounded(outputreinvestmentList.get(2))));
+                F19.setText(String.valueOf(isRounded(outputreinvestmentList.get(3))));
+                F20.setText(String.valueOf(isRounded(outputreinvestmentList.get(4))));
+                F21.setText(String.valueOf(isRounded(outputreinvestmentList.get(5))));
+                F22.setText(String.valueOf(isRounded(outputreinvestmentList.get(6))));
+                F23.setText(String.valueOf(isRounded(outputreinvestmentList.get(7))));
+                F24.setText(String.valueOf(isRounded(outputreinvestmentList.get(8))));
+                F25.setText(String.valueOf(isRounded(outputreinvestmentList.get(9))));
+                F26.setText(String.valueOf(isRounded(outputreinvestmentList.get(10))));
+                F27.setText(String.valueOf(isRounded(outputreinvestmentList.get(11))));
 
 
                 int dTemp = (int) (Double.parseDouble(B17.getText()) * Double.parseDouble(C17.getText()));
@@ -379,6 +411,42 @@ public class Result {
                 sdTemp = isNegative(dTemp);
                 G27.setText(sdTemp);
 
+                C17.setText(isPercentage(outputebitMarginList.get(1)));
+                C18.setText(isPercentage(outputebitMarginList.get(2)));
+                C19.setText(isPercentage(outputebitMarginList.get(3)));
+                C20.setText(isPercentage(outputebitMarginList.get(4)));
+                C21.setText(isPercentage(outputebitMarginList.get(5)));
+                C22.setText(isPercentage(outputebitMarginList.get(6)));
+                C23.setText(isPercentage(outputebitMarginList.get(7)));
+                C24.setText(isPercentage(outputebitMarginList.get(8)));
+                C25.setText(isPercentage(outputebitMarginList.get(9)));
+                C26.setText(isPercentage(outputebitMarginList.get(10)));
+                C27.setText(isPercentage(outputebitMarginList.get(11)));
+
+                F17.setText(isNegative(isRounded(outputreinvestmentList.get(1))));
+                F18.setText(isNegative(isRounded(outputreinvestmentList.get(2))));
+                F19.setText(isNegative(isRounded(outputreinvestmentList.get(3))));
+                F20.setText(isNegative(isRounded(outputreinvestmentList.get(4))));
+                F21.setText(isNegative(isRounded(outputreinvestmentList.get(5))));
+                F22.setText(isNegative(isRounded(outputreinvestmentList.get(6))));
+                F23.setText(isNegative(isRounded(outputreinvestmentList.get(7))));
+                F24.setText(isNegative(isRounded(outputreinvestmentList.get(8))));
+                F25.setText(isNegative(isRounded(outputreinvestmentList.get(9))));
+                F26.setText(isNegative(isRounded(outputreinvestmentList.get(10))));
+                F27.setText(isNegative(isRounded(outputreinvestmentList.get(11))));
+
+                E17.setText(isNegative(isRounded(outputEBIT1_tList.get(1))));
+                E18.setText(isNegative(isRounded(outputEBIT1_tList.get(2))));
+                E19.setText(isNegative(isRounded(outputEBIT1_tList.get(3))));
+                E20.setText(isNegative(isRounded(outputEBIT1_tList.get(4))));
+                E21.setText(isNegative(isRounded(outputEBIT1_tList.get(5))));
+                E22.setText(isNegative(isRounded(outputEBIT1_tList.get(6))));
+                E23.setText(isNegative(isRounded(outputEBIT1_tList.get(7))));
+                E24.setText(isNegative(isRounded(outputEBIT1_tList.get(8))));
+                E25.setText(isNegative(isRounded(outputEBIT1_tList.get(9))));
+                E26.setText(isNegative(isRounded(outputEBIT1_tList.get(10))));
+                E27.setText(isNegative(isRounded(outputEBIT1_tList.get(11))));
+
         }
 
         private String  isNegative(int value) {
@@ -390,6 +458,31 @@ public class Result {
                         result = value + "";
                 }
                 return result;
+        }
+        private String  isNegative(BigDecimal value) {
+                String result = "";
+                double temp = value.doubleValue();
+                if (temp < 0){
+                        temp *= -1;
+                        result = "(" + temp +")";
+                }else{
+                        result = temp + "";
+                }
+                return result;
+        }
+
+
+        private BigDecimal isRounded(double value){
+                BigDecimal bd = new BigDecimal(value);
+                bd = bd.setScale(2, RoundingMode.HALF_UP);
+                return bd;
+        }
+
+
+        private String isPercentage(double value){
+                value *= 100;
+                BigDecimal bd = isRounded(value);
+                return bd + "%";
         }
 
 

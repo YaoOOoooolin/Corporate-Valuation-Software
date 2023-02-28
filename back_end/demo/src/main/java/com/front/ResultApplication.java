@@ -9,7 +9,7 @@ public class ResultApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("result.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 850, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 1094, 800);
         stage.setTitle("Result");
         stage.setScene(scene);
         stage.setResizable(false);

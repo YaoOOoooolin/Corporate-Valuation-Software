@@ -45,7 +45,8 @@ public class SignUp {
     }
 
     @FXML
-    void Quit(ActionEvent event) {
+    void Quit(ActionEvent event) throws IOException {
+        ChangeImg();
         Platform.exit();
     }
 
@@ -55,17 +56,12 @@ public class SignUp {
     @FXML
     private ImageView code_id;
 
-    String code = "OLOB";
-    int num = 0;
+    String code;
     @FXML
     void ChangeImg() throws IOException {
-        num++;
-        if (num > 5){
-            num = 1;
-        }
-        String name = "code"+num+".jpg";
-        code = CheckCodeUtil.Image(num);
-        FileInputStream fis = new FileInputStream("front_end/demo/src/main/resources/com/example/demo/" + name);
+        String name = "code.jpg";
+        code = CheckCodeUtil.Image();
+        FileInputStream fis = new FileInputStream("back_end/demo/src/main/resources/com/front/" + name);
         Image image = new Image(fis);
         code_id.setImage(image);
         System.out.println(code);
