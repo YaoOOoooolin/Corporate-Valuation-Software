@@ -450,8 +450,8 @@
                                                          <children>
                                                             <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;">
                                                                <children>
-                                                                  <CheckBox fx:id="B52Yes1" mnemonicParsing="false" onAction="#B52CheckYes" text="Yes" />
-                                                                  <CheckBox fx:id="B52No1" mnemonicParsing="false" onAction="#B52CheckNo" text="No" />
+                                                                  <CheckBox fx:id="B52Yes" mnemonicParsing="false" onAction="#B52CheckYes" text="Yes" />
+                                                                  <CheckBox fx:id="B52No" mnemonicParsing="false" onAction="#B52CheckNo" text="No" />
                                                                </children>
                                                             </HBox>
                                                          </children>

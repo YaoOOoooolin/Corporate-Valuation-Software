@@ -71,8 +71,8 @@ public class Controller {
     public TextField B61;
     public TextField B64;
     public TextField B65;
-    public CheckBox B52Yes1;
-    public CheckBox B52No1;
+    public CheckBox B52Yes;
+    public CheckBox B52No;
     public Text B50Text;
     public Text B48Text;
     public Text B49Text;
@@ -169,13 +169,13 @@ public class Controller {
         tabPane.getSelectionModel().select(tab6);
     }
     @FXML
-    void result(ActionEvent event) throws IOException {
+    void result(ActionEvent event){
         //submit 按钮进行读入 后进行计算
+        try{
         BasicData basicData = new BasicData();
         basicData.setRevenues_A8(Float.parseFloat(B8.getText()));
         System.out.println(basicData.getRevenues_A8());
         basicData.setOperating_ncome_or_EBIT_A9(Float.parseFloat(B9.getText()));
-
         Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         Scene scene = new Scene(root, 1094, 800);
@@ -183,6 +183,12 @@ public class Controller {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Please fill in all the information");
+            alert.show();
+            throw new RuntimeException(e);
+        }
     }
 
     public void B13CheckNo(ActionEvent event) {
@@ -279,8 +285,10 @@ public class Controller {
     }
 
     public void B52CheckYes(ActionEvent event) {
+        boolean b = CheckBoxYes(B52Yes, B52No);
     }
 
     public void B52CheckNo(ActionEvent event) {
+        boolean b = CheckBoxNo(B52Yes, B52No);
     }
 }
