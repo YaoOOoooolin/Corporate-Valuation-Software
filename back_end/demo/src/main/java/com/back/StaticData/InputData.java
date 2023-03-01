@@ -3,6 +3,8 @@ package com.back.StaticData;
 public class InputData {
 
 
+    public static void setB52(boolean b) {
+    }
 
     public double getB26() {
         return B26;
@@ -265,7 +267,7 @@ public class InputData {
         B18 = b18;
     }
 
-    public void setB33(boolean b33) {
+    public static void setB33(boolean b33) {
         B33 = b33;
     }
 
@@ -273,7 +275,7 @@ public class InputData {
         B16 = b16;
     }
 
-    public void setB63(boolean b63) {
+    public static void setB63(boolean b63) {
         B63 = b63;
     }
 

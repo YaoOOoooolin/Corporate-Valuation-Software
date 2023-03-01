@@ -230,6 +230,8 @@ public class Result {
 
 
                 double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - OutPutMethod.outputB24()));
+//                测试用数据
+//                double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - 97127.42));
                 System.out.println(OutPutMethod.outputB24());
                 bd = isRounded(outputD33);
                 D33.setText(String.valueOf(bd));
@@ -264,8 +266,9 @@ public class Result {
                 v = isPercentage(outputG33);
                 G33.setText(v);
 
-                double outputG39 = OutPutMethod.outputD39();
-                G39.setText(String.valueOf(outputG39));
+
+
+                G39.setText(Controller.B19Result);
 
                 ArrayList<Double> outputRevenuesList=OutPutMethod.outputRevenuesList();
                 B17.setText(String.valueOf(isRounded(outputRevenuesList.get(1))));

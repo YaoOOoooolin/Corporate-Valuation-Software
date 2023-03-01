@@ -432,7 +432,6 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Text>
-                                                      <TextField fx:id="B49" promptText="B or V" styleClass="input-group" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to override this assumption" wrappingWidth="242.86093139648438" GridPane.rowIndex="7">
                                                          <font>
                                                             <Font size="13.0" />
@@ -454,6 +453,12 @@
                                                                   <CheckBox fx:id="B52No" mnemonicParsing="false" onAction="#B52CheckNo" text="No" />
                                                                </children>
                                                             </HBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                         <children>
+                                                            <CheckBox fx:id="B49B" mnemonicParsing="false" onAction="#B49CheckB" text="B" visible="false" />
+                                                            <CheckBox fx:id="B49V" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#B49CheckV" text="V" visible="false" />
                                                          </children>
                                                       </HBox>
                                                    </children>
@@ -527,8 +532,8 @@
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will assume that you have no losses carried forward from prior years ( NOL) coming into the valuation. If you have a money losing company, you may want to override this." wrappingWidth="420.8875427246094" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                          <children>
-                                                            <CheckBox fx:id="B58Yes" mnemonicParsing="false" onAction="#B58CheckYes" text="Yes" />
-                                                            <CheckBox fx:id="B58No" mnemonicParsing="false" onAction="#B58CheckNo" text="No" />
+                                                            <CheckBox fx:id="B57Yes" mnemonicParsing="false" onAction="#B58CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B57No" mnemonicParsing="false" onAction="#B58CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will assume that the growth rate in perpetuity will be equal to the risk free rate. This allows for both valuation consistency and prevents &quot;impossible&quot; growth rates." wrappingWidth="418.30859375" GridPane.rowIndex="6" />
