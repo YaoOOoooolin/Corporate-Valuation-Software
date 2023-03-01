@@ -236,8 +236,8 @@ public class Controller {
             stage.setResizable(false);
             stage.show();
         } catch (Exception e) {
-//            blankCheck(B8, B9, B2, B10, B11, B12, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26);
-//            blankCheck(B27, B28, B30, B31, B34, B35, B36, B37, B42, B45, B48, B50, B55, B59, B61, B64,B65);
+            blankCheck(B8, B9, B2, B10, B11, B12, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26);
+            blankCheck(B27, B28, B30, B31, B34, B35, B36, B37, B42, B45, B48, B50, B55, B59, B61, B64,B65);
             isBlank(B13Yes, B13No);
             isBlank(B33Yes, B33No);
             isBlank(B41Yes, B41No);
@@ -248,8 +248,22 @@ public class Controller {
             isBlank(B60Yes, B60No);
             isBlank(B63Yes, B63No);
             isBlank(B52Yes, B52No);
-            isBlank(B49B,B49V);
+            isBlank(B49B,B49V,B47Yes.isSelected());
             throw new RuntimeException(e);
+        }
+    }
+
+    private void isBlank(CheckBox c, CheckBox d, boolean selected) {
+        Parent parent = c.getParent();
+        if (selected){
+        parent = c.getParent();
+        if (!(c.isSelected() | d.isSelected())) {
+            parent.setStyle("-fx-border-color: red;");
+        }else {
+            parent.setStyle("-fx-border-color: rgb(230, 230, 230)");
+        }
+        }else {
+            parent.setStyle("");
         }
     }
 
@@ -450,7 +464,7 @@ public class Controller {
 
     public void isBlank(CheckBox c, CheckBox d) {
         Parent parent = c.getParent();
-        if (!(c.isSelected() & d.isSelected())) {
+        if (!(c.isSelected() | d.isSelected())) {
             parent.setStyle("-fx-border-color: red;");
         }else {
             parent.setStyle("-fx-border-color: rgb(230, 230, 230)");

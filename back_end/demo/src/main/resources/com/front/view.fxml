@@ -348,7 +348,7 @@
                                        <content>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="651.0" prefWidth="723.0">
                                              <children>
-                                                <GridPane layoutX="13.0" layoutY="14.0" prefHeight="490.0" prefWidth="416.0">
+                                                <GridPane layoutX="13.0" layoutY="14.0" prefHeight="486.0" prefWidth="416.0">
                                                    <columnConstraints>
                                                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.3999481201172" minWidth="10.0" prefWidth="281.0" />
                                                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="137.0" />
@@ -362,12 +362,13 @@
                                                       <RowConstraints maxHeight="319.966064453125" minHeight="0.0" prefHeight="26.096527099609375" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="416.94000244140625" minHeight="0.0" prefHeight="46.491302490234375" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="467.0" minHeight="10.0" prefHeight="44.5" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="451.526123046875" minHeight="10.0" prefHeight="26.5" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="482.4749450683594" minHeight="10.0" prefHeight="39.5" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="486.64361572265625" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="508.08843994140625" minHeight="10.0" prefHeight="32.5" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="578.3634033203125" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="578.3634033203125" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="451.526123046875" minHeight="10.0" prefHeight="32.5" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="482.4749450683594" minHeight="10.0" prefHeight="29.5" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="486.64361572265625" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="508.08843994140625" minHeight="10.0" prefHeight="40.5" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="578.3634033203125" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="578.3634033203125" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="578.3634033203125" minHeight="9.0" prefHeight="19.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <children>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to override this assumption" GridPane.rowIndex="1">
@@ -447,7 +448,7 @@
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to override this assumption" wrappingWidth="274.96875" GridPane.rowIndex="12" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
                                                          <children>
-                                                            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;">
+                                                            <HBox prefHeight="19.0" prefWidth="142.0" style="-fx-spacing: 10; -fx-padding: 3;">
                                                                <children>
                                                                   <CheckBox fx:id="B52Yes" mnemonicParsing="false" onAction="#B52CheckYes" text="Yes" />
                                                                   <CheckBox fx:id="B52No" mnemonicParsing="false" onAction="#B52CheckNo" text="No" />
