@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.Locale;
 
 public class Controller {
@@ -174,7 +173,6 @@ public class Controller {
         try{
         BasicData basicData = new BasicData();
         basicData.setRevenues_A8(Float.parseFloat(B8.getText()));
-        System.out.println(basicData.getRevenues_A8());
         basicData.setOperating_ncome_or_EBIT_A9(Float.parseFloat(B9.getText()));
         Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -185,10 +183,43 @@ public class Controller {
         stage.show();
         }catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Please fill in all the information");
+            alert.setHeaderText("Please fill in every single component");
             alert.show();
+            blankCheck(B8, B9, B2, B10, B11, B12, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26);
+            blankCheck(B27, B28, B30, B31, B34, B35, B36, B37, B42, B45, B49, B48, B50, B55, B59, B61, B64);
+            isBlank(B65);
+            isBlank(B13Yes,B13No);
+            isBlank(B33Yes,B33No);
+            isBlank(B41Yes,B41No);
+            isBlank(B44Yes,B44No);
+            isBlank(B47Yes,B47No);
+            isBlank(B54Yes,B54No);
+            isBlank(B58Yes,B58No);
+            isBlank(B60Yes,B60No);
+            isBlank(B63Yes,B63No);
+            isBlank(B52Yes,B52No);
             throw new RuntimeException(e);
         }
+    }
+
+    private void blankCheck(TextField b27, TextField b28, TextField b30, TextField b31, TextField b34, TextField b35, TextField b36, TextField b37, TextField b42, TextField b45, TextField b49, TextField b48, TextField b50, TextField b55, TextField b59, TextField b61, TextField b64) {
+        isBlank(b27);
+        isBlank(b28);
+        isBlank(b30);
+        isBlank(b31);
+        isBlank(b34);
+        isBlank(b35);
+        isBlank(b36);
+        isBlank(b37);
+        isBlank(b42);
+        isBlank(b45);
+        isBlank(b49);
+        isBlank(b48);
+        isBlank(b50);
+        isBlank(b55);
+        isBlank(b59);
+        isBlank(b61);
+        isBlank(b64);
     }
 
     public void B13CheckNo(ActionEvent event) {
@@ -290,5 +321,24 @@ public class Controller {
 
     public void B52CheckNo(ActionEvent event) {
         boolean b = CheckBoxNo(B52Yes, B52No);
+    }
+
+    public void isBlank(DatePicker c){
+        //如果不填写，填写当前电脑日期还是？
+    }
+
+    //下拉菜单不选择适配数据库，还是？
+    public void isBlank(){
+
+    }
+    public void isBlank(TextField c){
+        if (c.getText().isEmpty()){
+            c.setStyle("-fx-border-color: red;");
+        }
+    }public void isBlank(CheckBox c,CheckBox d){
+        if (!(c.isSelected() & d.isSelected())){
+            Parent parent = c.getParent();
+            parent.setStyle("-fx-border-color: red;");
+        }
     }
 }
