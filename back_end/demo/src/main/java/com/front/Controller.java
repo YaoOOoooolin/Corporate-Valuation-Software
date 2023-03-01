@@ -1,4 +1,6 @@
 package com.front;
+
+import com.back.StaticData.InputData;
 import com.back.example.InputSheet.BasicData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,10 +14,12 @@ import javafx.stage.Stage;
 
 import java.util.Locale;
 
+import static java.lang.Double.parseDouble;
+
 public class Controller {
-/*
-* b标签与a标签一一对应
-* 日期行业等先不用输入，只输入数据相关*/
+    /*
+     * b标签与a标签一一对应
+     * 日期行业等先不用输入，只输入数据相关*/
     public DatePicker B1;
     public TextField B2;
     public TextField B8;
@@ -61,12 +65,13 @@ public class Controller {
     public TextField B59;
     public CheckBox B54Yes;
     public CheckBox B54No;
-    public CheckBox B58Yes;
-    public CheckBox B58No;
+    public CheckBox B57Yes;
+    public CheckBox B57No;
     public CheckBox B60Yes;
     public CheckBox B60No;
     public CheckBox B63Yes;
     public CheckBox B63No;
+    public TextField B58;
     public TextField B61;
     public TextField B64;
     public TextField B65;
@@ -121,7 +126,7 @@ public class Controller {
     private Button submit_id;
 
     @FXML
-    private void B13CheckYes(){
+    private void B13CheckYes() {
         //b 为YES 和 NO 选择的返回值， yes为true  no为false
         boolean b = CheckBoxYes(B13Yes, B13No);
     }
@@ -138,6 +143,8 @@ public class Controller {
                 "Japan");
 
         Locale.setDefault(Locale.ENGLISH);
+
+
     }
 
     @FXML
@@ -159,45 +166,93 @@ public class Controller {
     void ToTab4(ActionEvent event) {
         tabPane.getSelectionModel().select(tab4);
     }
+
     @FXML
-    void ToTab5(ActionEvent event) {tabPane.getSelectionModel().select(tab5);
+    void ToTab5(ActionEvent event) {
+        tabPane.getSelectionModel().select(tab5);
     }
 
     @FXML
-    void ToTab6(ActionEvent event){
+    void ToTab6(ActionEvent event) {
         tabPane.getSelectionModel().select(tab6);
     }
+
     @FXML
-    void result(ActionEvent event){
+    void result(ActionEvent event) {
         //submit 按钮进行读入 后进行计算
-        try{
-        BasicData basicData = new BasicData();
-        basicData.setRevenues_A8(Float.parseFloat(B8.getText()));
-        basicData.setOperating_ncome_or_EBIT_A9(Float.parseFloat(B9.getText()));
-        Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
-        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        Scene scene = new Scene(root, 1094, 800);
-        stage.setTitle("Result");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-        }catch (Exception e) {
+        try {
+            BasicData basicData = new BasicData();
+            InputData.setB8(Double.parseDouble(B8.getText()));
+            InputData.setB9(Double.parseDouble(B9.getText()));
+            InputData.setB10(Double.parseDouble(B10.getText()));
+            InputData.setB11(Double.parseDouble(B11.getText()));
+            InputData.setB12(Double.parseDouble(B12.getText()));
+
+            InputData.setB15(Double.parseDouble(B15.getText()));
+            InputData.setB16(Double.parseDouble(B16.getText()));
+            InputData.setB17(Double.parseDouble(B17.getText()));
+            InputData.setB18(Double.parseDouble(B18.getText()));
+            InputData.setB19(Double.parseDouble(B19.getText()));
+            InputData.setB20(Double.parseDouble(B20.getText()));
+            InputData.setB21(Double.parseDouble(B21.getText()));
+
+            InputData.setB23(Double.parseDouble(B23.getText()));
+            InputData.setB24(Double.parseDouble(B24.getText()));
+            InputData.setB25(Double.parseDouble(B25.getText()));
+            InputData.setB26(Double.parseDouble(B26.getText()));
+            InputData.setB27(Double.parseDouble(B27.getText()));
+            InputData.setB28(Double.parseDouble(B28.getText()));
+
+            InputData.setB30(Double.parseDouble(B30.getText()));
+            InputData.setB31(Double.parseDouble(B31.getText()));
+
+            InputData.setB34(Double.parseDouble(B34.getText()));
+            InputData.setB35(Double.parseDouble(B35.getText()));
+            InputData.setB36(Double.parseDouble(B36.getText()));
+            InputData.setB37(Double.parseDouble(B37.getText()));
+
+            InputData.setB42(Double.parseDouble(B42.getText()));
+
+            InputData.setB45(Double.parseDouble(B45.getText()));
+            InputData.setB48(Double.parseDouble(B48.getText()));
+            InputData.setB50(Double.parseDouble(B50.getText()));
+            InputData.setB55(Double.parseDouble(B55.getText()));
+            InputData.setB58(Double.parseDouble(B58.getText()));
+            InputData.setB61(Double.parseDouble(B61.getText()));
+            InputData.setB64(Double.parseDouble(B64.getText()));
+            InputData.setB65(Double.parseDouble(B65.getText()));
+
+
+
+
+
+
+
+
+            Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
+            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+            Scene scene = new Scene(root, 1094, 800);
+            stage.setTitle("Result");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Please fill in every single component");
             alert.show();
             blankCheck(B8, B9, B2, B10, B11, B12, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26);
             blankCheck(B27, B28, B30, B31, B34, B35, B36, B37, B42, B45, B49, B48, B50, B55, B59, B61, B64);
             isBlank(B65);
-            isBlank(B13Yes,B13No);
-            isBlank(B33Yes,B33No);
-            isBlank(B41Yes,B41No);
-            isBlank(B44Yes,B44No);
-            isBlank(B47Yes,B47No);
-            isBlank(B54Yes,B54No);
-            isBlank(B58Yes,B58No);
-            isBlank(B60Yes,B60No);
-            isBlank(B63Yes,B63No);
-            isBlank(B52Yes,B52No);
+            isBlank(B13Yes, B13No);
+            isBlank(B33Yes, B33No);
+            isBlank(B41Yes, B41No);
+            isBlank(B44Yes, B44No);
+            isBlank(B47Yes, B47No);
+            isBlank(B54Yes, B54No);
+            isBlank(B57Yes, B57No);
+            isBlank(B60Yes, B60No);
+            isBlank(B63Yes, B63No);
+            isBlank(B52Yes, B52No);
             throw new RuntimeException(e);
         }
     }
@@ -236,12 +291,12 @@ public class Controller {
 
     public void B41CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B41Yes, B41No);
-        isVisible(B42Text,B42,B41Yes.isSelected());
+        isVisible(B42Text, B42, B41Yes.isSelected());
     }
 
     public void B44CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B44Yes, B44No);
-        isVisible(B45Text,B45,B44Yes.isSelected());
+        isVisible(B45Text, B45, B44Yes.isSelected());
     }
 
     public void B41CheckNo(ActionEvent event) {
@@ -254,9 +309,9 @@ public class Controller {
 
     public void B47CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B47Yes, B47No);
-        isVisible(B48Text,B48,B47Yes.isSelected());
-        isVisible(B49Text,B49,B47Yes.isSelected());
-        isVisible(B50Text,B50,B47Yes.isSelected());
+        isVisible(B48Text, B48, B47Yes.isSelected());
+        isVisible(B49Text, B49, B47Yes.isSelected());
+        isVisible(B50Text, B50, B47Yes.isSelected());
     }
 
     public void B47CheckNo(ActionEvent event) {
@@ -265,7 +320,7 @@ public class Controller {
 
     public void B54CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B54Yes, B54No);
-        isVisible(B55Text,B55,B54Yes.isSelected());
+        isVisible(B55Text, B55, B54Yes.isSelected());
     }
 
     public void B54CheckNo(ActionEvent event) {
@@ -273,17 +328,17 @@ public class Controller {
     }
 
     public void B58CheckYes(ActionEvent event) {
-        boolean b = CheckBoxYes(B58Yes, B58No);
-        isVisible(B59Text,B59,B58Yes.isSelected());
+        boolean b = CheckBoxYes(B57Yes, B57No);
+        isVisible(B59Text, B59, B57Yes.isSelected());
     }
 
     public void B58CheckNo(ActionEvent event) {
-        boolean b = CheckBoxNo(B58Yes, B58No);
+        boolean b = CheckBoxNo(B57Yes, B57No);
     }
 
     public void B60CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B60Yes, B60No);
-        isVisible(B61Text,B61,B60Yes.isSelected());
+        isVisible(B61Text, B61, B60Yes.isSelected());
     }
 
     public void B60CheckNo(ActionEvent event) {
@@ -292,25 +347,25 @@ public class Controller {
 
     public void B63CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B63Yes, B63No);
-        isVisible(B64Text,B64,B63Yes.isSelected());
+        isVisible(B64Text, B64, B63Yes.isSelected());
     }
 
     public void B63CheckNo(ActionEvent event) {
         boolean b = CheckBoxNo(B63Yes, B63No);
     }
 
-    public boolean CheckBoxYes(CheckBox yes, CheckBox no){
+    public boolean CheckBoxYes(CheckBox yes, CheckBox no) {
         no.setDisable(yes.isSelected());
         return true;
     }
 
-    public boolean CheckBoxNo(CheckBox yes, CheckBox no){
+    public boolean CheckBoxNo(CheckBox yes, CheckBox no) {
         yes.setDisable(no.isSelected());
         return false;
     }
 
 
-    public void isVisible(Text t, TextField f,boolean b){
+    public void isVisible(Text t, TextField f, boolean b) {
         t.setVisible(b);
         f.setVisible(b);
     }
@@ -323,20 +378,23 @@ public class Controller {
         boolean b = CheckBoxNo(B52Yes, B52No);
     }
 
-    public void isBlank(DatePicker c){
+    public void isBlank(DatePicker c) {
         //如果不填写，填写当前电脑日期还是？
     }
 
     //下拉菜单不选择适配数据库，还是？
-    public void isBlank(){
+    public void isBlank() {
 
     }
-    public void isBlank(TextField c){
-        if (c.getText().isEmpty()){
+
+    public void isBlank(TextField c) {
+        if (c.getText().isEmpty()) {
             c.setStyle("-fx-border-color: red;");
         }
-    }public void isBlank(CheckBox c,CheckBox d){
-        if (!(c.isSelected() & d.isSelected())){
+    }
+
+    public void isBlank(CheckBox c, CheckBox d) {
+        if (!(c.isSelected() & d.isSelected())) {
             Parent parent = c.getParent();
             parent.setStyle("-fx-border-color: red;");
         }
