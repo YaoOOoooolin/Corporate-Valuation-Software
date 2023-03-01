@@ -36,7 +36,6 @@ public class CheckCodeUtil {
      * 使用系统默认字符源生成验证码
      *
      * @param verifySize 验证码长度
-     * @return
      */
     public static String generateVerifyCode(int verifySize) {
         return generateVerifyCode(verifySize, VERIFY_CODES);
@@ -47,7 +46,6 @@ public class CheckCodeUtil {
      *
      * @param verifySize 验证码长度
      * @param sources    验证码字符源
-     * @return
      */
     public static String generateVerifyCode(int verifySize, String sources) {
         // 未设定展示源的字码，赋默认值大写字母+数字
@@ -66,12 +64,7 @@ public class CheckCodeUtil {
     /**
      * 生成随机验证码文件,并返回验证码值 (生成图片形式，用的较少)
      *
-     * @param w
-     * @param h
-     * @param outputFile
-     * @param verifySize
-     * @return
-     * @throws IOException
+
      */
     public static String outputVerifyImage(int w, int h, File outputFile, int verifySize) throws IOException {
         String verifyCode = generateVerifyCode(verifySize);

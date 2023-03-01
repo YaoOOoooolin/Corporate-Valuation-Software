@@ -73,11 +73,7 @@ public class SignUp {
     void SignUpCheck(){
         String inputCode = VerifiCode.getText();
         inputCode = inputCode.toUpperCase();
-        if (!code.equals(inputCode)){
-            VerificationCodeError_id.setVisible(true);
-        }else {
-            VerificationCodeError_id.setVisible(false);
-        }
+        VerificationCodeError_id.setVisible(!code.equals(inputCode));
     }
     @FXML
     public void initialize() {

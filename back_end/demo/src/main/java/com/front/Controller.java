@@ -249,6 +249,7 @@ public class Controller {
             isBlank(B63Yes, B63No);
             isBlank(B52Yes, B52No);
             isBlank(B49B,B49V,B47Yes.isSelected());
+            Alert();
             throw new RuntimeException(e);
         }
     }
@@ -421,8 +422,8 @@ public class Controller {
                 if (s.charAt(i) != 37){
                     stringBuilder.append(s.charAt(i));
                 }
-               return Double.parseDouble(stringBuilder.toString()) * 0.01;
             }
+            return Double.parseDouble(stringBuilder.toString()) * 0.01;
         }
 
         return Double.parseDouble(s) * 0.01;

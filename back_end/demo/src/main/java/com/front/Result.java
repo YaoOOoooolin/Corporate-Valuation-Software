@@ -232,7 +232,6 @@ public class Result {
                 double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - OutPutMethod.outputB24()));
 //                测试用数据
 //                double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - 97127.42));
-                System.out.println(OutPutMethod.outputB24());
                 bd = isRounded(outputD33);
                 D33.setText(String.valueOf(bd));
 
@@ -267,7 +266,9 @@ public class Result {
                 G33.setText(v);
 
 
-
+                if (B19.getText().isEmpty()){
+                        Controller.B19Result = "";
+                }
                 G39.setText(Controller.B19Result);
 
                 ArrayList<Double> outputRevenuesList=OutPutMethod.outputRevenuesList();
@@ -454,7 +455,7 @@ public class Result {
         }
 
         private String  isNegative(int value) {
-                String result = "";
+                String result;
                 if (value < 0){
                         value *= -1;
                         result = "(" + value +")";
@@ -464,7 +465,7 @@ public class Result {
                 return result;
         }
         private String  isNegative(BigDecimal value) {
-                String result = "";
+                String result;
                 double temp = value.doubleValue();
                 if (temp < 0){
                         temp *= -1;

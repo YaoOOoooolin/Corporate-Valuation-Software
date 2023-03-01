@@ -369,7 +369,7 @@
             <Label prefHeight="17.0" prefWidth="180.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label prefHeight="17.0" prefWidth="165.0" text="\$" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <Text fx:id="G33" text="Text" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Text fx:id="G39" text="Text" wrappingWidth="287.28802490234375" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Text fx:id="G39" text="Text" wrappingWidth="26.28802490234375" GridPane.columnIndex="3" GridPane.rowIndex="10" />
          </children>
       </GridPane>
       <MenuBar layoutX="1.0" layoutY="-2.0" prefHeight="28.0" prefWidth="914.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
