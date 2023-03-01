@@ -138,7 +138,7 @@ public class OutPutMethod2 {
         probabilityOfFailure.setProbability_failure(inputData.getB48(), inputData.isB47());
 
         A23ProceedsIfFirmFails proceedsIfFirmFails = new A23ProceedsIfFirmFails();
-        proceedsIfFirmFails.setProceedsIfFirmFails(inputData.getB49(), inputData.getB11(), inputData.getB12(), inputData.getB50());
+        proceedsIfFirmFails.setProceedsIfFirmFails(inputData.getB49(), inputData.getB11(), inputData.getB12(), inputData.getB50(),sumOfPV);
 
         A24ValueOfOperatingAssets valueOfOperatingAssets = new A24ValueOfOperatingAssets();
         valueOfOperatingAssets.setValueOfOperatingAssets(sumOfPV, proceedsIfFirmFails, probabilityOfFailure);
@@ -424,7 +424,7 @@ class test{
         probabilityOfFailure.setProbability_failure(inputData.getB48(), inputData.isB47());
 
         A23ProceedsIfFirmFails proceedsIfFirmFails = new A23ProceedsIfFirmFails();
-        proceedsIfFirmFails.setProceedsIfFirmFails(inputData.getB49(), inputData.getB11(), inputData.getB12(), inputData.getB50());
+        proceedsIfFirmFails.setProceedsIfFirmFails(inputData.getB49(), inputData.getB11(), inputData.getB12(), inputData.getB50(),sumOfPV);
 
         A24ValueOfOperatingAssets valueOfOperatingAssets = new A24ValueOfOperatingAssets();
         valueOfOperatingAssets.setValueOfOperatingAssets(sumOfPV, proceedsIfFirmFails, probabilityOfFailure);
