@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -70,6 +71,18 @@ public class Controller {
     public TextField B61;
     public TextField B64;
     public TextField B65;
+    public CheckBox B52Yes1;
+    public CheckBox B52No1;
+    public Text B50Text;
+    public Text B48Text;
+    public Text B49Text;
+    public Text B45Text;
+    public Text B42Text;
+    public Text B55Text;
+    public Text B61Text;
+    public Text B64Text;
+    public Text B65Text;
+    public Text B59Text;
     @FXML
     private Button TPtoInput1;
 
@@ -186,10 +199,12 @@ public class Controller {
 
     public void B41CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B41Yes, B41No);
+        isVisible(B42Text,B42,B41Yes.isSelected());
     }
 
     public void B44CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B44Yes, B44No);
+        isVisible(B45Text,B45,B44Yes.isSelected());
     }
 
     public void B41CheckNo(ActionEvent event) {
@@ -202,6 +217,9 @@ public class Controller {
 
     public void B47CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B47Yes, B47No);
+        isVisible(B48Text,B48,B47Yes.isSelected());
+        isVisible(B49Text,B49,B47Yes.isSelected());
+        isVisible(B50Text,B50,B47Yes.isSelected());
     }
 
     public void B47CheckNo(ActionEvent event) {
@@ -210,6 +228,7 @@ public class Controller {
 
     public void B54CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B54Yes, B54No);
+        isVisible(B55Text,B55,B54Yes.isSelected());
     }
 
     public void B54CheckNo(ActionEvent event) {
@@ -218,6 +237,7 @@ public class Controller {
 
     public void B58CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B58Yes, B58No);
+        isVisible(B59Text,B59,B58Yes.isSelected());
     }
 
     public void B58CheckNo(ActionEvent event) {
@@ -226,6 +246,7 @@ public class Controller {
 
     public void B60CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B60Yes, B60No);
+        isVisible(B61Text,B61,B60Yes.isSelected());
     }
 
     public void B60CheckNo(ActionEvent event) {
@@ -234,6 +255,7 @@ public class Controller {
 
     public void B63CheckYes(ActionEvent event) {
         boolean b = CheckBoxYes(B63Yes, B63No);
+        isVisible(B64Text,B64,B63Yes.isSelected());
     }
 
     public void B63CheckNo(ActionEvent event) {
@@ -248,5 +270,17 @@ public class Controller {
     public boolean CheckBoxNo(CheckBox yes, CheckBox no){
         yes.setDisable(no.isSelected());
         return false;
+    }
+
+
+    public void isVisible(Text t, TextField f,boolean b){
+        t.setVisible(b);
+        f.setVisible(b);
+    }
+
+    public void B52CheckYes(ActionEvent event) {
+    }
+
+    public void B52CheckNo(ActionEvent event) {
     }
 }
