@@ -167,8 +167,8 @@
                                                       <TextField fx:id="B20" promptText="\%" styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="16" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="10">
                                                          <children>
-                                                            <CheckBox fx:id="B13Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B13No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B13Yes" mnemonicParsing="false" onAction="#B13CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B13No" mnemonicParsing="false" onAction="#B13CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marginal tax rate" wrappingWidth="154.26028442382812" GridPane.rowIndex="17">
@@ -335,8 +335,8 @@
                                                       <TextField fx:id="B37" promptText="(%)" styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1">
                                                          <children>
-                                                            <CheckBox fx:id="B33Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B33No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B33Yes" mnemonicParsing="false" onAction="#B33CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B33No" mnemonicParsing="false" onAction="#B33CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                    </children>
@@ -394,8 +394,8 @@
                                                       <TextField fx:id="B45" promptText="(%)" styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                          <children>
-                                                            <CheckBox fx:id="B41Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B41No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B41Yes" mnemonicParsing="false" onAction="#B41CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B41No" mnemonicParsing="false" onAction="#B41CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will assume that your firm will earn a return on capital equal to its cost of capital after year 10. I am assuming that whatever competitive advantages you have today will fade over time." wrappingWidth="416.4388771057129" GridPane.rowIndex="3">
@@ -406,15 +406,15 @@
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="In stable growth, I will assume that your firm will have a cost of capital similar to that of typical mature companies (riskfree rate + 4.5%)" wrappingWidth="420.8875427246094" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                          <children>
-                                                            <CheckBox fx:id="B44Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B44No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B44Yes" mnemonicParsing="false" onAction="#B44CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B44No" mnemonicParsing="false" onAction="#B44CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will assume that your firm has no chance of failure over the foreseeable future" wrappingWidth="418.30859375" GridPane.rowIndex="6" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                          <children>
-                                                            <CheckBox fx:id="B47Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B47No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B47Yes" mnemonicParsing="false" onAction="#B47CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B47No" mnemonicParsing="false" onAction="#B47CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="If yes, enter the probability of failure =" GridPane.rowIndex="8">
@@ -515,8 +515,8 @@
                                                       <TextField fx:id="B59" promptText="(%)" styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                          <children>
-                                                            <CheckBox fx:id="B54Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B54No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B54Yes" mnemonicParsing="false" onAction="#B54CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B54No" mnemonicParsing="false" onAction="#B54CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will asssume that today's risk free rate will prevail in perpetuity. If you override this assumption, I will change the riskfree rate after year 10." wrappingWidth="416.4388771057129" GridPane.rowIndex="3">
@@ -527,15 +527,15 @@
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will assume that you have no losses carried forward from prior years ( NOL) coming into the valuation. If you have a money losing company, you may want to override this." wrappingWidth="420.8875427246094" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                          <children>
-                                                            <CheckBox fx:id="B58Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B58No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B58Yes" mnemonicParsing="false" onAction="#B58CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B58No" mnemonicParsing="false" onAction="#B58CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I will assume that the growth rate in perpetuity will be equal to the risk free rate. This allows for both valuation consistency and prevents &quot;impossible&quot; growth rates." wrappingWidth="418.30859375" GridPane.rowIndex="6" />
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                          <children>
-                                                            <CheckBox fx:id="B60Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B60No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B60Yes" mnemonicParsing="false" onAction="#B60CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B60No" mnemonicParsing="false" onAction="#B60CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="If yes, enter the growth rate in perpetuity" GridPane.rowIndex="8">
@@ -561,8 +561,8 @@
                                                       </Text>
                                                       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.rowIndex="10">
                                                          <children>
-                                                            <CheckBox fx:id="B63Yes" mnemonicParsing="false" text="Yes" />
-                                                            <CheckBox fx:id="B63No" mnemonicParsing="false" text="No" />
+                                                            <CheckBox fx:id="B63Yes" mnemonicParsing="false" onAction="#B63CheckYes" text="Yes" />
+                                                            <CheckBox fx:id="B63No" mnemonicParsing="false" onAction="#B63CheckNo" text="No" />
                                                          </children>
                                                       </HBox>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="If yes, enter trapped cash (if taxes) or entire balance (if mistrust)" wrappingWidth="272.2652587890625" GridPane.rowIndex="11">
@@ -576,7 +576,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Text>
-                                                      <TextField promptText="(%)" styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                                      <TextField fx:id="B65" promptText="(%)" styleClass="input-group" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                                                    </children>
                                                 </GridPane>
                                                 <Separator layoutX="-1.0" layoutY="106.0" prefHeight="18.0" prefWidth="502.0" />

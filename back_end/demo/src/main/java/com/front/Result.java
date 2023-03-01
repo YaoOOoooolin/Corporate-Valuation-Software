@@ -229,7 +229,8 @@ public class Result {
                 D32.setText(String.valueOf(bd));
 
 
-                double outputD33 =  Double.parseDouble(D32.getText()) - OutPutMethod.outputB24();
+                double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - OutPutMethod.outputB24()));
+                System.out.println(OutPutMethod.outputB24());
                 bd = isRounded(outputD33);
                 D33.setText(String.valueOf(bd));
 
