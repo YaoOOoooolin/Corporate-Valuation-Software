@@ -13,10 +13,8 @@ public class A21SumOfPV {
         BigDecimal getpVCFOver10Year=new BigDecimal(Double.toString(pvcfOver10Year.getpVCFOver10Year()));
         BigDecimal getpVTerminalValue=new BigDecimal(Double.toString(pvTerminalValue.getpVTerminalValue()));
         BigDecimal ans=getpVCFOver10Year.add(getpVTerminalValue);
-        double temp=ans.setScale(4, RoundingMode.HALF_UP).doubleValue();
 
-
-        sumOfPV=temp;
+        sumOfPV= ans.setScale(4, RoundingMode.HALF_UP).doubleValue();
         //sumOfPV = pvcfOver10Year.getpVCFOver10Year() + pvTerminalValue.getpVTerminalValue();
     }
 

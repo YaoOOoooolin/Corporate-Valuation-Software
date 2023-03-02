@@ -1,6 +1,7 @@
 package com.front;
 
 import com.back.example.OutPutMethod;
+import com.back.example.OutPutMethod2;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -126,121 +127,121 @@ public class Result {
                 BigDecimal bd;
                 String v;
 
-                double outputB9 = OutPutMethod.outputB9();
+                double outputB9 = OutPutMethod2.output("B9");
                 B9.setText(String.valueOf(outputB9));
 
-                double outputC9 = OutPutMethod.outputC9();
+                double outputC9 = OutPutMethod2.output("C9");
                 v = isPercentage(outputC9);
                 C9.setText(v);
 
-                double outputD9 = OutPutMethod.outputD9();
+                double outputD9 = OutPutMethod2.output("D9");
                 v = isPercentage(outputD9);
                 D9.setText(v);
 
-                double outputF9 = OutPutMethod.outputF9();
+                double outputF9 = OutPutMethod2.output("F9");
                 v = isPercentage(outputF9);
                 F9.setText(v);
 
 
-                double outputB10 = OutPutMethod.outputB10();
+                double outputB10 = OutPutMethod2.output("B10");
                 v = isPercentage(outputB10);
                 B10.setText(v);
 
-                double outputC10 = OutPutMethod.outputC10();
+                double outputC10 = OutPutMethod2.output("C10");
                 v = isPercentage(outputC10);
                 C10.setText(v);
 
-                double outputD10 = OutPutMethod.outputD10();
+                double outputD10 = OutPutMethod2.output("D10");
                 v = isPercentage(outputD10);
                 D10.setText(v);
 
-                double outputF10 = OutPutMethod.outputF10();
+                double outputF10 = OutPutMethod2.output("F10");
                 v = isPercentage(outputF10);
                 F10.setText(v);
 
 
-                double outputB11 = OutPutMethod.outputB11();
+                double outputB11 = OutPutMethod2.output("B11");
                 v = isPercentage(outputB11);
                 B11.setText(v);
 
-                double outputC11 = OutPutMethod.outputC11();
+                double outputC11 = OutPutMethod2.output("C11");
                 v = isPercentage(outputC11);
                 C11.setText(v);
 
-                double outputD11 = OutPutMethod.outputD11();
+                double outputD11 = OutPutMethod2.output("D11");
                 v = isPercentage(outputD11);
                 D11.setText(v);
 
-                double outputF11 = OutPutMethod.outputF11();
+                double outputF11 = OutPutMethod2.output("F11");
                 v = isPercentage(outputF11);
                 F11.setText(v);
 
 
-                double outputD12 = OutPutMethod.outputD12();
+
+                double outputD12 = OutPutMethod2.output("D12");
                 D12.setText(String.valueOf(outputD12));
 
-                double outputF12 = OutPutMethod.outputF12();
+                double outputF12 = OutPutMethod2.output("F12");
                 v = isPercentage(outputF12);
                 F12.setText(v);
 
 
-                double outputB13 = OutPutMethod.outputB13();
+
+                double outputB13 = OutPutMethod2.output("B13");
                 v = isPercentage(outputB13);
                 B13.setText(v);
 
-                double outputD13 = OutPutMethod.outputD13();
+                double outputD13 = OutPutMethod2.output("D13");
                 v = isPercentage(outputD13);
                 D13.setText(v);
 
-                double outputF13 = OutPutMethod.outputF13();
+                double outputF13 = OutPutMethod2.output("F13");
                 v = isPercentage(outputF13);
                 F13.setText(v);
 
 
-                double outputC14 = OutPutMethod.outputC14();
+                double outputC14 = OutPutMethod2.output("C14");
                 v = isPercentage(outputC14);
                 C14.setText(v);
 
-                double outputD14 = OutPutMethod.outputD14();
+                double outputD14 = OutPutMethod2.output("D14");
                 v = isPercentage(outputD14);
                 D14.setText(v);
 
-                double outputF14 = OutPutMethod.outputF14();
+                double outputF14 = OutPutMethod2.output("F14");
                 v = isPercentage(outputF14);
                 F14.setText(v);
 
 
-                double outputD29 = OutPutMethod.outputD29();
+
+                double outputD29 = OutPutMethod2.output("D29");
                 bd = isRounded(outputD29);
                 D29.setText(String.valueOf(bd));
 
-
-                double outputD30 = OutPutMethod.outputD30();
+                double outputD30 = OutPutMethod2.output("D30");
                 bd = isRounded(outputD30);
                 D30.setText(String.valueOf(bd));
 
-                double outputD31 = OutPutMethod.outputD31();
+                double outputD31 = OutPutMethod2.output("D31");
                 bd = isRounded(outputD31);
                 D31.setText(String.valueOf(bd));
 
 
-                double outputD32 = OutPutMethod.outputD32();
+                double outputD32 = OutPutMethod2.output("D32");
                 bd = isRounded(outputD32);
                 D32.setText(String.valueOf(bd));
 
 
-                double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - OutPutMethod.outputB24()));
-//                测试用数据
-//                double outputD33 =  Double.parseDouble(String.valueOf(Double.parseDouble(D32.getText()) - 97127.42));
+                double outputD33 =  Double.parseDouble(D32.getText()) - OutPutMethod2.output("B24");
                 bd = isRounded(outputD33);
                 D33.setText(String.valueOf(bd));
 
-                double outputD34 = OutPutMethod.outputD34();
+                double outputD34 = OutPutMethod2.output("D34");
                 bd = isRounded(outputD34);
                 D34.setText(String.valueOf(bd));
 
 
-                double outputD35 = OutPutMethod.outputD35();
+                double outputD35 = OutPutMethod2.output("D35");
                 bd = isRounded(outputD35);
                 D35.setText(String.valueOf(bd));
 
@@ -248,11 +249,11 @@ public class Result {
                 bd = isRounded(outputD36);
                 D36.setText(String.valueOf(bd));
 
-                double outputD37 = OutPutMethod.outputD37();
+                double outputD37 = OutPutMethod2.output("D37");
                 bd = isRounded(outputD37);
                 D37.setText(String.valueOf(bd));
 
-                double outputD38 = OutPutMethod.outputD38();
+                double outputD38 = OutPutMethod2.output("D38");
                 bd = isRounded(outputD38);
                 D38.setText(String.valueOf(bd));
 
@@ -261,10 +262,13 @@ public class Result {
                 D39.setText(String.valueOf(bd));
 
 
-                double outputG33 = OutPutMethod.outputG33();
+
+                double outputG33 = OutPutMethod2.output("G33");
                 v = isPercentage(outputG33);
                 G33.setText(v);
 
+                double outputG39 = OutPutMethod2.output("G39");
+                G39.setText(String.valueOf(outputG39));
 
                 if (B19.getText().isEmpty()){
                         Controller.B19Result = "";
@@ -272,6 +276,7 @@ public class Result {
                 G39.setText(Controller.B19Result);
 
                 ArrayList<Double> outputRevenuesList=OutPutMethod.outputRevenuesList();
+
                 B17.setText(String.valueOf(isRounded(outputRevenuesList.get(1))));
                 B18.setText(String.valueOf(isRounded(outputRevenuesList.get(2))));
                 B19.setText(String.valueOf(isRounded(outputRevenuesList.get(3))));
@@ -326,6 +331,14 @@ public class Result {
                 F25.setText(String.valueOf(isRounded(outputreinvestmentList.get(9))));
                 F26.setText(String.valueOf(isRounded(outputreinvestmentList.get(10))));
                 F27.setText(String.valueOf(isRounded(outputreinvestmentList.get(11))));
+
+
+
+
+
+
+
+
 
 
                 int dTemp = (int) (Double.parseDouble(B17.getText()) * Double.parseDouble(C17.getText()));
