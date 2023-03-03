@@ -84,10 +84,18 @@
     /*边框圆角*/
     -fx-border-radius: 2px;
     -fx-background-radius: 2px;
+    -fx-pref-height: 23;
     /*内边距*/
     -fx-padding: 5 5 5 5;
 }
 
+.grid{
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: lightGray;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+}
 /*白色字体*/
 .font-white {
     -fx-text-fill: #fff;
@@ -145,12 +153,18 @@
 .table-view .table-column {
     -fx-alignment: center;
 }*/
-.submit-but{
+.submit-btn{
     -fx-border-radius: 0px;
     -fx-pref-width: 80px;
     -fx-pref-height: 35px;
     -fx-background-color: rgb(95, 184, 120);
     -fx-text-fill: rgb(256,256,256);
+}
+
+.submit-btn:hover{
+    -fx-background-color: rgb(72, 138, 91);
+    -fx-text-fill: rgb(210,210,210);
+    -fx-border-color: LightGray;
 }
 
 /*左侧导航菜单按钮样式*/
@@ -184,7 +198,7 @@
 .titled-pane > .title {
     -fx-background-color: rgb(58, 61, 73);
     -fx-padding: 10 10 10 10;
-    -fx-font-size: 13px;
+    -fx-font-size: 14px;
 }
 /*tabPane*/
 /* 修改TabPane的Pane区域背景颜色 */
