@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -85,6 +86,8 @@ public class Controller {
     public Text B59Text;
     public CheckBox B49B;
     public CheckBox B49V;
+    public Button TPtoInput6;
+    public GridPane Sheet1;
     @FXML
     private Button TPtoInput1;
 
@@ -393,6 +396,7 @@ public class Controller {
         B65.setText("0");
     }
 
+    // This is for the CheckBox logic
     public boolean CheckBoxYes(CheckBox yes, CheckBox no) {
         no.setDisable(yes.isSelected());
         return true;
