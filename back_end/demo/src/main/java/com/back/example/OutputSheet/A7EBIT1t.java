@@ -26,7 +26,7 @@ public class A7EBIT1t {
     }
 
 
-    public void setEBIT1tList(A5EBITIncome ebitIncome, double B20,A10NOL nol) {
+    public void setEBIT1tList(A5EBITIncome ebitIncome, double B20,A10NOL nol,int yearOfList) {
         BigDecimal big_1=new BigDecimal("1");
         BigDecimal big_B20=new BigDecimal(Double.toString(B20));
         BigDecimal EBITIncomeListget0=new BigDecimal(Double.toString(ebitIncome.getEBITIncomeList().get(0)));
@@ -45,7 +45,7 @@ public class A7EBIT1t {
         }
 
 
-        for (int i = 1; i <=10 ; i++) {
+        for (int i = 1; i <=yearOfList ; i++) {
 
             BigDecimal EBITIncomeListgeti=new BigDecimal(Double.toString(ebitIncome.getEBITIncomeList().get(i)));
             BigDecimal NolListgeti1=new BigDecimal(Double.toString(nol.getNolList().get(i-1)));

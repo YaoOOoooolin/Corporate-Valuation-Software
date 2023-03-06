@@ -40,18 +40,18 @@ public class A12CostOfCapital {
     }
 
 
-    public void setCostOfCapitalList(double B31) {
+    public void setCostOfCapitalList(double B31,int yearOfList,int year2_x) {
         costOfCapitalList.add((double) 0);
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= year2_x; i++) {
             costOfCapitalList.add(B31);
         }
-        for (int i = 6; i <= 10; i++) {
+        for (int i = year2_x+1; i <= yearOfList; i++) {
 
             BigDecimal costOfCapitalList1=new BigDecimal(Double.toString(costOfCapitalList.get(i - 1)));
-            BigDecimal costOfCapitalList5=new BigDecimal(Double.toString(costOfCapitalList.get(5)));
+            BigDecimal costOfCapitalList5=new BigDecimal(Double.toString(costOfCapitalList.get(year2_x)));
             BigDecimal terminaCapital=new BigDecimal(Double.toString(terminalostOfCapital));
-            BigDecimal big_5=new BigDecimal("5");
+            BigDecimal big_5=new BigDecimal(Double.toString(year2_x));
             BigDecimal ans1=costOfCapitalList5.subtract(terminaCapital);
             BigDecimal ans2=ans1.divide(big_5,20,RoundingMode.HALF_UP);
             BigDecimal ans3=costOfCapitalList1.subtract(ans2);

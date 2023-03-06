@@ -43,7 +43,7 @@ public class A4EBITMargin {
         }
     }
 
-    public void setEBITMarginList(double inputB8, double inputB24, double inputB26, double inputB27) {
+    public void setEBITMarginList(double inputB8, double inputB24, double inputB26, double inputB27,int yearOfList) {
 
 
         BigDecimal big_income=new BigDecimal(Double.toString(baseIncome));
@@ -52,7 +52,7 @@ public class A4EBITMargin {
         ebitMarginList.add(num.doubleValue());
         //ebitMarginList.add(baseIncome / inputB8);
         ebitMarginList.add(inputB24);
-        for (int i = 2; i <= 10; i++) {
+        for (int i = 2; i <= yearOfList; i++) {
             if (i > inputB27) {
                 ebitMarginList.add(inputB26);
             } else {
@@ -73,7 +73,7 @@ public class A4EBITMargin {
                 ebitMarginList.add(ans);
             }
         }
-        ebitMarginList.add(ebitMarginList.get(10));
+        ebitMarginList.add(ebitMarginList.get(yearOfList));
     }
 
 
@@ -82,7 +82,7 @@ public class A4EBITMargin {
     }
 
     public double getTerminalEBITMargin() {
-        return ebitMarginList.get(11);
+        return ebitMarginList.get(ebitMarginList.size()-1);
     }
 
 }

@@ -8,7 +8,8 @@ public class A8Reinvestment {
     public ArrayList<Double> reinvestmentList = new ArrayList<>();
     double sum=0;
 
-    public void setReinvestmentList(A3Revenues revenues,double inputB28,A2RevenueGrowthRate revenueGrowthRate,A40ROIC roic,A7EBIT1t ebit1t) {
+    public void setReinvestmentList(A3Revenues revenues,double inputB28,A2RevenueGrowthRate revenueGrowthRate,
+                                    A40ROIC roic,A7EBIT1t ebit1t,int yearOfList) {
         reinvestmentList.add((double) 0);
 
         for (int i = 1; i <= 10; i++) {
@@ -36,7 +37,7 @@ public class A8Reinvestment {
             reinvestmentList.add(temp);
        }
 
-        for (int i = 1; i <=11 ; i++) {
+        for (int i = 1; i <=yearOfList+1 ; i++) {
             BigDecimal big_i=new BigDecimal(Double.toString(reinvestmentList.get(i)));
             BigDecimal big_sum=new BigDecimal(Double.toString(sum));
             BigDecimal ans=big_i.add(big_sum);
@@ -52,7 +53,7 @@ public class A8Reinvestment {
     }
 
     public double getTerminalreinvestment(){
-        return reinvestmentList.get(11);
+        return reinvestmentList.get(reinvestmentList.size()-2);
     }
 
     public double getSum() {

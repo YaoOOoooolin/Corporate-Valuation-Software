@@ -6,9 +6,9 @@ public class A38SalesToCapitalRatio {
 
     public ArrayList <Double> salesToCapitalRatioList=new ArrayList<>();
 
-    public void setSalesToCapitalRatioList(double inputB28) {
+    public void setSalesToCapitalRatioList(double inputB28,int yearOfList) {
         salesToCapitalRatioList.add((double) 0);
-        for (int i = 1; i <=10 ; i++) {
+        for (int i = 1; i <=yearOfList ; i++) {
             salesToCapitalRatioList.add(inputB28);
         }
     }

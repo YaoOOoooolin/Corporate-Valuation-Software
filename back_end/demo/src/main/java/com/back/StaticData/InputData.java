@@ -212,6 +212,28 @@ public class InputData {
     static double B35 ;
     static double B36 ;
     static double B37 ;
+    static int yearOfList=10;
+    static int year2_x=5;
+
+
+
+    public static int getYear2_x() {
+        return year2_x;
+    }
+
+    public static void setYear2_x(int year2_x) {
+        InputData.year2_x = year2_x;
+    }
+
+
+
+    public static int getYearOfList() {
+        return yearOfList;
+    }
+
+    public static void setYearOfList(int yearOfList) {
+        InputData.yearOfList = yearOfList;
+    }
 
     public static double getB35() {
         return B35;

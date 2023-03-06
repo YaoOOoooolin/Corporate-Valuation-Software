@@ -9,7 +9,8 @@ public class A39InvestedCapital {
     public ArrayList<Double> investedCapitalList = new ArrayList<>();
 
 
-    public void setInvestedCapitalList(Boolean inputB14, Boolean inputB13, double inputB12, double inputB15, double inputB11, double olcF33, double rdcD35, A8Reinvestment reinvestment) {
+    public void setInvestedCapitalList(Boolean inputB14, Boolean inputB13, double inputB12, double inputB15, double inputB11,
+                                       double olcF33, double rdcD35, A8Reinvestment reinvestment,int yearOfList) {
         double temp;
         BigDecimal big_b11 = new BigDecimal(Double.toString(inputB11));
         BigDecimal big_b12 = new BigDecimal(Double.toString(inputB12));
@@ -42,7 +43,7 @@ public class A39InvestedCapital {
         }
         investedCapitalList.add(temp);
 
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 1+yearOfList; i++) {
             BigDecimal investedCapitalListi1=new BigDecimal(Double.toString(investedCapitalList.get(i - 1)));
             BigDecimal getReinvestmentListi =new BigDecimal(Double.toString(reinvestment.getReinvestmentList().get(i)));
             BigDecimal ans_0=investedCapitalListi1.add(getReinvestmentListi);

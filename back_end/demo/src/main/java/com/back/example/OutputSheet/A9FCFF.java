@@ -9,9 +9,9 @@ public class A9FCFF {
     public ArrayList<Double> fcffList = new ArrayList<>();
 
 
-    public void setFcffList(A7EBIT1t ebit1t, A8Reinvestment reinvestment) {
+    public void setFcffList(A7EBIT1t ebit1t, A8Reinvestment reinvestment,int yearOfList) {
         fcffList.add((double) 0);
-        for (int i = 1; i <= 11; i++) {
+        for (int i = 1; i <= 1+yearOfList; i++) {
             BigDecimal getEBIT1tListi=new BigDecimal(Double.toString(ebit1t.getEBIT1tList().get(i)));
             BigDecimal getReinvestmentListi=new BigDecimal((Double.toString(reinvestment.getReinvestmentList().get(i))));
             BigDecimal ans=getEBIT1tListi.subtract(getReinvestmentListi);
@@ -28,7 +28,7 @@ public class A9FCFF {
     }
 
     public double getTerminalFcff() {
-        return fcffList.get(11);
+        return fcffList.get(fcffList.size()-1);
     }
 
 
