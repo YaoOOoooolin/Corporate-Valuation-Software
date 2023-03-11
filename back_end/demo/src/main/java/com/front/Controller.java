@@ -102,6 +102,14 @@ public class Controller {
     public Text B59Text;
     public CheckBox B49B;
     public CheckBox B49V;
+    public Button TPtoInput6;
+    public GridPane Sheet1;
+    public Button changeButton;
+    public GridPane Sheet2;
+    public GridPane Sheet4;
+    public GridPane Sheet3;
+    public GridPane Sheet5;
+    public GridPane Sheet6;
     public Button ChartOpen;
     public TextField captialRatioForNextYear;
     public TextField nextYearGrowthRate;
@@ -137,6 +145,8 @@ public class Controller {
     private Tab tab3;
     @FXML
     private Tab tab4;
+    @FXML
+    private Tab tab7;
 
     @FXML
     private TabPane tabPane;
@@ -146,8 +156,19 @@ public class Controller {
     private ComboBox<String> comboBox1;
 
     @FXML
-    private Button submit_id;
+    private ComboBox<String> comboBox2;
 
+    @FXML
+    private ComboBox<String> comboBox3;
+
+    @FXML
+    private ComboBox<String> comboBox4;
+
+    @FXML
+    private ComboBox<String> comboBox5;
+
+    @FXML
+    private Button submit_id;
 
     @FXML
     private void B13CheckYes() {
@@ -165,7 +186,13 @@ public class Controller {
                 "United Kingdom",
                 "China",
                 "Denmark",
-                "Japan");
+                "Japan","HongKong");
+        comboBox4.getItems().addAll(
+                "United States",
+                "United Kingdom",
+                "China",
+                "Denmark",
+                "Japan","HongKong");
 
         Locale.setDefault(Locale.ENGLISH);
 
@@ -199,6 +226,9 @@ public class Controller {
     @FXML
     void ToTab6(ActionEvent event) {
         tabPane.getSelectionModel().select(tab6);
+    }
+    public void ToTab7(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab7);
     }
 
     @FXML
@@ -418,6 +448,7 @@ public class Controller {
         B65.setText("0");
     }
 
+    // This is for the CheckBox logic
     public boolean CheckBoxYes(CheckBox yes, CheckBox no) {
         no.setDisable(yes.isSelected());
         return true;
@@ -735,5 +766,170 @@ public class Controller {
 
             }
         });
+    }
+    public void LightMode(ActionEvent actionEvent) {
+        Scene scene = changeButton.getScene();
+
+        scene.getStylesheets().removeAll("interface.css");
+
+        scene.getStylesheets().add("interface.css");
+
+        String[] ChineseSheet1={"日期" ,"公司名" ,"国家" ,"行业" ,"行业(全球)" ,"营业额" ,"营业利润"
+                ,"利息费用" ,"股权账面价值" ,"债权账面价值" ,"是否有研发费用需要资本化?" ,"现金和适销证券"
+                ,"交叉持股和其他非经营性资产" ,"少数股东权益" ,"流通股票数量" ,"当前股价" ,"有效税率" ,"边际税率"};
+        String[] ChineseSheet2={"次年收入增长率", "次年营业利润率", "复合年收入增长率(2-5年)",
+                "目标税前营业利润率", "几年实现经营利润率目标", "销售资本比率",};
+        String[] ChineseSheet3={"是否存在未完成的员工期权？", "未完成的期权数量", "平均执行价格",
+                "平均期限", "股价标准差",};
+        String[] ChineseSheet4={"您想覆盖这个假设吗？",
+                "输入第10年后的资本成本",
+                "您想覆盖这个假设吗？",
+                "输入第10年后您预期的资本回报率",
+                "我将假设您的公司在第10年后的资本回报率等于其资本成本。我假设您今天拥有的任何竞争优势会随着时间的推移而消失。",
+                "在稳定增长阶段，我将假设您的公司的资本成本类似于典型成熟公司的资本成本（无风险利率+4.5％）",
+                "我将假设您的公司在可预见的未来没有失败的机会",
+                "输入失败概率",
+                "您想将失败的收益与什么联系起来？",
+                "输入破产清算收益作为账面价值或公允价值的百分比",
+                "您想覆盖这个假设吗？",
+                "我将假设您的有效税率将调整为您终止年度的边际税率。如果您覆盖此假设，我将保持税率为您的有效税率。",
+                "您想覆盖这个假设吗？"};
+        String[] ChineseSheet5={"您想覆盖这个假设吗？",
+                "输入您带入第1年的可抵税亏损（NOL）",
+                "您想覆盖这个假设吗？",
+                "输入第10年后的无风险利率",
+                "我将假设今天的无风险利率将永久保持不变。如果您覆盖此假设，我将更改第10年后的无风险利率。",
+                "我将假设您没有来自前几年的损失结转（NOL）进入估值。如果您的公司存在亏损，您可能需要覆盖此假设。",
+                "我将假设永久增长率等于无风险利率。这既可以实现估值一致性，又可以避免“不可能”的增长率。",
+                "输入永久增长率",
+                "您想覆盖这个假设吗？",
+                "我已假设现金没有被困住（在外国）并且没有额外的税收责任，现金是一项中性资产。",
+                "您想覆盖这个假设吗？",
+                "输入被困住的现金（如果是税）或整个余额（如果是不信任）",
+                "被困住的现金所在国外市场的平均税率"};
+        String[] ChineseSheet6={"请选择一个国家","请选择一个行业"};
+        /*
+        int i=0;
+        for (Node node : Sheet1.getChildren()) {
+            if (GridPane.getColumnIndex(node) == 1) {
+                // Check if node is in second column
+                if (node instanceof Text) {
+                    // Check if node is a label or its subclass
+                    System.out.println("233"+((Text) node).getText()+"233"+",");
+                    ((Text) node).setText(ChineseSheet1[i]);
+                    //System.out.println(ChineseSheet1[i]);
+                    i++;
+                    // Cast node to Labeled and set its text
+                }
+            }
+        }
+         */
+        ChangeVersion(ChineseSheet1,Sheet1);
+        ChangeVersion(ChineseSheet2,Sheet2);
+        ChangeVersion(ChineseSheet3,Sheet3);
+        ChangeVersion(ChineseSheet4,Sheet4);
+        ChangeVersion(ChineseSheet5,Sheet5);
+        ChangeVersion(ChineseSheet6,Sheet6);
+    }
+
+    public void DatabaseResult1(ActionEvent actionEvent) {
+    }
+
+    public void DatabaseResult2(ActionEvent actionEvent) {
+    }
+
+    public void ChangeVersion(String[] strings, GridPane gridPane){
+        int i=0;
+        for (Node node : gridPane.getChildren()) {
+            if (GridPane.getColumnIndex(node) == 1) {
+                // Check if node is in second column
+                if (node instanceof Text) {
+                    if(!Objects.equals(((Text) node).getText(), "")){
+                        // Check if node is a label or its subclass
+                        System.out.println("\""+((Text) node).getText()+"\""+",");
+                        ((Text) node).setText(strings[i]);
+                        //System.out.println(ChineseSheet1[i]);
+                        i++;
+                        // Cast node to Labeled and set its text
+                    }
+
+                }
+            }
+        }
+        System.out.println("");
+    }
+
+    public void Eng_Version(ActionEvent actionEvent) {
+        String[] EnglishSheet1={"Date of valuation", "Company name", "Country", "Industry", "Industry (Global)",
+                "Revenues", "EBIT", "Interest expense", "Book value of equity", "Book value of debt",
+                "R&D expense to capitalize?", "Cash and Marketable Securities",
+                "Crossing holdings", "Minority interests", "Number of shares outstanding",
+                "Current stock price", "Effective tax rate", "Marginal tax rate",
+        };
+        String[] EnglishSheet2={"Revenue growth rate for next year",
+                "Operating Margin for next year",
+                "Compounded annual revenue growth rate - years 2-5",
+                "Target pre-tax operating margin",
+                "Year of convergence",
+                "Sales to capital ratio",};
+        String[] EnglishSheet3={"Do you have employee options outstanding?",
+                "Number of options outstanding",
+                "Average strike price",
+                "Average maturity",
+                "Standard deviation on stock price",};
+        String[] EnglishSheet4={"Do you want to override this assumption",
+                "Enter the cost of capital after year 10",
+                "Do you want to override this assumption",
+                "Enter the return on capital you expect after year 10",
+                "I will assume that your firm will earn a return on capital equal to its cost of capital after year 10. I am assuming that whatever competitive advantages you have today will fade over time.",
+                "In stable growth, I will assume that your firm will have a cost of capital similar to that of typical mature companies (riskfree rate + 4.5%)",
+                "I will assume that your firm has no chance of failure over the foreseeable future",
+                "Enter the probability of failure",
+                "What do you want to tie your proceeds in failure to?",
+                "Enter the distress proceeds as percentage of book or fair value",
+                "Do you want to override this assumption",
+                "I will assume that your effective tax rate will adjust to your marginal tax rate by your terminal year. If you override this assumption, I will leave the tax rate at your effective tax rate.",
+                "Do you want to override this assumption",
+        };
+        String[] EnglishSheet5={"Do you want to override this assumption",
+                "Enter the NOL that you are carrying over into year 1",
+                "Do you want to override this assumption",
+                "Enter the riskfree rate after year 10",
+                "I will assume that today's risk free rate will prevail in perpetuity. If you override this assumption, I will change the riskfree rate after year 10.",
+                "I will assume that you have no losses carried forward from prior years ( NOL) coming into the valuation. If you have a money losing company, you may want to override this.",
+                "I will assume that the growth rate in perpetuity will be equal to the risk free rate. This allows for both valuation consistency and prevents \"impossible\" growth rates.",
+                "Enter the growth rate in perpetuity",
+                "Do you want to override this assumption?",
+                "I have assumed that none of the cash is trapped (in foreign countries) and that there is no additional tax liability coming due and that cash is a neutral asset.",
+                "Do you want to override this assumption",
+                "Enter trapped cash (if taxes) or entire balance (if mistrust)",
+                "Average tax rate of the foreign markets where the cash is trapped",
+        };
+        String[] EnglishSheet6={"Please choose a country",
+                "Please choose an industry",};
+
+        ChangeVersion(EnglishSheet1,Sheet1);
+        ChangeVersion(EnglishSheet2,Sheet2);
+        ChangeVersion(EnglishSheet3,Sheet3);
+        ChangeVersion(EnglishSheet4,Sheet4);
+        ChangeVersion(EnglishSheet5,Sheet5);
+        ChangeVersion(EnglishSheet6,Sheet6);
+        /*
+        int i=0;
+        for (Node node : Sheet1.getChildren()) {
+            if (GridPane.getColumnIndex(node) == 1) {
+                // Check if node is in second column
+                if (node instanceof Text) {
+                    // Check if node is a label or its subclass
+                    System.out.println("233"+((Text) node).getText()+"233"+",");
+                    ((Text) node).setText(EnglishSheet1[i]);
+                    //System.out.println(ChineseSheet1[i]);
+                    i++;
+                    // Cast node to Labeled and set its text
+                }
+            }
+        }
+         */
+
     }
 }
