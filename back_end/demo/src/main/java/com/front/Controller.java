@@ -1,18 +1,34 @@
 package com.front;
 
 import com.back.StaticData.InputData;
+import javafx.application.Platform;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import netscape.javascript.JSException;
+import netscape.javascript.JSObject;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Controller {
     /*
@@ -86,8 +102,14 @@ public class Controller {
     public Text B59Text;
     public CheckBox B49B;
     public CheckBox B49V;
-    public Button TPtoInput6;
-    public GridPane Sheet1;
+    public Button ChartOpen;
+    public TextField captialRatioForNextYear;
+    public TextField nextYearGrowthRate;
+    public TextField growthRateUpToN;
+    public TextField finalYearGrowthRate;
+    public TextField FinalYearCapitalRatio;
+    public TextField capitalRatioUptoN;
+    public Button ChartOpenForCapitalRatio;
     @FXML
     private Button TPtoInput1;
 
@@ -126,6 +148,7 @@ public class Controller {
     @FXML
     private Button submit_id;
 
+
     @FXML
     private void B13CheckYes() {
         //b 为YES 和 NO 选择的返回值， yes为true  no为false
@@ -145,7 +168,6 @@ public class Controller {
                 "Japan");
 
         Locale.setDefault(Locale.ENGLISH);
-
 
     }
 
@@ -396,7 +418,6 @@ public class Controller {
         B65.setText("0");
     }
 
-    // This is for the CheckBox logic
     public boolean CheckBoxYes(CheckBox yes, CheckBox no) {
         no.setDisable(yes.isSelected());
         return true;
@@ -488,4 +509,231 @@ public class Controller {
         }
     }
 
+    JSObject jsWindow;
+    double nextYear;
+    double nextYearForCapitalRatio;
+    double finalYearForCapitalRatio;
+    double finalYear;
+    int upToNYearForGrowthRate;
+    int upToNYearForCapitalRatio;
+
+
+    public void openNewWindow(ActionEvent actionEvent) {
+        nextYear = Double.parseDouble(nextYearGrowthRate.getText());
+        finalYear = Double.parseDouble(finalYearGrowthRate.getText());
+        upToNYearForGrowthRate = Integer.parseInt(growthRateUpToN.getText());
+
+        Stage stage = new Stage();
+        stage.setTitle("Revenue chart");
+
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+
+        Button button = new Button("OK");
+        button.setLayoutX(100);
+        button.setLayoutY(100);
+        button.setPrefWidth(100);
+        button.setPrefHeight(50);
+
+        VBox root = new VBox();
+        root.setSpacing(10);
+        root.setAlignment(Pos.CENTER);
+
+        HBox hBox = new HBox();
+        hBox.setSpacing(20);
+        hBox.setAlignment(Pos.CENTER_LEFT);
+
+
+        Text text = new Text();
+        text.setText("Set convergence:");
+        text.setLayoutX(100);
+        text.setLayoutY(100);
+        text.prefWidth(100);
+        text.prefHeight(50);
+
+        TextField textField = new TextField();
+        textField.setLayoutX(100);
+        textField.setLayoutY(100);
+        textField.prefWidth(100);
+        textField.prefHeight(50);
+
+        Button converge = new Button("Set Up");
+        button.setLayoutX(100);
+        button.setLayoutY(100);
+        button.setPrefWidth(100);
+        button.setPrefHeight(50);
+
+
+        hBox.getChildren().add(text);
+        hBox.getChildren().add(textField);
+        hBox.getChildren().add(converge);
+
+       converge.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent actionEvent) {
+               double convergence = Double.parseDouble(textField.getText());
+               webEngine.executeScript("getConvergence(" + convergence + ")").toString();
+
+           }
+       });
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                String result = jsWindow.call("getMyData").toString();
+                String[] dataArray = result.split(",");
+                double[] values = new double[upToNYearForGrowthRate + 10];
+
+                for (int i = 0; i < dataArray.length; i += 2) {
+                    int index = Integer.parseInt(dataArray[i]) - 1;
+                    double value = Double.parseDouble(dataArray[i+1]);
+                    System.out.println(value);
+                    values[index] = value;
+                }
+            }
+        });
+
+        webEngine.load(Objects.requireNonNull(this.getClass().getResource("drag.html")).toExternalForm());
+        root.getChildren().add(webView);
+        root.getChildren().add(hBox);
+        root.getChildren().add(button);
+
+        Scene scene = new Scene(root, 825, 550, Color.web("lightgray"));
+        stage.setScene(scene);
+
+        webEngine.getLoadWorker().stateProperty().addListener((ObservableValue<? extends Worker.State> ov, Worker.State oldState, Worker.State newState) -> {
+            MyBridge myBridge = new MyBridge();
+            myBridge.setBaseYear(nextYear);
+            myBridge.setTerminalYear(finalYear);
+            ArrayList<Double> myArray = myBridge.getValue(upToNYearForGrowthRate);
+
+            if (newState == Worker.State.SUCCEEDED) {
+                try {
+                    // Read the contents of the JS file
+                    String script = new String(Files.readAllBytes(Paths.get("back_end/demo/src/main/resources/com/front/index.js")));
+                    webEngine.executeScript(script);
+                    // Execute the JS file in the WebView
+                    jsWindow = (JSObject) webEngine.executeScript("window");
+                    jsWindow.setMember("javaArray", myArray);
+                    webEngine.executeScript("useJavaArray(javaArray,"+ upToNYearForGrowthRate +")");
+                    webEngine.executeScript("setDataZoomRange(myChart,0,100,25,75)");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                stage.show();
+
+
+            }
+        });
+    }
+
+    public void openNewWindowForCaptialRatio(ActionEvent actionEvent) {
+        nextYearForCapitalRatio = Double.parseDouble(captialRatioForNextYear.getText());
+        finalYearForCapitalRatio = Double.parseDouble(FinalYearCapitalRatio.getText());
+        System.out.println(finalYearForCapitalRatio);
+        upToNYearForCapitalRatio = Integer.parseInt(capitalRatioUptoN.getText());
+
+        Stage stage = new Stage();
+        stage.setTitle("Revenue chart");
+
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+
+        Button button = new Button("OK");
+        button.setLayoutX(100);
+        button.setLayoutY(100);
+        button.setPrefWidth(100);
+        button.setPrefHeight(50);
+
+        VBox root = new VBox();
+        root.setSpacing(10);
+        root.setAlignment(Pos.CENTER);
+
+        HBox hBox = new HBox();
+        hBox.setSpacing(20);
+        hBox.setAlignment(Pos.CENTER_LEFT);
+
+
+        Text text = new Text();
+        text.setText("Set convergence:");
+        text.setLayoutX(100);
+        text.setLayoutY(100);
+        text.prefWidth(100);
+        text.prefHeight(50);
+
+        TextField textField = new TextField();
+        textField.setLayoutX(100);
+        textField.setLayoutY(100);
+        textField.prefWidth(100);
+        textField.prefHeight(50);
+
+        Button converge = new Button("Set Up");
+        button.setLayoutX(100);
+        button.setLayoutY(100);
+        button.setPrefWidth(100);
+        button.setPrefHeight(50);
+
+
+        hBox.getChildren().add(text);
+        hBox.getChildren().add(textField);
+        hBox.getChildren().add(converge);
+
+        converge.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                double convergence = Double.parseDouble(textField.getText());
+                webEngine.executeScript("getConvergence(" + convergence + ")").toString();
+
+            }
+        });
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                String result = jsWindow.call("getMyData").toString();
+                String[] dataArray = result.split(",");
+                double[] values = new double[upToNYearForCapitalRatio + 10];
+
+                for (int i = 0; i < dataArray.length; i += 2) {
+                    int index = Integer.parseInt(dataArray[i]) - 1;
+                    double value = Double.parseDouble(dataArray[i+1]);
+                    System.out.println(value);
+                    values[index] = value;
+                }
+            }
+        });
+
+        webEngine.load(Objects.requireNonNull(this.getClass().getResource("drag.html")).toExternalForm());
+        root.getChildren().add(webView);
+        root.getChildren().add(hBox);
+        root.getChildren().add(button);
+
+        Scene scene = new Scene(root, 825, 550, Color.web("lightgray"));
+        stage.setScene(scene);
+
+        webEngine.getLoadWorker().stateProperty().addListener((ObservableValue<? extends Worker.State> ov, Worker.State oldState, Worker.State newState) -> {
+            MyBridge myBridge = new MyBridge();
+            myBridge.setBaseYear(nextYearForCapitalRatio);
+            myBridge.setTerminalYear(finalYearForCapitalRatio);
+            ArrayList<Double> myArray = myBridge.getValue(upToNYearForCapitalRatio);
+
+            if (newState == Worker.State.SUCCEEDED) {
+                try {
+                    // Read the contents of the JS file
+                    String script = new String(Files.readAllBytes(Paths.get("back_end/demo/src/main/resources/com/front/index.js")));
+                    webEngine.executeScript(script);
+                    // Execute the JS file in the WebView
+                    jsWindow = (JSObject) webEngine.executeScript("window");
+                    jsWindow.setMember("javaArray", myArray);
+                    webEngine.executeScript("useJavaArray(javaArray,"+ upToNYearForCapitalRatio +")");
+                    webEngine.executeScript("setDataZoomRange(myChart,0,100,25,75)");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                stage.show();
+
+
+            }
+        });
+    }
 }
