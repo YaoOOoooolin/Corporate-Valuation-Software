@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -612,7 +613,7 @@ public class Controller {
             public void handle(ActionEvent actionEvent) {
                 String result = jsWindow.call("getMyData").toString();
                 String[] dataArray = result.split(",");
-                double[] values = new double[upToNYearForGrowthRate + 10];
+                double[] values = new double[upToNYearForGrowthRate + 50];
 
                 for (int i = 0; i < dataArray.length; i += 2) {
                     int index = Integer.parseInt(dataArray[i]) - 1;

@@ -205,7 +205,8 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <GridPane fx:id="Sheet2" layoutX="14.0" layoutY="14.0" prefHeight="217.0" prefWidth="462.0" styleClass="grid">
+<!--                                          //TODO-->
+<!--                                          <GridPane fx:id="Sheet2" layoutX="14.0" layoutY="14.0" prefHeight="217.0" prefWidth="462.0" styleClass="grid">-->
                                           <GridPane layoutX="14.0" layoutY="14.0" prefHeight="405.0" prefWidth="532.0" styleClass="grid">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
@@ -735,7 +736,8 @@
             </Button>
             <ImageView fitHeight="103.0" fitWidth="139.0" layoutX="-6.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@facebook_cover_photo_2.png" />
+<!--                  //TODO-->
+<!--                  <Image url="@facebook_cover_photo_2.png" />-->
                </image>
             </ImageView>
             <Button fx:id="changeButton" layoutX="654.0" layoutY="14.0" mnemonicParsing="false" onAction="#LightMode" prefHeight="23.0" prefWidth="36.0" text="中" />
