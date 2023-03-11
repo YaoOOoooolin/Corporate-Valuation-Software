@@ -2,6 +2,11 @@ package com.back.example;
 
 import com.back.StaticData.*;
 import com.back.example.OutputSheet.*;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.FileOutputStream;
 
 
 public class TestOutputSheet {
@@ -135,9 +140,6 @@ public class TestOutputSheet {
 
 
 
-
-
-
         System.out.println(" 2 Revenue growth rate       \t" + revenueGrowthRate.getRevenueGrowthRateList().toString());
         System.out.println(" 3 Revenues                  \t" + revenues.getRevenuesList().toString());
         System.out.println(" 4 EBIT (Operating) margin   \t" + ebitMargin.getEBITMarginList().toString());
@@ -176,6 +178,100 @@ public class TestOutputSheet {
         System.out.println("38 Sales to capital ratio    \t" + salesToCapitalRatio.getSalesToCapitalRatioList().toString());
         System.out.println("39 Invested capital          \t" + investedCapital.getInvestedCapitalList().toString());
         System.out.println("40 ROIC                      \t" + roic.getRoicList().toString());
+
+
+
+
+
+       /* Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("OutputSheet.pdf"));
+            document.open();
+            Paragraph paragraph = new Paragraph();
+            paragraph.add("Hello, World!");
+            paragraph.add("\n");
+            paragraph.add(" 2 Revenue growth rate       \t" + revenueGrowthRate.getRevenueGrowthRateList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 3 Revenues                  \t" + revenues.getRevenuesList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 4 EBIT (Operating) margin   \t" + ebitMargin.getEBITMarginList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 5 EBIT (Operating income)   \t" + ebitIncome.getEBITIncomeList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 6 Tax rate                  \t" + taxRate.getTaxRateList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 7 EBIT(1-t)                 \t" + ebit1t.getEBIT1tList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 8 Reinvestment              \t" + reinvestment.getReinvestmentList().toString());
+            paragraph.add("\n");
+            paragraph.add(" 9 FCFF                      \t" + fcff.getFcffList().toString());
+            paragraph.add("\n");
+            paragraph.add("10 NOL                       \t" + nol.getNolList().toString());
+            paragraph.add("\n");
+            paragraph.add("12 Cost of capital           \t" + costOfCapital.getCostOfCapitalList().toString());
+            paragraph.add("\n");
+            paragraph.add("13 Cumulated discount factor \t" + cumulatedDiscountFactor.getCumulatedDFList().toString());
+            paragraph.add("\n");
+            paragraph.add("14 PV(FCFF)                  \t" + pvfcff.getPvFcffList().toString());
+            paragraph.add("\n");
+            paragraph.add("\n");
+            paragraph.add("16 Terminal cash flow        \t" + fcff.getTerminalFcff());
+            paragraph.add("\n");
+            paragraph.add("17 Terminal cost of capital  \t" + costOfCapital.getTerminalostOfCapital());
+            paragraph.add("\n");
+            paragraph.add("18 Terminal value            \t" + a18terminalValue.getTerminalvalue());
+            paragraph.add("\n");
+            paragraph.add("19 PV (Terminal value)       \t" + pvTerminalValue.getpVTerminalValue());
+            paragraph.add("\n");
+            paragraph.add("20 PV (CF over next 10 years)\t" + pvcfOver10Year.getpVCFOver10Year());
+            paragraph.add("\n");
+            paragraph.add("21 Sum of PV                 \t" + sumOfPV.getSumOfPV());
+            paragraph.add("\n");
+            paragraph.add("22 Probability of failure    \t" + probabilityOfFailure.getProbability_failure());
+            paragraph.add("\n");
+            paragraph.add("23 Proceeds if firm fails    \t" + proceedsIfFirmFails.getProceedsIfFirmFails());
+            paragraph.add("\n");
+            paragraph.add("24 Value of operating asset \t"+valueOfOperatingAssets.getValueOfOperatingAssets());
+            paragraph.add("\n");
+            paragraph.add("25 Debt                      \t"+debt.getDebt());
+            paragraph.add("\n");
+            paragraph.add("A26 Minority interests       \t"+minorityInterests.getMinorityInterests());
+            paragraph.add("\n");
+            paragraph.add("A27 Cach                     \t"+cash.getCash());
+            paragraph.add("\n");
+            paragraph.add("A28 Non-operating assets     \t"+nonOperatingAssets.getNonOperatingAssets());
+            paragraph.add("\n");
+            paragraph.add("️A29 Value of equity         \t"+valueOfEquity.getValueOfEquity());
+            paragraph.add("\n");
+            paragraph.add("A30 Value of options         \t"+valueOfOptions.getValueOfOptions());
+            paragraph.add("\n");
+            paragraph.add("A31 Value of equity stock   \t"+valueOfEquityInCommonStock.getValueOfEquityInCommonStock());
+            paragraph.add("\n");
+            paragraph.add("A32 Number of shares         \t"+numberOfShares.getNumberOfShares());
+            paragraph.add("\n");
+            paragraph.add("️A33 Estimated value /share  \t"+estimatedValueShare.getEstimatedValueShare());
+            paragraph.add("\n");
+            paragraph.add("A34 Price                    \t"+price.getPrice());
+            paragraph.add("\n");
+            paragraph.add("️A35 Price as % of value     \t"+priceAsOfValue.getPriceAsPercentageOfValue());
+            paragraph.add("\n");
+            paragraph.add("\n");
+            paragraph.add("38 Sales to capital ratio    \t" + salesToCapitalRatio.getSalesToCapitalRatioList().toString());
+            paragraph.add("\n");
+            paragraph.add("39 Invested capital          \t" + investedCapital.getInvestedCapitalList().toString());
+            paragraph.add("\n");
+            paragraph.add("40 ROIC                      \t" + roic.getRoicList().toString());
+            paragraph.add("\n");
+
+
+            document.add(paragraph);
+            document.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+
     }
 }
 

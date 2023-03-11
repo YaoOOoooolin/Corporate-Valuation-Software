@@ -39,7 +39,6 @@ public class A2RevenueGrowthRate {
             BigDecimal big_terminalvalue=new BigDecimal(Double.toString(terminalRevenue));
             BigDecimal big_int5=new BigDecimal(Double.toString(year2_x));
             BigDecimal big_temp=new BigDecimal(Double.toString(i - year2_x+1));
-
             BigDecimal ans1=big_get2.subtract(big_terminalvalue);
             BigDecimal ans2=ans1.divide(big_int5,20, RoundingMode.HALF_UP);
             BigDecimal ans3=ans2.multiply(big_temp);

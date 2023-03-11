@@ -10,8 +10,8 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Result {
-        public Text F14;
-        public Text B11;
+        public  Text F14;
+        public  Text B11;
         public Text F13;
         public Text F12;
         public Text F11;
@@ -127,7 +127,7 @@ public class Result {
                 BigDecimal bd;
                 String v;
 
-                double outputB9 = OutPutMethod2.output("B9");
+                double  outputB9 = OutPutMethod2.output("B9");
                 B9.setText(String.valueOf(outputB9));
 
                 double outputC9 = OutPutMethod2.output("C9");
