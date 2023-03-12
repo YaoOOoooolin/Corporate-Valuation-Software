@@ -769,17 +769,21 @@ public class Controller {
         });
     }
     public void LightMode(ActionEvent actionEvent) {
+        /*
         Scene scene = changeButton.getScene();
 
         scene.getStylesheets().removeAll("interface.css");
 
         scene.getStylesheets().add("interface.css");
+         */
+        //修改背景的
 
         String[] ChineseSheet1={"日期" ,"公司名" ,"国家" ,"行业" ,"行业(全球)" ,"营业额" ,"营业利润"
                 ,"利息费用" ,"股权账面价值" ,"债权账面价值" ,"是否有研发费用需要资本化?" ,"现金和适销证券"
                 ,"交叉持股和其他非经营性资产" ,"少数股东权益" ,"流通股票数量" ,"当前股价" ,"有效税率" ,"边际税率"};
-        String[] ChineseSheet2={"次年收入增长率", "次年营业利润率", "复合年收入增长率(2-5年)",
-                "目标税前营业利润率", "几年实现经营利润率目标", "销售资本比率",};
+        String[] ChineseSheet2={"直至n年的收入增长率","次年收入增长率", "第n年的收入增长率","次年营业利润率",
+                "目标税前营业利润率", "直至n年销售额与资本的比率", "次年销售额与资本比率","目标销售额与资本比率",
+                "无风险收益率","初始资本成本"};
         String[] ChineseSheet3={"是否存在未完成的员工期权？", "未完成的期权数量", "平均执行价格",
                 "平均期限", "股价标准差",};
         String[] ChineseSheet4={"您想覆盖这个假设吗？",
@@ -869,10 +873,14 @@ public class Controller {
         };
         String[] EnglishSheet2={"Revenue growth rate for next year",
                 "Operating Margin for next year",
-                "Compounded annual revenue growth rate - years 2-5",
                 "Target pre-tax operating margin",
-                "Year of convergence",
-                "Sales to capital ratio",};
+                "Sales to capital ratio up to year n =",
+                "Target sales to capital ratio",
+                "Revenue growth rate for the n year",
+                "Revenue growth rate up to year n =",
+                "Sales to capital ratio for next year",
+                "Risk-Free rate",
+                "Initial cost of capital",};
         String[] EnglishSheet3={"Do you have employee options outstanding?",
                 "Number of options outstanding",
                 "Average strike price",
@@ -883,7 +891,7 @@ public class Controller {
                 "Do you want to override this assumption",
                 "Enter the return on capital you expect after year 10",
                 "I will assume that your firm will earn a return on capital equal to its cost of capital after year 10. I am assuming that whatever competitive advantages you have today will fade over time.",
-                "In stable growth, I will assume that your firm will have a cost of capital similar to that of typical mature companies (riskfree rate + 4.5%)",
+                "In stable growth, I will assume that your firm will have a cost of capital similar to that of typical mature companies (risk-free rate + 4.5%)",
                 "I will assume that your firm has no chance of failure over the foreseeable future",
                 "Enter the probability of failure",
                 "What do you want to tie your proceeds in failure to?",
@@ -895,8 +903,8 @@ public class Controller {
         String[] EnglishSheet5={"Do you want to override this assumption",
                 "Enter the NOL that you are carrying over into year 1",
                 "Do you want to override this assumption",
-                "Enter the riskfree rate after year 10",
-                "I will assume that today's risk free rate will prevail in perpetuity. If you override this assumption, I will change the riskfree rate after year 10.",
+                "Enter the risk-free rate after year 10",
+                "I will assume that today's risk free rate will prevail in perpetuity. If you override this assumption, I will change the risk-free rate after year 10.",
                 "I will assume that you have no losses carried forward from prior years ( NOL) coming into the valuation. If you have a money losing company, you may want to override this.",
                 "I will assume that the growth rate in perpetuity will be equal to the risk free rate. This allows for both valuation consistency and prevents \"impossible\" growth rates.",
                 "Enter the growth rate in perpetuity",

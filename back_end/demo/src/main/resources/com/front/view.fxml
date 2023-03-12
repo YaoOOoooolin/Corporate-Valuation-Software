@@ -79,13 +79,13 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <DatePicker fx:id="B1" prefHeight="23.0" prefWidth="168.0" GridPane.columnIndex="2" />
+                                                <DatePicker fx:id="B1" prefHeight="23.0" prefWidth="199.0" GridPane.columnIndex="2" />
                                                 <Text fx:id="text2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="Company name" wrappingWidth="243.86026000976562" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <ComboBox id="CompanyName" fx:id="comboBox1" prefHeight="23.0" prefWidth="172.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <ComboBox id="CompanyName" fx:id="comboBox1" prefHeight="23.0" prefWidth="177.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <Text fx:id="text3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" wrappingWidth="241.6704559326172" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="13.0" />
@@ -98,13 +98,13 @@
                                                    </font>
                                                 </Text>
 
-                                                <ComboBox id="Industry" fx:id="comboBox2" prefHeight="23.0" prefWidth="164.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                <ComboBox id="Industry" fx:id="comboBox2" prefHeight="23.0" prefWidth="179.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <Text fx:id="text5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Industry (Global)" wrappingWidth="247.46026611328125" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <ComboBox id="Industry" fx:id="comboBox3" prefHeight="23.0" prefWidth="164.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <ComboBox id="Industry" fx:id="comboBox3" prefHeight="23.0" prefWidth="182.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                                 <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenues" wrappingWidth="247.0602569580078" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="13.0" />
@@ -205,15 +205,13 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-<!--                                          //TODO 合并的时候中文表格丢失，应该是这里-->
-<!--                                          <GridPane fx:id="Sheet2" layoutX="14.0" layoutY="14.0" prefHeight="217.0" prefWidth="462.0" styleClass="grid">-->
-                                          <GridPane layoutX="14.0" layoutY="14.0" prefHeight="405.0" prefWidth="532.0" styleClass="grid">
+                                          <GridPane fx:id="Sheet2" layoutX="14.0" layoutY="14.0" prefHeight="405.0" prefWidth="532.0" styleClass="grid">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.40001220703124" minWidth="10.0" prefWidth="216.5" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.20004272460938" minWidth="0.0" prefWidth="176.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.0" minWidth="8.0" prefWidth="31.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="115.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.40001220703124" minWidth="10.0" prefWidth="238.19993286132814" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.20004272460938" minWidth="0.0" prefWidth="163.5999877929688" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.0" minWidth="8.0" prefWidth="35.00001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="85.99998779296874" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -248,7 +246,7 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio up to year n =" wrappingWidth="185.2402458190918" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio up to year n =" wrappingWidth="223.64023971557617" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -272,7 +270,7 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue gorwth rate up to year n =" wrappingWidth="205.84025192260742" GridPane.columnIndex="1">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue growth rate up to year n =" wrappingWidth="233.04023361206055" GridPane.columnIndex="1">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -283,7 +281,7 @@
                                                    </font>
                                                 </Text>
                                                 <Button fx:id="ChartOpenForCapitalRatio" mnemonicParsing="false" onAction="#openNewWindowForCaptialRatio" prefHeight="23.0" prefWidth="73.0" styleClass="submit-btn" text="Chart" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Riskfree rate" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Risk-Free rate" wrappingWidth="127.0794677734375" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -652,8 +650,8 @@
                                           <GridPane fx:id="Sheet6" layoutX="14.0" layoutY="14.0" prefHeight="203.0" prefWidth="514.0" styleClass="grid">
                                             <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.1999938964844" minWidth="10.0" prefWidth="181.600048828125" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.59998779296876" minWidth="10.0" prefWidth="207.999951171875" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.1999938964844" minWidth="10.0" prefWidth="207.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.59998779296876" minWidth="10.0" prefWidth="182.79998779296875" />
                                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="162.5999755859375" minWidth="10.0" prefWidth="104.60001220703128" />
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                             </columnConstraints>
@@ -677,6 +675,13 @@
                                                 <ComboBox id="CompanyName" fx:id="comboBox5" prefHeight="23.0" prefWidth="214.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                 <Button fx:id="submit_id2" mnemonicParsing="false" onAction="#DatabaseResult1" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" />
                                                 <Button fx:id="submit_id3" mnemonicParsing="false" onAction="#DatabaseResult2" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a company name" wrappingWidth="197.4527587890625" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField prefHeight="23.0" prefWidth="145.0" promptText="Enter company name" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <Button fx:id="submit_id4" mnemonicParsing="false" onAction="#DatabaseResult3" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                              </children>
                                           </GridPane>
                                        </children>
@@ -698,7 +703,7 @@
       </VBox>
    </center>
    <left>
-      <VBox prefHeight="724.0" prefWidth="156.0" style="-fx-background-color: #2c2a2a; -fx-padding: 5; -fx-spacing: 10; -fx-border-color: gray; -fx-border-width: 3;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="724.0" prefWidth="128.0" style="-fx-background-color: #2c2a2a; -fx-padding: 5; -fx-spacing: 10; -fx-border-color: gray; -fx-border-width: 3;" BorderPane.alignment="CENTER">
          <children>
             <TitledPane animated="false" prefHeight="259.0" prefWidth="117.0" style="-fx-line-spacing: 10;" text="Main input" textAlignment="CENTER">
                <content>
@@ -722,21 +727,19 @@
          </children></VBox>
    </left>
    <top>
-      <AnchorPane prefHeight="93.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="80.0" prefWidth="742.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
          <children>
             <Button alignment="TOP_LEFT" graphicTextGap="8.0" layoutX="125.0" layoutY="5.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-width: 0; -fx-border-color: #4169E1;" text="Corporate&#10;Valuation" textFill="#05267a">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>
             </Button>
-            <ImageView fitHeight="103.0" fitWidth="139.0" layoutX="-6.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-<!--                  //TODO logo图片-->
-<!--                  <Image url="@facebook_cover_photo_2.png" />-->
-               </image>
-            </ImageView>
             <Button fx:id="changeButton" layoutX="654.0" layoutY="14.0" mnemonicParsing="false" onAction="#LightMode" prefHeight="23.0" prefWidth="36.0" text="中" />
             <Button layoutX="690.0" layoutY="14.0" mnemonicParsing="false" onAction="#Eng_Version" text="Eng" />
+            <ImageView fitHeight="94.0" fitWidth="127.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img.png" />
+               </image></ImageView>
          </children>
       </AnchorPane>
    </top>
