@@ -205,19 +205,15 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-<!--                                          //TODO-->
+<!--                                          //TODO 合并的时候中文表格丢失，应该是这里-->
 <!--                                          <GridPane fx:id="Sheet2" layoutX="14.0" layoutY="14.0" prefHeight="217.0" prefWidth="462.0" styleClass="grid">-->
                                           <GridPane layoutX="14.0" layoutY="14.0" prefHeight="405.0" prefWidth="532.0" styleClass="grid">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.40001220703124" minWidth="10.0" prefWidth="281.40001525878904" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.20004272460938" minWidth="0.0" prefWidth="128.8" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="16.0" minWidth="10.0" prefWidth="16.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.40001220703124" minWidth="10.0" prefWidth="247.5" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="0.0" prefWidth="173.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.20001220703125" minWidth="10.0" prefWidth="18.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.20001220703125" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.40001220703124" minWidth="10.0" prefWidth="216.5" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.20004272460938" minWidth="0.0" prefWidth="176.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.0" minWidth="8.0" prefWidth="31.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="115.0" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -232,12 +228,12 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue growth rate for next year" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue growth rate for next year" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="grid" text="Operating Margin for next year" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="grid" text="Operating Margin for next year" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -247,12 +243,12 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Target pre-tax operating margin" wrappingWidth="243.8401756286621" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Target pre-tax operating margin" wrappingWidth="243.8401756286621" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio up to year n =" wrappingWidth="185.2402458190918" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio up to year n =" wrappingWidth="185.2402458190918" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -263,37 +259,37 @@
                                                 <TextField fx:id="finalYearGrowthRate" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <TextField fx:id="capitalRatioUptoN" promptText="Enter a number" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                 <TextField fx:id="FinalYearCapitalRatio" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Target sales to captial ratio" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Target sales to captial ratio" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="captialRatioForNextYear" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                                                 <TextField fx:id="nextYearGrowthRate" prefHeight="23.0" prefWidth="28.0" promptText="(%)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <Button fx:id="ChartOpen" mnemonicParsing="false" onAction="#openNewWindow" prefHeight="23.0" prefWidth="64.0" text="Chart" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue growth rate for the n year" wrappingWidth="239.36446380615234" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <Button fx:id="ChartOpen" mnemonicParsing="false" onAction="#openNewWindow" prefHeight="23.0" prefWidth="68.0" styleClass="submit-btn" text="Chart" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue growth rate for the n year" wrappingWidth="239.36446380615234" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue gorwth rate up to year n =" wrappingWidth="205.84025192260742" GridPane.columnIndex="1">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue gorwth rate up to year n =" wrappingWidth="205.84025192260742" GridPane.columnIndex="1">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio for next year" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio for next year" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Button fx:id="ChartOpenForCapitalRatio" mnemonicParsing="false" onAction="#openNewWindowForCaptialRatio" prefHeight="23.0" prefWidth="64.0" text="Chart" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Riskfree rate" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                <Button fx:id="ChartOpenForCapitalRatio" mnemonicParsing="false" onAction="#openNewWindowForCaptialRatio" prefHeight="23.0" prefWidth="73.0" styleClass="submit-btn" text="Chart" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Riskfree rate" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="B301" prefHeight="27.0" prefWidth="147.0" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initial cost of captial" wrappingWidth="164.3234748840332" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial cost of captial" wrappingWidth="164.3234748840332" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -702,15 +698,14 @@
       </VBox>
    </center>
    <left>
-      <VBox prefHeight="728.0" prefWidth="135.0" style="-fx-background-color: #2c2a2a; -fx-padding: 5; -fx-spacing: 10; -fx-border-color: gray; -fx-border-width: 3;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="724.0" prefWidth="156.0" style="-fx-background-color: #2c2a2a; -fx-padding: 5; -fx-spacing: 10; -fx-border-color: gray; -fx-border-width: 3;" BorderPane.alignment="CENTER">
          <children>
             <TitledPane animated="false" prefHeight="259.0" prefWidth="117.0" style="-fx-line-spacing: 10;" text="Main input" textAlignment="CENTER">
                <content>
                   <VBox prefHeight="246.0" prefWidth="246.0" style="-fx-padding: 3; -fx-spacing: 5; -fx-background-color: gray;">
                      <children>
-                        <Button fx:id="TPtoInput1" mnemonicParsing="false" onAction="#ToTab1" prefHeight="23.0" prefWidth="83.0" styleClass="menu-btn" stylesheets="@interface.css" text="Basic Input" />
+                        <Button fx:id="TPtoInput1" mnemonicParsing="false" onAction="#ToTab1" prefHeight="23.0" prefWidth="0.0" styleClass="menu-btn" stylesheets="@interface.css" text="Basic Input" />
                         <Button fx:id="TPtoInput2" mnemonicParsing="false" onAction="#ToTab2" prefHeight="23.0" prefWidth="100.0" styleClass="menu-btn" text="Value Drivers" />
-                        <Button fx:id="TPtoInput3" mnemonicParsing="false" onAction="#ToTab3" prefHeight="23.0" prefWidth="118.0" styleClass="menu-btn" text="Market Numbers" />
                         <Button fx:id="TPtoInput4" mnemonicParsing="false" onAction="#ToTab4" prefHeight="23.0" prefWidth="92.0" styleClass="menu-btn" text="Other Inputs" />
                         <Button fx:id="TPtoInput5" mnemonicParsing="false" onAction="#ToTab5" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Assumptions(1)">
                            <font>
@@ -736,7 +731,7 @@
             </Button>
             <ImageView fitHeight="103.0" fitWidth="139.0" layoutX="-6.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
                <image>
-<!--                  //TODO-->
+<!--                  //TODO logo图片-->
 <!--                  <Image url="@facebook_cover_photo_2.png" />-->
                </image>
             </ImageView>
