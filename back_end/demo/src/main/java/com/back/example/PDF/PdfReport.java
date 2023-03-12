@@ -319,7 +319,7 @@ public class PdfReport {
         ArrayList<Double> outputreinvestmentList = OutPutMethod.outputReinvestmentList();
         table2.addCell(createCell("", textfont));
         table2.addCell(createCell("Revenues", textfont));
-        table2.addCell(createCell("Operatin1g Margin", textfont));
+        table2.addCell(createCell("Operating Margin", textfont));
         table2.addCell(createCell("EBIT", textfont));
         table2.addCell(createCell("EBIT (1-t)", textfont));
         table2.addCell(createCell("Reinvestment ", textfont));
@@ -379,8 +379,11 @@ public class PdfReport {
         table3.addCell(createCell("", textfont));
 
         table3.addCell(createCell("Adjustment for distress", textfont));
-        bd = isRounded(OutPutMethod2.output("D33"));
+        double outputD33 =  OutPutMethod2.output("D32") - OutPutMethod2.output("B24");
+        bd = isRounded(outputD33);
         table3.addCell(createCell(String.valueOf(bd), textfont));
+
+
         bd = isRounded(OutPutMethod2.output("G33"));
         table3.addCell(createCell("Probability of failure =" + bd, textfont));
 
@@ -396,9 +399,11 @@ public class PdfReport {
         table3.addCell(createCell("", textfont));
 
         table3.addCell(createCell("Value of equity", textfont));
-        bd = isRounded(OutPutMethod2.output("D36"));
+        double outputD36 = OutPutMethod2.output("D32") - outputD33 - OutPutMethod2.output("D34") + OutPutMethod2.output("D35");
+        bd = isRounded(outputD36);
         table3.addCell(createCell(String.valueOf(bd), textfont));
         table3.addCell(createCell("", textfont));
+
 
         table3.addCell(createCell(" - Value of equity options", textfont));
         bd = isRounded(OutPutMethod2.output("D37"));
@@ -411,7 +416,10 @@ public class PdfReport {
         table3.addCell(createCell("", textfont));
 
         table3.addCell(createCell("Value per share", textfont));
-        bd = isRounded(OutPutMethod2.output("D39"));
+        double outputD39 =( (outputD36) - OutPutMethod2.output("D37")) /OutPutMethod2.output("D38");
+        bd = isRounded(outputD39);
+
+
         table3.addCell(createCell(String.valueOf(bd), textfont));
         bd = isRounded(OutPutMethod2.output("G39"));
         table3.addCell(createCell("Stock was trading at =" + bd, textfont));
