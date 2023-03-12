@@ -684,9 +684,257 @@
                                                 <Button fx:id="submit_id4" mnemonicParsing="false" onAction="#DatabaseResult3" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                              </children>
                                           </GridPane>
+                                          <GridPane layoutX="18.0" layoutY="269.0" prefHeight="283.0" prefWidth="503.0" styleClass="grid">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="36.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="127.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="156.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="178.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="107.87953186035156" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" wrappingWidth="166.87953186035156" GridPane.columnIndex="2">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Industry" wrappingWidth="146.87953186035156" GridPane.columnIndex="3">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="37.87953186035156" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="37.87953186035156" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="37.87953186035156" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="37.87953186035156" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="industryFive" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="countryFive" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="industryFour" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="countryFour" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="nameFive" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="nameFour" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="industryThree" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="countryThree" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="nameThree" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="industryTwo" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="industryOne" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="countryTwo" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="nameTwo" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="countryOne" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="nameOne" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="39.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </GridPane>
                                        </children>
                                     </AnchorPane>
                                 </content>
+                              </Tab>
+                              <Tab fx:id="tab71" text="Edit Data">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="675.0">
+                                       <children>
+                                          <GridPane layoutX="18.0" layoutY="13.0" prefHeight="539.0" prefWidth="615.0" styleClass="grid">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="89.67239379882812" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="4.8307952880859375" prefWidth="12.721649169921875" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="74.62313842773438" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="0.0" prefWidth="11.410064697265625" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.56875610351562" minWidth="10.0" prefWidth="145.5738525390625" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="77.4261474609375" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="11.262939453125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="133.336181640625" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="50.663818359375" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Symbol:" wrappingWidth="61.14918518066406">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating Income:" wrappingWidth="121.04783630371094" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Industry:" wrappingWidth="148.41481018066406" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Year:" wrappingWidth="37.87953186035156" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Revenue:" wrappingWidth="59.44740295410156" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating Expenses:" wrappingWidth="68.43400573730469" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="ResearchandDevelopmentExpenses" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Research and Development Expenses:" wrappingWidth="87.30587768554688" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField fx:id="Symbol" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" />
+                                                <TextField fx:id="Industry" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <TextField fx:id="Year" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="Revenue" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                <TextField fx:id="OperatingExpenses" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                <TextField fx:id="CostandExpenses" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="5" />
+                                                <TextField fx:id="OperatingIncome" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                                <TextField fx:id="InterestExpense" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                                <TextField fx:id="EBITMargin" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                <TextField fx:id="BookVaueofEquity" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                                <TextField prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                                                <TextField fx:id="WeightedAverageSharesOutstanding" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="8" />
+                                                <TextField fx:id="Currentstockprice" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost and Expenses:" wrappingWidth="125.54112243652344" GridPane.columnIndex="4">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest Expense:" wrappingWidth="116.55455017089844" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="EBIT Margin:" wrappingWidth="87.79737854003906" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Vaue of Equity:" wrappingWidth="134.5277557373047" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="BookValueofdebt" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Value of debt:" wrappingWidth="130.03440856933594" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Weighted Average Shares Outstanding:" wrappingWidth="134.20494079589844" GridPane.columnIndex="7">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Current stock price:" wrappingWidth="125.54112243652344" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
                               </Tab>
                            </tabs>
                         </TabPane>

@@ -941,4 +941,7 @@ public class Controller {
          */
 
     }
+
+    public void DatabaseResult3(ActionEvent actionEvent) {
+    }
 }
