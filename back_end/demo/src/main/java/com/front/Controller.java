@@ -111,6 +111,7 @@ public class Controller {
     public GridPane Sheet3;
     public GridPane Sheet5;
     public GridPane Sheet6;
+    public GridPane Sheet7;
     public Button ChartOpen;
     public TextField captialRatioForNextYear;
     public TextField nextYearGrowthRate;
@@ -119,6 +120,7 @@ public class Controller {
     public TextField FinalYearCapitalRatio;
     public TextField capitalRatioUptoN;
     public Button ChartOpenForCapitalRatio;
+
     @FXML
     private Button TPtoInput1;
 
@@ -812,7 +814,9 @@ public class Controller {
                 "您想覆盖这个假设吗？",
                 "输入被困住的现金（如果是税）或整个余额（如果是不信任）",
                 "被困住的现金所在国外市场的平均税率"};
-        String[] ChineseSheet6={"请选择一个国家","请选择一个行业"};
+        String[] ChineseSheet6={"请选择一个国家","请选择一个行业","请输入国家"};
+        String[] ChineseSheet7={"符号:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
+                "利息费用:", "EBIT 利润率:", "股东权益账面价值:", "负债账面价值:", "加权平均股本:", "当前股价:",};
         /*
         int i=0;
         for (Node node : Sheet1.getChildren()) {
@@ -835,6 +839,21 @@ public class Controller {
         ChangeVersion(ChineseSheet4,Sheet4);
         ChangeVersion(ChineseSheet5,Sheet5);
         ChangeVersion(ChineseSheet6,Sheet6);
+        ChangeVersion(ChineseSheet7,Sheet7);
+        int i=0;
+        for (Node node : Sheet7.getChildren()) {
+            if (GridPane.getColumnIndex(node) == 1) {
+                // Check if node is in second column
+                if (node instanceof Text) {
+                    // Check if node is a label or its subclass
+                    System.out.println("\""+((Text) node).getText()+"\",");
+                    //((Text) node).setText(ChineseSheet1[i]);
+                    //System.out.println(ChineseSheet1[i]);
+                    i++;
+                    // Cast node to Labeled and set its text
+                }
+            }
+        }
     }
 
     public void DatabaseResult1(ActionEvent actionEvent) {
@@ -915,7 +934,12 @@ public class Controller {
                 "Average tax rate of the foreign markets where the cash is trapped",
         };
         String[] EnglishSheet6={"Please choose a country",
-                "Please choose an industry",};
+                "Please choose an industry","Please enter a country"};
+        String[] EnglishSheet7={"Symbol:", "Operating Income:", "Industry:", "Year:", "Revenue:", "Operating Expenses:",
+                "Research and Development Expenses:", "Cost and Expenses:", "Interest Expense:", "EBIT Margin:",
+                "Book Vaue of Equity:", "Book Value of debt:", "Weighted Average Shares Outstanding:",
+                "Current stock price:",
+        };
 
         ChangeVersion(EnglishSheet1,Sheet1);
         ChangeVersion(EnglishSheet2,Sheet2);
@@ -923,6 +947,7 @@ public class Controller {
         ChangeVersion(EnglishSheet4,Sheet4);
         ChangeVersion(EnglishSheet5,Sheet5);
         ChangeVersion(EnglishSheet6,Sheet6);
+        ChangeVersion(EnglishSheet7,Sheet7);
         /*
         int i=0;
         for (Node node : Sheet1.getChildren()) {
