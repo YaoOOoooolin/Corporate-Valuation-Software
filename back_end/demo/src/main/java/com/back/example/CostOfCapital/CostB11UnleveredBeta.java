@@ -1,5 +1,8 @@
 package com.back.example.CostOfCapital;
 
+
+import java.util.Objects;
+
 /**
  * B11 in Cost of capital worksheet:
  * Unlevered Beta
@@ -9,16 +12,24 @@ public class CostB11UnleveredBeta {
         return unLeveredBeta;
     }
 
-    public void setUnLeveredBeta(CostB9ApproachForEstimatingBeta B9, SingleUSBeta singleUSBeta, SingleGlobalBeta singleGlobalBeta, CostK48MultiUSBeta costK48MultiUSBeta, CostK64MultiGlobalBeta costK64MultiGlobalBeta) {
-        int type = B9.getApproachForEstimatingBeta();
-        if(type == 2){
-            this.unLeveredBeta = singleUSBeta.getSingleUSBeta();
-        } else if (type == 3) {
-            this.unLeveredBeta = singleGlobalBeta.getSingleGlobalBeta();
-        } else if (type == 4) {
-            this.unLeveredBeta = costK48MultiUSBeta.getMultiUSBeta();
-        } else if (type == 5) {
-            this.unLeveredBeta = costK64MultiGlobalBeta.getMultiGlobalBeta();
+    /**
+     *
+     * Different types of data approaching:
+     * <p>2. Single Business(US)</p>
+     * <p>3. Single Business(Global)</p>
+     * <p>4. Multibusiness(US)</p>
+     * <p>5. Multibusiness(Global)</p>
+     */
+    public void setUnLeveredBeta() {
+        String type = InputForCapital.getB9ApproachForEstimatingBeta();
+        if(Objects.equals(type, "Single Business(US)")){
+            this.unLeveredBeta = InputForCapital.getSingleUSBeta();
+        } else if (Objects.equals(type, "Single Business(Global)")) {
+            this.unLeveredBeta = InputForCapital.getSingleGlobalBeta();
+        } else if (Objects.equals(type, "Multibusiness(US)")) {
+            this.unLeveredBeta = InputForCapital.getK48MultiUSBeta();
+        } else if (Objects.equals(type, "Multibusiness(Global)")) {
+            this.unLeveredBeta = InputForCapital.getK64MultiGlobalBeta();
         }
     }
 

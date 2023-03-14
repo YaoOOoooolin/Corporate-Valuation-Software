@@ -3,6 +3,8 @@ package com.back.StaticData;
 public class InputData {
 
 
+
+
     public static void setB52(boolean b) {
     }
 
