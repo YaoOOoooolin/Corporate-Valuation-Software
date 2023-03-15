@@ -51,11 +51,23 @@ function getConvergence(converge){
     //先选择的year
     let pop2 = selectedPoints.pop();
 
-    for (let i = 0; i <= (pop1 - pop2); i++) {
-        let tempArr = data[pop2+i];
-        let temp = tempArr[1];
-        convergence += temp;
-        data[pop2+i] = [pop2+i+1, convergence];
+
+
+    let yearStart = pop2;
+    let yearEnd = pop1;
+
+    let startValue;
+    let startValueArr = data[pop1];
+    startValue = startValueArr[1];
+
+    let difference = Math.abs((startValue - convergence))/ (yearEnd - yearStart);
+
+    let tempArr = data[pop2];
+    let cnt = tempArr[1];
+
+    for (let i = 1; i <= (pop1 - pop2); i++) {
+        cnt -= difference;
+        data[pop2+i] = [pop2+i+1, cnt];
     }
 
     myChart.setOption({
@@ -68,9 +80,11 @@ function getConvergence(converge){
     })
 
     updatePosition();
+
+    return difference;
 }
 
-//TODO 开始时调用updatePosition()来更新节点
+
 
 option = {
     title: {

@@ -563,7 +563,7 @@ public class Controller {
         WebView webView = new WebView();
         WebEngine webEngine = webView.getEngine();
 
-        Button button = new Button("OK");
+        Button button = new Button("Save and exit");
         button.setLayoutX(100);
         button.setLayoutY(100);
         button.setPrefWidth(100);
@@ -577,6 +577,17 @@ public class Controller {
         hBox.setSpacing(20);
         hBox.setAlignment(Pos.CENTER_LEFT);
 
+        HBox hBoxOne = new HBox();
+        hBoxOne.setSpacing(20);
+        hBoxOne.setAlignment(Pos.CENTER_LEFT);
+
+        Text guide = new Text();
+        guide.setText("Guide: select two points in the chart and input the convergence below ↓\n1.Please select the point in a sequence which end year is bigger than start year\n2.You can only set convergence once.");
+        guide.setLayoutX(100);
+        guide.setLayoutY(100);
+        guide.prefWidth(100);
+        guide.prefHeight(50);
+        hBoxOne.getChildren().add(guide);
 
         Text text = new Text();
         text.setText("Set convergence:");
@@ -592,10 +603,10 @@ public class Controller {
         textField.prefHeight(50);
 
         Button converge = new Button("Set Up");
-        button.setLayoutX(100);
-        button.setLayoutY(100);
-        button.setPrefWidth(100);
-        button.setPrefHeight(50);
+        converge.setLayoutX(100);
+        converge.setLayoutY(100);
+        converge.setPrefWidth(100);
+        converge.setPrefHeight(50);
 
 
         hBox.getChildren().add(text);
@@ -606,8 +617,9 @@ public class Controller {
            @Override
            public void handle(ActionEvent actionEvent) {
                double convergence = Double.parseDouble(textField.getText());
-               webEngine.executeScript("getConvergence(" + convergence + ")").toString();
-
+               String s = webEngine.executeScript("getConvergence(" + convergence + ")").toString();
+               textField.setDisable(true);
+               System.out.println(s);
            }
        });
         button.setOnAction(new EventHandler<ActionEvent>() {
@@ -623,11 +635,16 @@ public class Controller {
                     System.out.println(value);
                     values[index] = value;
                 }
+
+                Stage stage = (Stage)button.getScene().getWindow();
+                stage.close();
             }
+
         });
 
         webEngine.load(Objects.requireNonNull(this.getClass().getResource("drag.html")).toExternalForm());
         root.getChildren().add(webView);
+        root.getChildren().add(hBoxOne);
         root.getChildren().add(hBox);
         root.getChildren().add(button);
 
@@ -673,11 +690,11 @@ public class Controller {
         WebView webView = new WebView();
         WebEngine webEngine = webView.getEngine();
 
-        Button button = new Button("OK");
-        button.setLayoutX(100);
-        button.setLayoutY(100);
-        button.setPrefWidth(100);
-        button.setPrefHeight(50);
+        Button buttonOk = new Button("Save and exit");
+        buttonOk.setLayoutX(100);
+        buttonOk.setLayoutY(100);
+        buttonOk.setPrefWidth(100);
+        buttonOk.setPrefHeight(50);
 
         VBox root = new VBox();
         root.setSpacing(10);
@@ -702,10 +719,10 @@ public class Controller {
         textField.prefHeight(50);
 
         Button converge = new Button("Set Up");
-        button.setLayoutX(100);
-        button.setLayoutY(100);
-        button.setPrefWidth(100);
-        button.setPrefHeight(50);
+        converge.setLayoutX(100);
+        converge.setLayoutY(100);
+        converge.setPrefWidth(100);
+        converge.setPrefHeight(50);
 
 
         hBox.getChildren().add(text);
@@ -720,7 +737,7 @@ public class Controller {
 
             }
         });
-        button.setOnAction(new EventHandler<ActionEvent>() {
+        buttonOk.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 String result = jsWindow.call("getMyData").toString();
@@ -733,13 +750,16 @@ public class Controller {
                     System.out.println(value);
                     values[index] = value;
                 }
+
+                Stage stage = (Stage)buttonOk.getScene().getWindow();
+                stage.close();
             }
         });
 
         webEngine.load(Objects.requireNonNull(this.getClass().getResource("drag.html")).toExternalForm());
         root.getChildren().add(webView);
         root.getChildren().add(hBox);
-        root.getChildren().add(button);
+        root.getChildren().add(buttonOk);
 
         Scene scene = new Scene(root, 825, 550, Color.web("lightgray"));
         stage.setScene(scene);
