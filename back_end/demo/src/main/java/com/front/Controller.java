@@ -1044,16 +1044,28 @@ public class Controller {
 
     public void CoCSelect3(ActionEvent actionEvent) {
         if(comboCoC3.getValue().equals("Direct input")){
-            DirectInputDebt.setVisible(false);
-            CoCText3.setVisible(false);
-        }
-        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            DirectInputDebt.setVisible(true);
+            CoCText3.setVisible(true);
             comboCoC4.setVisible(false);
             CoCText4.setVisible(false);
-        }
-        else if(comboCoC3.getValue().equals("Actual rating")){
             comboCoC5.setVisible(false);
             CoCText5.setVisible(false);
+        }
+        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(true);
+            CoCText4.setVisible(true);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+        }
+        else if(comboCoC3.getValue().equals("Actual rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(true);
+            CoCText5.setVisible(true);
         }
     }
 
