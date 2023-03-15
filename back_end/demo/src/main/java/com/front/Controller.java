@@ -1,7 +1,6 @@
 package com.front;
 
 import com.back.StaticData.InputData;
-import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
@@ -13,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,7 +21,6 @@ import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import netscape.javascript.JSException;
 import netscape.javascript.JSObject;
 
 import java.io.IOException;
@@ -120,6 +119,49 @@ public class Controller {
     public TextField FinalYearCapitalRatio;
     public TextField capitalRatioUptoN;
     public Button ChartOpenForCapitalRatio;
+    //database 数据对应id
+    public ComboBox<String> comboBoxForCountry;
+    public ComboBox<String> comboBoxForIndustry;
+    public Button submit_id2;
+    public Button submit_id3;
+    public TextField selectedCountry;
+    public Button submit_id4;
+    public Text industry5;
+    public Text country5;
+
+    //databse 输出数据id
+    public Text ResearchandDevelopmentExpenses;
+    public TextField Symbol;
+    public TextField Industry;
+    public TextField Year;
+    public TextField Revenue;
+    public TextField OperatingExpenses;
+    public TextField CostandExpenses;
+    public TextField OperatingIncome;
+    public TextField InterestExpense;
+    public TextField EBITMargin;
+    public TextField BookVaueofEquity;
+    public TextField WeightedAverageSharesOutstanding;
+    public TextField Currentstockprice;
+    public Text BookValueofdebt;
+    public TextField researchAndDevelopmentExpenses;
+    public TextField bookValueOfDebt;
+    public Text industry4;
+    public Text country4;
+    public Text name5;
+    public Text name4;
+    public Text industry3;
+    public Text country3;
+    public Text name3;
+    public Text industry2;
+    public Text industry1;
+    public Text country2;
+    public Text name2;
+    public Text country1;
+    public Text name1;
+    public Button saveDataBase;
+    public Tab tab8;
+
 
     @FXML
     private Button TPtoInput1;
@@ -190,14 +232,27 @@ public class Controller {
                 "China",
                 "Denmark",
                 "Japan","HongKong");
-        comboBox4.getItems().addAll(
-                "United States",
-                "United Kingdom",
-                "China",
-                "Denmark",
-                "Japan","HongKong");
+        csVreadData.setCountryName("cty");
+        csVreadData.readData();
+        ArrayList<String> countryList = csVreadData.getCountryList();
+        for (String s : countryList) {
+            comboBoxForCountry.getItems().add(s);
+        }
+        comboBoxForCountry.setValue(countryList.get(0));
+        csVreadData.setCountryName("");
 
+        csVreadData.setIndustryName("box");
+        csVreadData.readData();
+        ArrayList<String> industryList = csVreadData.getIndustryList();
+//        System.out.println(industryList);
+        for (String s : industryList) {
+            comboBoxForIndustry.getItems().add(s);
+        }
+
+        comboBoxForIndustry.setValue(industryList.get(0));
+        csVreadData.setIndustryName("");
         Locale.setDefault(Locale.ENGLISH);
+        changeAble(flag);
 
     }
 
@@ -875,11 +930,85 @@ public class Controller {
             }
         }
     }
+    CSVreadData csVreadData = new CSVreadData();
 
     public void DatabaseResult1(ActionEvent actionEvent) {
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+        csVreadData.companyList.clear();
+        csVreadData.countryList.clear();
+        csVreadData.industryList.clear();
+        csVreadData.setCountryName(comboBoxForCountry.getValue());
+        csVreadData.readData();
+//        System.out.println(csVreadData.getCompanyList());
+//        System.out.println(csVreadData.getIndustryList());
+//        System.out.println(csVreadData.getCountryList());
+        setValues( csVreadData.getCompanyList(),csVreadData.getCountryList(),csVreadData.getIndustryList());
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+        csVreadData.companyList.clear();
+        csVreadData.countryList.clear();
+        csVreadData.industryList.clear();
     }
 
+    public void setValues(ArrayList<String> companyList,ArrayList<String> countryList,ArrayList<String> industryList){
+//        int companySize = companyList.size();
+//        if (companySize < 5){
+//            for (int i = 0; i < (5-companySize); i++) {
+//                companyList.add("NULL");
+//            }
+//        }
+        setUpBlank(companyList.size(),companyList);
+        setUpBlank(countryList.size(),countryList);
+        setUpBlank(industryList.size(),industryList);
+        name1.setText(companyList.get(0));
+        name2.setText(companyList.get(1));
+        name3.setText(companyList.get(2));
+        name4.setText(companyList.get(3));
+        name5.setText(companyList.get(4));
+
+        country1.setText(countryList.get(0));
+        country2.setText(countryList.get(1));
+        country3.setText(countryList.get(2));
+        country4.setText(countryList.get(3));
+        country5.setText(countryList.get(4));
+
+        industry1.setText(industryList.get(0));
+        industry2.setText(industryList.get(1));
+        industry3.setText(industryList.get(2));
+        industry4.setText(industryList.get(3));
+        industry5.setText(industryList.get(4));
+    }
+
+    public void setUpBlank(int size, ArrayList<String> list){
+        if (size < 5){
+            for (int i = 0; i < (5-size); i++) {
+                list.add("NULL");
+            }
+        }
+    }
+
+
+
     public void DatabaseResult2(ActionEvent actionEvent) {
+        //TODO 逻辑bug 输入行业会返回所有值
+        csVreadData.setIndustryName(comboBoxForIndustry.getValue());
+        csVreadData.readData();
+        ArrayList<String> companyList = csVreadData.getCompanyList();
+        ArrayList<String> countryList = csVreadData.getCountryList();
+        ArrayList<String> industryList = csVreadData.getIndustryList();
+//        System.out.println(companyList);
+//        System.out.println(countryList);
+//        System.out.println(industryList);
+        setValues(companyList, countryList, industryList);
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+        csVreadData.companyList.clear();
+        csVreadData.countryList.clear();
+        csVreadData.industryList.clear();
     }
 
     public void ChangeVersion(String[] strings, GridPane gridPane){
@@ -986,7 +1115,108 @@ public class Controller {
          */
 
     }
-
+    String company;
     public void DatabaseResult3(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab8);
+       company = selectedCountry.getText();
+       csVreadData.setCompanyName(company);
+       csVreadData.readData();
+       System.out.println(csVreadData.getResultList());
+       Symbol.setText(csVreadData.getResultList().get(0));
+       Industry.setText(csVreadData.getResultList().get(1));
+       Year.setText(csVreadData.getResultList().get(2));
+       Revenue.setText(csVreadData.getResultList().get(3));
+       OperatingExpenses.setText(csVreadData.getResultList().get(4));
+       researchAndDevelopmentExpenses.setText(csVreadData.getResultList().get(5));
+       WeightedAverageSharesOutstanding.setText(csVreadData.getResultList().get(6));
+       CostandExpenses.setText(csVreadData.getResultList().get(7));
+       OperatingIncome.setText(csVreadData.getResultList().get(8));
+       InterestExpense.setText(csVreadData.getResultList().get(9));
+       EBITMargin.setText(csVreadData.getResultList().get(10));
+       BookVaueofEquity.setText(csVreadData.getResultList().get(11));
+       bookValueOfDebt.setText(csVreadData.getResultList().get(12));
+       Currentstockprice.setText(csVreadData.getResultList().get(13));
+
+//       Symbol.setText(csVreadData.getResultList().get(14));
+//       Symbol.setText(csVreadData.getResultList().get(15));
+
+
+
+       csVreadData.resultList.clear();
+    }
+
+    public String getCompany(){
+        return company;
+    }
+    //保存修改内容到数据库中
+    public void saveToDataBase(ActionEvent actionEvent) {
+        CSVupdateRow csVupdateRow = new CSVupdateRow();
+        try {
+            csVupdateRow.Update(Symbol.getText(),
+                    Industry.getText(),
+                    Year.getText(),
+                    Revenue.getText(),
+                    OperatingExpenses.getText(),
+                    researchAndDevelopmentExpenses.getText(),
+                    WeightedAverageSharesOutstanding.getText(),
+                    CostandExpenses.getText(),
+                    OperatingIncome.getText(),
+                    InterestExpense.getText(),
+                    EBITMargin.getText(),
+                    BookVaueofEquity.getText(),
+                    BookValueofdebt.getText(),
+                    Currentstockprice.getText(),
+                    "More value1",
+                    "More value2");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    boolean flag = true;
+    public void changeDataBaseValue(ActionEvent event) {
+        flag = !flag;
+        changeAble(flag);
+    }
+
+    public void changeAble(boolean flag){
+        Symbol.setDisable(flag);
+        Industry.setDisable(flag);
+        Year.setDisable(flag);
+        Revenue.setDisable(flag);
+        OperatingExpenses.setDisable(flag);
+        researchAndDevelopmentExpenses.setDisable(flag);
+        WeightedAverageSharesOutstanding.setDisable(flag);
+        CostandExpenses.setDisable(flag);
+        OperatingIncome.setDisable(flag);
+        InterestExpense.setDisable(flag);
+        EBITMargin.setDisable(flag);
+        BookVaueofEquity.setDisable(flag);
+        bookValueOfDebt.setDisable(flag);
+        Currentstockprice.setDisable(flag);
+    }
+
+    public void addToDataBase(ActionEvent actionEvent) {
+        CSVaddData csVaddData = new CSVaddData();
+        try {
+            csVaddData.Add(Symbol.getText(),
+                    Industry.getText(),
+                    Year.getText(),
+                    Revenue.getText(),
+                    OperatingExpenses.getText(),
+                    researchAndDevelopmentExpenses.getText(),
+                    WeightedAverageSharesOutstanding.getText(),
+                    CostandExpenses.getText(),
+                    OperatingIncome.getText(),
+                    InterestExpense.getText(),
+                    EBITMargin.getText(),
+                    BookVaueofEquity.getText(),
+                    BookValueofdebt.getText(),
+                    Currentstockprice.getText(),
+                    "More value1",
+                    "More value2");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

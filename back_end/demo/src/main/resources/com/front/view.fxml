@@ -677,8 +677,8 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <ComboBox id="CompanyName" fx:id="comboBox4" prefHeight="23.0" prefWidth="218.0" GridPane.columnIndex="2" />
-                                                <ComboBox id="CompanyName" fx:id="comboBox5" prefHeight="23.0" prefWidth="214.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <ComboBox id="CompanyName" fx:id="comboBoxForCountry" prefHeight="23.0" prefWidth="218.0" GridPane.columnIndex="2" />
+                                                <ComboBox id="CompanyName" fx:id="comboBoxForIndustry" prefHeight="23.0" prefWidth="214.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                 <Button fx:id="submit_id2" mnemonicParsing="false" onAction="#DatabaseResult1" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" />
                                                 <Button fx:id="submit_id3" mnemonicParsing="false" onAction="#DatabaseResult2" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                 <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a company name" wrappingWidth="197.4527587890625" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -686,7 +686,7 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <TextField prefHeight="23.0" prefWidth="145.0" promptText="Enter company name" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="selectedCountry" prefHeight="23.0" prefWidth="145.0" promptText="Enter company name" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <Button fx:id="submit_id4" mnemonicParsing="false" onAction="#DatabaseResult3" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                              </children>
                                           </GridPane>
@@ -746,77 +746,77 @@
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industryFive" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                                <Text fx:id="industry5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="178.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="countryFive" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                <Text fx:id="country5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="155.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industryFour" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                <Text fx:id="industry4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="179.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="countryFour" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                <Text fx:id="country4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="nameFive" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                <Text fx:id="name5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="123.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="nameFour" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                <Text fx:id="name4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="129.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industryThree" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                <Text fx:id="industry3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="177.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="countryThree" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                <Text fx:id="country3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="nameThree" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                <Text fx:id="name3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="126.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industryTwo" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                <Text fx:id="industry2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="178.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industryOne" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                <Text fx:id="industry1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="176.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="countryTwo" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                <Text fx:id="country2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="nameTwo" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <Text fx:id="name2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="126.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="countryOne" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                <Text fx:id="country1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="nameOne" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <Text fx:id="name1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="127.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
@@ -829,7 +829,7 @@
                               </Tab>
                               <Tab fx:id="tab8" text="Edit Data">
                                  <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="675.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" onDragDetected="#changeDataBaseValue" prefHeight="594.0" prefWidth="675.0">
                                        <children>
                                           <GridPane fx:id="Sheet7" layoutX="18.0" layoutY="13.0" prefHeight="539.0" prefWidth="428.0" styleClass="grid">
                                              <columnConstraints>
@@ -895,13 +895,13 @@
                                                 <TextField fx:id="Year" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <TextField fx:id="Revenue" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <TextField fx:id="OperatingExpenses" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                <TextField prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                <TextField fx:id="researchAndDevelopmentExpenses" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                 <TextField fx:id="CostandExpenses" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
                                                 <TextField fx:id="OperatingIncome" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                                                 <TextField fx:id="InterestExpense" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
                                                 <TextField fx:id="EBITMargin" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
                                                 <TextField fx:id="BookVaueofEquity" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-                                                <TextField prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                                                <TextField fx:id="bookValueOfDebt" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
                                                 <TextField fx:id="WeightedAverageSharesOutstanding" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                                                 <TextField fx:id="Currentstockprice" prefHeight="23.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                                                 <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost and Expenses:" wrappingWidth="230.74107360839844" GridPane.columnIndex="1" GridPane.rowIndex="7">
@@ -941,6 +941,9 @@
                                                 </Text>
                                              </children>
                                           </GridPane>
+                                          <Button fx:id="saveDataBase" layoutX="476.0" layoutY="30.0" mnemonicParsing="false" onAction="#saveToDataBase" text="Save" />
+                                          <Button layoutX="518.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeDataBaseValue" prefHeight="23.0" prefWidth="56.0" text="Change" />
+                                          <Button layoutX="574.0" layoutY="30.0" mnemonicParsing="false" onAction="#addToDataBase" prefHeight="23.0" prefWidth="37.0" text="Add" />
                                        </children>
                                     </AnchorPane>
                                  </content>

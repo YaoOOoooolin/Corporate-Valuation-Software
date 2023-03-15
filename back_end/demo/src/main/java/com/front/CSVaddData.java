@@ -9,29 +9,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 public class CSVaddData {
-    public static void main(String[] args) throws Exception {
+    public void Add(String a,String b,String c,String d,String e1,String f,String g,String h,String i,String j,String k,String l,String m,String n,String o,String p) throws Exception {
         // Path to the CSV file
         String csvFilePath = "back_end/demo/src/main/resources/TestData.csv";
         int rowIndex = getRow();
         // Line number to replace
         System.out.println(rowIndex);
         // New values to append to the last row
-        String newValue1 = "1";
-        String newValue2 = "2";
-        String newValue3 = "3";
-        String newValue4 = "3";
-        String newValue5 = "3";
-        String newValue6 = "3";
-        String newValue7 = "3";
-        String newValue8 = "3";
-        String newValue9 = "3";
-        String newValue10 = "3";
-        String newValue11 = "3";
-        String newValue12 = "3";
-        String newValue13 = "3";
-        String newValue14 = "3";
-        String newValue15 = "3";
-        String newValue16 = "3";
+        String newValue1 = a;
+        String newValue2 = b;
+        String newValue3 = c;
+        String newValue4 = d;
+        String newValue5 = e1;
+        String newValue6 = f;
+        String newValue7 = g;
+        String newValue8 = h;
+        String newValue9 = i;
+        String newValue10 = j;
+        String newValue11 = k;
+        String newValue12 = l;
+        String newValue13 = m;
+        String newValue14 = n;
+        String newValue15 = o;
+        String newValue16 = p;
         String[] newValues = {newValue1, newValue2, newValue3,newValue4,newValue5,  newValue6,  newValue7,  newValue8,  newValue9,  newValue10,  newValue11,
                 newValue12 ,
                 newValue13 ,
