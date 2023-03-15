@@ -1,5 +1,7 @@
 package com.back.StaticData;
 
+import java.util.ArrayList;
+
 public class InputData {
 
 
@@ -218,11 +220,28 @@ public class InputData {
     static double B35 = 1.29;
     static double B36 = 7;
     static double B37 = 0.45;
-
-
     public static int yearOfList = 10;
     static int year2_x = 5;
     static double B26 = (double) 0.096;
+
+    public static ArrayList<Double> getA2RevenueGrowthRateList() {
+        return A2RevenueGrowthRateList;
+    }
+
+    public static void setA2RevenueGrowthRateList(ArrayList<Double> a2RevenueGrowthRateList) {
+        A2RevenueGrowthRateList = a2RevenueGrowthRateList;
+    }
+
+    public static ArrayList<Double> getA12CostOfCapitalList() {
+        return A12CostOfCapitalList;
+    }
+
+    public static void setA12CostOfCapitalList(ArrayList<Double> a12CostOfCapitalList) {
+        A12CostOfCapitalList = a12CostOfCapitalList;
+    }
+
+    static ArrayList<Double> A2RevenueGrowthRateList=new ArrayList<>();
+    static ArrayList<Double> A12CostOfCapitalList=new ArrayList<>();
 
 
     public static int getYear2_x() {

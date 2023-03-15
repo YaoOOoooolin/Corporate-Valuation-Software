@@ -41,7 +41,6 @@ public class PdfReport {
             writer.setPageEvent(new Watermark("GRP14"));// 水印
             writer.setPageEvent(new MyHeaderFooter());// 页眉/页脚
 
-            // 3.打开文档
             document.open();
             document.addTitle("Title@PDF-Java");// 标题
             document.addAuthor("Author@umiz");// 作者
@@ -72,10 +71,10 @@ public class PdfReport {
         try {
             // 不同字体（这里定义为同一种字体：包含不同字号、不同style）
             BaseFont bfChinese = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
-            titlefont = new Font(bfChinese, 16, Font.BOLD);
-            headfont = new Font(bfChinese, 14, Font.BOLD);
-            keyfont = new Font(bfChinese, 10, Font.BOLD);
-            textfont = new Font(bfChinese, 10, Font.NORMAL);
+            titlefont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
+            headfont = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+            keyfont = new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD);
+            textfont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -245,6 +244,8 @@ public class PdfReport {
 
 
         BigDecimal bd;
+        String v;
+
         // 表格
         PdfPTable table = createTable(new float[]{120, 80, 80, 80, 40, 80, 80});
         table.addCell(createCell("The Assumptions", headfont, Element.ALIGN_LEFT, 7, false));
@@ -260,53 +261,73 @@ public class PdfReport {
 
         table.addCell(createCell("Revenues (a)", textfont));
         table.addCell(createCell(String.valueOf(OutPutMethod2.output("B9")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("C9")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("D9")), textfont));
+        v=isPercentage(OutPutMethod2.output("C9"));
+        table.addCell(createCell(v, textfont));
+        v=isPercentage(OutPutMethod2.output("D9"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("F9")), textfont));
+        v=isPercentage(OutPutMethod2.output("F9"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
 
 
         table.addCell(createCell("Operating margin (b)", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("B10")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("C10")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("D10")), textfont));
+        v=isPercentage(OutPutMethod2.output("B10"));
+        table.addCell(createCell(v, textfont));
+        v=isPercentage(OutPutMethod2.output("C10"));
+        table.addCell(createCell(v, textfont));
+        v=isPercentage(OutPutMethod2.output("D10"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("F10")), textfont));
+        v=isPercentage(OutPutMethod2.output("F10"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
 
+
         table.addCell(createCell("Tax rate", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("B11")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("C11")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("D11")), textfont));
+        v=isPercentage(OutPutMethod2.output("B11"));
+        table.addCell(createCell(v, textfont));
+        v=isPercentage(OutPutMethod2.output("C11"));
+        table.addCell(createCell(v, textfont));
+        v=isPercentage(OutPutMethod2.output("D11"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("F11")), textfont));
+        v=isPercentage(OutPutMethod2.output("F11"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
+
 
         table.addCell(createCell("Reinvestment (c )", textfont));
         table.addCell(createCell("", textfont));
         table.addCell(createCell("Sales to capital ratio =", textfont));
         table.addCell(createCell(String.valueOf(OutPutMethod2.output("D12")), textfont));
         table.addCell(createCell("RIR=", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("F12")), textfont));
+        v=isPercentage(OutPutMethod2.output("F12"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
 
 
         table.addCell(createCell("Return on capital", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("B13")), textfont));
+        v=isPercentage(OutPutMethod2.output("B13"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("Marginal ROIC =", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("D13")), textfont));
+        v=isPercentage(OutPutMethod2.output("D13"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("F13")), textfont));
+        v=isPercentage(OutPutMethod2.output("F13"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
 
 
         table.addCell(createCell("Cost of capital (d)", textfont));
         table.addCell(createCell("", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("C14")), textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("D14")), textfont));
+        v=isPercentage(OutPutMethod2.output("C14"));
+        table.addCell(createCell(v, textfont));
+        v=isPercentage(OutPutMethod2.output("D14"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
-        table.addCell(createCell(String.valueOf(OutPutMethod2.output("F14")), textfont));
+        v=isPercentage(OutPutMethod2.output("F14"));
+        table.addCell(createCell(v, textfont));
         table.addCell(createCell("", textfont));
 
 
@@ -336,7 +357,8 @@ public class PdfReport {
             table2.addCell(createCell(String.valueOf(bd), textfont));
 
             bd = isRounded(outputebitMarginList.get(i));
-            table2.addCell(createCell(String.valueOf(bd), textfont));
+            v=isPercentage(bd.doubleValue());
+            table2.addCell(createCell(v, textfont));
 
             bd = isRounded(outputRevenuesList.get(i) * outputebitMarginList.get(i));
             table2.addCell(createCell(String.valueOf(bd), textfont));
@@ -434,7 +456,6 @@ public class PdfReport {
         paragraph2.setSpacingBefore(100f); //设置段落上空白
         paragraph2.setSpacingAfter(10f); //设置段落下空白
 
-
         //input todo
         PdfPTable table4 = createTable(new float[]{320, 240});
         table4.addCell(createCell("Date of valuation", keyfont));
@@ -479,22 +500,28 @@ public class PdfReport {
         table5.addCell(createCell("Current stock price =", textfont));
         table5.addCell(createCell(String.valueOf(InputData.getB19()), textfont));
         table5.addCell(createCell("Effective tax rate =", textfont));
-        table5.addCell(createCell(String.valueOf(InputData.getB20()), textfont));
+        v=isPercentage(InputData.getB20());
+        table5.addCell(createCell(v, textfont));
         table5.addCell(createCell("Marginal tax rate = ", textfont));
-        table5.addCell(createCell(String.valueOf(InputData.getB21()), textfont));
+        v=isPercentage(InputData.getB21());
+        table5.addCell(createCell(v, textfont));
 
 
         PdfPTable table6 = createTable(new float[]{320, 240});
         table6.addCell(createCell("The value drivers", headfont, Element.ALIGN_LEFT, 2, false));
         table6.setSpacingBefore(10f); //设置段落上空白
         table6.addCell(createCell("Revenue growth rate for next year", textfont));
-        table6.addCell(createCell(String.valueOf(InputData.getB23()), textfont));
+        v=isPercentage(InputData.getB23());
+        table6.addCell(createCell(v, textfont));
         table6.addCell(createCell("Operating Margin for next year", textfont));
-        table6.addCell(createCell(String.valueOf(InputData.getB24()), textfont));
+        v=isPercentage(InputData.getB24());
+        table6.addCell(createCell(v, textfont));
         table6.addCell(createCell("Compounded annual revenue growth rate - years 2-5 =", textfont));
-        table6.addCell(createCell(String.valueOf(InputData.getB25()), textfont));
+        v=isPercentage(InputData.getB25());
+        table6.addCell(createCell(v, textfont));
         table6.addCell(createCell("Target pre-tax operating margin (EBIT as % of sales in year 10) =", textfont));
-        table6.addCell(createCell(String.valueOf(InputData.getB26()), textfont));
+        v=isPercentage(InputData.getB26());
+        table6.addCell(createCell(v, textfont));
         table6.addCell(createCell("Year of convergence", textfont));
         table6.addCell(createCell(String.valueOf(InputData.getB27()), textfont));
         table6.addCell(createCell("Sales to capital ratio  (for computing reinvestment) =", textfont));
@@ -505,9 +532,11 @@ public class PdfReport {
         table7.addCell(createCell("Market numbers", headfont, Element.ALIGN_LEFT, 2, false));
         table7.setSpacingBefore(10f); //设置段落上空白
         table7.addCell(createCell("Riskfree rate", textfont));
-        table7.addCell(createCell(String.valueOf(InputData.getB30()), textfont));
+        v=isPercentage(InputData.getB30());
+        table7.addCell(createCell(v, textfont));
         table7.addCell(createCell("Riskfree rate", textfont));
-        table7.addCell(createCell(String.valueOf(InputData.getB31()), textfont));
+        v=isPercentage(InputData.getB31());
+        table7.addCell(createCell(v, textfont));
 
 
         PdfPTable table8 = createTable(new float[]{320, 240});
@@ -522,7 +551,8 @@ public class PdfReport {
         table8.addCell(createCell("Average maturity =", textfont));
         table8.addCell(createCell(String.valueOf(InputData.getB36()), textfont));
         table8.addCell(createCell("Standard deviation on stock price =", textfont));
-        table8.addCell(createCell(String.valueOf(InputData.getB37()), textfont));
+        v=isPercentage(InputData.getB37());
+        table8.addCell(createCell(v, textfont));
 
         PdfPTable table9 = createTable(new float[]{400, 160});
         table9.setSpacingBefore(10f); //设置段落上空白
@@ -532,14 +562,16 @@ public class PdfReport {
         table9.addCell(createCell("Do you want to override this assumption", textfont));
         table9.addCell(createCell(InputData.isB41() ? "yes" : "no", textfont));
         table9.addCell(createCell("If yes, enter the cost of capital after year 10 =", textfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB42()), textfont));
+        v=isPercentage(InputData.getB42());
+        table9.addCell(createCell(v, textfont));
 
         table9.addCell(createCell("I will assume that your firm will earn a return on capital equal to its cost of capital after year 10. I am assuming that whatever competitive advantages you have today will fade over time.", keyfont));
         table9.addCell(createCell("", textfont));
         table9.addCell(createCell("Do you want to override this assumption", textfont));
         table9.addCell(createCell(InputData.isB44() ? "yes" : "no", textfont));
         table9.addCell(createCell("If yes, enter the return on capital you expect after year 10", textfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB45()), textfont));
+        v=isPercentage(InputData.getB45());
+        table9.addCell(createCell(v, textfont));
 
         table9.addCell(createCell("I will assume that your firm has no chance of failure over the foreseeable future.", textfont));
         table9.addCell(createCell("", textfont));
@@ -547,11 +579,13 @@ public class PdfReport {
         table9.addCell(createCell(InputData.isB47() ? "yes" : "no", textfont));
 
         table9.addCell(createCell("If yes, enter the probability of failure =", textfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB48()), textfont));
+        v=isPercentage(InputData.getB48());
+        table9.addCell(createCell(v, textfont));
         table9.addCell(createCell("What do you want to tie your proceeds in failure to?", textfont));
         table9.addCell(createCell(String.valueOf(InputData.getB49()), textfont));
         table9.addCell(createCell("Enter the distress proceeds as percentage of book or fair value", textfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB50()), textfont));
+        v=isPercentage(InputData.getB50());
+        table9.addCell(createCell(v, textfont));
 
 
         table9.addCell(createCell("I will assume that your effective tax rate will adjust to your marginal tax rate by your terminal year. If you override this assumption, I will leave the tax rate at your effective tax rate.", keyfont));
@@ -569,7 +603,8 @@ public class PdfReport {
         table9.addCell(createCell("Do you want to override this assumption", textfont));
         table9.addCell(createCell(InputData.isB57() ? "yes" : "no", textfont));
         table9.addCell(createCell("If yes, enter the riskfree rate after year 10", textfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB58()), textfont));
+        v=isPercentage(InputData.getB58());
+        table9.addCell(createCell(v, textfont));
         table9.addCell(createCell("I will assume that the growth rate in perpetuity will be equal to the risk free rate. This allows for both valuation consistency and prevents \"impossible\" growth rates.", keyfont));
 
 
@@ -578,7 +613,8 @@ public class PdfReport {
         table9.addCell(createCell("Do you want to override this assumption", textfont));
         table9.addCell(createCell(InputData.isB60() ? "yes" : "no", textfont));
         table9.addCell(createCell("If yes, enter the growth rate in perpetuity", keyfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB61()), textfont));
+        v=isPercentage(InputData.getB61());
+        table9.addCell(createCell(v, textfont));
 
         table9.addCell(createCell("I have assumed that none of the cash is trapped (in foreign countries) and that there is no additional tax liability coming due and that cash is a neutral asset.", keyfont));
         table9.addCell(createCell("", textfont));
@@ -587,10 +623,11 @@ public class PdfReport {
         table9.addCell(createCell("If yes, enter trapped cash (if taxes) or entire balance (if mistrust)", textfont));
         table9.addCell(createCell(String.valueOf(InputData.getB64()), textfont));
         table9.addCell(createCell("& Average tax rate of the foreign markets where the cash is trapped", textfont));
-        table9.addCell(createCell(String.valueOf(InputData.getB65()), textfont));
+        v=isPercentage(InputData.getB65());
+        table9.addCell(createCell(v, textfont));
 
 
-        Paragraph paragraph3 = new Paragraph("Stories to Numbers", titlefont);
+        Paragraph paragraph3 = new Paragraph("Valuation output", titlefont);
         paragraph3.setAlignment(1); //设置文字居中 0靠左   1，居中     2，靠右
         paragraph3.setIndentationLeft(12); //设置左缩进
         paragraph3.setIndentationRight(12); //设置右缩进
@@ -617,11 +654,16 @@ public class PdfReport {
                 table10.addCell(createCell(String.valueOf(i), textfont));
             }
 
-            table10.addCell(createCell(String.valueOf(revenueGrowthRate.getRevenueGrowthRateList().get(i)), textfont));
-            table10.addCell(createCell(String.valueOf(revenues.getRevenuesList().get(i)), textfont));
-            table10.addCell(createCell(String.valueOf(ebitMargin.getEBITMarginList().get(i)), textfont));
-            table10.addCell(createCell(String.valueOf(ebitIncome.getEBITIncomeList().get(i)), textfont));
-            table10.addCell(createCell(String.valueOf(taxRate.taxRateList.get(i)), textfont));
+            v=isPercentage(revenueGrowthRate.getRevenueGrowthRateList().get(i));
+            table10.addCell(createCell(v, textfont));
+            bd=isRounded(revenues.getRevenuesList().get(i));
+            table10.addCell(createCell(String.valueOf(bd), textfont));
+            v=isPercentage(ebitMargin.getEBITMarginList().get(i));
+            table10.addCell(createCell(v, textfont));
+            bd=isRounded(ebitIncome.getEBITIncomeList().get(i));
+            table10.addCell(createCell(String.valueOf(bd), textfont));
+            v=isPercentage(taxRate.taxRateList.get(i));
+            table10.addCell(createCell(v, textfont));
 
         }
 
@@ -644,11 +686,16 @@ public class PdfReport {
                 table11.addCell(createCell(String.valueOf(i), textfont));
             }
 
-            table11.addCell(createCell(String.valueOf(ebit1t.getEBIT1tList().get(i)), textfont));
-            table11.addCell(createCell(String.valueOf(reinvestment.getReinvestmentList().get(i)), textfont));
-            table11.addCell(createCell(String.valueOf(fcff.fcffList.get(i)), textfont));
-            table11.addCell(createCell(String.valueOf(nol.getNolList().get(i)), textfont));
-            table11.addCell(createCell(String.valueOf(costOfCapital.getCostOfCapitalList().get(i)), textfont));
+            bd=isRounded(ebit1t.getEBIT1tList().get(i));
+            table11.addCell(createCell(String.valueOf(bd), textfont));
+            bd=isRounded(reinvestment.getReinvestmentList().get(i));
+            table11.addCell(createCell(String.valueOf(bd), textfont));
+            bd=isRounded(fcff.fcffList.get(i));
+            table11.addCell(createCell(String.valueOf(bd), textfont));
+            bd=isRounded(nol.getNolList().get(i));
+            table11.addCell(createCell(String.valueOf(bd), textfont));
+            v=isPercentage(costOfCapital.getCostOfCapitalList().get(i));
+            table11.addCell(createCell(v, textfont));
 
         }
 
@@ -669,11 +716,15 @@ public class PdfReport {
                 table12.addCell(createCell(String.valueOf(i), textfont));
             }
 
+
             table12.addCell(createCell(String.valueOf(cumulatedDiscountFactor.getCumulatedDFList().get(i)), textfont));
-            table12.addCell(createCell(String.valueOf(pvfcff.getPvFcffList().get(i)), textfont));
+            bd=isRounded(pvfcff.getPvFcffList().get(i));
+            table12.addCell(createCell(String.valueOf(bd), textfont));
             table12.addCell(createCell(String.valueOf(salesToCapitalRatio.getSalesToCapitalRatioList().get(i)), textfont));
-            table12.addCell(createCell(String.valueOf(investedCapital.getInvestedCapitalList().get(i)), textfont));
-            table12.addCell(createCell(String.valueOf(roic.getRoicList().get(i)), textfont));
+            bd=isRounded(investedCapital.getInvestedCapitalList().get(i));
+            table12.addCell(createCell(String.valueOf(bd), textfont));
+            v=isPercentage(roic.getRoicList().get(i));
+            table12.addCell(createCell(v, textfont));
         }
 
         table12.addCell(createCell("Terminal year", textfont));
@@ -687,45 +738,64 @@ public class PdfReport {
         table13.setSpacingBefore(30f); //设置段落上空白
 
         table13.addCell(createCell("Terminal cash flow", textfont));
-        table13.addCell(createCell(String.valueOf(terminalCashFlow.getTerminalCashFlow()), textfont));
+        bd=isRounded(terminalCashFlow.getTerminalCashFlow());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Terminal cost of capital", textfont));
-        table13.addCell(createCell(String.valueOf(costOfCapital.getTerminalostOfCapital()), textfont));
+        v=isPercentage(costOfCapital.getTerminalostOfCapital());
+        table13.addCell(createCell(String.valueOf(v), textfont));
         table13.addCell(createCell("Terminal value", textfont));
-        table13.addCell(createCell(String.valueOf(a18terminalValue), textfont));
+        bd=isRounded(a18terminalValue.getTerminalvalue());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("PV(Terminal value)", textfont));
-        table13.addCell(createCell(String.valueOf(pvTerminalValue.getpVTerminalValue()), textfont));
+        bd=isRounded(pvTerminalValue.getpVTerminalValue());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("PV (CF over next 10 years)", textfont));
-        table13.addCell(createCell(String.valueOf(pvcfOver10Year.getpVCFOver10Year()), textfont));
+        bd=isRounded(pvcfOver10Year.getpVCFOver10Year());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Sum of PV", textfont));
-        table13.addCell(createCell(String.valueOf(sumOfPV.getSumOfPV()), textfont));
+        bd=isRounded(sumOfPV.getSumOfPV());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Probability of failure =", textfont));
-        table13.addCell(createCell(String.valueOf(probabilityOfFailure.getProbability_failure()), textfont));
+        v=isPercentage(probabilityOfFailure.getProbability_failure());
+        table13.addCell(createCell(String.valueOf(v), textfont));
         table13.addCell(createCell("Proceeds if firm fails =", textfont));
-        table13.addCell(createCell(String.valueOf(proceedsIfFirmFails.getProceedsIfFirmFails()), textfont));
+        bd=isRounded(proceedsIfFirmFails.getProceedsIfFirmFails());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Value of operating assets =", textfont));
-        table13.addCell(createCell(String.valueOf(valueOfOperatingAssets.getValueOfOperatingAssets()), textfont));
+        bd=isRounded(valueOfOperatingAssets.getValueOfOperatingAssets());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell(" - Debt", textfont));
-        table13.addCell(createCell(String.valueOf(debt.getDebt()), textfont));
+        bd=isRounded(debt.getDebt());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell(" - Minority interests", textfont));
-        table13.addCell(createCell(String.valueOf(minorityInterests.getMinorityInterests()), textfont));
+        bd=isRounded(minorityInterests.getMinorityInterests());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell(" +  Cash", textfont));
-        table13.addCell(createCell(String.valueOf(cash.getCash()), textfont));
+        bd=isRounded(cash.getCash());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell(" + Non-operating assets", textfont));
-        table13.addCell(createCell(String.valueOf(nonOperatingAssets.getNonOperatingAssets()), textfont));
+        bd=isRounded(nonOperatingAssets.getNonOperatingAssets());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Value of equity", textfont));
-        table13.addCell(createCell(String.valueOf(valueOfEquity.getValueOfEquity()), textfont));
+        bd=isRounded(valueOfEquity.getValueOfEquity());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell(" - Value of options", textfont));
-        table13.addCell(createCell(String.valueOf(valueOfOptions.getValueOfOptions()), textfont));
+        bd=isRounded(valueOfOptions.getValueOfOptions());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Value of equity in common stock", textfont));
-        table13.addCell(createCell(String.valueOf(valueOfEquityInCommonStock.getValueOfEquityInCommonStock()), textfont));
+        bd=isRounded(valueOfEquityInCommonStock.getValueOfEquityInCommonStock());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Number of shares", textfont));
-        table13.addCell(createCell(String.valueOf(numberOfShares.getNumberOfShares()), textfont));
+        bd=isRounded(numberOfShares.getNumberOfShares());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Estimated value /share", textfont));
-        table13.addCell(createCell(String.valueOf(estimatedValueShare.getEstimatedValueShare()), textfont));
+        bd=isRounded(estimatedValueShare.getEstimatedValueShare());
+        table13.addCell(createCell(String.valueOf(bd), textfont));
         table13.addCell(createCell("Price", textfont));
         table13.addCell(createCell(String.valueOf(price.getPrice()), textfont));
         table13.addCell(createCell("Price as % of value", textfont));
-        table13.addCell(createCell(String.valueOf(priceAsOfValue.getPriceAsPercentageOfValue()), textfont));
+        v=isPercentage(priceAsOfValue.getPriceAsPercentageOfValue());
+        table13.addCell(createCell(v, textfont));
 
 
 
