@@ -10,11 +10,10 @@ public class CostC41EstimatingMarketValueOfStraightDebt {
 
     /**
      * B19*(1-(1+B25)^(-B20))/B25+B18/(1+B25)^B20
-     * @param inputData
      * @param costB25PreTaxCostOfDebt
      */
-    public void setEstimatingMarketValueOfStraightDebt(InputData inputData, CostB25PreTaxCostOfDebt costB25PreTaxCostOfDebt) {
-        double costB18BookValueOfStraightDebt = inputData.getB12();
+    public void setEstimatingMarketValueOfStraightDebt(CostB25PreTaxCostOfDebt costB25PreTaxCostOfDebt) {
+        double costB18BookValueOfStraightDebt = InputData.getB12();
         double costB19InterestExpenseOnDebt = InputData.getB10();
         double costB25preTexCostOfDebt = costB25PreTaxCostOfDebt.getPreTaxCostOfDebt();
         double costB20AverageMaturity = InputForCapital.getB20AverageMaturity();

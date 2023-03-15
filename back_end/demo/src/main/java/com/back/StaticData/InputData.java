@@ -40,7 +40,7 @@ public class InputData {
         return B58;
     }
 
-    public double getB30() {
+    public static double getB30() {
         return B30;
     }
 
@@ -52,7 +52,7 @@ public class InputData {
         return B13;
     }
 
-    public double getB9() {
+    public static double getB9() {
         return B9;
     }
 
@@ -105,7 +105,7 @@ public class InputData {
         return B11;
     }
 
-    public double getB12() {
+    public static double getB12() {
         return B12;
     }
 
@@ -130,7 +130,7 @@ public class InputData {
         return B50;
     }
 
-    public double getB21() {
+    public static double getB21() {
         return B21;
     }
 
@@ -163,12 +163,12 @@ public class InputData {
     }
 
 
-    public double getB18() {
+    public static double getB18() {
         return B18;
     }
 
 
-    public double getB19() {
+    public static double getB19() {
         return B19;
     }
 

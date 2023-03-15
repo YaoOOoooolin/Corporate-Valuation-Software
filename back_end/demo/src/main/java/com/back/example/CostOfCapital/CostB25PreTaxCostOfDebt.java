@@ -10,16 +10,16 @@ public class CostB25PreTaxCostOfDebt {
         return PreTaxCostOfDebt;
     }
 
-    public void setPreTaxCostOfDebt(InputData inputData) {
+    public void setPreTaxCostOfDebt() {
         String ApproachType = InputForCapital.B21ApproachForPreTaxCostOfDebt;
         String rating = InputForCapital.B23ActualRating;
         String syntheticRating = InputForCapital.B24SyntheticRatingType;
-        double EBIT = inputData.getB9();
+        double EBIT = InputData.getB9();
         double interestExpense = InputData.getB10();
         if(Objects.equals(ApproachType, "Direct Input")){
             this.PreTaxCostOfDebt = InputForCapital.getB22DirectInputPreTaxCostOfDebt();
         } else if (Objects.equals(ApproachType, "Actual rating")) {
-            this.PreTaxCostOfDebt = inputData.getB30() + RatingSpread.ratingSpread.get(rating);
+            this.PreTaxCostOfDebt = InputData.getB30() + RatingSpread.ratingSpread.get(rating);
         } else if(Objects.equals(ApproachType, "Synthetic rating")){
             double interestConvergeRatio = EBIT/interestExpense;
             if(Objects.equals(syntheticRating, "1")){

@@ -9,8 +9,8 @@ public class CostC50DebtComponent {
         return debtComponent;
     }
 
-    public void setDebtComponent(InputData inputData, CostB25PreTaxCostOfDebt costB25PreTaxCostOfDebt) {
-        double taxRate = inputData.getB21();
+    public void setDebtComponent(CostB25PreTaxCostOfDebt costB25PreTaxCostOfDebt) {
+        double taxRate = InputData.getB21();
         this.debtComponent = costB25PreTaxCostOfDebt.getPreTaxCostOfDebt() * (1 - taxRate);
     }
 }

@@ -10,12 +10,12 @@ public class CostB48MarketEquity {
     }
 
     /**
-     * B6 * B7 in cost worksheet
-     * @param inputData read data from inputSheet B18 and B19
+     * B6 * B7 in cost worksheet.
+     * read data from inputSheet B18 and B19
      */
-    public void setMarketEquity(InputData inputData) {
-        double costB6NumberOfShares = inputData.getB18();
-        double costB7PricePerShare = inputData.getB19();
+    public void setMarketEquity() {
+        double costB6NumberOfShares = InputData.getB18();
+        double costB7PricePerShare = InputData.getB19();
         this.marketEquity = costB6NumberOfShares * costB7PricePerShare;
     }
 }

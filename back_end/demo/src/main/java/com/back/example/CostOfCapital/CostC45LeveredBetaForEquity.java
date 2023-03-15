@@ -11,9 +11,9 @@ public class CostC45LeveredBetaForEquity {
         return leveredBetaForEquity;
     }
 
-    public void setLeveredBetaForEquity(CostB11UnleveredBeta costB11UnleveredBeta, CostB48MarketEquity costB48MarketEquity, CostC48MarketDebt costC48MarketDebt, InputData inputData) {
+    public void setLeveredBetaForEquity(CostB11UnleveredBeta costB11UnleveredBeta, CostB48MarketEquity costB48MarketEquity, CostC48MarketDebt costC48MarketDebt) {
         double B11UnLeveredBeta = costB11UnleveredBeta.getUnLeveredBeta();
-        double B26TaxRate = inputData.getB21();
+        double B26TaxRate = InputData.getB21();
         double B48MarketEquity = costB48MarketEquity.getMarketEquity();
         double C48MarketDebt = costC48MarketDebt.getMarketDebt();
         String type = InputForCapital.getB9ApproachForEstimatingBeta();
