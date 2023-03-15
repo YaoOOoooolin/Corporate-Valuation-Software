@@ -3,6 +3,8 @@ package com.front;
 import com.back.StaticData.InputData;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -120,6 +122,24 @@ public class Controller {
     public TextField FinalYearCapitalRatio;
     public TextField capitalRatioUptoN;
     public Button ChartOpenForCapitalRatio;
+    public ComboBox<String> comboCoC1;
+    public ComboBox<String> comboCoC2;
+    public ComboBox<String> comboCoC3;
+    public ComboBox<String> comboCoC5;
+    public ComboBox<String> comboCoC4;
+    public TextField DirectInputERP;
+    public TextField DirectInput1;
+    public TextField DirectInputDebt;
+    public Text CoCText1;
+    public Text CoCText2;
+    public Text CoCText3;
+    public Text CoCText4;
+    public Text CoCText5;
+    public Tab tab9;
+    public TabPane CostTabPane;
+    public Tab tab81;
+    public Tab tab82;
+    public Tab tab83;
 
     @FXML
     private Button TPtoInput1;
@@ -182,8 +202,11 @@ public class Controller {
 
     @FXML
     private void initialize() {
-        //ObservableList<String> observableList = FXCollections.observableArrayList("111", "222", "333");
-        //combo1.setItems(observableList);
+        /*
+        ObservableList<String> observableList = FXCollections.observableArrayList("111", "222", "333");
+        comboCoC1.setItems(observableList);
+         */
+
         comboBox1.getItems().addAll(
                 "United States",
                 "United Kingdom",
@@ -196,6 +219,13 @@ public class Controller {
                 "China",
                 "Denmark",
                 "Japan","HongKong");
+        comboCoC1.getItems().addAll("Direct input","Single Business(US)","Single Business(Global)");
+        comboCoC2.getItems().addAll("Will input", "Country of incorporation");
+        comboCoC3.getItems().addAll("Direct input", "Synthetic rating", "Actual rating");
+        comboCoC4.getItems().addAll("1-safer","2-risky");
+        comboCoC5.getItems().addAll("Aaa/AAA", "Aa2/AA", "A1/A+", "A2/A", "A3/A-", "Baa2/BBB",
+                "Ba1/BB+", "Ba2/BB", "B1/B+", "B2/B", "B3/B-", "C2/C", "Ca2/CC", "Caa/CCC", "D2/D");
+
 
         Locale.setDefault(Locale.ENGLISH);
 
@@ -803,8 +833,8 @@ public class Controller {
         String[] ChineseSheet1={"日期" ,"公司名" ,"国家" ,"行业" ,"行业(全球)" ,"营业额" ,"营业利润"
                 ,"利息费用" ,"股权账面价值" ,"债权账面价值" ,"是否有研发费用需要资本化?" ,"现金和适销证券"
                 ,"交叉持股和其他非经营性资产" ,"少数股东权益" ,"流通股票数量" ,"当前股价" ,"有效税率" ,"边际税率"};
-        String[] ChineseSheet2={"直至n年的收入增长率","次年收入增长率", "第n年的收入增长率","次年营业利润率",
-                "目标税前营业利润率", "直至n年销售额与资本的比率", "次年销售额与资本比率","目标销售额与资本比率",
+        String[] ChineseSheet2={ "次年收入增长率","次年营业利润率", "目标税前营业利润率", "至n年销售额与资本的比率",
+                "目标销售额与资本比率","第n年的收入增长率","直至n年的收入增长率", "次年销售额与资本比率",
                 "无风险收益率","初始资本成本"};
         String[] ChineseSheet3={"是否存在未完成的员工期权？", "未完成的期权数量", "平均执行价格",
                 "平均期限", "股价标准差",};
@@ -830,12 +860,12 @@ public class Controller {
                 "我将假设永久增长率等于无风险利率。这既可以实现估值一致性，又可以避免“不可能”的增长率。",
                 "输入永久增长率",
                 "您想覆盖这个假设吗？",
-                "我已假设现金没有被困住（在外国）并且没有额外的税收责任，现金是一项中性资产。",
+                "我已假设现金没有被周转困难（例如不可从外国周转）并且没有额外的税收责任，现金是一项中性资产。",
                 "您想覆盖这个假设吗？",
                 "输入被困住的现金（如果是税）或整个余额（如果是不信任）",
                 "被困住的现金所在国外市场的平均税率"};
         String[] ChineseSheet6={"请选择一个国家","请选择一个行业","请输入国家"};
-        String[] ChineseSheet7={"符号:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
+        String[] ChineseSheet7={"股票代码:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
                 "利息费用:", "EBIT 利润率:", "股东权益账面价值:", "负债账面价值:", "加权平均股本:", "当前股价:",};
         /*
         int i=0;
@@ -988,5 +1018,62 @@ public class Controller {
     }
 
     public void DatabaseResult3(ActionEvent actionEvent) {
+    }
+
+    public void CoCSelect1(ActionEvent actionEvent) {
+        if(comboCoC1.getValue().equals("Direct input")){
+            DirectInput1.setVisible(true);
+            CoCText1.setVisible(true);
+        }
+        else {
+            DirectInput1.setVisible(false);
+            CoCText1.setVisible(false);
+        }
+    }
+
+    public void CoCSelect2(ActionEvent actionEvent) {
+        if(comboCoC2.getValue().equals("Will input")){
+            DirectInputERP.setVisible(true);
+            CoCText2.setVisible(true);
+        }
+        else {
+            DirectInputERP.setVisible(false);
+            CoCText2.setVisible(false);
+        }
+    }
+
+    public void CoCSelect3(ActionEvent actionEvent) {
+        if(comboCoC3.getValue().equals("Direct input")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+        }
+        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+        }
+        else if(comboCoC3.getValue().equals("Actual rating")){
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+        }
+    }
+
+    public void ToTab8(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+    }
+
+    public void ToTab81(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+        CostTabPane.getSelectionModel().select(tab81);
+    }
+
+
+    public void ToTab83(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+        CostTabPane.getSelectionModel().select(tab82);
+    }
+
+    public void ToTab84(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+        CostTabPane.getSelectionModel().select(tab83);
     }
 }
