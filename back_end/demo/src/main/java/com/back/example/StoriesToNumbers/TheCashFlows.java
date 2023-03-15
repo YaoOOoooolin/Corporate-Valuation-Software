@@ -18,10 +18,10 @@ public class TheCashFlows {
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
         revenueGrowthRate.setTerminalRevenue(data.isB60(), data.getB61(), data.isB57(), data.getB58(), data.getB30());
 
-        revenueGrowthRate.setRevenueGrowthRateList(data.getB23(), data.getB25(), revenueGrowthRate.getTerminalRevenue());
+        revenueGrowthRate.setRevenueGrowthRateList(data.getB23(), data.getB25(), revenueGrowthRate.getTerminalRevenue(),InputData.getYearOfList(),InputData.getYear2_x());
         A3Revenues revenues = new A3Revenues();
 
-        revenues.setA3RevenuesList(data.getB8(), revenueGrowthRate);
+        revenues.setA3RevenuesList(data.getB8(), revenueGrowthRate,InputData.getYearOfList());
         //Revenues outputs
         ArrayList<Double> revenuesList = revenues.getRevenuesList();
 
@@ -32,7 +32,7 @@ public class TheCashFlows {
         A4EBITMargin ebitMargin=new A4EBITMargin();
 
         ebitMargin.setBaseIncome(data.isB14(),data.isB13(), olc.getF32(),rdc.getD39(),data.getB9());
-        ebitMargin.setEBITMarginList(data.getB8(),data.getB24(), data.getB26(), data.getB27());
+        ebitMargin.setEBITMarginList(data.getB8(),data.getB24(), data.getB26(), data.getB27(),InputData.getYearOfList());
         //Operating Margin outputs
         ArrayList<Double> ebitMarginList = ebitMargin.getEBITMarginList();
 

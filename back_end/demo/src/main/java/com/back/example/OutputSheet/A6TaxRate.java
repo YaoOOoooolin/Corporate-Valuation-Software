@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class A6TaxRate {
     public ArrayList<Double> taxRateList = new ArrayList<>();
 
-    public void setTaxRateList(double inputB20) {
-        for (int i = 0; i <=11; i++) {
+    public void setTaxRateList(double inputB20,int yearOfList) {
+        for (int i = 0; i <=1+yearOfList; i++) {
         taxRateList.add(inputB20);
         }
     }
@@ -16,7 +16,7 @@ public class A6TaxRate {
     }
 
     public Double getTerminalTaxRate() {
-        return taxRateList.get(11);
+        return taxRateList.get(taxRateList.size()-1);
     }
 }
 

@@ -3,6 +3,8 @@ package com.back.StaticData;
 public class InputData {
 
 
+
+
     public static void setB52(boolean b) {
     }
 
@@ -38,7 +40,7 @@ public class InputData {
         return B58;
     }
 
-    public double getB30() {
+    public static double getB30() {
         return B30;
     }
 
@@ -50,7 +52,7 @@ public class InputData {
         return B13;
     }
 
-    public double getB9() {
+    public static double getB9() {
         return B9;
     }
 
@@ -103,7 +105,7 @@ public class InputData {
         return B11;
     }
 
-    public double getB12() {
+    public static double getB12() {
         return B12;
     }
 
@@ -128,7 +130,7 @@ public class InputData {
         return B50;
     }
 
-    public double getB21() {
+    public static double getB21() {
         return B21;
     }
 
@@ -161,12 +163,12 @@ public class InputData {
     }
 
 
-    public double getB18() {
+    public static double getB18() {
         return B18;
     }
 
 
-    public double getB19() {
+    public static double getB19() {
         return B19;
     }
 
@@ -212,6 +214,28 @@ public class InputData {
     static double B35 ;
     static double B36 ;
     static double B37 ;
+    static int yearOfList=10;
+    static int year2_x=5;
+
+
+
+    public static int getYear2_x() {
+        return year2_x;
+    }
+
+    public static void setYear2_x(int year2_x) {
+        InputData.year2_x = year2_x;
+    }
+
+
+
+    public static int getYearOfList() {
+        return yearOfList;
+    }
+
+    public static void setYearOfList(int yearOfList) {
+        InputData.yearOfList = yearOfList;
+    }
 
     public static double getB35() {
         return B35;

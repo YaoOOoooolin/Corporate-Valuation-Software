@@ -19,8 +19,8 @@ public class A40ROIC {
         }
     }
 
-    public void setRoicList(A7EBIT1t ebit1t, A39InvestedCapital investedCapital){
-        for (int i = 0; i <=9; i++) {
+    public void setRoicList(A7EBIT1t ebit1t, A39InvestedCapital investedCapital,int yearOfList){
+        for (int i = 0; i <=yearOfList; i++) {
 
             BigDecimal getEBIT1tListi= new BigDecimal(Double.toString(ebit1t.getEBIT1tList().get(i)));
             BigDecimal investedCapitalListi=new BigDecimal(Double.toString(investedCapital.investedCapitalList.get(i)));

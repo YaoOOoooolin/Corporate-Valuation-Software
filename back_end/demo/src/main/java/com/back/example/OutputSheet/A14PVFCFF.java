@@ -8,9 +8,9 @@ public class A14PVFCFF {
 
     public ArrayList<Double> pvFcffList =new ArrayList<>();
 
-    public void setPvFcffList(A9FCFF fcff, A13CumulatedDiscountFactor cumulatedDiscountFactor) {
+    public void setPvFcffList(A9FCFF fcff, A13CumulatedDiscountFactor cumulatedDiscountFactor,int yearOfList) {
         pvFcffList.add((double) 0);
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= yearOfList; i++) {
             BigDecimal getFcffListi=new BigDecimal(Double.toString(fcff.getFcffList().get(i)));
             BigDecimal cumulatedDFListgeti=new BigDecimal(Double.toString(cumulatedDiscountFactor.cumulatedDFList.get(i)));
             BigDecimal ans=getFcffListi.multiply(cumulatedDFListgeti);

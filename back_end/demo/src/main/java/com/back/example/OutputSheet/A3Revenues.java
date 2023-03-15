@@ -8,9 +8,9 @@ public class A3Revenues {
 
     public ArrayList<Double> revenuesList = new ArrayList<>();
 
-    public void setA3RevenuesList(double A8, A2RevenueGrowthRate revenueGrowthRate) {
+    public void setA3RevenuesList(double A8, A2RevenueGrowthRate revenueGrowthRate,int yearOfList) {
         revenuesList.add(A8);
-        for (int i = 1; i <= 11; i++) {
+        for (int i = 1; i <= yearOfList+1; i++) {
 
 
             double temp1=revenueGrowthRate.getRevenueGrowthRateList().get(i)+1;
@@ -30,7 +30,7 @@ public class A3Revenues {
     }
 
     public double getTerminalRevenues() {
-        return revenuesList.get(11);
+        return revenuesList.get(revenuesList.size()-1);
     }
 
 

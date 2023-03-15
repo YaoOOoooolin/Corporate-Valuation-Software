@@ -464,9 +464,9 @@ public class OutPutMethod {
         InputData inputData = new InputData();
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
         revenueGrowthRate.setTerminalRevenue(inputData.isB60(), inputData.getB61(), inputData.isB57(), inputData.getB58(), inputData.getB30());
-        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
+        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue(), InputData.getYearOfList(),InputData.getYear2_x());
         A3Revenues revenues = new A3Revenues();
-        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
+        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate,InputData.getYearOfList());
         revenuesList=revenues.getRevenuesList();
         return revenuesList;
     }
@@ -479,10 +479,10 @@ public class OutPutMethod {
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
         revenueGrowthRate.setTerminalRevenue(inputData.isB60(), inputData.getB61(), inputData.isB57(), inputData.getB58(), inputData.getB30());
 
-        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
+        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue(),InputData.getYearOfList(),InputData.getYear2_x());
         A3Revenues revenues = new A3Revenues();
 
-        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
+        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate,InputData.getYearOfList());
 
         OperatingLeaseConverter olc = new OperatingLeaseConverter();
         RDConverter rdc = new RDConverter();
@@ -490,7 +490,7 @@ public class OutPutMethod {
         A4EBITMargin ebitMargin = new A4EBITMargin();
 
         ebitMargin.setBaseIncome(inputData.isB14(), inputData.isB13(), olc.getF32(), rdc.getD39(), inputData.getB9());
-        ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27());
+        ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27(),InputData.getYearOfList());
 
         ebitMarginList = ebitMargin.ebitMarginList;
         return ebitMarginList;
@@ -509,26 +509,26 @@ public class OutPutMethod {
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
         revenueGrowthRate.setTerminalRevenue(inputData.isB60(), inputData.getB61(), inputData.isB57(), inputData.getB58(), inputData.getB30());
 
-        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
+        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue(),InputData.getYearOfList(),InputData.getYear2_x());
 
         A3Revenues revenues = new A3Revenues();
-        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
+        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate,InputData.getYearOfList());
 
         A4EBITMargin ebitMargin = new A4EBITMargin();
 
         ebitMargin.setBaseIncome(inputData.isB14(), inputData.isB13(), olc.getF32(), rdc.getD39(), inputData.getB9());
-        ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27());
+        ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27(),InputData.getYearOfList());
 
         A5EBITIncome ebitIncome = new A5EBITIncome();
-        ebitIncome.setEBITIncomeList(revenues, ebitMargin);
+        ebitIncome.setEBITIncomeList(revenues, ebitMargin,InputData.getYearOfList());
 
         A10NOL nol = new A10NOL();
-        nol.setNolList(inputData.isB54(), inputData.getB55(), ebitIncome);
+        nol.setNolList(inputData.isB54(), inputData.getB55(), ebitIncome,InputData.getYearOfList());
 
         A7EBIT1t ebit1t = new A7EBIT1t();
         ebit1t.setTerminalEBIT1t(inputData.getB20(), revenues, ebitMargin);
 
-        ebit1t.setEBIT1tList(ebitIncome, inputData.getB20(), nol);
+        ebit1t.setEBIT1tList(ebitIncome, inputData.getB20(), nol,InputData.getYearOfList());
 
         EBIT1_tList = ebit1t.getEBIT1tList();
 
@@ -546,31 +546,31 @@ public class OutPutMethod {
 
         A12CostOfCapital costOfCapital = new A12CostOfCapital();
         costOfCapital.setTerminalostOfCapital(inputData.isB41(), inputData.getB42(), inputData.isB57(), inputData.getB58(), cerp.getB1(), inputData.getB30());
-        costOfCapital.setCostOfCapitalList(inputData.getB31());
+        costOfCapital.setCostOfCapitalList(inputData.getB31(),InputData.getYearOfList(),InputData.getYear2_x());
 
         A2RevenueGrowthRate revenueGrowthRate = new A2RevenueGrowthRate();
         revenueGrowthRate.setTerminalRevenue(inputData.isB60(), inputData.getB61(), inputData.isB57(), inputData.getB58(), inputData.getB30());
 
-        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue());
+        revenueGrowthRate.setRevenueGrowthRateList(inputData.getB23(), inputData.getB25(), revenueGrowthRate.getTerminalRevenue(),InputData.getYearOfList(),InputData.getYear2_x());
 
         A3Revenues revenues = new A3Revenues();
-        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate);
+        revenues.setA3RevenuesList(inputData.getB8(), revenueGrowthRate,InputData.getYearOfList());
 
         A4EBITMargin ebitMargin = new A4EBITMargin();
 
         ebitMargin.setBaseIncome(inputData.isB14(), inputData.isB13(), olc.getF32(), rdc.getD39(), inputData.getB9());
-        ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27());
+        ebitMargin.setEBITMarginList(inputData.getB8(), inputData.getB24(), inputData.getB26(), inputData.getB27(),InputData.getYearOfList());
 
         A5EBITIncome ebitIncome = new A5EBITIncome();
-        ebitIncome.setEBITIncomeList(revenues, ebitMargin);
+        ebitIncome.setEBITIncomeList(revenues, ebitMargin,InputData.getYearOfList());
 
         A10NOL nol = new A10NOL();
-        nol.setNolList(inputData.isB54(), inputData.getB55(), ebitIncome);
+        nol.setNolList(inputData.isB54(), inputData.getB55(), ebitIncome,InputData.getYearOfList());
 
         A7EBIT1t ebit1t = new A7EBIT1t();
         ebit1t.setTerminalEBIT1t(inputData.getB20(), revenues, ebitMargin);
 
-        ebit1t.setEBIT1tList(ebitIncome, inputData.getB20(), nol);
+        ebit1t.setEBIT1tList(ebitIncome, inputData.getB20(), nol,InputData.getYearOfList());
 
 
         costOfCapital.setTerminalostOfCapital(inputData.isB41(), inputData.getB42(), inputData.isB57(), inputData.getB58(), cerp.getB1(), inputData.getB30());
@@ -579,7 +579,7 @@ public class OutPutMethod {
         roic.setTerminaLROIC(inputData.isB44(), inputData.getB45(), costOfCapital);
 
         A8Reinvestment reinvestment = new A8Reinvestment();
-        reinvestment.setReinvestmentList(revenues, inputData.getB28(), revenueGrowthRate, roic, ebit1t);
+        reinvestment.setReinvestmentList(revenues, inputData.getB28(), revenueGrowthRate, roic, ebit1t,InputData.getYearOfList());
         reinvestmentList = reinvestment.getReinvestmentList();
         return reinvestmentList;
     }
@@ -924,9 +924,4 @@ public class OutPutMethod {
 
 
 
-class Test {
-    public static void main(String[] args) {
-        System.out.println(OutPutMethod2.output("G39"));
 
-    }
-}

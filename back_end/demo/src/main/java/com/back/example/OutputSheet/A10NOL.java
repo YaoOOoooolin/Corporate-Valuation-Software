@@ -8,7 +8,7 @@ public class A10NOL {
     ArrayList<Double> nolList=new ArrayList<>();
 
 
-    public void setNolList(boolean B54,double B55,A5EBITIncome ebitIncome) {
+    public void setNolList(boolean B54,double B55,A5EBITIncome ebitIncome,int yearOfList) {
         if(B54){
             nolList.add(B55);
         }
@@ -16,7 +16,7 @@ public class A10NOL {
             nolList.add((double) 0);
         }
 
-        for (int i = 1; i <=11; i++) {
+        for (int i = 1; i <=1+yearOfList; i++) {
             BigDecimal nolListget1 =new BigDecimal(Double.toString(nolList.get(i-1)));
             BigDecimal getEBITIncomeListi=new BigDecimal(Double.toString(ebitIncome.getEBITIncomeList().get(i)));
             BigDecimal ans=nolListget1.subtract(getEBITIncomeListi);
