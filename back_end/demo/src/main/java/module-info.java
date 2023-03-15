@@ -4,6 +4,7 @@ module com.example.demo {
     requires java.desktop;
     requires javafx.web;
     requires jdk.jsobject;
+    requires com.opencsv;
 
 
     opens com.front to javafx.fxml;
