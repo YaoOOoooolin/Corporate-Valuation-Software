@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -235,6 +236,8 @@ public class Controller {
         csVreadData.setCountryName("cty");
         csVreadData.readData();
         ArrayList<String> countryList = csVreadData.getCountryList();
+        HashSet<String> cList = new HashSet<>(countryList);
+        countryList = new ArrayList<>(cList);
         for (String s : countryList) {
             comboBoxForCountry.getItems().add(s);
         }
@@ -244,6 +247,8 @@ public class Controller {
         csVreadData.setIndustryName("box");
         csVreadData.readData();
         ArrayList<String> industryList = csVreadData.getIndustryList();
+        HashSet<String> iList = new HashSet<>(industryList);
+        industryList = new ArrayList<>(iList);
 //        System.out.println(industryList);
         for (String s : industryList) {
             comboBoxForIndustry.getItems().add(s);
@@ -1218,5 +1223,29 @@ public class Controller {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+        csVreadData.setCountryName("cty");
+        csVreadData.readData();
+        ArrayList<String> countryList = csVreadData.getCountryList();
+        comboBoxForCountry.getItems().clear();
+        for (String s : countryList) {
+            comboBoxForCountry.getItems().add(s);
+        }
+        comboBoxForCountry.setValue(countryList.get(0));
+        csVreadData.setCountryName("");
+
+        csVreadData.setIndustryName("box");
+        csVreadData.readData();
+        ArrayList<String> industryList = csVreadData.getIndustryList();
+        HashSet<String> iiList = new HashSet<>(industryList);
+        industryList = new ArrayList<>(iiList);
+
+        comboBoxForIndustry.getItems().clear();
+        for (String s : industryList) {
+            comboBoxForIndustry.getItems().add(s);
+        }
+
+        comboBoxForIndustry.setValue(industryList.get(0));
+        csVreadData.setIndustryName("");
     }
 }
