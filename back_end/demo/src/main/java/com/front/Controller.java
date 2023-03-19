@@ -203,6 +203,7 @@ public class Controller {
     public TextField cocOutput32;
     public TextField cocOutput33;
     public TextField cocOutput34;
+    public Button submit_CostOfCapital;
 
     @FXML
     private Button TPtoInput1;

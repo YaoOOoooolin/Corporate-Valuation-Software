@@ -1199,7 +1199,7 @@
                                                                   <TextField fx:id="DebtInput10" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="15" />
                                                                </children>
                                                             </GridPane>
-                                                            <Button layoutX="481.0" layoutY="482.0" mnemonicParsing="false" onAction="#submitCostOfCapital" prefHeight="274.0" styleClass="submit-btn" text="Submit" />
+                                                            <Button fx:id="submit_CostOfCapital" layoutX="481.0" layoutY="482.0" mnemonicParsing="false" onAction="#submitCostOfCapital" prefHeight="274.0" styleClass="submit-btn" text="Submit" />
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
