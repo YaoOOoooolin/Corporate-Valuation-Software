@@ -3,14 +3,14 @@ package com.back.example.CostOfCapital;
 import com.back.StaticData.InputData;
 
 public class CostC50DebtComponent {
-    private double debtComponent;
+    private static double debtComponent;
 
-    public double getDebtComponent() {
+    public static double getDebtComponent() {
         return debtComponent;
     }
 
-    public void setDebtComponent(CostB25PreTaxCostOfDebt costB25PreTaxCostOfDebt) {
+    public static void setDebtComponent() {
         double taxRate = InputData.getB21();
-        this.debtComponent = costB25PreTaxCostOfDebt.getPreTaxCostOfDebt() * (1 - taxRate);
+        debtComponent = CostB25PreTaxCostOfDebt.getPreTaxCostOfDebt() * (1 - taxRate);
     }
 }

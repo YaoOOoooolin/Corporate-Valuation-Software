@@ -5,22 +5,22 @@ import com.back.StaticData.InputData;
 import java.util.Objects;
 
 public class CostC45LeveredBetaForEquity {
-    double leveredBetaForEquity;
+    static double leveredBetaForEquity;
 
-    public double getLeveredBetaForEquity() {
+    public static double getLeveredBetaForEquity() {
         return leveredBetaForEquity;
     }
 
-    public void setLeveredBetaForEquity(CostB11UnleveredBeta costB11UnleveredBeta, CostB48MarketEquity costB48MarketEquity, CostC48MarketDebt costC48MarketDebt) {
-        double B11UnLeveredBeta = costB11UnleveredBeta.getUnLeveredBeta();
+    public static void setLeveredBetaForEquity() {
+        double B11UnLeveredBeta = CostB11UnleveredBeta.getUnLeveredBeta();
         double B26TaxRate = InputData.getB21();
-        double B48MarketEquity = costB48MarketEquity.getMarketEquity();
-        double C48MarketDebt = costC48MarketDebt.getMarketDebt();
+        double B48MarketEquity = CostB48MarketEquity.getMarketEquity();
+        double C48MarketDebt = CostC48MarketDebt.getMarketDebt();
         String type = InputForCapital.getB9ApproachForEstimatingBeta();
         if (Objects.equals(type, "Direct Input")) {
-            this.leveredBetaForEquity = InputForCapital.getB10leveredBeta();
+            leveredBetaForEquity = InputForCapital.getB10leveredBeta();
         } else {
-            this.leveredBetaForEquity = B11UnLeveredBeta * (1 + (1 - B26TaxRate) * (C48MarketDebt / B48MarketEquity));
+            leveredBetaForEquity = B11UnLeveredBeta * (1 + (1 - B26TaxRate) * (C48MarketDebt / B48MarketEquity));
         }
 
 

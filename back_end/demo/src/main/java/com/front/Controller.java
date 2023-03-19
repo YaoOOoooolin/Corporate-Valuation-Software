@@ -1,7 +1,11 @@
 package com.front;
 
 import com.back.StaticData.InputData;
+import com.back.example.CostOfCapital.*;
+import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -163,6 +167,87 @@ public class Controller {
     public Button saveDataBase;
     public Tab tab8;
 
+    public ComboBox<String> comboCoC1;
+    public ComboBox<String> comboCoC2;
+    public ComboBox<String> comboCoC3;
+    public ComboBox<String> comboCoC5;
+    public ComboBox<String> comboCoC4;
+    public TextField DirectInputERP;
+    public TextField DirectInput1;
+    public TextField DirectInputDebt;
+    public Text CoCText1;
+    public Text CoCText2;
+    public Text CoCText3;
+    public Text CoCText4;
+    public Text CoCText5;
+    public Tab tab9;
+    public TabPane CostTabPane;
+    public Tab tab81;
+    public Tab tab82;
+    public Tab tab83;
+    /**
+     * numbers of share outstanding
+     */
+    public TextField EquityInput1;
+    /**
+     * Market stock price
+     */
+    public TextField EquityInput2;
+    /**
+     * Unlevered Beta
+     */
+    public TextField EquityInput3;
+    /**
+     * RiskFree rate
+     */
+    public TextField EquityInput4;
+    /**
+     *  ERP
+     */
+    public TextField EquityInput5;
+
+
+    public TextField StockInput4;
+    public TextField StockInput3;
+    public TextField StockInput2;
+    /**
+     * book value of straight debt
+     */
+    public TextField DebtInput1;
+    /**
+     * Interest expense
+     */
+    public TextField DebtInput2;
+    /**
+     * Average Maturity
+     */
+    public TextField DebtInput3;
+    public TextField DebtInput4;
+    public TextField DebtInput5;
+    public TextField DebtInput6;
+    public TextField DebtInput7;
+    public TextField DebtInput8;
+    public TextField DebtInput9;
+    public TextField DebtInput10;
+    //output part
+    public TextField cocOutput1;
+    public TextField cocOutput2;
+    public TextField cocOutput3;
+    public TextField cocOutput4;
+    public TextField cocOutput5;
+    public TextField cocOutput11;
+    public TextField cocOutput12;
+    public TextField cocOutput13;
+    public TextField cocOutput14;
+    public TextField cocOutput21;
+    public TextField cocOutput22;
+    public TextField cocOutput23;
+    public TextField cocOutput24;
+    public TextField cocOutput31;
+    public TextField cocOutput32;
+    public TextField cocOutput33;
+    public TextField cocOutput34;
+    public Button submit_CostOfCapital;
 
     @FXML
     private Button TPtoInput1;
@@ -243,6 +328,26 @@ public class Controller {
         }
         comboBoxForCountry.setValue(countryList.get(0));
         csVreadData.setCountryName("");
+        /*
+        ObservableList<String> observableList = FXCollections.observableArrayList("111", "222", "333");
+        comboCoC1.setItems(observableList);
+         */
+
+        comboBox1.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
+        comboBox4.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
+        comboCoC1.getItems().addAll("Direct input","Single Business(US)","Single Business(Global)");
+        comboCoC2.getItems().addAll("Will input", "Country of incorporation");
+        comboCoC3.getItems().addAll("Direct input", "Actual rating", "Synthetic rating");
+        comboCoC4.getItems().addAll("1-safer","2-risky");
+        comboCoC5.getItems().addAll("Aaa/AAA", "Aa2/AA", "A1/A+", "A2/A", "A3/A-", "Baa2/BBB",
+                "Ba1/BB+", "Ba2/BB", "B1/B+", "B2/B", "B3/B-", "C2/C", "Ca2/CC", "Caa/CCC", "D2/D");
+
+        comboCoC1.setValue("Direct input");
+        comboCoC2.setValue("Will input");
+        comboCoC3.setValue("Direct input");
+        comboCoC4.setValue("1-safer");
+        comboCoC5.setValue("Aaa/AAA");
+        DefaultCoCSelect();
 
         csVreadData.setIndustryName("box");
         csVreadData.readData();
@@ -259,6 +364,23 @@ public class Controller {
         Locale.setDefault(Locale.ENGLISH);
         changeAble(flag);
 
+        setAllZero(EquityInput1, EquityInput2, EquityInput3, EquityInput4, EquityInput5, StockInput2, StockInput3, StockInput4, DebtInput1, DebtInput2);
+        setAllZero(DebtInput3, DebtInput4, DebtInput5, DebtInput6, DebtInput7, DebtInput8, DebtInput9, DebtInput10, DirectInput1, DirectInputERP);
+        setZero(DirectInputDebt);
+
+    }
+
+    private void setAllZero(TextField equityInput1, TextField equityInput2, TextField equityInput3, TextField equityInput4, TextField equityInput5, TextField stockInput2, TextField stockInput3, TextField stockInput4, TextField debtInput1, TextField debtInput2) {
+        setZero(equityInput1);
+        setZero(equityInput2);
+        setZero(equityInput3);
+        setZero(equityInput4);
+        setZero(equityInput5);
+        setZero(stockInput2);
+        setZero(stockInput3);
+        setZero(stockInput4);
+        setZero(debtInput1);
+        setZero(debtInput2);
     }
 
     @FXML
@@ -345,6 +467,8 @@ public class Controller {
             InputData.setB61(isPercentage(B61.getText()));
             InputData.setB64(Double.parseDouble(B64.getText()));
             InputData.setB65(isPercentage(B65.getText()));
+
+
 
             Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -863,8 +987,8 @@ public class Controller {
         String[] ChineseSheet1={"日期" ,"公司名" ,"国家" ,"行业" ,"行业(全球)" ,"营业额" ,"营业利润"
                 ,"利息费用" ,"股权账面价值" ,"债权账面价值" ,"是否有研发费用需要资本化?" ,"现金和适销证券"
                 ,"交叉持股和其他非经营性资产" ,"少数股东权益" ,"流通股票数量" ,"当前股价" ,"有效税率" ,"边际税率"};
-        String[] ChineseSheet2={"直至n年的收入增长率","次年收入增长率", "第n年的收入增长率","次年营业利润率",
-                "目标税前营业利润率", "直至n年销售额与资本的比率", "次年销售额与资本比率","目标销售额与资本比率",
+        String[] ChineseSheet2={ "次年收入增长率","次年营业利润率", "目标税前营业利润率", "至n年销售额与资本的比率",
+                "目标销售额与资本比率","第n年的收入增长率","直至n年的收入增长率", "次年销售额与资本比率",
                 "无风险收益率","初始资本成本"};
         String[] ChineseSheet3={"是否存在未完成的员工期权？", "未完成的期权数量", "平均执行价格",
                 "平均期限", "股价标准差",};
@@ -890,12 +1014,12 @@ public class Controller {
                 "我将假设永久增长率等于无风险利率。这既可以实现估值一致性，又可以避免“不可能”的增长率。",
                 "输入永久增长率",
                 "您想覆盖这个假设吗？",
-                "我已假设现金没有被困住（在外国）并且没有额外的税收责任，现金是一项中性资产。",
+                "我已假设现金没有被周转困难（例如不可从外国周转）并且没有额外的税收责任，现金是一项中性资产。",
                 "您想覆盖这个假设吗？",
                 "输入被困住的现金（如果是税）或整个余额（如果是不信任）",
                 "被困住的现金所在国外市场的平均税率"};
         String[] ChineseSheet6={"请选择一个国家","请选择一个行业","请输入国家"};
-        String[] ChineseSheet7={"符号:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
+        String[] ChineseSheet7={"股票代码:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
                 "利息费用:", "EBIT 利润率:", "股东权益账面价值:", "负债账面价值:", "加权平均股本:", "当前股价:",};
         /*
         int i=0;
@@ -1275,7 +1399,7 @@ public class Controller {
         ArrayList<String> industryList = csVreadData.getIndustryList();
         HashSet<String> iiList = new HashSet<>(industryList);
         industryList = new ArrayList<>(iiList);
-        
+
         comboBoxForIndustry.getItems().clear();
         for (String s : industryList) {
             comboBoxForIndustry.getItems().add(s);
@@ -1294,5 +1418,221 @@ public class Controller {
         B11.setText(BookVaueofEquity.getText());
         B12.setText(bookValueOfDebt.getText());
         tabPane.getSelectionModel().select(tab1);
+    }
+
+    public void CoCSelect1(ActionEvent actionEvent) {
+        if(comboCoC1.getValue().equals("Direct input")){
+            InputForCapital.setB9ApproachForEstimatingBeta("Direct input");
+            DirectInput1.setVisible(true);
+            CoCText1.setVisible(true);
+        }
+        else {
+            if(comboCoC1.getValue().equals("Single Business(US")){
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(US)");
+            } else if (comboCoC1.getValue().equals("Single Business(Global)")) {
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(Global)");
+            }
+            DirectInput1.setVisible(false);
+            CoCText1.setVisible(false);
+        }
+    }
+
+    public void CoCSelect2(ActionEvent actionEvent) {
+        if(comboCoC2.getValue().equals("Will input")){
+            DirectInputERP.setVisible(true);
+            CoCText2.setVisible(true);
+        }
+        else {
+            DirectInputERP.setVisible(false);
+            CoCText2.setVisible(false);
+        }
+    }
+
+    public void CoCSelect3(ActionEvent actionEvent) {
+        if(comboCoC3.getValue().equals("Direct input")){
+            DirectInputDebt.setVisible(true);
+            CoCText3.setVisible(true);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Direct input");
+        }
+        else if(comboCoC3.getValue().equals("Actual rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(true);
+            CoCText5.setVisible(true);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Actual rating");
+        }
+        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(true);
+            CoCText4.setVisible(true);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Synthetic rating");
+        }
+    }
+
+    public void CoCSelect4(ActionEvent actionEvent){
+        if(comboCoC4.getValue().equals("1-safer")){
+            InputForCapital.setB24SyntheticRatingType("1");
+        } else {
+            InputForCapital.setB24SyntheticRatingType("2");
+        }
+    }
+
+    public void CoCSelect5(ActionEvent actionEvent){
+        InputForCapital.setB23ActualRating(comboCoC5.getValue());
+    }
+
+    public void DefaultCoCSelect(){
+        if(comboCoC1.getValue().equals("Direct input")){
+            InputForCapital.setB9ApproachForEstimatingBeta("Direct input");
+            DirectInput1.setVisible(true);
+            CoCText1.setVisible(true);
+        }
+        else {
+            if(comboCoC1.getValue().equals("Single Business(US")){
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(US)");
+            } else if (comboCoC1.getValue().equals("Single Business(Global)")) {
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(Global)");
+            }
+            DirectInput1.setVisible(false);
+            CoCText1.setVisible(false);
+        }
+        if(comboCoC2.getValue().equals("Will input")){
+            DirectInputERP.setVisible(true);
+            CoCText2.setVisible(true);
+        }
+        else {
+            DirectInputERP.setVisible(false);
+            CoCText2.setVisible(false);
+        }
+        if(comboCoC3.getValue().equals("Direct input")){
+            DirectInputDebt.setVisible(true);
+            CoCText3.setVisible(true);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Direct input");
+        }
+        else if(comboCoC3.getValue().equals("Actual rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(true);
+            CoCText5.setVisible(true);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Actual rating");
+        }
+        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(true);
+            CoCText4.setVisible(true);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Synthetic rating");
+        }
+    }
+
+
+    public void ToTab8(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+    }
+
+    public void ToTab81(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+        CostTabPane.getSelectionModel().select(tab81);
+    }
+
+
+    public void ToTab83(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+        CostTabPane.getSelectionModel().select(tab82);
+    }
+
+    public void ToTab84(ActionEvent actionEvent) {
+        tabPane.getSelectionModel().select(tab9);
+        CostTabPane.getSelectionModel().select(tab83);
+    }
+    public void setZero(TextField textField){
+        textField.setText("0");
+    }
+
+    public void submitCostOfCapital(ActionEvent actionEvent) {
+            //cost of capital part: Equity
+            InputData.setB18(Double.parseDouble(EquityInput1.getText()));
+            InputData.setB19(Double.parseDouble(EquityInput2.getText()));
+            InputForCapital.setB10leveredBeta(Double.parseDouble(DirectInput1.getText()));
+            InputData.setB30(Double.parseDouble(EquityInput4.getText()));
+            InputForCapital.setB14DirectInputForERP(Double.parseDouble(DirectInputERP.getText()));
+            CostB15ERPInEquity.setERPInEquity();
+            EquityInput5.setText(String.valueOf(CostB15ERPInEquity.getERPInEquity()));
+
+            //cost of capital part: Preferred Stock
+            InputForCapital.setB36NumberOfPreferredShares(Double.parseDouble(StockInput2.getText()));
+            InputForCapital.setB37CurrentMarketPricePerShare(Double.parseDouble(StockInput3.getText()));
+            InputForCapital.setB38AnnualDividedPerShare(Double.parseDouble(StockInput4.getText()));
+
+            //cost of capital part: Debt
+            InputData.setB12(Double.parseDouble(DebtInput1.getText()));
+            InputData.setB10(Double.parseDouble(DebtInput2.getText()));
+            InputForCapital.setB20AverageMaturity(Double.parseDouble(DebtInput3.getText()));
+            InputForCapital.setB22DirectInputPreTaxCostOfDebt(Double.parseDouble(DirectInputDebt.getText()));
+            CostB25PreTaxCostOfDebt.setPreTaxCostOfDebt();
+            DebtInput4.setText(String.valueOf(CostB25PreTaxCostOfDebt.getPreTaxCostOfDebt()));
+            InputData.setB21(Double.parseDouble(DebtInput5.getText()));
+            InputForCapital.setB28BookValueOfConvertibleDebt(Double.parseDouble(DebtInput6.getText()));
+            InputForCapital.setB29InterestExpenseOnConvertible(Double.parseDouble(DebtInput7.getText()));
+            InputForCapital.setB30MaturityOfConvertibleBond(Double.parseDouble(DebtInput8.getText()));
+            InputForCapital.setB31MarketValueOfConvertible(Double.parseDouble(DebtInput9.getText()));
+            InputForCapital.setB33DebtValueOfOperatingLeases(Double.parseDouble(DebtInput10.getText()));
+
+
+            //output part
+            CostC41EstimatingMarketValueOfStraightDebt.setEstimatingMarketValueOfStraightDebt();
+            CostC42EstimatedValueOfStraightDebtInConvertible.setEstimatedValueOfStraightDebtInConvertible();
+            CostC44EstimatedValueOfEquityInConvertible.setEVInConvertible();
+            CostC45LeveredBetaForEquity.setLeveredBetaForEquity();
+            CostB48MarketEquity.setMarketEquity();
+            CostC48MarketDebt.setMarketDebt();
+            CostD48MarketPreferredStock.setMarketPreferredStock();
+            CostE48MarketCapital.setMarketCapital();
+            CostB49WeightOfEquity.setWeightOfEquity();
+            CostC49WeightOfDebt.setWeightOfDebt();
+            CostD49WeightOfPreferred.setWeightOfPreferredStock();
+            CostB50EquityComponent.setEquityComponent();
+            CostC50DebtComponent.setDebtComponent();
+            CostD50PreferredStockComponent.setPreferredStockComponent();
+            CostE50CostOfCapital.setCostOfCapital();
+
+
+            cocOutput1.setText(String.valueOf(CostC41EstimatingMarketValueOfStraightDebt.getEstimatingMarketValueOfStraightDebt()));
+            cocOutput2.setText(String.valueOf(CostC42EstimatedValueOfStraightDebtInConvertible.getEstimatedValueOfStraightDebtInConvertible()));
+            cocOutput3.setText(String.valueOf(InputForCapital.getB33DebtValueOfOperatingLeases()));
+            cocOutput4.setText(String.valueOf(CostC44EstimatedValueOfEquityInConvertible.getEVInConvertible()));
+            cocOutput5.setText(String.valueOf(CostC45LeveredBetaForEquity.getLeveredBetaForEquity()));
+
+            cocOutput11.setText(String.valueOf(CostB48MarketEquity.getMarketEquity()));
+            cocOutput12.setText(String.valueOf(CostC48MarketDebt.getMarketDebt()));
+            cocOutput13.setText(String.valueOf(CostD48MarketPreferredStock.getMarketPreferredStock()));
+            cocOutput14.setText(String.valueOf(CostE48MarketCapital.getMarketCapital()));
+
+            cocOutput21.setText(String.valueOf(CostB49WeightOfEquity.getWeightOfEquity()));
+            cocOutput22.setText(String.valueOf(CostC49WeightOfDebt.getWeightOfDebt()));
+            cocOutput23.setText(String.valueOf(CostD49WeightOfPreferred.getWeightOfPreferredStock()));
+            cocOutput24.setText(String.valueOf(1));
+
+            cocOutput31.setText(String.valueOf(CostB50EquityComponent.getEquityComponent()));
+            cocOutput32.setText(String.valueOf(CostC50DebtComponent.getDebtComponent()));
+            cocOutput33.setText(String.valueOf(CostD50PreferredStockComponent.getPreferredStockComponent()));
+            cocOutput34.setText(String.valueOf(CostE50CostOfCapital.getCostOfCapital()));
     }
 }

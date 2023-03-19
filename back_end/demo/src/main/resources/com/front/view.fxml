@@ -85,7 +85,7 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <ComboBox id="CompanyName" fx:id="comboBox1" prefHeight="23.0" prefWidth="177.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <ComboBox id="CompanyName" fx:id="comboBox1" editable="true" prefHeight="23.0" prefWidth="177.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <Text fx:id="text3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" wrappingWidth="241.6704559326172" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="13.0" />
@@ -98,7 +98,7 @@
                                                    </font>
                                                 </Text>
 
-                                                <ComboBox id="Industry" fx:id="comboBox2" prefHeight="23.0" prefWidth="179.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                <ComboBox id="Industry" fx:id="comboBox2" editable="true" prefHeight="23.0" prefWidth="179.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                 <Text fx:id="text5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Industry (Global)" wrappingWidth="247.46026611328125" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="13.0" />
@@ -247,7 +247,7 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio up to year n =" wrappingWidth="223.64023971557617" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to capital ratio up to year n =" wrappingWidth="223.64023971557617" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -258,7 +258,7 @@
                                                 <TextField fx:id="finalYearGrowthRate" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <TextField fx:id="capitalRatioUptoN" promptText="Enter a number" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                 <TextField fx:id="FinalYearCapitalRatio" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Target sales to captial ratio" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Target sales to capital ratio" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -276,7 +276,7 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to captial ratio for next year" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales to capital ratio for next year" wrappingWidth="243.84025192260742" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -288,7 +288,7 @@
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="B301" prefHeight="27.0" prefWidth="147.0" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial cost of captial" wrappingWidth="164.3234748840332" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial cost of capital" wrappingWidth="164.3234748840332" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -949,21 +949,21 @@
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab fx:id="tab81" text="Cost of Capital">
+                              <Tab fx:id="tab9" text="Cost of Capital">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="675.0">
                                        <children>
-                                          <TabPane layoutX="14.0" layoutY="14.0" prefHeight="560.0" prefWidth="563.0" style="-fx-background-color: black; -fx-border-color: Gray; -fx-border-width: 2; -fx-border-radius: 5;" tabClosingPolicy="UNAVAILABLE">
+                                          <TabPane fx:id="CostTabPane" layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="579.0" style="-fx-background-color: black; -fx-border-color: Gray; -fx-border-width: 2; -fx-border-radius: 5;" tabClosingPolicy="UNAVAILABLE">
                                             <tabs>
-                                              <Tab text="Equity Input">
+                                              <Tab fx:id="tab81" text="Equity Input">
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="311.0">
                                                          <children>
-                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="299.0" prefWidth="458.0" styleClass="grid">
+                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="323.0" prefWidth="458.0" styleClass="grid">
                                                               <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="207.20004272460938" prefWidth="280.6" />
-                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="68.60000000000002" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="207.20004272460938" prefWidth="285.5999755859375" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="144.2000244140625" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="0.0" prefWidth="0.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                               </columnConstraints>
@@ -972,7 +972,7 @@
                                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                  <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -1020,13 +1020,32 @@
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </Text>
+                                                                  <ComboBox fx:id="comboCoC1" onAction="#CoCSelect1" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <Text fx:id="CoCText1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="Enter levered beta (or regression beta)" visible="false" wrappingWidth="257.3070602416992" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                     <font>
+                                                                        <Font size="13.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fx:id="CoCText2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="Direct input for ERP" visible="false" wrappingWidth="235.70708465576172" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                                     <font>
+                                                                        <Font size="13.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <TextField fx:id="DirectInput1" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                                  <ComboBox fx:id="comboCoC2" onAction="#CoCSelect2" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                                                  <TextField fx:id="DirectInputERP" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                                                  <TextField fx:id="EquityInput1" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="EquityInput2" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="EquityInput5" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                                                  <TextField fx:id="EquityInput4" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                                  <TextField fx:id="EquityInput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                                </children>
                                                             </GridPane>
-                                                            <GridPane layoutX="14.0" layoutY="321.0" prefHeight="137.0" prefWidth="453.0" styleClass="grid">
+                                                            <GridPane layoutX="13.0" layoutY="344.0" prefHeight="137.0" prefWidth="459.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="207.20004272460938" prefWidth="280.6" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="68.60000000000002" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="207.20004272460938" prefWidth="287.3999877929688" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="144.60001220703123" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="0.0" prefWidth="0.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                </columnConstraints>
@@ -1057,23 +1076,25 @@
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </Text>
+                                                                  <TextField fx:id="StockInput4" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <TextField fx:id="StockInput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="StockInput2" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                                </children>
                                                             </GridPane>
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
                                               </Tab>
-                                              <Tab text="Debt Input">
+                                              <Tab fx:id="tab82" text="Debt Input">
                                                 <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="559.0">
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="552.0" prefWidth="559.0">
                                                          <children>
-                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="433.0" styleClass="grid">
+                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="504.0" prefWidth="461.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="203.20004272460938" prefWidth="281.59998474121096" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="131.80001525878902" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="203.20004272460938" prefWidth="289.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="153.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="0.0" prefWidth="0.0" />
                                                                </columnConstraints>
                                                                <rowConstraints>
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -1085,13 +1106,14 @@
                                                                   <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="15.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="15.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
                                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                                                </rowConstraints>
                                                                <children>
                                                                   <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="Book Value of Straight Debt =" wrappingWidth="235.70708465576172" GridPane.columnIndex="1">
@@ -1149,13 +1171,43 @@
                                                                         <Font size="13.0" />
                                                                      </font>
                                                                   </Text>
+                                                                  <Text fx:id="CoCText3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If direct input, input the pre-tax cost of debt" visible="false" wrappingWidth="281.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                     <font>
+                                                                        <Font size="13.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fx:id="CoCText4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If synethetic rating, input the type of company" visible="false" wrappingWidth="281.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                                     <font>
+                                                                        <Font size="13.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fx:id="CoCText5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If actual rating, input the rating" visible="false" wrappingWidth="289.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                                     <font>
+                                                                        <Font size="13.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <TextField fx:id="DirectInputDebt" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                                  <ComboBox fx:id="comboCoC3" onAction="#CoCSelect3" prefHeight="23.0" prefWidth="167.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <ComboBox fx:id="comboCoC5" onAction="#CoCSelect5" prefHeight="23.0" prefWidth="167.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                                  <ComboBox fx:id="comboCoC4" onAction="#CoCSelect4" prefHeight="23.0" prefWidth="167.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                                  <TextField fx:id="DebtInput1" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" />
+                                                                  <TextField fx:id="DebtInput2" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="DebtInput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="DebtInput5" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                                                  <TextField fx:id="DebtInput4" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                                                  <TextField fx:id="DebtInput6" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                                                  <TextField fx:id="DebtInput7" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                                                                  <TextField fx:id="DebtInput8" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                                                                  <TextField fx:id="DebtInput9" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                                                                  <TextField fx:id="DebtInput10" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="15" />
                                                                </children>
                                                             </GridPane>
+                                                            <Button fx:id="submit_CostOfCapital" layoutX="481.0" layoutY="482.0" mnemonicParsing="false" onAction="#submitCostOfCapital" prefHeight="274.0" styleClass="submit-btn" text="Submit" />
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
                                               </Tab>
-                                                <Tab text="Output">
+                                                <Tab fx:id="tab83" text="Output">
                                                   <content>
                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
@@ -1200,6 +1252,11 @@
                                                                         <Font size="13.0" />
                                                                      </font>
                                                                   </Text>
+                                                                  <TextField fx:id="cocOutput1" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" />
+                                                                  <TextField fx:id="cocOutput2" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="cocOutput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="cocOutput4" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <TextField fx:id="cocOutput5" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                                                </children>
                                                             </GridPane>
                                                             <GridPane layoutX="14.0" layoutY="194.0" prefHeight="169.0" prefWidth="500.0" styleClass="grid">
@@ -1255,6 +1312,18 @@
                                                                         <Font size="13.0" />
                                                                      </font>
                                                                   </Text>
+                                                                  <TextField fx:id="cocOutput13" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="cocOutput11" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="cocOutput12" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="cocOutput14" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                                                  <TextField fx:id="cocOutput21" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="cocOutput22" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="cocOutput23" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="cocOutput24" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                                                  <TextField fx:id="cocOutput31" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <TextField fx:id="cocOutput32" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                                                  <TextField fx:id="cocOutput33" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                                                  <TextField fx:id="cocOutput34" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="5" GridPane.rowIndex="3" />
                                                                </children>
                                                             </GridPane>
                                                          </children>
@@ -1297,7 +1366,7 @@
                            </font></Button>
                         <Button fx:id="TPtoInput6" mnemonicParsing="false" onAction="#ToTab6" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Assumptions(2)" />
                         <Button fx:id="TPtoInput7" mnemonicParsing="false" onAction="#ToTab7" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Database" />
-                        <Button fx:id="TPtoInput8" mnemonicParsing="false" onAction="#ToTab7" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Cost of Capital" />
+                        <Button fx:id="TPtoInput8" mnemonicParsing="false" onAction="#ToTab8" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Cost of Capital" />
                      </children>
                   </VBox>
                </content>
@@ -1308,11 +1377,10 @@
                <content>
                   <VBox prefHeight="50.0" prefWidth="120.0" style="-fx-padding: 3; -fx-spacing: 5; -fx-background-color: gray;">
                      <children>
-                        <Button fx:id="TPtoInput81" mnemonicParsing="false" onAction="#ToTab7" prefHeight="40.0" prefWidth="113.0" styleClass="menu-btn" text="Equity Input" />
-                        <Button fx:id="TPtoInput813" mnemonicParsing="false" onAction="#ToTab7" prefHeight="40.0" prefWidth="113.0" styleClass="menu-btn" text="Stock Input" />
-                        <Button fx:id="TPtoInput811" mnemonicParsing="false" onAction="#ToTab7" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Debt Input" />
+                        <Button fx:id="TPtoInput81" mnemonicParsing="false" onAction="#ToTab81" prefHeight="40.0" prefWidth="113.0" styleClass="menu-btn" text="Equity Input" />
+                        <Button fx:id="TPtoInput83" mnemonicParsing="false" onAction="#ToTab83" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Debt Input" />
                         <Separator prefWidth="200.0" />
-                        <Button fx:id="TPtoInput812" mnemonicParsing="false" onAction="#ToTab7" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Output" />
+                        <Button fx:id="TPtoInput84" mnemonicParsing="false" onAction="#ToTab84" prefHeight="31.0" prefWidth="171.0" styleClass="menu-btn" text="Output" />
                      </children>
                   </VBox>
                </content>
