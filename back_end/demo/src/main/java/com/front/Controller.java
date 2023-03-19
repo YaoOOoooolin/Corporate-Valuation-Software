@@ -334,7 +334,7 @@ public class Controller {
          */
 
         comboBox1.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
-        comboBox4.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
+//        comboBox4.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
         comboCoC1.getItems().addAll("Direct input","Single Business(US)","Single Business(Global)");
         comboCoC2.getItems().addAll("Will input", "Country of incorporation");
         comboCoC3.getItems().addAll("Direct input", "Actual rating", "Synthetic rating");
