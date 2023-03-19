@@ -1244,4 +1244,8 @@ public class Controller {
         tabPane.getSelectionModel().select(tab9);
         CostTabPane.getSelectionModel().select(tab83);
     }
+
+    public void submitCostOfCapital(ActionEvent actionEvent) {
+
+    }
 }

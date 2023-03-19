@@ -949,7 +949,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="675.0">
                                        <children>
-                                          <TabPane fx:id="CostTabPane" layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="563.0" style="-fx-background-color: black; -fx-border-color: Gray; -fx-border-width: 2; -fx-border-radius: 5;" tabClosingPolicy="UNAVAILABLE">
+                                          <TabPane fx:id="CostTabPane" layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="579.0" style="-fx-background-color: black; -fx-border-color: Gray; -fx-border-width: 2; -fx-border-radius: 5;" tabClosingPolicy="UNAVAILABLE">
                                             <tabs>
                                               <Tab fx:id="tab81" text="Equity Input">
                                                 <content>
@@ -1086,11 +1086,11 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="552.0" prefWidth="559.0">
                                                          <children>
-                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="504.0" prefWidth="483.0" styleClass="grid">
+                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="504.0" prefWidth="461.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="203.20004272460938" prefWidth="281.59998474121096" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="131.80001525878902" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="203.20004272460938" prefWidth="289.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="153.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                </columnConstraints>
                                                                <rowConstraints>
@@ -1199,6 +1199,7 @@
                                                                   <TextField fx:id="DebtInput10" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="15" />
                                                                </children>
                                                             </GridPane>
+                                                            <Button layoutX="481.0" layoutY="482.0" mnemonicParsing="false" onAction="#submitCostOfCapital" prefHeight="274.0" styleClass="submit-btn" text="Submit" />
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
