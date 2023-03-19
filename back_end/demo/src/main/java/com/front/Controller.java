@@ -999,6 +999,12 @@ public class Controller {
 
     public void DatabaseResult2(ActionEvent actionEvent) {
         //TODO 逻辑bug 输入行业会返回所有值
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+        csVreadData.companyList.clear();
+        csVreadData.countryList.clear();
+        csVreadData.industryList.clear();
         csVreadData.setIndustryName(comboBoxForIndustry.getValue());
         csVreadData.readData();
         ArrayList<String> companyList = csVreadData.getCompanyList();
@@ -1030,7 +1036,6 @@ public class Controller {
                         i++;
                         // Cast node to Labeled and set its text
                     }
-
                 }
             }
         }
@@ -1122,25 +1127,35 @@ public class Controller {
     }
     String company;
     public void DatabaseResult3(ActionEvent actionEvent) {
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+        csVreadData.companyList.clear();
+        csVreadData.countryList.clear();
+        csVreadData.industryList.clear();
+        csVreadData.resultList.clear();
         tabPane.getSelectionModel().select(tab8);
-       company = selectedCountry.getText();
-       csVreadData.setCompanyName(company);
-       csVreadData.readData();
-       System.out.println(csVreadData.getResultList());
-       Symbol.setText(csVreadData.getResultList().get(0));
-       Industry.setText(csVreadData.getResultList().get(1));
-       Year.setText(csVreadData.getResultList().get(2));
-       Revenue.setText(csVreadData.getResultList().get(3));
-       OperatingExpenses.setText(csVreadData.getResultList().get(4));
-       researchAndDevelopmentExpenses.setText(csVreadData.getResultList().get(5));
-       WeightedAverageSharesOutstanding.setText(csVreadData.getResultList().get(6));
-       CostandExpenses.setText(csVreadData.getResultList().get(7));
-       OperatingIncome.setText(csVreadData.getResultList().get(8));
-       InterestExpense.setText(csVreadData.getResultList().get(9));
-       EBITMargin.setText(csVreadData.getResultList().get(10));
-       BookVaueofEquity.setText(csVreadData.getResultList().get(11));
-       bookValueOfDebt.setText(csVreadData.getResultList().get(12));
-       Currentstockprice.setText(csVreadData.getResultList().get(13));
+        company = selectedCountry.getText();
+        csVreadData.setCompanyName(company);
+        csVreadData.readData();
+        System.out.println(csVreadData.getResultList());
+
+        Symbol.setText(csVreadData.getResultList().get(0));
+       Industry.setText(csVreadData.getResultList().get(2));
+       Year.setText(csVreadData.getResultList().get(3));
+       Revenue.setText(csVreadData.getResultList().get(4));
+       OperatingExpenses.setText(csVreadData.getResultList().get(6));
+       researchAndDevelopmentExpenses.setText(csVreadData.getResultList().get(7));
+
+
+       WeightedAverageSharesOutstanding.setText(csVreadData.getResultList().get(14));
+       CostandExpenses.setText(csVreadData.getResultList().get(8));
+       OperatingIncome.setText(csVreadData.getResultList().get(9));
+       InterestExpense.setText(csVreadData.getResultList().get(10));
+       EBITMargin.setText(csVreadData.getResultList().get(11));
+       BookVaueofEquity.setText(csVreadData.getResultList().get(12));
+       bookValueOfDebt.setText(csVreadData.getResultList().get(13));
+       Currentstockprice.setText(csVreadData.getResultList().get(15));
 
 //       Symbol.setText(csVreadData.getResultList().get(14));
 //       Symbol.setText(csVreadData.getResultList().get(15));
@@ -1203,6 +1218,27 @@ public class Controller {
 
     public void addToDataBase(ActionEvent actionEvent) {
         CSVaddData csVaddData = new CSVaddData();
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+        csVreadData.companyList.clear();
+        csVreadData.countryList.clear();
+        csVreadData.industryList.clear();
+        csVreadData.setCompanyName(Symbol.getText());
+        csVreadData.readData();
+        csVreadData.setIndustryName("");
+        csVreadData.setCompanyName("");
+        csVreadData.setCountryName("");
+
+        if (csVreadData.companyList.size() > 0) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("The company already exists in the database");
+            alert.showAndWait();
+            return;
+        }
+
         try {
             csVaddData.Add(Symbol.getText(),
                     Industry.getText(),
@@ -1239,7 +1275,7 @@ public class Controller {
         ArrayList<String> industryList = csVreadData.getIndustryList();
         HashSet<String> iiList = new HashSet<>(industryList);
         industryList = new ArrayList<>(iiList);
-
+        
         comboBoxForIndustry.getItems().clear();
         for (String s : industryList) {
             comboBoxForIndustry.getItems().add(s);
@@ -1247,5 +1283,16 @@ public class Controller {
 
         comboBoxForIndustry.setValue(industryList.get(0));
         csVreadData.setIndustryName("");
+    }
+
+    public void UseInCalculation(ActionEvent actionEvent) {
+        B2.setText(Symbol.getText());
+        comboBox2.setValue(Industry.getText());
+        B8.setText(Revenue.getText());
+        B18.setText(WeightedAverageSharesOutstanding.getText());
+        B19.setText(Currentstockprice.getText());
+        B11.setText(BookVaueofEquity.getText());
+        B12.setText(bookValueOfDebt.getText());
+        tabPane.getSelectionModel().select(tab1);
     }
 }

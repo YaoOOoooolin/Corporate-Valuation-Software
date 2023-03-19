@@ -138,7 +138,7 @@ public class CSVreadData {
                     countryList.add(countryName);
                     industryList.add(industryName);
                     if (!companyName.equals("")){
-                        resultList.addAll(Arrays.asList(row).subList(0, 15));
+                        resultList.addAll(Arrays.asList(row).subList(0, 16));
                     }
                 }else if (industryName.equals("box")){
                     String industryName = row[2];
@@ -156,7 +156,9 @@ public class CSVreadData {
 
     public static void main(String[] args) {
         CSVreadData csVreadData = new CSVreadData();
-        csVreadData.setCountryName("United States");
+//        csVreadData.setCountryName("United States");
+        csVreadData.setCompanyName("AAPL");
+
         csVreadData.readData();
         System.out.println(csVreadData.getCompanyList());
         System.out.println(csVreadData.getCountryList());

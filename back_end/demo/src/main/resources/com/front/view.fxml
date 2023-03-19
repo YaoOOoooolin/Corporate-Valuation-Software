@@ -944,6 +944,7 @@
                                           <Button fx:id="saveDataBase" layoutX="476.0" layoutY="30.0" mnemonicParsing="false" onAction="#saveToDataBase" text="Save" />
                                           <Button layoutX="518.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeDataBaseValue" prefHeight="23.0" prefWidth="56.0" text="Change" />
                                           <Button layoutX="574.0" layoutY="30.0" mnemonicParsing="false" onAction="#addToDataBase" prefHeight="23.0" prefWidth="37.0" text="Add" />
+                                          <Button layoutX="477.0" layoutY="53.0" mnemonicParsing="false" onAction="#UseInCalculation" prefHeight="23.0" prefWidth="134.0" text="Use in calculation" />
                                        </children>
                                     </AnchorPane>
                                  </content>
