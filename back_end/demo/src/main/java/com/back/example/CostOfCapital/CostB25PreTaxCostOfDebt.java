@@ -6,30 +6,30 @@ import com.back.StaticData.InputData;
 import java.util.Objects;
 
 public class CostB25PreTaxCostOfDebt {
-    public double getPreTaxCostOfDebt() {
+    public static double getPreTaxCostOfDebt() {
         return PreTaxCostOfDebt;
     }
 
-    public void setPreTaxCostOfDebt() {
+    public static void setPreTaxCostOfDebt() {
         String ApproachType = InputForCapital.B21ApproachForPreTaxCostOfDebt;
         String rating = InputForCapital.B23ActualRating;
         String syntheticRating = InputForCapital.B24SyntheticRatingType;
         double EBIT = InputData.getB9();
         double interestExpense = InputData.getB10();
         if(Objects.equals(ApproachType, "Direct Input")){
-            this.PreTaxCostOfDebt = InputForCapital.getB22DirectInputPreTaxCostOfDebt();
+            PreTaxCostOfDebt = InputForCapital.getB22DirectInputPreTaxCostOfDebt();
         } else if (Objects.equals(ApproachType, "Actual rating")) {
-            this.PreTaxCostOfDebt = InputData.getB30() + RatingSpread.ratingSpread.get(rating);
+            PreTaxCostOfDebt = InputData.getB30() + RatingSpread.ratingSpread.get(rating);
         } else if(Objects.equals(ApproachType, "Synthetic rating")){
             double interestConvergeRatio = EBIT/interestExpense;
             if(Objects.equals(syntheticRating, "1")){
-                this.PreTaxCostOfDebt = SyntheticRating.LargerSaferFirms(interestConvergeRatio);
+                PreTaxCostOfDebt = SyntheticRating.LargerSaferFirms(interestConvergeRatio);
             } else if(Objects.equals(syntheticRating, "2")){
-                this.PreTaxCostOfDebt = SyntheticRating.SmallerRiskierFirms(interestConvergeRatio);
+                PreTaxCostOfDebt = SyntheticRating.SmallerRiskierFirms(interestConvergeRatio);
             }
         }
     }
 
-    double PreTaxCostOfDebt;
+    private static double PreTaxCostOfDebt;
 
 }

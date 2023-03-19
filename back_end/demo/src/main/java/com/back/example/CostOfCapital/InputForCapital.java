@@ -198,6 +198,14 @@ public class InputForCapital {
         B38AnnualDividedPerShare = b38AnnualDividedPerShare;
     }
 
+    public static double getB33DebtValueOfOperatingLeases() {
+        return B33DebtValueOfOperatingLeases;
+    }
+
+    public static void setB33DebtValueOfOperatingLeases(double b33DebtValueOfOperatingLeases) {
+        B33DebtValueOfOperatingLeases = b33DebtValueOfOperatingLeases;
+    }
+
     //Equity part
     // beta part in Equity
     static double B10leveredBeta;
@@ -231,6 +239,8 @@ public class InputForCapital {
     static double B30MaturityOfConvertibleBond;
 
     static double B31MarketValueOfConvertible;
+
+    static double B33DebtValueOfOperatingLeases;
 
 //Preferred Stock
     static double B36NumberOfPreferredShares;

@@ -1173,20 +1173,20 @@
                                                                         <Font size="13.0" />
                                                                      </font>
                                                                   </Text>
-                                                                  <Text fx:id="CoCText4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If actual rating, input the rating" visible="false" wrappingWidth="281.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                                  <Text fx:id="CoCText4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If synethetic rating, input the type of company" visible="false" wrappingWidth="281.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                                      <font>
                                                                         <Font size="13.0" />
                                                                      </font>
                                                                   </Text>
-                                                                  <Text fx:id="CoCText5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If synethetic rating, input the type of company" visible="false" wrappingWidth="289.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                                  <Text fx:id="CoCText5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Calibri" text="If actual rating, input the rating" visible="false" wrappingWidth="289.7070999145508" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                                      <font>
                                                                         <Font size="13.0" />
                                                                      </font>
                                                                   </Text>
                                                                   <TextField fx:id="DirectInputDebt" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                                                   <ComboBox fx:id="comboCoC3" onAction="#CoCSelect3" prefHeight="23.0" prefWidth="167.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                                                  <ComboBox fx:id="comboCoC5" prefHeight="23.0" prefWidth="167.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                                                                  <ComboBox fx:id="comboCoC4" prefHeight="23.0" prefWidth="167.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                                  <ComboBox fx:id="comboCoC5" onAction="#CoCSelect5" prefHeight="23.0" prefWidth="167.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                                  <ComboBox fx:id="comboCoC4" onAction="#CoCSelect4" prefHeight="23.0" prefWidth="167.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                                   <TextField fx:id="DebtInput1" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" />
                                                                   <TextField fx:id="DebtInput2" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                                   <TextField fx:id="DebtInput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />

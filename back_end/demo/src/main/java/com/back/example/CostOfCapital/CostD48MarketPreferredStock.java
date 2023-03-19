@@ -1,9 +1,9 @@
 package com.back.example.CostOfCapital;
 
 public class CostD48MarketPreferredStock {
-    private double marketPreferredStock;
+    private static double marketPreferredStock;
 
-    public double getMarketPreferredStock() {
+    public static double getMarketPreferredStock() {
         return marketPreferredStock;
     }
 
@@ -11,7 +11,7 @@ public class CostD48MarketPreferredStock {
      * B36 * B37
      * Number of Preferred Shares * Current Market Price per Share
      */
-    public void setMarketPreferredStock() {
-        this.marketPreferredStock = InputForCapital.getB36NumberOfPreferredShares() * InputForCapital.getB37CurrentMarketPricePerShare();
+    public static void setMarketPreferredStock() {
+        marketPreferredStock = InputForCapital.getB36NumberOfPreferredShares() * InputForCapital.getB37CurrentMarketPricePerShare();
     }
 }

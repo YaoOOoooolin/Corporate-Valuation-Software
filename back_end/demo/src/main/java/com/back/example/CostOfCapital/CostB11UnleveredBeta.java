@@ -8,7 +8,7 @@ import java.util.Objects;
  * Unlevered Beta
  */
 public class CostB11UnleveredBeta {
-    public double getUnLeveredBeta() {
+    public static double getUnLeveredBeta() {
         return unLeveredBeta;
     }
 
@@ -23,16 +23,16 @@ public class CostB11UnleveredBeta {
     public void setUnLeveredBeta() {
         String type = InputForCapital.getB9ApproachForEstimatingBeta();
         if(Objects.equals(type, "Single Business(US)")){
-            this.unLeveredBeta = InputForCapital.getSingleUSBeta();
+            unLeveredBeta = InputForCapital.getSingleUSBeta();
         } else if (Objects.equals(type, "Single Business(Global)")) {
-            this.unLeveredBeta = InputForCapital.getSingleGlobalBeta();
+            unLeveredBeta = InputForCapital.getSingleGlobalBeta();
         } else if (Objects.equals(type, "Multibusiness(US)")) {
-            this.unLeveredBeta = InputForCapital.getK48MultiUSBeta();
+            unLeveredBeta = InputForCapital.getK48MultiUSBeta();
         } else if (Objects.equals(type, "Multibusiness(Global)")) {
-            this.unLeveredBeta = InputForCapital.getK64MultiGlobalBeta();
+            unLeveredBeta = InputForCapital.getK64MultiGlobalBeta();
         }
     }
 
-    double unLeveredBeta;
+    static double unLeveredBeta;
 
 }

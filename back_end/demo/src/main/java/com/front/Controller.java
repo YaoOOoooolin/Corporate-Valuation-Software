@@ -1,6 +1,7 @@
 package com.front;
 
 import com.back.StaticData.InputData;
+import com.back.example.CostOfCapital.*;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -140,6 +141,68 @@ public class Controller {
     public Tab tab81;
     public Tab tab82;
     public Tab tab83;
+    /**
+     * numbers of share outstanding
+     */
+    public TextField EquityInput1;
+    /**
+     * Market stock price
+     */
+    public TextField EquityInput2;
+    /**
+     * Unlevered Beta
+     */
+    public TextField EquityInput3;
+    /**
+     * RiskFree rate
+     */
+    public TextField EquityInput4;
+    /**
+     *  ERP
+     */
+    public TextField EquityInput5;
+
+
+    public TextField StockInput4;
+    public TextField StockInput3;
+    public TextField StockInput2;
+    /**
+     * book value of straight debt
+     */
+    public TextField DebtInput1;
+    /**
+     * Interest expense
+     */
+    public TextField DebtInput2;
+    /**
+     * Average Maturity
+     */
+    public TextField DebtInput3;
+    public TextField DebtInput4;
+    public TextField DebtInput5;
+    public TextField DebtInput6;
+    public TextField DebtInput7;
+    public TextField DebtInput8;
+    public TextField DebtInput9;
+    public TextField DebtInput10;
+    //output part
+    public TextField cocOutput1;
+    public TextField cocOutput2;
+    public TextField cocOutput3;
+    public TextField cocOutput4;
+    public TextField cocOutput5;
+    public TextField cocOutput11;
+    public TextField cocOutput12;
+    public TextField cocOutput13;
+    public TextField cocOutput14;
+    public TextField cocOutput21;
+    public TextField cocOutput22;
+    public TextField cocOutput23;
+    public TextField cocOutput24;
+    public TextField cocOutput31;
+    public TextField cocOutput32;
+    public TextField cocOutput33;
+    public TextField cocOutput34;
 
     @FXML
     private Button TPtoInput1;
@@ -221,7 +284,7 @@ public class Controller {
                 "Japan","HongKong");
         comboCoC1.getItems().addAll("Direct input","Single Business(US)","Single Business(Global)");
         comboCoC2.getItems().addAll("Will input", "Country of incorporation");
-        comboCoC3.getItems().addAll("Direct input", "Synthetic rating", "Actual rating");
+        comboCoC3.getItems().addAll("Direct input", "Actual rating", "Synthetic rating");
         comboCoC4.getItems().addAll("1-safer","2-risky");
         comboCoC5.getItems().addAll("Aaa/AAA", "Aa2/AA", "A1/A+", "A2/A", "A3/A-", "Baa2/BBB",
                 "Ba1/BB+", "Ba2/BB", "B1/B+", "B2/B", "B3/B-", "C2/C", "Ca2/CC", "Caa/CCC", "D2/D");
@@ -315,6 +378,75 @@ public class Controller {
             InputData.setB61(isPercentage(B61.getText()));
             InputData.setB64(Double.parseDouble(B64.getText()));
             InputData.setB65(isPercentage(B65.getText()));
+
+
+            //cost of capital part: Equity
+            InputData.setB18(Double.parseDouble(EquityInput1.getText()));
+            InputData.setB19(Double.parseDouble(EquityInput2.getText()));
+            InputForCapital.setB10leveredBeta(Double.parseDouble(DirectInput1.getText()));
+            InputData.setB30(Double.parseDouble(EquityInput4.getText()));
+            InputForCapital.setB14DirectInputForERP(Double.parseDouble(DirectInputERP.getText()));
+            CostB15ERPInEquity.setERPInEquity();
+            EquityInput5.setText(String.valueOf(CostB15ERPInEquity.getERPInEquity()));
+
+            //cost of capital part: Preferred Stock
+            InputForCapital.setB36NumberOfPreferredShares(Double.parseDouble(StockInput2.getText()));
+            InputForCapital.setB37CurrentMarketPricePerShare(Double.parseDouble(StockInput3.getText()));
+            InputForCapital.setB38AnnualDividedPerShare(Double.parseDouble(StockInput4.getText()));
+
+            //cost of capital part: Debt
+            InputData.setB12(Double.parseDouble(DebtInput1.getText()));
+            InputData.setB10(Double.parseDouble(DebtInput2.getText()));
+            InputForCapital.setB20AverageMaturity(Double.parseDouble(DebtInput3.getText()));
+            InputForCapital.setB22DirectInputPreTaxCostOfDebt(Double.parseDouble(DirectInputDebt.getText()));
+            CostB25PreTaxCostOfDebt.setPreTaxCostOfDebt();
+            DebtInput4.setText(String.valueOf(CostB25PreTaxCostOfDebt.getPreTaxCostOfDebt()));
+            InputData.setB21(Double.parseDouble(DebtInput5.getText()));
+            InputForCapital.setB28BookValueOfConvertibleDebt(Double.parseDouble(DebtInput6.getText()));
+            InputForCapital.setB29InterestExpenseOnConvertible(Double.parseDouble(DebtInput7.getText()));
+            InputForCapital.setB30MaturityOfConvertibleBond(Double.parseDouble(DebtInput8.getText()));
+            InputForCapital.setB31MarketValueOfConvertible(Double.parseDouble(DebtInput9.getText()));
+            InputForCapital.setB33DebtValueOfOperatingLeases(Double.parseDouble(DebtInput10.getText()));
+
+
+            //output part
+            CostC41EstimatingMarketValueOfStraightDebt.setEstimatingMarketValueOfStraightDebt();
+            CostC42EstimatedValueOfStraightDebtInConvertible.setEstimatedValueOfStraightDebtInConvertible();
+            CostC44EstimatedValueOfEquityInConvertible.setEVInConvertible();
+            CostC45LeveredBetaForEquity.setLeveredBetaForEquity();
+            CostB48MarketEquity.setMarketEquity();
+            CostC48MarketDebt.setMarketDebt();
+            CostD48MarketPreferredStock.setMarketPreferredStock();
+            CostE48MarketCapital.setMarketCapital();
+            CostB49WeightOfEquity.setWeightOfEquity();
+            CostC49WeightOfDebt.setWeightOfDebt();
+            CostD49WeightOfPreferred.setWeightOfPreferredStock();
+            CostB50EquityComponent.setEquityComponent();
+            CostC50DebtComponent.setDebtComponent();
+            CostD50PreferredStockComponent.setPreferredStockComponent();
+            CostE50CostOfCapital.setCostOfCapital();
+
+
+            cocOutput1.setText(String.valueOf(CostC41EstimatingMarketValueOfStraightDebt.getEstimatingMarketValueOfStraightDebt()));
+            cocOutput2.setText(String.valueOf(CostC42EstimatedValueOfStraightDebtInConvertible.getEstimatedValueOfStraightDebtInConvertible()));
+            cocOutput3.setText(String.valueOf(InputForCapital.getB33DebtValueOfOperatingLeases()));
+            cocOutput4.setText(String.valueOf(CostC44EstimatedValueOfEquityInConvertible.getEVInConvertible()));
+            cocOutput5.setText(String.valueOf(CostC45LeveredBetaForEquity.getLeveredBetaForEquity()));
+
+            cocOutput11.setText(String.valueOf(CostB48MarketEquity.getMarketEquity()));
+            cocOutput12.setText(String.valueOf(CostC48MarketDebt.getMarketDebt()));
+            cocOutput13.setText(String.valueOf(CostD48MarketPreferredStock.getMarketPreferredStock()));
+            cocOutput14.setText(String.valueOf(CostE48MarketCapital.getMarketCapital()));
+
+            cocOutput21.setText(String.valueOf(CostB49WeightOfEquity.getWeightOfEquity()));
+            cocOutput22.setText(String.valueOf(CostC49WeightOfDebt.getWeightOfDebt()));
+            cocOutput23.setText(String.valueOf(CostD49WeightOfPreferred.getWeightOfPreferredStock()));
+            cocOutput24.setText(String.valueOf(1));
+
+            cocOutput31.setText(String.valueOf(CostB50EquityComponent.getEquityComponent()));
+            cocOutput32.setText(String.valueOf(CostC50DebtComponent.getDebtComponent()));
+            cocOutput33.setText(String.valueOf(CostD50PreferredStockComponent.getPreferredStockComponent()));
+            cocOutput34.setText(String.valueOf(CostE50CostOfCapital.getCostOfCapital()));
 
             Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -1022,10 +1154,16 @@ public class Controller {
 
     public void CoCSelect1(ActionEvent actionEvent) {
         if(comboCoC1.getValue().equals("Direct input")){
+            InputForCapital.setB9ApproachForEstimatingBeta("Direct input");
             DirectInput1.setVisible(true);
             CoCText1.setVisible(true);
         }
         else {
+            if(comboCoC1.getValue().equals("Single Business(US")){
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(US)");
+            } else if (comboCoC1.getValue().equals("Single Business(Global)")) {
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(Global)");
+            }
             DirectInput1.setVisible(false);
             CoCText1.setVisible(false);
         }
@@ -1050,14 +1188,7 @@ public class Controller {
             CoCText4.setVisible(false);
             comboCoC5.setVisible(false);
             CoCText5.setVisible(false);
-        }
-        else if(comboCoC3.getValue().equals("Synthetic rating")){
-            DirectInputDebt.setVisible(false);
-            CoCText3.setVisible(false);
-            comboCoC4.setVisible(true);
-            CoCText4.setVisible(true);
-            comboCoC5.setVisible(false);
-            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Direct input");
         }
         else if(comboCoC3.getValue().equals("Actual rating")){
             DirectInputDebt.setVisible(false);
@@ -1066,8 +1197,33 @@ public class Controller {
             CoCText4.setVisible(false);
             comboCoC5.setVisible(true);
             CoCText5.setVisible(true);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Actual rating");
+        }
+        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(true);
+            CoCText4.setVisible(true);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Synthetic rating");
         }
     }
+
+    public void CoCSelect4(ActionEvent actionEvent){
+        if(comboCoC4.getValue().equals("1-safer")){
+            InputForCapital.setB24SyntheticRatingType("1");
+        } else {
+            InputForCapital.setB24SyntheticRatingType("2");
+        }
+    }
+
+    public void CoCSelect5(ActionEvent actionEvent){
+        InputForCapital.setB23ActualRating(comboCoC5.getValue());
+    }
+
+
+
 
     public void ToTab8(ActionEvent actionEvent) {
         tabPane.getSelectionModel().select(tab9);

@@ -9,7 +9,7 @@ import java.util.Objects;
  * Equity Risk Premium used in cost of equity
  */
 public class CostB15ERPInEquity {
-    public double getERPInEquity() {
+    public static double getERPInEquity() {
         return ERPInEquity;
     }
 
@@ -21,19 +21,19 @@ public class CostB15ERPInEquity {
      * 3. Operating Countries
      * 4. Operating Regions
      */
-    public void setERPInEquity() {
+    public static void setERPInEquity() {
         String type = InputForCapital.getB13ApproachForERP();
         if (Objects.equals(type, "Direct Input")) {
-            this.ERPInEquity = InputForCapital.getB14DirectInputForERP();
+            ERPInEquity = InputForCapital.getB14DirectInputForERP();
         } else if (Objects.equals(type, "Country of Incorporation")) {
-            this.ERPInEquity = InputForCapital.getCountryERP();
+            ERPInEquity = InputForCapital.getCountryERP();
         } else if (Objects.equals(type, "Operating Countries")) {
-            this.ERPInEquity = InputForCapital.getK18OperatingCountriesERP();
+            ERPInEquity = InputForCapital.getK18OperatingCountriesERP();
         } else if (Objects.equals(type, "Operating Regions")) {
-            this.ERPInEquity = InputForCapital.getK32OperatingRegionERP();
+            ERPInEquity = InputForCapital.getK32OperatingRegionERP();
         }
     }
 
-    double ERPInEquity;
+    static double ERPInEquity;
 
 }
