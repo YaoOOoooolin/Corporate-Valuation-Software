@@ -24,7 +24,7 @@ public class PdfReport {
 
     // main测试
     public static void main(String[] args) throws Exception {
-        // 1.新建document对象
+        // 1.document对象
         Document document = new Document(PageSize.A4);// 建立一个Document对象
 
         // 2.建立一个书写器(Writer)与document对象关联

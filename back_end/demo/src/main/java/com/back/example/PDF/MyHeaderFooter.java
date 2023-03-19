@@ -34,7 +34,7 @@ public class MyHeaderFooter extends PdfPageEventHelper {
             table.getDefaultCell().setFixedHeight(-10);
             table.getDefaultCell().setBorder(Rectangle.BOTTOM);
 
-            table.addCell(new Paragraph(/*"我是页眉/页脚"*/  "", hfFont));// 可以直接使用addCell(str)，不过不能指定字体，中文无法显示
+            table.addCell(new Paragraph(  "", hfFont));// 可以直接使用addCell(str)，不过不能指定字体，中文无法显示
             table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_RIGHT);
             table.addCell(new Paragraph("page " + writer.getPageNumber() + "/", hfFont));
             // 总页数
