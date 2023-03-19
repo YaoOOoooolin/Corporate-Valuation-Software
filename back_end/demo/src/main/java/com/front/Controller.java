@@ -271,24 +271,22 @@ public class Controller {
         comboCoC1.setItems(observableList);
          */
 
-        comboBox1.getItems().addAll(
-                "United States",
-                "United Kingdom",
-                "China",
-                "Denmark",
-                "Japan","HongKong");
-        comboBox4.getItems().addAll(
-                "United States",
-                "United Kingdom",
-                "China",
-                "Denmark",
-                "Japan","HongKong");
+        comboBox1.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
+        comboBox4.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
         comboCoC1.getItems().addAll("Direct input","Single Business(US)","Single Business(Global)");
         comboCoC2.getItems().addAll("Will input", "Country of incorporation");
         comboCoC3.getItems().addAll("Direct input", "Actual rating", "Synthetic rating");
         comboCoC4.getItems().addAll("1-safer","2-risky");
         comboCoC5.getItems().addAll("Aaa/AAA", "Aa2/AA", "A1/A+", "A2/A", "A3/A-", "Baa2/BBB",
                 "Ba1/BB+", "Ba2/BB", "B1/B+", "B2/B", "B3/B-", "C2/C", "Ca2/CC", "Caa/CCC", "D2/D");
+
+        comboCoC1.setValue("Direct input");
+        comboCoC2.setValue("Will input");
+        comboCoC3.setValue("Direct input");
+        comboCoC4.setValue("1-safer");
+        comboCoC5.setValue("Aaa/AAA");
+        DefaultCoCSelect();
+
         Locale.setDefault(Locale.ENGLISH);
 
         setAllZero(EquityInput1, EquityInput2, EquityInput3, EquityInput4, EquityInput5, StockInput2, StockInput3, StockInput4, DebtInput1, DebtInput2);
@@ -1171,7 +1169,57 @@ public class Controller {
         InputForCapital.setB23ActualRating(comboCoC5.getValue());
     }
 
-
+    public void DefaultCoCSelect(){
+        if(comboCoC1.getValue().equals("Direct input")){
+            InputForCapital.setB9ApproachForEstimatingBeta("Direct input");
+            DirectInput1.setVisible(true);
+            CoCText1.setVisible(true);
+        }
+        else {
+            if(comboCoC1.getValue().equals("Single Business(US")){
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(US)");
+            } else if (comboCoC1.getValue().equals("Single Business(Global)")) {
+                InputForCapital.setB9ApproachForEstimatingBeta("Single Business(Global)");
+            }
+            DirectInput1.setVisible(false);
+            CoCText1.setVisible(false);
+        }
+        if(comboCoC2.getValue().equals("Will input")){
+            DirectInputERP.setVisible(true);
+            CoCText2.setVisible(true);
+        }
+        else {
+            DirectInputERP.setVisible(false);
+            CoCText2.setVisible(false);
+        }
+        if(comboCoC3.getValue().equals("Direct input")){
+            DirectInputDebt.setVisible(true);
+            CoCText3.setVisible(true);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Direct input");
+        }
+        else if(comboCoC3.getValue().equals("Actual rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(false);
+            CoCText4.setVisible(false);
+            comboCoC5.setVisible(true);
+            CoCText5.setVisible(true);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Actual rating");
+        }
+        else if(comboCoC3.getValue().equals("Synthetic rating")){
+            DirectInputDebt.setVisible(false);
+            CoCText3.setVisible(false);
+            comboCoC4.setVisible(true);
+            CoCText4.setVisible(true);
+            comboCoC5.setVisible(false);
+            CoCText5.setVisible(false);
+            InputForCapital.setB21ApproachForPreTaxCostOfDebt("Synthetic rating");
+        }
+    }
 
 
     public void ToTab8(ActionEvent actionEvent) {

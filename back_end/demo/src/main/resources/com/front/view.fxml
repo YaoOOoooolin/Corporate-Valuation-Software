@@ -1072,7 +1072,6 @@
                                                                         <Font size="15.0" />
                                                                      </font>
                                                                   </Text>
-                                                                  <TextField fx:id="StockInput1" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" />
                                                                   <TextField fx:id="StockInput4" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                                                   <TextField fx:id="StockInput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                                   <TextField fx:id="StockInput2" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="1" />
