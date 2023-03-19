@@ -217,7 +217,7 @@ public class InputForCapital {
 
     //ERP part in Equity
     static String B13ApproachForERP;
-    static double B14DirectInputForERP;
+    static double B14DirectInputForERP = 0;
     static double CountryERP;
     static double K18OperatingCountriesERP;
     static double K32OperatingRegionERP;
@@ -227,7 +227,7 @@ public class InputForCapital {
 //Debt part
     static double B20AverageMaturity;
     static String B21ApproachForPreTaxCostOfDebt;
-    static double B22DirectInputPreTaxCostOfDebt;
+    static double B22DirectInputPreTaxCostOfDebt = 0;
     static String B23ActualRating;
     static String B24SyntheticRatingType;
     static double SyntheticD13CostOfDebt; // D13 in the worksheet "Synthetic rating"

@@ -289,10 +289,25 @@ public class Controller {
         comboCoC4.getItems().addAll("1-safer","2-risky");
         comboCoC5.getItems().addAll("Aaa/AAA", "Aa2/AA", "A1/A+", "A2/A", "A3/A-", "Baa2/BBB",
                 "Ba1/BB+", "Ba2/BB", "B1/B+", "B2/B", "B3/B-", "C2/C", "Ca2/CC", "Caa/CCC", "D2/D");
-
-
         Locale.setDefault(Locale.ENGLISH);
 
+        setAllZero(EquityInput1, EquityInput2, EquityInput3, EquityInput4, EquityInput5, StockInput2, StockInput3, StockInput4, DebtInput1, DebtInput2);
+        setAllZero(DebtInput3, DebtInput4, DebtInput5, DebtInput6, DebtInput7, DebtInput8, DebtInput9, DebtInput10, DirectInput1, DirectInputERP);
+        setZero(DirectInputDebt);
+
+    }
+
+    private void setAllZero(TextField equityInput1, TextField equityInput2, TextField equityInput3, TextField equityInput4, TextField equityInput5, TextField stockInput2, TextField stockInput3, TextField stockInput4, TextField debtInput1, TextField debtInput2) {
+        setZero(equityInput1);
+        setZero(equityInput2);
+        setZero(equityInput3);
+        setZero(equityInput4);
+        setZero(equityInput5);
+        setZero(stockInput2);
+        setZero(stockInput3);
+        setZero(stockInput4);
+        setZero(debtInput1);
+        setZero(debtInput2);
     }
 
     @FXML
@@ -381,73 +396,6 @@ public class Controller {
             InputData.setB65(isPercentage(B65.getText()));
 
 
-            //cost of capital part: Equity
-            InputData.setB18(Double.parseDouble(EquityInput1.getText()));
-            InputData.setB19(Double.parseDouble(EquityInput2.getText()));
-            InputForCapital.setB10leveredBeta(Double.parseDouble(DirectInput1.getText()));
-            InputData.setB30(Double.parseDouble(EquityInput4.getText()));
-            InputForCapital.setB14DirectInputForERP(Double.parseDouble(DirectInputERP.getText()));
-            CostB15ERPInEquity.setERPInEquity();
-            EquityInput5.setText(String.valueOf(CostB15ERPInEquity.getERPInEquity()));
-
-            //cost of capital part: Preferred Stock
-            InputForCapital.setB36NumberOfPreferredShares(Double.parseDouble(StockInput2.getText()));
-            InputForCapital.setB37CurrentMarketPricePerShare(Double.parseDouble(StockInput3.getText()));
-            InputForCapital.setB38AnnualDividedPerShare(Double.parseDouble(StockInput4.getText()));
-
-            //cost of capital part: Debt
-            InputData.setB12(Double.parseDouble(DebtInput1.getText()));
-            InputData.setB10(Double.parseDouble(DebtInput2.getText()));
-            InputForCapital.setB20AverageMaturity(Double.parseDouble(DebtInput3.getText()));
-            InputForCapital.setB22DirectInputPreTaxCostOfDebt(Double.parseDouble(DirectInputDebt.getText()));
-            CostB25PreTaxCostOfDebt.setPreTaxCostOfDebt();
-            DebtInput4.setText(String.valueOf(CostB25PreTaxCostOfDebt.getPreTaxCostOfDebt()));
-            InputData.setB21(Double.parseDouble(DebtInput5.getText()));
-            InputForCapital.setB28BookValueOfConvertibleDebt(Double.parseDouble(DebtInput6.getText()));
-            InputForCapital.setB29InterestExpenseOnConvertible(Double.parseDouble(DebtInput7.getText()));
-            InputForCapital.setB30MaturityOfConvertibleBond(Double.parseDouble(DebtInput8.getText()));
-            InputForCapital.setB31MarketValueOfConvertible(Double.parseDouble(DebtInput9.getText()));
-            InputForCapital.setB33DebtValueOfOperatingLeases(Double.parseDouble(DebtInput10.getText()));
-
-
-            //output part
-            CostC41EstimatingMarketValueOfStraightDebt.setEstimatingMarketValueOfStraightDebt();
-            CostC42EstimatedValueOfStraightDebtInConvertible.setEstimatedValueOfStraightDebtInConvertible();
-            CostC44EstimatedValueOfEquityInConvertible.setEVInConvertible();
-            CostC45LeveredBetaForEquity.setLeveredBetaForEquity();
-            CostB48MarketEquity.setMarketEquity();
-            CostC48MarketDebt.setMarketDebt();
-            CostD48MarketPreferredStock.setMarketPreferredStock();
-            CostE48MarketCapital.setMarketCapital();
-            CostB49WeightOfEquity.setWeightOfEquity();
-            CostC49WeightOfDebt.setWeightOfDebt();
-            CostD49WeightOfPreferred.setWeightOfPreferredStock();
-            CostB50EquityComponent.setEquityComponent();
-            CostC50DebtComponent.setDebtComponent();
-            CostD50PreferredStockComponent.setPreferredStockComponent();
-            CostE50CostOfCapital.setCostOfCapital();
-
-
-            cocOutput1.setText(String.valueOf(CostC41EstimatingMarketValueOfStraightDebt.getEstimatingMarketValueOfStraightDebt()));
-            cocOutput2.setText(String.valueOf(CostC42EstimatedValueOfStraightDebtInConvertible.getEstimatedValueOfStraightDebtInConvertible()));
-            cocOutput3.setText(String.valueOf(InputForCapital.getB33DebtValueOfOperatingLeases()));
-            cocOutput4.setText(String.valueOf(CostC44EstimatedValueOfEquityInConvertible.getEVInConvertible()));
-            cocOutput5.setText(String.valueOf(CostC45LeveredBetaForEquity.getLeveredBetaForEquity()));
-
-            cocOutput11.setText(String.valueOf(CostB48MarketEquity.getMarketEquity()));
-            cocOutput12.setText(String.valueOf(CostC48MarketDebt.getMarketDebt()));
-            cocOutput13.setText(String.valueOf(CostD48MarketPreferredStock.getMarketPreferredStock()));
-            cocOutput14.setText(String.valueOf(CostE48MarketCapital.getMarketCapital()));
-
-            cocOutput21.setText(String.valueOf(CostB49WeightOfEquity.getWeightOfEquity()));
-            cocOutput22.setText(String.valueOf(CostC49WeightOfDebt.getWeightOfDebt()));
-            cocOutput23.setText(String.valueOf(CostD49WeightOfPreferred.getWeightOfPreferredStock()));
-            cocOutput24.setText(String.valueOf(1));
-
-            cocOutput31.setText(String.valueOf(CostB50EquityComponent.getEquityComponent()));
-            cocOutput32.setText(String.valueOf(CostC50DebtComponent.getDebtComponent()));
-            cocOutput33.setText(String.valueOf(CostD50PreferredStockComponent.getPreferredStockComponent()));
-            cocOutput34.setText(String.valueOf(CostE50CostOfCapital.getCostOfCapital()));
 
             Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -1245,8 +1193,77 @@ public class Controller {
         tabPane.getSelectionModel().select(tab9);
         CostTabPane.getSelectionModel().select(tab83);
     }
+    public void setZero(TextField textField){
+        textField.setText("0");
+    }
 
     public void submitCostOfCapital(ActionEvent actionEvent) {
+            //cost of capital part: Equity
+            InputData.setB18(Double.parseDouble(EquityInput1.getText()));
+            InputData.setB19(Double.parseDouble(EquityInput2.getText()));
+            InputForCapital.setB10leveredBeta(Double.parseDouble(DirectInput1.getText()));
+            InputData.setB30(Double.parseDouble(EquityInput4.getText()));
+            InputForCapital.setB14DirectInputForERP(Double.parseDouble(DirectInputERP.getText()));
+            CostB15ERPInEquity.setERPInEquity();
+            EquityInput5.setText(String.valueOf(CostB15ERPInEquity.getERPInEquity()));
 
+            //cost of capital part: Preferred Stock
+            InputForCapital.setB36NumberOfPreferredShares(Double.parseDouble(StockInput2.getText()));
+            InputForCapital.setB37CurrentMarketPricePerShare(Double.parseDouble(StockInput3.getText()));
+            InputForCapital.setB38AnnualDividedPerShare(Double.parseDouble(StockInput4.getText()));
+
+            //cost of capital part: Debt
+            InputData.setB12(Double.parseDouble(DebtInput1.getText()));
+            InputData.setB10(Double.parseDouble(DebtInput2.getText()));
+            InputForCapital.setB20AverageMaturity(Double.parseDouble(DebtInput3.getText()));
+            InputForCapital.setB22DirectInputPreTaxCostOfDebt(Double.parseDouble(DirectInputDebt.getText()));
+            CostB25PreTaxCostOfDebt.setPreTaxCostOfDebt();
+            DebtInput4.setText(String.valueOf(CostB25PreTaxCostOfDebt.getPreTaxCostOfDebt()));
+            InputData.setB21(Double.parseDouble(DebtInput5.getText()));
+            InputForCapital.setB28BookValueOfConvertibleDebt(Double.parseDouble(DebtInput6.getText()));
+            InputForCapital.setB29InterestExpenseOnConvertible(Double.parseDouble(DebtInput7.getText()));
+            InputForCapital.setB30MaturityOfConvertibleBond(Double.parseDouble(DebtInput8.getText()));
+            InputForCapital.setB31MarketValueOfConvertible(Double.parseDouble(DebtInput9.getText()));
+            InputForCapital.setB33DebtValueOfOperatingLeases(Double.parseDouble(DebtInput10.getText()));
+
+
+            //output part
+            CostC41EstimatingMarketValueOfStraightDebt.setEstimatingMarketValueOfStraightDebt();
+            CostC42EstimatedValueOfStraightDebtInConvertible.setEstimatedValueOfStraightDebtInConvertible();
+            CostC44EstimatedValueOfEquityInConvertible.setEVInConvertible();
+            CostC45LeveredBetaForEquity.setLeveredBetaForEquity();
+            CostB48MarketEquity.setMarketEquity();
+            CostC48MarketDebt.setMarketDebt();
+            CostD48MarketPreferredStock.setMarketPreferredStock();
+            CostE48MarketCapital.setMarketCapital();
+            CostB49WeightOfEquity.setWeightOfEquity();
+            CostC49WeightOfDebt.setWeightOfDebt();
+            CostD49WeightOfPreferred.setWeightOfPreferredStock();
+            CostB50EquityComponent.setEquityComponent();
+            CostC50DebtComponent.setDebtComponent();
+            CostD50PreferredStockComponent.setPreferredStockComponent();
+            CostE50CostOfCapital.setCostOfCapital();
+
+
+            cocOutput1.setText(String.valueOf(CostC41EstimatingMarketValueOfStraightDebt.getEstimatingMarketValueOfStraightDebt()));
+            cocOutput2.setText(String.valueOf(CostC42EstimatedValueOfStraightDebtInConvertible.getEstimatedValueOfStraightDebtInConvertible()));
+            cocOutput3.setText(String.valueOf(InputForCapital.getB33DebtValueOfOperatingLeases()));
+            cocOutput4.setText(String.valueOf(CostC44EstimatedValueOfEquityInConvertible.getEVInConvertible()));
+            cocOutput5.setText(String.valueOf(CostC45LeveredBetaForEquity.getLeveredBetaForEquity()));
+
+            cocOutput11.setText(String.valueOf(CostB48MarketEquity.getMarketEquity()));
+            cocOutput12.setText(String.valueOf(CostC48MarketDebt.getMarketDebt()));
+            cocOutput13.setText(String.valueOf(CostD48MarketPreferredStock.getMarketPreferredStock()));
+            cocOutput14.setText(String.valueOf(CostE48MarketCapital.getMarketCapital()));
+
+            cocOutput21.setText(String.valueOf(CostB49WeightOfEquity.getWeightOfEquity()));
+            cocOutput22.setText(String.valueOf(CostC49WeightOfDebt.getWeightOfDebt()));
+            cocOutput23.setText(String.valueOf(CostD49WeightOfPreferred.getWeightOfPreferredStock()));
+            cocOutput24.setText(String.valueOf(1));
+
+            cocOutput31.setText(String.valueOf(CostB50EquityComponent.getEquityComponent()));
+            cocOutput32.setText(String.valueOf(CostC50DebtComponent.getDebtComponent()));
+            cocOutput33.setText(String.valueOf(CostD50PreferredStockComponent.getPreferredStockComponent()));
+            cocOutput34.setText(String.valueOf(CostE50CostOfCapital.getCostOfCapital()));
     }
 }
