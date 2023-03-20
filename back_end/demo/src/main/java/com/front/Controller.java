@@ -248,6 +248,12 @@ public class Controller {
     public TextField cocOutput33;
     public TextField cocOutput34;
     public Button submit_CostOfCapital;
+    public GridPane Sheet8;
+    public GridPane Sheet9;
+    public GridPane Sheet10;
+    public GridPane Sheet11;
+    public GridPane Sheet12;
+
 
     @FXML
     private Button TPtoInput1;
@@ -1021,6 +1027,16 @@ public class Controller {
         String[] ChineseSheet6={"请选择一个国家","请选择一个行业","请输入国家"};
         String[] ChineseSheet7={"股票代码:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
                 "利息费用:", "EBIT 利润率:", "股东权益账面价值:", "负债账面价值:", "加权平均股本:", "当前股价:",};
+        String[] ChineseSheet8={"流通股数量 =", "每股当前市场价格 =", "估算β的方法", "无杠杆β =", "无风险利率 =",
+                "输入ERP的方法是什么？", "股权风险溢价用于权益成本 =", "股本", "输入杠杆β（或回归β）", "直接输入ERP",};
+        String[] ChineseSheet9={"优先股数量 =", "每股当前市场价格 =", "每股年度股息 =", "优先股",};
+        String[] ChineseSheet10={"直接债务的账面价值 =", "债务利息支出 =", "平均到期期限 =",
+                "税率 =", "估算税前债务成本的方法", "税前债务成本 =", "可转换债务的账面价值 =",
+                "可转换债务的利息支出 =", "可转换债券的到期期限 =", "可转换债券的市场价值 =", "经营租赁的债务价值 =",
+                "如果直接输入，则输入税前债务成本", "如果合成评级，则输入公司类型", "如果实际评级，则输入评级",};
+        String[] ChineseSheet11={"估算直接债务的市场价值 =", "估算可转换债务的直接债务价值 =",
+                "经营租赁中的债务价值 =", "估算可转换债务的股本价值 =", "股权的杠杆β =",};
+        String[] ChineseSheet12={"市场价值", "资本成本中的权重", "成本成分",};
         /*
         int i=0;
         for (Node node : Sheet1.getChildren()) {
@@ -1044,8 +1060,14 @@ public class Controller {
         ChangeVersion(ChineseSheet5,Sheet5);
         ChangeVersion(ChineseSheet6,Sheet6);
         ChangeVersion(ChineseSheet7,Sheet7);
+        ChangeVersion(ChineseSheet8,Sheet8);
+        ChangeVersion(ChineseSheet9,Sheet9);
+        ChangeVersion(ChineseSheet10,Sheet10);
+        ChangeVersion(ChineseSheet11,Sheet11);
+        ChangeVersion(ChineseSheet12,Sheet12);
+        System.out.println("道");
         int i=0;
-        for (Node node : Sheet7.getChildren()) {
+        for (Node node : Sheet9.getChildren()) {
             if (GridPane.getColumnIndex(node) == 1) {
                 // Check if node is in second column
                 if (node instanceof Text) {
@@ -1058,6 +1080,7 @@ public class Controller {
                 }
             }
         }
+
     }
     CSVreadData csVreadData = new CSVreadData();
 
@@ -1220,9 +1243,25 @@ public class Controller {
                 "Please choose an industry","Please enter a country"};
         String[] EnglishSheet7={"Symbol:", "Operating Income:", "Industry:", "Year:", "Revenue:", "Operating Expenses:",
                 "Research and Development Expenses:", "Cost and Expenses:", "Interest Expense:", "EBIT Margin:",
-                "Book Vaue of Equity:", "Book Value of debt:", "Weighted Average Shares Outstanding:",
-                "Current stock price:",
-        };
+                "Book Value of Equity:", "Book Value of debt:", "Weighted Average Shares Outstanding:",
+                "Current stock price:",};
+        String[] EnglishSheet8={"Number of Shares outstanding =",
+                "Current Market Price per share =", "Approach for estimating beta", "Unlevered beta =", "Risk-free Rate =",
+                "What approach will be used to input ERP?", "Equity Risk Premium used in cost of equity =",
+                "Equity", "Enter levered beta (or regression beta)", "Direct input for ERP",};
+        String[] EnglishSheet9={"Number of Preferred Shares =",
+                "Current Market Price per share =", "Annual Dividend per Share =", "Preferred Stock",};
+        String[] EnglishSheet10={"Book Value of Straight Debt =",
+                "Interest Expense on Debt =", "Average Maturity =", "Tax Rate =",
+                "Approach for estimating pre-tax cost of debt", "Pre-tax Cost of Debt =",
+                "Book Value of Convertible Debt =", "Interest Expense on Convertible =",
+                "Maturity of Convertible Bond =", "Market Value of Convertible =",
+                "Debt value of operating leases =", "If direct input, input the pre-tax cost of debt",
+                "If synthetic rating, input the type of company", "If actual rating, input the rating",};
+        String[] EnglishSheet11={"Estimating Market Value of Straight Debt =",
+                "Estimated Value of Straight Debt in Convertible =", "Value of Debt in Operating leases =",
+                "Estimated Value of Equity in Convertible =", "Levered Beta for equity =",};
+        String[] EnglishSheet12={"Market Value", "Weight in Cost of Capital", "Cost of Component",};
 
         ChangeVersion(EnglishSheet1,Sheet1);
         ChangeVersion(EnglishSheet2,Sheet2);
@@ -1231,6 +1270,12 @@ public class Controller {
         ChangeVersion(EnglishSheet5,Sheet5);
         ChangeVersion(EnglishSheet6,Sheet6);
         ChangeVersion(EnglishSheet7,Sheet7);
+        ChangeVersion(EnglishSheet8,Sheet8);
+        ChangeVersion(EnglishSheet9,Sheet9);
+        ChangeVersion(EnglishSheet10,Sheet10);
+        ChangeVersion(EnglishSheet11,Sheet11);
+        ChangeVersion(EnglishSheet12,Sheet12);
+
         /*
         int i=0;
         for (Node node : Sheet1.getChildren()) {

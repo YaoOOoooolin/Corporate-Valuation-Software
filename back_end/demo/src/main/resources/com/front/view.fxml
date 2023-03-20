@@ -197,7 +197,7 @@
 
                                              </children>
                                           </GridPane>
-                                          <Button layoutX="503.0" layoutY="546.0" mnemonicParsing="false" text="Value Drivers" />
+                                          <Button layoutX="503.0" layoutY="546.0" mnemonicParsing="false" onAction="#ToTab2" text="Value Drivers" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -959,7 +959,7 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="311.0">
                                                          <children>
-                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="323.0" prefWidth="458.0" styleClass="grid">
+                                                            <GridPane fx:id="Sheet8" layoutX="14.0" layoutY="14.0" prefHeight="323.0" prefWidth="458.0" styleClass="grid">
                                                               <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="207.20004272460938" prefWidth="285.5999755859375" />
@@ -1041,7 +1041,7 @@
                                                                   <TextField fx:id="EquityInput3" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                                                </children>
                                                             </GridPane>
-                                                            <GridPane layoutX="13.0" layoutY="344.0" prefHeight="137.0" prefWidth="459.0" styleClass="grid">
+                                                            <GridPane fx:id="Sheet9" layoutX="13.0" layoutY="344.0" prefHeight="137.0" prefWidth="459.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="207.20004272460938" prefWidth="287.3999877929688" />
@@ -1089,7 +1089,7 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="552.0" prefWidth="559.0">
                                                          <children>
-                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="504.0" prefWidth="461.0" styleClass="grid">
+                                                            <GridPane fx:id="Sheet10" layoutX="14.0" layoutY="14.0" prefHeight="504.0" prefWidth="461.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="203.20004272460938" prefWidth="289.0" />
@@ -1211,7 +1211,7 @@
                                                   <content>
                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <GridPane layoutX="14.0" layoutY="14.0" prefHeight="169.0" prefWidth="498.0" styleClass="grid">
+                                                            <GridPane fx:id="Sheet11" layoutX="14.0" layoutY="14.0" prefHeight="169.0" prefWidth="498.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.9999755859375" minWidth="203.20004272460938" prefWidth="322.9999755859375" />
@@ -1259,7 +1259,7 @@
                                                                   <TextField fx:id="cocOutput5" prefHeight="23.0" prefWidth="145.0" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                                                </children>
                                                             </GridPane>
-                                                            <GridPane layoutX="14.0" layoutY="194.0" prefHeight="169.0" prefWidth="500.0" styleClass="grid">
+                                                            <GridPane fx:id="Sheet12" layoutX="14.0" layoutY="194.0" prefHeight="169.0" prefWidth="500.0" styleClass="grid">
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.9999755859375" minWidth="164.4000274658203" prefWidth="164.4000274658203" />
