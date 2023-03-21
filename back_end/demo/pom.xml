@@ -78,29 +78,7 @@
                     <target>16</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>io.github.fvarrui</groupId>
-                <artifactId>javapackager</artifactId>
-                <version>1.6.7</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>package</goal>
-                        </goals>
-                        <configuration>
 
-<!--                            <mainClass>com.example.demo.Main</mainClass>-->
-                            <mainClass>back_end.demo.src.main.java.com.front.CorporateValuationFrontEnd</mainClass>
-
-                            <bundleJre>true</bundleJre>
-                            <generateInstaller>false</generateInstaller>
-                            <administratorRequired>false</administratorRequired>
-                            <platform>mac</platform>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>

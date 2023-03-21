@@ -2,6 +2,7 @@ package com.front;
 
 import com.back.StaticData.InputData;
 import com.back.example.CostOfCapital.*;
+import com.back.example.OutPutMethod;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -30,10 +31,7 @@ import netscape.javascript.JSObject;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 
 public class Controller {
     /*
@@ -812,6 +810,7 @@ public class Controller {
                System.out.println(s);
            }
        });
+        OutPutMethod outPutMethod = new OutPutMethod();
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -825,9 +824,13 @@ public class Controller {
                     System.out.println(value);
                     values[index] = value;
                 }
+                Collections.addAll(OutPutMethod.revenuesList, Arrays.stream(values).boxed().toArray(Double[]::new));
+
+
 
                 Stage stage = (Stage)button.getScene().getWindow();
                 stage.close();
+
             }
 
         });
@@ -940,7 +943,8 @@ public class Controller {
                     System.out.println(value);
                     values[index] = value;
                 }
-
+                //TODO capital ratio的list在哪？
+//                Collections.addAll(OutPutMethod.revenuesList, Arrays.stream(values).boxed().toArray(Double[]::new));
                 Stage stage = (Stage)buttonOk.getScene().getWindow();
                 stage.close();
             }
