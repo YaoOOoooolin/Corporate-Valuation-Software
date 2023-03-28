@@ -146,7 +146,6 @@
 }*/
 .submit-btn{
     -fx-border-radius: 0px;
-    -fx-pref-width: 80px;
     -fx-pref-height: 35px;
     -fx-background-color: rgb(95, 184, 120);
     -fx-text-fill: rgb(256,256,256);
