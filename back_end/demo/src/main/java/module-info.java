@@ -4,8 +4,10 @@ module com.front {
     requires java.desktop;
     requires javafx.web;
     requires jdk.jsobject;
-    requires com.opencsv;
-
+    requires java.sql;
+    requires java.base;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.dataformat.csv;
 
     opens com.front to javafx.fxml;
     exports com.front;

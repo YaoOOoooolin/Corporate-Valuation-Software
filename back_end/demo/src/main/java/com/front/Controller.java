@@ -29,6 +29,8 @@ import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -852,14 +854,37 @@ public class Controller {
 
             if (newState == Worker.State.SUCCEEDED) {
                 try {
-                    // Read the contents of the JS file
-                    String script = new String(Files.readAllBytes(Paths.get("back_end/demo/src/main/resources/com/front/index.js")));
+//                     Read the contents of the JS file
+//                    String script = new String(Files.readAllBytes(Paths.get("src/main/resources/com/front/index.js")));
+                    URL url = Controller.class.getResource("index.js");
+                    String script = null;
+                    try {
+                        script = new String(Files.readAllBytes(Paths.get(url.toURI())));
+                    } catch (URISyntaxException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
+                    URL url1 = Controller.class.getResource("echarts.js");
+                    String script1 = null;
+                    try {
+                        script1 = new String(Files.readAllBytes(Paths.get(url1.toURI())));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (URISyntaxException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    webEngine.executeScript(script1);
                     webEngine.executeScript(script);
+
+
                     // Execute the JS file in the WebView
                     jsWindow = (JSObject) webEngine.executeScript("window");
                     jsWindow.setMember("javaArray", myArray);
                     webEngine.executeScript("useJavaArray(javaArray,"+ upToNYearForGrowthRate +")");
                     webEngine.executeScript("setDataZoomRange(myChart,0,100,25,75)");
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -967,7 +992,26 @@ public class Controller {
             if (newState == Worker.State.SUCCEEDED) {
                 try {
                     // Read the contents of the JS file
-                    String script = new String(Files.readAllBytes(Paths.get("back_end/demo/src/main/resources/com/front/index.js")));
+                    URL url = Controller.class.getResource("index.js");
+                    String script = null;
+                    try {
+                        script = new String(Files.readAllBytes(Paths.get(url.toURI())));
+                    } catch (URISyntaxException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    URL url1 = Controller.class.getResource("echarts.js");
+                    String script1 = null;
+                    try {
+                        script1 = new String(Files.readAllBytes(Paths.get(url1.toURI())));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (URISyntaxException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    webEngine.executeScript(script1);
+
                     webEngine.executeScript(script);
                     // Execute the JS file in the WebView
                     jsWindow = (JSObject) webEngine.executeScript("window");

@@ -1,14 +1,17 @@
 package com.front;
 
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
+import com.fasterxml.jackson.databind.MappingIterator;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 public class CSVreadData {
+    // ... (Getter and Setter methods, and instance variables)
     public ArrayList<String> getCompanyList() {
         return companyList;
     }
@@ -32,136 +35,106 @@ public class CSVreadData {
     public void setIndustryList(ArrayList<String> industryList) {
         this.industryList = industryList;
     }
-
     ArrayList<String> companyList = new ArrayList<>();
     ArrayList<String> countryList = new ArrayList<>();
     ArrayList<String> industryList = new ArrayList<>();
-
     public ArrayList<String> getResultList() {
         return resultList;
     }
-
     public void setResultList(ArrayList<String> resultList) {
         this.resultList = resultList;
     }
-
     ArrayList<String> resultList = new ArrayList<>();
-
-
-
     public String getCountryName() {
         return countryName;
     }
-
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
-
     public String getIndustryName() {
         return industryName;
     }
-
     public void setIndustryName(String industryName) {
         this.industryName = industryName;
     }
-
     public String getCompanyName() {
         return companyName;
     }
-
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
-
     String countryName = "";
     String industryName = "";
     String companyName = "";
     public void readData() {
-        Controller controller = new Controller();
         // Path to the CSV file
-        String csvFilePath = "back_end/demo/src/main/resources/TestData.csv";
+//        String csvFilePath = "/Users/allan/GRPTeam14/back_end/demo/src/main/java/com/front/TestData.csv";
+        URL path = CSVreadData.class.getResource("TestData.csv");
+//        if (csvFilePath.isEmpty()) {
+//            csvFilePath = "src/main/resources/TestData.csv";
+//            if (csvFilePath.isEmpty()){
+//                csvFilePath = "TestData.csv";
+//            }
+//        }
+        CsvMapper mapper = new CsvMapper();
+        CsvSchema schema = CsvSchema.emptySchema().withHeader();
+
         String country = getCountryName();
         String industry = getIndustryName();
         String company = getCompanyName();
-//        System.out.println(country);
-//        System.out.println(industry);
-//        System.out.println(company);
         String column = "";
         String value = "";
-        if (industry.equals("") & company.equals("")){
+        if (industry.equals("") & company.equals("")) {
             column = "Country";
             value = country;
-        } else if (country.equals("")&industry.equals("")) {
+        } else if (country.equals("") & industry.equals("")) {
             column = "Name";
             value = company;
-        }else{
+        } else {
             column = "Industry";
             value = industry;
         }
 
-        try (CSVReader reader = new CSVReader(new FileReader(csvFilePath))) {
+        try {
+            MappingIterator<Map<String, String>> iterator = mapper.readerFor(Map.class)
+                    .with(schema)
+                    .readValues(new BufferedReader(new InputStreamReader(path.openStream())));
+//                    .readValues(new File(csvFilePath));
 
-            // Read the header row
-            String[] header = reader.readNext();
+            while (iterator.hasNext()) {
+                Map<String, String> row = iterator.next();
 
-            // Find the index of the "Country" column
-            int countryColumnIndex = -1;
-            for (int i = 0; i < header.length; i++) {
-                if (header[i].equals(column)) {
-                    countryColumnIndex = i;
-                    break;
-                }
-            }
+                // Check if the value matches the specified column
+                if (row.get(column).equals(value)) {
+                    String companyName = row.get("Name");
+                    String countryName = row.get("Country");
+                    String industryName = row.get("Industry");
 
-            // Throw an exception if the "Country" column isn't found
-            if (countryColumnIndex == -1) {
-                throw new RuntimeException("The 'Country' column was not found in the CSV file.");
-            }
-
-            // Loop through the rest of the rows
-            String[] row;
-
-            while ((row = reader.readNext()) != null) {
-
-                // Check if the country is "China"
-                if (row[countryColumnIndex].equals(value)) {
-
-                    // Extract the company name
-                    String companyName = row[0]; // Assumes that the company name is in the first column
-                    String countryName = row[1];
-                    String industryName = row[2];
-                    // Print the company name
-//                    System.out.println(companyName);
-//                    System.out.println(countryName);
-//                    System.out.println(industryName);
                     companyList.add(companyName);
                     countryList.add(countryName);
                     industryList.add(industryName);
-                    if (!companyName.equals("")){
-                        resultList.addAll(Arrays.asList(row).subList(0, 16));
+
+                    if (!companyName.equals("")) {
+                        resultList.addAll(Arrays.asList(row.values().toArray(new String[0])).subList(0, 16));
                     }
-                }else if (industryName.equals("box")){
-                    String industryName = row[2];
+                } else if (industryName.equals("box")) {
+                    String industryName = row.get("Industry");
                     industryList.add(industryName);
                 } else if (countryName.equals("cty")) {
-                    String countryName = row[1];
+                    String countryName = row.get("Country");
                     countryList.add(countryName);
                 }
             }
-
-        } catch (IOException | CsvValidationException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
+
     public static void main(String[] args) {
         CSVreadData csVreadData = new CSVreadData();
-//        csVreadData.setCountryName("United States");
-        csVreadData.setCompanyName("AAPL");
-
+        csVreadData.setCompanyName("AMD");
         csVreadData.readData();
-        System.out.println(csVreadData.getCompanyList());
-        System.out.println(csVreadData.getCountryList());
-        System.out.println(csVreadData.getIndustryList());
+        System.out.println(csVreadData.resultList);
     }
 }
