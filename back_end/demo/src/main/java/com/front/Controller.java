@@ -3,10 +3,7 @@ package com.front;
 import com.back.StaticData.InputData;
 import com.back.example.CostOfCapital.*;
 import com.back.example.OutPutMethod;
-import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,7 +14,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -56,13 +52,12 @@ public class Controller {
     public CheckBox B13Yes;
     public CheckBox B13No;
     public TextField B21;
-    public TextField B23;
     public TextField B24;
-    public TextField B25;
+//    public TextField B25;
     public TextField B26;
-    public TextField B27;
-    public TextField B28;
-    public TextField B30;
+//    public TextField B27;
+//    public TextField B28;
+//    public TextField B30;
     public TextField B31;
     public TextField B34;
     public TextField B35;
@@ -253,6 +248,8 @@ public class Controller {
     public GridPane Sheet10;
     public GridPane Sheet11;
     public GridPane Sheet12;
+    //数据库路径
+    public TextField filePath;
 
 
     @FXML
@@ -425,7 +422,7 @@ public class Controller {
     @FXML
     void result(ActionEvent event) {
         //submit 按钮进行读入 后进行计算
-        try {
+//        try {
             InputData.setB8(Double.parseDouble(B8.getText()));
             InputData.setB9(Double.parseDouble(B9.getText()));
             InputData.setB10(Double.parseDouble(B10.getText()));
@@ -441,14 +438,14 @@ public class Controller {
             InputData.setB20(isPercentage(B20.getText()));
             InputData.setB21(isPercentage(B21.getText()));
 
-            InputData.setB23(isPercentage(B23.getText()));
-            InputData.setB24(isPercentage(B24.getText()));
-            InputData.setB25(isPercentage(B25.getText()));
-            InputData.setB26(isPercentage(B26.getText()));
-            InputData.setB27(Double.parseDouble(B27.getText()));
-            InputData.setB28(Double.parseDouble(B28.getText()));
 
-            InputData.setB30(isPercentage(B30.getText()));
+            InputData.setB24(isPercentage(B24.getText()));
+//            InputData.setB25(isPercentage(B25.getText()));
+            InputData.setB26(isPercentage(B26.getText()));
+//            InputData.setB27(Double.parseDouble(B27.getText()));
+//            InputData.setB28(Double.parseDouble(B28.getText()));
+
+//            InputData.setB30(isPercentage(B30.getText()));
             InputData.setB31(isPercentage(B31.getText()));
 
             InputData.setB34(Double.parseDouble(B34.getText()));
@@ -475,31 +472,34 @@ public class Controller {
             InputData.setB65(isPercentage(B65.getText()));
 
 
-
-            Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            Scene scene = new Scene(root, 1094, 800);
-            stage.setTitle("Result");
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-        } catch (Exception e) {
-            blankCheck(B8, B9, B2, B10, B11, B12, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26);
-            blankCheck(B27, B28, B30, B31, B34, B35, B36, B37, B42, B45, B48, B50, B55, B59, B61, B64,B65);
-            isBlank(B13Yes, B13No);
-            isBlank(B33Yes, B33No);
-            isBlank(B41Yes, B41No);
-            isBlank(B44Yes, B44No);
-            isBlank(B47Yes, B47No);
-            isBlank(B54Yes, B54No);
-            isBlank(B57Yes, B57No);
-            isBlank(B60Yes, B60No);
-            isBlank(B63Yes, B63No);
-            isBlank(B52Yes, B52No);
-            isBlank(B49B,B49V,B47Yes.isSelected());
-            Alert();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("result.fxml"));
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+            Scene scene = new Scene(root, 1096, 742);
+            stage.setTitle("Result");
+            stage.setScene(scene);
+            stage.show();
+//        } catch (Exception e) {
+//            blankCheck(B8, B9, B2, B10, B11, B12, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26);
+//            blankCheck(B27, B28, B30, B31, B34, B35, B36, B37, B42, B45, B48, B50, B55, B59, B61, B64,B65);
+//            isBlank(B13Yes, B13No);
+//            isBlank(B33Yes, B33No);
+//            isBlank(B41Yes, B41No);
+//            isBlank(B44Yes, B44No);
+//            isBlank(B47Yes, B47No);
+//            isBlank(B54Yes, B54No);
+//            isBlank(B57Yes, B57No);
+//            isBlank(B60Yes, B60No);
+//            isBlank(B63Yes, B63No);
+//            isBlank(B52Yes, B52No);
+//            isBlank(B49B,B49V,B47Yes.isSelected());
+//            Alert();
+//            throw new RuntimeException(e);
+//        }
     }
 
     private void isBlank(CheckBox c, CheckBox d, boolean selected) {
@@ -530,10 +530,6 @@ public class Controller {
         isBlank(b49);
         isBlank(b48);
         isBlank(b50);
-        isBlank(b55);
-        isBlank(b59);
-        isBlank(b61);
-        isBlank(b64);
     }
 
     public void B13CheckNo(ActionEvent event) {
@@ -1727,5 +1723,11 @@ public class Controller {
             cocOutput32.setText(String.valueOf(CostC50DebtComponent.getDebtComponent()));
             cocOutput33.setText(String.valueOf(CostD50PreferredStockComponent.getPreferredStockComponent()));
             cocOutput34.setText(String.valueOf(CostE50CostOfCapital.getCostOfCapital()));
+    }
+
+    //设置数据库方法
+    public void SetFilePath(ActionEvent actionEvent) {
+
+        String path = filePath.getText();
     }
 }

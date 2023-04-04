@@ -71,7 +71,7 @@ public class Login {
     public void switchToGame(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("view.fxml"));
         Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        Scene scene = new Scene(root, 750, 800);
+        Scene scene = new Scene(root, 800, 800);
         stage.setScene(scene);
         stage.setTitle("The Story");
         stage.show();

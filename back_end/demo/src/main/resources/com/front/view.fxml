@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -22,16 +23,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="915.0" prefWidth="800.0" stylesheets="@interface.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="915.0" prefWidth="800.0" stylesheets="@interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Controller">
    <bottom>
-      <HBox prefHeight="91.0" prefWidth="742.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="94.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@linkedin_profile_image.png" />
-               </image>
-            </ImageView>
-         </children></HBox>
+      <HBox prefHeight="91.0" prefWidth="742.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
       <VBox prefHeight="820.0" prefWidth="562.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: gray;" BorderPane.alignment="CENTER">
@@ -197,7 +191,6 @@
 
                                              </children>
                                           </GridPane>
-                                          <Button layoutX="503.0" layoutY="546.0" mnemonicParsing="false" onAction="#ToTab2" text="Value Drivers" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -294,7 +287,7 @@
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="B31" prefHeight="27.0" prefWidth="163.0" promptText="(%)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                                                <Button mnemonicParsing="false" onAction="#ToTab81" prefHeight="23.0" prefWidth="73.0" styleClass="submit-btn" text="Cost of Capital" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ToTab81" prefHeight="23.0" prefWidth="75.0" styleClass="submit-btn" text="To Capital " GridPane.columnIndex="4" GridPane.rowIndex="9" />
                                              </children>
                                           </GridPane>
                                        </children>
@@ -506,7 +499,6 @@
                                                 <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                                              </children>
                                           </GridPane>
-                                          <Button layoutX="542.0" layoutY="524.0" mnemonicParsing="false" text="Value Drivers" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -642,7 +634,6 @@
                                                 <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                                              </children>
                                           </GridPane>
-                                          <Button layoutX="511.0" layoutY="521.0" mnemonicParsing="false" text="Value Drivers" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -651,7 +642,7 @@
                                 <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <GridPane fx:id="Sheet6" layoutX="14.0" layoutY="14.0" prefHeight="203.0" prefWidth="514.0" styleClass="grid">
+                                          <GridPane fx:id="Sheet6" layoutX="13.0" layoutY="54.0" prefHeight="203.0" prefWidth="514.0" styleClass="grid">
                                             <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="8.0" minWidth="8.0" prefWidth="8.0" />
                                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.1999938964844" minWidth="10.0" prefWidth="207.20001220703125" />
@@ -684,7 +675,6 @@
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
-                                                <TextField fx:id="selectedCountry" prefHeight="23.0" prefWidth="145.0" promptText="Enter company name" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                                 <Button fx:id="submit_id4" mnemonicParsing="false" onAction="#DatabaseResult3" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                              </children>
                                           </GridPane>
@@ -821,6 +811,24 @@
                                                 </Text>
                                              </children>
                                           </GridPane>
+                                          <HBox alignment="CENTER_LEFT" layoutX="13.0" layoutY="21.0" prefHeight="25.0" prefWidth="513.0">
+                                             <children>
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the path of the file:" wrappingWidth="176.87953186035156">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField fx:id="filePath" prefHeight="27.0" prefWidth="196.0" promptText="Enter file path" styleClass="input-group">
+                                                   <HBox.margin>
+                                                      <Insets left="30.0" />
+                                                   </HBox.margin></TextField>
+                                                <Button mnemonicParsing="false" onAction="#SetFilePath" prefHeight="27.0" prefWidth="73.0" styleClass="submit-btn" text="confirm">
+                                                   <HBox.margin>
+                                                      <Insets left="15.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -939,10 +947,26 @@
                                                 </Text>
                                              </children>
                                           </GridPane>
-                                          <Button fx:id="saveDataBase" layoutX="476.0" layoutY="30.0" mnemonicParsing="false" onAction="#saveToDataBase" text="Save" />
-                                          <Button layoutX="518.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeDataBaseValue" prefHeight="23.0" prefWidth="56.0" text="Change" />
-                                          <Button layoutX="574.0" layoutY="30.0" mnemonicParsing="false" onAction="#addToDataBase" prefHeight="23.0" prefWidth="37.0" text="Add" />
-                                          <Button layoutX="477.0" layoutY="53.0" mnemonicParsing="false" onAction="#UseInCalculation" prefHeight="23.0" prefWidth="134.0" text="Use in calculation" />
+                                          <VBox layoutX="471.0" layoutY="25.0" prefHeight="200.0" prefWidth="135.0">
+                                             <children>
+                                                <Button fx:id="saveDataBase" mnemonicParsing="false" onAction="#saveToDataBase" prefHeight="23.0" prefWidth="159.0" text="Save">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#changeDataBaseValue" prefHeight="23.0" prefWidth="145.0" text="Change">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#addToDataBase" prefHeight="23.0" prefWidth="154.0" text="Add">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#UseInCalculation" prefHeight="23.0" prefWidth="134.0" text="Use in calculation" />
+                                             </children>
+                                          </VBox>
                                        </children>
                                     </AnchorPane>
                                  </content>
