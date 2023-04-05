@@ -1,3 +1,15 @@
+/**
+
+The A40ROIC class represents the return on invested capital for a company over a period of time.
+
+It accepts multiple input parameters such as boolean values, doubles, and objects of A12CostOfCapital and A39InvestedCapital classes, to calculate
+
+the return on invested capital for each year over a specified period of time. The class provides a setter method to calculate the return on invested
+
+capital for each year and store it in an ArrayList, and a getter method to retrieve the ArrayList of return on invested capital values and the terminal
+
+return on invested capital value.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
