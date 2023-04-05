@@ -1,3 +1,11 @@
+/**
+
+ This package contains classes related to generating output sheet for a discounted cash flow (DCF) analysis.
+ The output sheet includes various financial metrics and cash flows for the analysis, such as revenues, EBIT, EBITDA, free cash flows, etc.
+ The classes in this package are used to calculate these metrics and cash flows based on the input data provided by the user.
+ @author KeYi LIU
+ @version V1.1
+ */
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
