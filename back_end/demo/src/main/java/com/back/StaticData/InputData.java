@@ -1,42 +1,47 @@
 package com.back.StaticData;
 
+import java.util.ArrayList;
+
 public class InputData {
 
 
-
-
     public static void setB52(boolean b) {
+        B52=b;
     }
 
-    public double getB26() {
+    public static double getB26() {
         return B26;
     }
 
-    public double getB27() {
+    public static double getB27() {
         return B27;
     }
 
-    public double getB23() {
+    public static double getB23() {
         return B23;
     }
 
-    public double getB25() {
+    public static double getB25() {
         return B25;
     }
 
-    public boolean isB60() {
+    public static boolean isB52() {
+        return B52;
+    }
+
+    public static boolean isB60() {
         return B60;
     }
 
-    public double getB61() {
+    public static double getB61() {
         return B61;
     }
 
-    public boolean isB57() {
+    public static boolean isB57() {
         return B57;
     }
 
-    public double getB58() {
+    public static double getB58() {
         return B58;
     }
 
@@ -44,11 +49,11 @@ public class InputData {
         return B30;
     }
 
-    public double getB8() {
+    public static double getB8() {
         return B8;
     }
 
-    public boolean isB13() {
+    public static boolean isB13() {
         return B13;
     }
 
@@ -56,52 +61,52 @@ public class InputData {
         return B9;
     }
 
-    public boolean isB14() {
+    public static boolean isB14() {
         return B14;
     }
 
-    public double getB24() {
+    public static double getB24() {
         return B24;
     }
 
-    public double getB20() {
+    public static double getB20() {
         return B20;
     }
 
-    public double getB55() {
+    public static double getB55() {
         return B55;
     }
 
-    public boolean isB54() {
+    public static boolean isB54() {
         return B54;
     }
 
-    public double getB28() {
+    public static double getB28() {
         return B28;
     }
 
-    public boolean isB41() {
+    public static boolean isB41() {
         return B41;
     }
 
-    public double getB42() {
+    public static double getB42() {
         return B42;
     }
 
-    public double getB31() {
+    public static double getB31() {
         return B31;
     }
 
-    public boolean isB44() {
+    public static boolean isB44() {
         return B44;
     }
 
-    public double getB45() {
+    public static double getB45() {
         return B45;
     }
 
 
-    public double getB11() {
+    public static double getB11() {
         return B11;
     }
 
@@ -109,24 +114,24 @@ public class InputData {
         return B12;
     }
 
-    public double getB15() {
+    public static double getB15() {
         return B15;
     }
 
-    public boolean isB47() {
+    public static boolean isB47() {
         return B47;
     }
 
-    public double getB48() {
+    public static double getB48() {
         return B48;
     }
 
 
-    public String getB49() {
+    public static String getB49() {
         return B49;
     }
 
-    public double getB50() {
+    public static double getB50() {
         return B50;
     }
 
@@ -135,30 +140,29 @@ public class InputData {
     }
 
 
-    public double getB17() {
+    public static double getB17() {
         return B17;
     }
 
 
-
-    public boolean isB63() {
+    public static boolean isB63() {
         return B63;
     }
 
-    public double getB64() {
+    public static double getB64() {
         return B64;
     }
 
-    public double getB65() {
+    public static double getB65() {
         return B65;
     }
 
 
-    public double getB16() {
+    public static double getB16() {
         return B16;
     }
 
-    public boolean isB33() {
+    public static boolean isB33() {
         return B33;
     }
 
@@ -172,17 +176,18 @@ public class InputData {
         return B19;
     }
 
-    private static double B16;
-    static double B19= (double) 127.68;
-    static double B18=566;
-    static boolean B33=false;
-    static boolean B63=false;
-    static double B64=140000;
-    static double B65= (double) 0.15;
-    static double B17=0;
-    static String B49="V";
-    static double B50= 0.5;
-    static double B21= 0.25;
+    static boolean B52 = false;
+    static double B16;
+    static double B19 = (double) 127.68;
+    static double B18 = 566;
+    static boolean B33 = false;
+    static boolean B63 = false;
+    static double B64 = 140000;
+    static double B65 = (double) 0.15;
+    static double B17 = 0;
+    static String B49 = "V";
+    static double B50 = 0.5;
+    static double B21 = 0.25;
     static boolean B47 = true;
     static double B48 = 0.2;
     static double B11 = -8617;
@@ -207,16 +212,36 @@ public class InputData {
     static double B8 = 76559;
     static boolean B13 = true;
     static double B9 = -2102;
-    static double B26 = (double) 0.096;
+
     static double B27 = 3;
     static boolean B14 = false;
     static double B24 = (double) -0.05;
-    static double B35 ;
-    static double B36 ;
-    static double B37 ;
-    static int yearOfList=10;
-    static int year2_x=5;
+    static double B34 = 7.27;
+    static double B35 = 1.29;
+    static double B36 = 7;
+    static double B37 = 0.45;
+    public static int yearOfList = 10;
+    static int year2_x = 5;
+    static double B26 = (double) 0.096;
 
+    public static ArrayList<Double> getA2RevenueGrowthRateList() {
+        return A2RevenueGrowthRateList;
+    }
+
+    public static void setA2RevenueGrowthRateList(ArrayList<Double> a2RevenueGrowthRateList) {
+        A2RevenueGrowthRateList = a2RevenueGrowthRateList;
+    }
+
+    public static ArrayList<Double> getA12CostOfCapitalList() {
+        return A12CostOfCapitalList;
+    }
+
+    public static void setA12CostOfCapitalList(ArrayList<Double> a12CostOfCapitalList) {
+        A12CostOfCapitalList = a12CostOfCapitalList;
+    }
+
+    static ArrayList<Double> A2RevenueGrowthRateList=new ArrayList<>();
+    static ArrayList<Double> A12CostOfCapitalList=new ArrayList<>();
 
 
     public static int getYear2_x() {
@@ -226,7 +251,6 @@ public class InputData {
     public static void setYear2_x(int year2_x) {
         InputData.year2_x = year2_x;
     }
-
 
 
     public static int getYearOfList() {
@@ -268,8 +292,6 @@ public class InputData {
     public static void setB34(double b34) {
         B34 = b34;
     }
-
-    static double B34 ;
 
 
     public static double getB10() {
@@ -438,4 +460,6 @@ public class InputData {
     public static void setB24(double b24) {
         B24 = b24;
     }
+
+
 }

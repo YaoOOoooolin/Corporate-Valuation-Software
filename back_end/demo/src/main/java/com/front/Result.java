@@ -2,12 +2,19 @@ package com.front;
 
 import com.back.example.OutPutMethod;
 import com.back.example.OutPutMethod2;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.PageSize;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+
+import static com.back.example.PDF.PdfReport.setMain;
 
 public class Result {
         public Text F14;
@@ -504,4 +511,14 @@ public class Result {
         }
 
 
+        public void report(ActionEvent actionEvent) throws IOException {
+                Document document = new Document(PageSize.A4);// 建立一个Document对象
+
+                // 2.建立一个书写器(Writer)与document对象关联
+                String str = "PDFDemo2";
+                File file = new File(str + ".pdf");
+                file.createNewFile();
+                setMain(file, document);
+                System.out.println("Report success");
+        }
 }
