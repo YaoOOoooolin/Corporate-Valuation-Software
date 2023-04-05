@@ -1,3 +1,17 @@
+/**
+
+* This class reads data from a CSV file using Jackson's CsvMapper library. The path to the CSV file can be set using
+* the setPath() method. The readData() method reads the data from the file and stores it in three ArrayLists - one for
+* company names, one for country names, and one for industry names. It also stores the data for a specified company,
+* country, or industry in a resultList ArrayList. The column to be searched for and its value are determined based on
+* the input values for the company, country, and industry names. If the path is not set, it defaults to the TestData.csv
+* file in the resources folder.
+* The main() method demonstrates how to use the class by setting a company name and calling the readData() method to
+* retrieve the data for that company. The result is printed to the console.
+* @author [Yao LIN]
+* @version [V1.1]
+* @since [2023/3/31]
+*/
 package com.front;
 
 import com.fasterxml.jackson.databind.MappingIterator;
