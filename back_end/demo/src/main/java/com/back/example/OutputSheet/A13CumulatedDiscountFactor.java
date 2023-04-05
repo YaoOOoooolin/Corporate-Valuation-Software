@@ -1,3 +1,8 @@
+/**
+
+This class represents a cumulative discount factor list generator.
+It provides methods to set and get the list of cumulated discount factors.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
