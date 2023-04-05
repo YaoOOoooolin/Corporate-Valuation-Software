@@ -19,6 +19,16 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 
 import static com.back.StaticData.InputData.yearOfList;
+/**
+ * Generates a PDF report that contains various elements such as paragraphs, lines, tables,
+ * images, links, and watermarks.
+ *
+ * @param document The document to write the PDF report to.
+ * @throws Exception If there is an error while generating the PDF report.
+ * @author [Keyi Liu]
+ * @version [2]
+ */
+
 
 public class PdfReport {
 
