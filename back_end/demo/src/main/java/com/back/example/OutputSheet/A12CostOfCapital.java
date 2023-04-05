@@ -1,3 +1,11 @@
+/**
+
+A12CostOfCapital represents the cost of capital used in the discounted cash flow (DCF) analysis.
+This class includes methods to calculate the terminal cost of capital and the cost of capital for each year in the forecast period.
+@author Back
+@version 1.0
+@since 2023-04-05
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
