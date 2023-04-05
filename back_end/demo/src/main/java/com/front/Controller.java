@@ -1066,7 +1066,7 @@ public class Controller {
     /**
      * This function changes English to Chinese
      */
-    public void LightMode(ActionEvent actionEvent) {
+    public void Chi_Version(ActionEvent actionEvent) {
 
         String[] ChineseSheet1={"日期" ,"公司名" ,"国家" ,"行业" ,"行业(全球)" ,"营业额" ,"营业利润"
                 ,"利息费用" ,"股权账面价值" ,"债权账面价值" ,"是否有研发费用需要资本化?" ,"现金和适销证券"
