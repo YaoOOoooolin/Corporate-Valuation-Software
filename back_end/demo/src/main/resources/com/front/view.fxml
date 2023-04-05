@@ -1403,7 +1403,7 @@
                   <Font name="Calibri Bold" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="changeButton" layoutX="712.0" layoutY="14.0" mnemonicParsing="false" onAction="#LightMode" prefHeight="23.0" prefWidth="36.0" text="中" />
+            <Button fx:id="changeButton" layoutX="712.0" layoutY="14.0" mnemonicParsing="false" onAction="#Chi_Version" prefHeight="23.0" prefWidth="36.0" text="中" />
             <Button layoutX="748.0" layoutY="14.0" mnemonicParsing="false" onAction="#Eng_Version" text="Eng" />
             <ImageView fitHeight="94.0" fitWidth="133.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
