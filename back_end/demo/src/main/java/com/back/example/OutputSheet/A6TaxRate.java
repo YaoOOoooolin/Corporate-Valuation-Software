@@ -1,3 +1,16 @@
+/**
+
+ The A6TaxRate class sets and retrieves the tax rate for each year.
+ This class contains the following public methods:
+ setTaxRateList: sets the tax rate list based on the input values.
+ getTaxRateList: retrieves the tax rate list.
+ getTerminalTaxRate: retrieves the terminal tax rate.
+ The following instance variables are used in this class:
+ taxRateList: an ArrayList of doubles that stores the tax rates.
+ Note: The tax rate for each year is the same and is set based on the input value.
+ @author [KeYi LIU]
+ @version [V1.1]
+ */
 package com.back.example.OutputSheet;
 
 import java.util.ArrayList;
