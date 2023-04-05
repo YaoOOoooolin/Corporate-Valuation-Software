@@ -1,3 +1,19 @@
+/**
+
+ The A5EBITIncome class calculates the EBIT income for each year based on the revenues and EBIT margins.
+ It also stores the list of EBIT income over the years and the operating income growth rate.
+ This class contains the following public methods:
+ setEBITIncomeList: calculates and sets the EBIT income list based on the input values.
+ getEBITIncomeList: retrieves the EBIT income list.
+ getOperatingIncomeGrew: retrieves the operating income growth rate.
+ The following instance variables are used in this class:
+ ebitIncomeList: an ArrayList of doubles that stores the EBIT income.
+ operatingIncomeGrew: a double that stores the operating income growth rate.
+ Note: The EBIT income for each year is calculated using the formula: EBIT income = revenue * EBIT margin.
+ The operating income growth rate is calculated as the difference between the terminal EBIT income and the initial EBIT income.
+ @author [KeYi LIU]
+ @version [V1.1]
+ */
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
