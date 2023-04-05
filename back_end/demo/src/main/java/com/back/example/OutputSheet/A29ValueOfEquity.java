@@ -1,12 +1,16 @@
 /**
 
-This class stores the amount of non-operating assets and provides methods to set and get the value of non-operating assets.
-This class has the following public methods:
-setNonOperatingAssets(double inputB16)
-This method takes in a double value which represents the book value of non-operating assets and sets the inputB16
-as the value of non-operating assets.
-getNonOperatingAssets()
-This method returns the value of non-operating assets stored in the nonOperatingAssets variable.
+The A29ValueOfEquity class represents the value of equity for a company.
+
+It calculates the value of equity based on the following formula:
+
+Value of Equity = Value of Operating Assets - Debt - Minority Interests + Cash + Non-Operating Assets
+
+The class accepts various input parameters such as A24ValueOfOperatingAssets, A25Debt, A26MinorityInterests,
+
+A27Cash, and A28NonOperatingAssets to calculate the value of equity.
+
+The class also provides a getter method to retrieve the calculated value of equity.
 */
 package com.back.example.OutputSheet;
 
