@@ -1,5 +1,11 @@
 package com.front;
+/**
 
+ * This class is the start the of program.
+ * @author [Zihao ZHANG]
+ * @version [V1.0]
+ * @since [2023/2/11]
+ */
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

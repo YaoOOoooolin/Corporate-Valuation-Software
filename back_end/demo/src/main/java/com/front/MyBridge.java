@@ -1,3 +1,10 @@
+/**
+
+ * This class is a tool class. It calculates each node of the two variables in the controller, Revenue and Cost of Capital.
+ * @author [Zihao ZHANG]
+ * @version [V1.0]
+ * @since [2023/2/11]
+ */
 package com.front;
 
 import java.util.ArrayList;
@@ -6,16 +13,8 @@ public class MyBridge {
     private double baseYear;
     private double terminalYear;
 
-    public double getBaseYear() {
-        return baseYear;
-    }
-
     public void setBaseYear(double baseYear) {
         this.baseYear = baseYear;
-    }
-
-    public double getTerminalYear() {
-        return terminalYear;
     }
 
     public void setTerminalYear(double terminalYear) {

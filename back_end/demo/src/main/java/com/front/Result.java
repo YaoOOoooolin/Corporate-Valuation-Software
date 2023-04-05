@@ -1,3 +1,11 @@
+/**
+
+ * This class generate the controller of the final result, in the initialization method, the variables will accept the value from the Controller class.
+ * This class also have a method report which used for generate a report of the calculation result.
+ * @author [Zihao ZHANG]
+ * @version [V1.0]
+ * @since [2023/3/30]
+ */
 package com.front;
 
 import com.back.example.OutPutMethod;

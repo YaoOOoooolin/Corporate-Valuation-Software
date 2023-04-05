@@ -1,3 +1,12 @@
+/**
+
+ * This class is the controller class of the loginApplication class.
+ * In this class, The username and password entered by the user are detected and the user is allowed to select the csv path.
+ * If the values are correct, it will junp to the next page, otherwise, it will show a prompt at the top.
+ * @author [Zihao ZHANG]
+ * @version [V1.0]
+ * @since [2023/2/11]
+ */
 package com.front;
 
 import javafx.event.ActionEvent;
