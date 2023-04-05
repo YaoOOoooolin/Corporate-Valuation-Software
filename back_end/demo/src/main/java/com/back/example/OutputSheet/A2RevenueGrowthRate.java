@@ -1,3 +1,20 @@
+/**
+
+ * The A2RevenueGrowthRate class calculates the revenue growth rate and terminal revenue for a given input set of values.
+ * It also stores the list of revenue growth rates over the years.
+ * This class contains the following public methods:
+ * setTerminalRevenue: sets the terminal revenue based on the input values.
+ * getTerminalRevenue: retrieves the terminal revenue.
+ * setRevenueGrowthRateList: calculates and sets the revenue growth rate list based on the input values.
+ * getRevenueGrowthRateList: retrieves the revenue growth rate list.
+ * getTerminalRevenueGrowthRate: retrieves the terminal revenue growth rate.
+ * The following instance variables are used in this class:
+ * revenueGrowthRateList: an ArrayList of doubles that stores the revenue growth rates.
+ * terminalRevenue: a double that stores the terminal revenue.
+ * Note: The revenue growth rate is calculated using the formula: (current revenue - terminal revenue) / (terminal year - current year + 1).
+ * @author [KeYi LIU]
+ * @version [V1.1]
+ */
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
