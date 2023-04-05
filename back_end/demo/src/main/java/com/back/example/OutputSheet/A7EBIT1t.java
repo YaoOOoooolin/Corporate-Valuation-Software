@@ -1,3 +1,19 @@
+/**
+ The A7EBIT1t class sets and retrieves the EBIT for each year after tax and NOLs.
+ This class contains the following public methods:
+ setTerminalEBIT1t: sets the terminal EBIT after tax and NOLs based on the input values.
+ setEBIT1tList: sets the EBIT after tax and NOLs list based on the input values.
+ getEBIT1tList: retrieves the EBIT after tax and NOLs list.
+ getTerminalEBIT1t: retrieves the terminal EBIT after tax and NOLs.
+ The following instance variables are used in this class:
+ ebit1tList: an ArrayList of doubles that stores the EBIT after tax and NOLs.
+ terminalEBIT1t: a double that stores the terminal EBIT after tax and NOLs.
+ Note: The EBIT after tax and NOLs for each year is calculated based on the EBIT income, tax rate, and NOL for that year.
+ The terminal EBIT after tax and NOLs is calculated based on the terminal EBIT income, tax rate, and NOL.
+ package com.back.example.OutputSheet;
+ @author [KeYi LIU]
+ @version [V1.1]
+ */
 package com.back.example.OutputSheet;
 
 
