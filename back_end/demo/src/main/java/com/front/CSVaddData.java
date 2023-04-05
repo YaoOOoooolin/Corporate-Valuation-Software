@@ -1,3 +1,14 @@
+/**
+
+* This class is responsible for adding new data to a CSV file.
+* The CSV file path is set through the setCsvFilePath() method.
+* The addData() method takes an array of Strings as input and appends a new row to the CSV file.
+* The Add() method takes 16 Strings as input and calls the addData() method with the provided values.
+* The class also provides a method for copying a file from a source to a destination.
+* @author [Yao LIN]
+* @version [V1.1]
+* @since [2023/3/31]
+*/
 package com.front;
 
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -25,6 +36,13 @@ public class CSVaddData {
     public String csvFilePath;
     public String csvBackupFilePath;
     String[] newValues;
+    
+    /**
+    * Adds a new row to the CSV file with the provided values.
+    * 
+    * @param list An array of Strings representing the values to add to the CSV file.
+    * @throws Exception If an error occurs while adding the data to the CSV file.
+    */
     public void addData(String[] list) throws Exception{
         csvFilePath = Login.filepath;
 
@@ -94,7 +112,13 @@ public class CSVaddData {
 
 
     }
+    /**
 
+    * Copies a file from the source location to the destination location.
+    * @param source the source file to copy from
+    * @param destination the destination file to copy to
+    * @throws IOException if there is an error during the file copy process
+    */
     private static void copyFile(File source, File destination) throws IOException {
         try (InputStream in = new FileInputStream(source);
              OutputStream out = new FileOutputStream(destination)) {
@@ -105,7 +129,10 @@ public class CSVaddData {
             }
         }
     }
+/**
 
+* Adds data with the provided values to the dataset.
+*/
 public void Add(String text, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11, String text12, String text13, String more_value1, String more_value2) {
         newValues = new String[]{text, text1, text2, text3, text4, text5, text6, text7, text8, text9, text10, text11, text12, text13, more_value1, more_value2};
     try {
