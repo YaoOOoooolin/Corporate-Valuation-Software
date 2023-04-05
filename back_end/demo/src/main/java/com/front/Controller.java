@@ -21,9 +21,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -321,6 +323,10 @@ public class Controller {
                 "China",
                 "Denmark",
                 "Japan","HongKong");
+        Login login = new Login();
+
+
+        csVreadData.setPath(Login.filepath);
         csVreadData.setCountryName("cty");
         csVreadData.readData();
         ArrayList<String> countryList = csVreadData.getCountryList();
@@ -1129,6 +1135,7 @@ public class Controller {
     CSVreadData csVreadData = new CSVreadData();
 
     public void DatabaseResult1(ActionEvent actionEvent) {
+        csVreadData.setPath(String.valueOf(filePath));
         csVreadData.setIndustryName("");
         csVreadData.setCompanyName("");
         csVreadData.setCountryName("");
@@ -1384,6 +1391,7 @@ public class Controller {
     //保存修改内容到数据库中
     public void saveToDataBase(ActionEvent actionEvent) {
         CSVupdateRow csVupdateRow = new CSVupdateRow();
+        csVupdateRow.setSearchValue(Symbol.getText());
         try {
             csVupdateRow.Update(Symbol.getText(),
                     Industry.getText(),
@@ -1726,8 +1734,21 @@ public class Controller {
     }
 
     //设置数据库方法
+    String path;
     public void SetFilePath(ActionEvent actionEvent) {
+        path = filePath.getText();
+    }
 
-        String path = filePath.getText();
+    public void SelectFile(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if (selectedFile != null) {
+
+            path = selectedFile.getAbsolutePath();
+
+            filePath.setText(path);
+            System.out.println(path);
+        }
     }
 }

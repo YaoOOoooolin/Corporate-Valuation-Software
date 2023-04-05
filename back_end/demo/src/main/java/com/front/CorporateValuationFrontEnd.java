@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class CorporateValuationFrontEnd extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(CorporateValuationFrontEnd.class.getResource("view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 880, 780);
         stage.setTitle("Corporate Valuation");

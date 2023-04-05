@@ -9,8 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Login {
@@ -79,6 +81,24 @@ public class Login {
 
     @FXML
         private Label wrongUsernameOrPassword_id;
+
+    public String getPath() {
+        return path;
+    }
+    static String filepath;
+    String path;
+
+    public void SelectFile(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if (selectedFile != null) {
+
+            path = selectedFile.getAbsolutePath();
+            System.out.println(path);
+            filepath = path;
+        }
+    }
 
 
 }

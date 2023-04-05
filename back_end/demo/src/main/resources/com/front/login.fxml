@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="656.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Login">
    <left>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="1315.0" style="-fx-background-color: #59606d;" BorderPane.alignment="CENTER">
          <children>
@@ -29,24 +29,26 @@
    <right>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="401.0" style="-fx-background-color: #59606D;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="119.0" prefHeight="43.0" prefWidth="113.0" text="Username:" textFill="#70abb0">
+            <Label layoutX="14.0" layoutY="65.0" prefHeight="43.0" prefWidth="113.0" text="Username:" textFill="#70abb0">
                <font>
                   <Font name="Apple LiGothic Medium" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="200.0" prefHeight="43.0" prefWidth="113.0" text="Password:" textFill="#70abb0">
+            <Label layoutX="14.0" layoutY="145.0" prefHeight="43.0" prefWidth="113.0" text="Password:" textFill="#70abb0">
                <font>
                   <Font name="Apple LiGothic Medium" size="30.0" />
                </font>
             </Label>
-            <TextField fx:id="username_id" layoutX="148.0" layoutY="128.0" promptText="Username" />
+            <TextField fx:id="username_id" layoutX="141.0" layoutY="74.0" promptText="Username" />
             <Button fx:id="SignIn_id" layoutX="148.0" layoutY="281.0" mnemonicParsing="false" onAction="#ToCal" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #59606D;" text="Login " textFill="#70abb0">
                <font>
                   <Font name="Apple LiGothic Medium" size="21.0" />
                </font>
             </Button>
             <Label fx:id="wrongUsernameOrPassword_id" layoutX="99.0" layoutY="87.0" prefHeight="22.0" prefWidth="168.0" text="User name or password wrong" textFill="#f20000" visible="false" />
-            <PasswordField fx:id="password_id" layoutX="148.0" layoutY="209.0" promptText="Password" />
+            <PasswordField fx:id="password_id" layoutX="141.0" layoutY="154.0" promptText="Password" />
+            <Label layoutX="17.0" layoutY="227.0" prefHeight="30.0" prefWidth="149.0" text="Choose the database path" textFill="#70abb0" />
+            <Button layoutX="194.0" layoutY="230.0" mnemonicParsing="false" onAction="#SelectFile" prefHeight="26.0" prefWidth="105.0" text="Open the file" />
          </children>
       </AnchorPane>
    </right>

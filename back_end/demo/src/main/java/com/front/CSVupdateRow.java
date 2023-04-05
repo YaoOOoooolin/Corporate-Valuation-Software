@@ -1,120 +1,143 @@
 package com.front;
 
 import com.fasterxml.jackson.databind.MappingIterator;
+import com.fasterxml.jackson.databind.SequenceWriter;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class CSVupdateRow {
 
-    public void Update(String a, String b, String c, String d, String e1, String f, String g, String h, String ii, String j, String k, String l, String m, String n, String o, String p) throws Exception {
-        URL path = CSVreadData.class.getResource("TestData.csv");
-
-        // Path to the CSV file
-//        String csvFilePath = "src/main/java/com/front/TestData.csv";
-        int rowIndex = getRow();
-        System.out.println(rowIndex);
-
-        String[] newValues = {a, b, c, d, e1, f, g, h, ii, j, k, l, m, n, o, p};
-
-        CsvMapper mapper = new CsvMapper();
-        CsvSchema schema = CsvSchema.emptySchema().withHeader();
-
-        List<Map<String, String>> records;
-
-        try {
-            MappingIterator<Map<String, String>> iterator = mapper.readerFor(Map.class)
-                    .with(schema)
-                    .readValues(new BufferedReader(new InputStreamReader(path.openStream())));
-
-            records = iterator.readAll();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Error reading CSV file.");
-        }
-
-        if (rowIndex < 0 || rowIndex >= records.size()) {
-            throw new RuntimeException("The specified line number is out of range.");
-        }
-
-        records.set(rowIndex, arrayToMap(newValues));
-
-        try {
-            mapper.writer(schema)
-                    .writeValue(new File("src/main/resources/temp.csv"), records);
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Error writing CSV file.");
-        }
-
-        File tempFile = new File("src/main/resources/temp.csv");
-        File originalFile = new File(path.toURI());
-        if (originalFile.exists()) {
-            originalFile.delete();
-        }
-        tempFile.renameTo(originalFile);
+    public String getCsvFilePath() {
+        return csvFilePath;
     }
 
-    private static int getRow() throws Exception {
-//        String csvFilePath = "src/main/resources/TestData.csv";
-        URL path = CSVreadData.class.getResource("TestData.csv");
-        String searchValue = "AMD";
-        int rowIndex = -1;
+    public void setCsvFilePath(String csvFilePath) {
+        this.csvFilePath = csvFilePath;
+    }
 
-        CsvMapper mapper = new CsvMapper();
-        CsvSchema schema = CsvSchema.emptySchema().withHeader();
+    public String getCsvBackupFilePath() {
+        return csvBackupFilePath;
+    }
 
+    public void setCsvBackupFilePath(String csvBackupFilePath) {
+        this.csvBackupFilePath = csvBackupFilePath;
+    }
+
+    String csvFilePath;
+    String csvBackupFilePath;
+    String[] newValues;
+
+    public void setSearchValue(String searchValue) {
+        this.searchValue = searchValue;
+    }
+
+    String searchValue;
+    public void updateRow(String[] list) throws Exception {
+
+        csvFilePath = Login.filepath;
+        String csvBackupFilePath = csvFilePath.substring(0, csvFilePath.lastIndexOf('.')) + "_backup" + csvFilePath.substring(csvFilePath.lastIndexOf('.'));
+
+        // Read column names as header from CSV file
+        List<String> columnNames = new ArrayList<>();
         try {
-            MappingIterator<Map<String, String>> iterator = mapper.readerFor(Map.class)
+            CsvMapper csvMapper = new CsvMapper();
+            CsvSchema schema = CsvSchema.emptySchema().withHeader();
+            MappingIterator<Map<String, String>> iterator = csvMapper.readerFor(Map.class)
                     .with(schema)
-//                    .readValues(new File(csvFilePath));
-                    .readValues(new BufferedReader(new InputStreamReader(path.openStream())));
-            List<Map<String, String>> records = iterator.readAll();
-
-            for (int i = 0; i < records.size(); i++) {
-                Map<String, String> record = records.get(i);
-                if (record.get("Name").equals(searchValue)) {
-                    rowIndex = i;
-                    System.out.println("Row index of \"" + searchValue + "\": " + rowIndex);
-                    break;
-                }
+                    .readValues(new File(csvFilePath));
+            if (iterator.hasNext()) {
+                Map<String, String> row = iterator.next();
+                columnNames.addAll(row.keySet());
+                System.out.println("Column names:");
+                System.out.println(columnNames);
             }
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("Error");
         }
-        return rowIndex;
+
+        // Read all the rows into a List
+        CsvMapper csvMapper = new CsvMapper();
+        CsvSchema schema = CsvSchema.emptySchema().withHeader();
+        MappingIterator<Map<String, String>> iterator = csvMapper.readerFor(Map.class)
+                .with(schema)
+                .readValues(new File(csvFilePath));
+        List<Map<String, String>> rows = iterator.readAll();
+
+        // Find the row to update
+        int rowIndexToUpdate = -1;
+
+
+        for (int i = 0; i < rows.size(); i++) {
+            Map<String, String> row = rows.get(i);
+            if (row.get(columnNames.get(0)).equals(searchValue)) {
+                rowIndexToUpdate = i;
+                break;
+            }
+        }
+
+        if (rowIndexToUpdate == -1) {
+            System.err.println("Row not found: " + searchValue);
+            return;
+        }
+
+        // New values to update the row
+        newValues = list;
+
+        // Update the row
+        Map<String, String> updatedRow = new HashMap<>();
+        for (int i = 0; i < columnNames.size(); i++) {
+            updatedRow.put(columnNames.get(i), newValues[i]);
+        }
+        rows.set(rowIndexToUpdate, updatedRow);
+
+        // Add column names to backup schema
+        CsvSchema.Builder csvBackupSchemaBuilder = CsvSchema.builder().setUseHeader(true);
+        for (String columnName : columnNames) {
+            csvBackupSchemaBuilder.addColumn(columnName);
+        }
+        CsvSchema csvBackupSchema = csvBackupSchemaBuilder.build().withLineSeparator("\r\n");
+
+        SequenceWriter backupSequenceWriter = csvMapper.writerFor(Map.class)
+                .with(csvBackupSchema)
+                .writeValues(new File(csvBackupFilePath));
+
+        backupSequenceWriter.writeAll(rows);
+        backupSequenceWriter.close();
+
+        // Replace the original CSV file with the backup file
+        copyFile(new File(csvBackupFilePath), new File(csvFilePath));
+        // Delete the backup file
+        File backupFile = new File(csvBackupFilePath);
+        if (!backupFile.delete()) {
+            System.err.println("Failed to delete backup file: " + backupFile.getAbsolutePath());
+        }
     }
 
-    private Map<String, String> arrayToMap(String[] values) {
-        Map<String, String> map = new LinkedHashMap<>();
-        map.put("Name", values[0]);
-        map.put("Country", values[1]);
-        map.put("Industry", values[2]);
-        map.put("Year", values[3]);
-        map.put("Revenue", values[4]);
-        map.put("EBIT", values[5]);
-        map.put("Operating Expenses", values[6]);
-        map.put("Research and Development Expenses", values[7]);
-        map.put("Cost and Expenses", values[8]);
-        map.put("Operating Income", values[9]);
-        map.put("Interest Expense", values[10]);
-        map.put("EBIT Margin", values[11]);
-        map.put("Book Value of Equity(Total shareholders equity)", values[12]);
-        map.put("Book Value of debt(Total liabilities)", values[13]);
-        map.put("Weighted Average Shares Outstanding (Diluted)", values[14]);
-        map.put("Current stock price", values[15]);
+    private static void copyFile(File source, File destination) throws IOException {
+        try (InputStream in = new FileInputStream(source);
+             OutputStream out = new FileOutputStream(destination)) {
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = in.read(buffer)) > 0) {
+                out.write(buffer, 0, length);
+            }
+        }
+    }
 
-        return map;
+    public void Update(String text, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11, String text12, String text13, String more_value1, String more_value2) {
+        newValues = new String[]{text, text1, text2, text3, text4, text5, text6, text7, text8, text9, text10, text11, text12, text13, more_value1, more_value2};
+        try {
+            updateRow(newValues);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("update success");
     }
 }
 

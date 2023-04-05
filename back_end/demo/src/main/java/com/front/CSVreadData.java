@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Objects;
 
 public class CSVreadData {
     // ... (Getter and Setter methods, and instance variables)
@@ -66,16 +67,25 @@ public class CSVreadData {
     String countryName = "";
     String industryName = "";
     String companyName = "";
+
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    String path = " ";
     public void readData() {
         // Path to the CSV file
 //        String csvFilePath = "/Users/allan/GRPTeam14/back_end/demo/src/main/java/com/front/TestData.csv";
-        URL path = CSVreadData.class.getResource("TestData.csv");
+        URL urlPath = CSVreadData.class.getResource("TestData.csv");
+
 //        if (csvFilePath.isEmpty()) {
 //            csvFilePath = "src/main/resources/TestData.csv";
 //            if (csvFilePath.isEmpty()){
 //                csvFilePath = "TestData.csv";
 //            }
 //        }
+
         CsvMapper mapper = new CsvMapper();
         CsvSchema schema = CsvSchema.emptySchema().withHeader();
 
@@ -95,38 +105,40 @@ public class CSVreadData {
             value = industry;
         }
 
-        try {
-            MappingIterator<Map<String, String>> iterator = mapper.readerFor(Map.class)
-                    .with(schema)
-                    .readValues(new BufferedReader(new InputStreamReader(path.openStream())));
-//                    .readValues(new File(csvFilePath));
+        if (!Objects.equals(path, " ")){
+            try {
+                MappingIterator<Map<String, String>> iterator = mapper.readerFor(Map.class)
+                        .with(schema)
+//                        .readValues(new BufferedReader(new InputStreamReader(urlPath.openStream())));
+                    .readValues(new File(path));
 
-            while (iterator.hasNext()) {
-                Map<String, String> row = iterator.next();
+                while (iterator.hasNext()) {
+                    Map<String, String> row = iterator.next();
 
-                // Check if the value matches the specified column
-                if (row.get(column).equals(value)) {
-                    String companyName = row.get("Name");
-                    String countryName = row.get("Country");
-                    String industryName = row.get("Industry");
+                    // Check if the value matches the specified column
+                    if (row.get(column).equals(value)) {
+                        String companyName = row.get("Name");
+                        String countryName = row.get("Country");
+                        String industryName = row.get("Industry");
 
-                    companyList.add(companyName);
-                    countryList.add(countryName);
-                    industryList.add(industryName);
+                        companyList.add(companyName);
+                        countryList.add(countryName);
+                        industryList.add(industryName);
 
-                    if (!companyName.equals("")) {
-                        resultList.addAll(Arrays.asList(row.values().toArray(new String[0])).subList(0, 16));
+                        if (!companyName.equals("")) {
+                            resultList.addAll(Arrays.asList(row.values().toArray(new String[0])).subList(0, 16));
+                        }
+                    } else if (industryName.equals("box")) {
+                        String industryName = row.get("Industry");
+                        industryList.add(industryName);
+                    } else if (countryName.equals("cty")) {
+                        String countryName = row.get("Country");
+                        countryList.add(countryName);
                     }
-                } else if (industryName.equals("box")) {
-                    String industryName = row.get("Industry");
-                    industryList.add(industryName);
-                } else if (countryName.equals("cty")) {
-                    String countryName = row.get("Country");
-                    countryList.add(countryName);
                 }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
