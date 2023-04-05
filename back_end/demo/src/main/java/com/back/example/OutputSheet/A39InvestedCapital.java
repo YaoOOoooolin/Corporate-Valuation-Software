@@ -1,3 +1,13 @@
+/**
+
+The A39InvestedCapital class represents the invested capital for a company over a period of time.
+
+It accepts multiple input parameters such as Boolean values, doubles, and an object of A8Reinvestment class, to calculate
+
+the invested capital for each year over a specified period of time. The class provides a setter method to calculate the invested
+
+capital for each year and store it in an ArrayList, and a getter method to retrieve the ArrayList of invested capital values.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
