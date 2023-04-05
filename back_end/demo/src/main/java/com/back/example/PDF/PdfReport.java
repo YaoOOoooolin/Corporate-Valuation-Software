@@ -22,12 +22,12 @@ import static com.back.StaticData.InputData.yearOfList;
 
 public class PdfReport {
 
-    // main测试
+    // 
     public static void main(String[] args) throws Exception {
-        // 1.document对象
-        Document document = new Document(PageSize.A4);// 建立一个Document对象
+        // 
+        Document document = new Document(PageSize.A4);//
 
-        // 2.建立一个书写器(Writer)与document对象关联
+        // 
         String str = "PDFDemo2";
         File file = new File(str + ".pdf");
         file.createNewFile();
@@ -38,38 +38,38 @@ public class PdfReport {
         try {
 
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
-            writer.setPageEvent(new Watermark("GRP14"));// 水印
-            writer.setPageEvent(new MyHeaderFooter());// 页眉/页脚
+            writer.setPageEvent(new Watermark("GRP14"));// 
+            writer.setPageEvent(new MyHeaderFooter());// 
 
             document.open();
-            document.addTitle("Title@PDF-Java");// 标题
-            document.addAuthor("Author@umiz");// 作者
-            document.addSubject("Subject@iText pdf sample");// 主题
-            document.addKeywords("Keywords@iTextpdf");// 关键字
-            document.addCreator("Creator@umiz`s");// 创建者
+            document.addTitle("Title@PDF-Java");// 
+            document.addAuthor("Author@umiz");// 
+            document.addSubject("Subject@iText pdf sample");// 
+            document.addKeywords("Keywords@iTextpdf");// 
+            document.addCreator("Creator@umiz`s");// 
 
-            // 4.向文档中添加内容
+            // 
             new PdfReport().generatePDF(document);
 
-            // 5.关闭文档
+            // 
             document.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    // 定义全局的字体静态变量
+    // 
     private static Font titlefont;
     private static Font headfont;
     private static Font keyfont;
     private static Font textfont;
-    // 最大宽度
+    // 
     private static int maxWidth = 520;
 
-    // 静态代码块
+    // 
     static {
         try {
-            // 不同字体（这里定义为同一种字体：包含不同字号、不同style）
+            // 
             BaseFont bfChinese = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
             titlefont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
             headfont = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
@@ -81,7 +81,7 @@ public class PdfReport {
         }
     }
 
-    // 生成PDF文件
+    // 
     public void generatePDF(Document document) throws Exception {
 
 
@@ -208,48 +208,48 @@ public class PdfReport {
         priceAsOfValue.setPriceAsPercentageOfValue(price, estimatedValueShare);
 
 
-        // 段落
+        // 
         Paragraph paragraph = new Paragraph("Stories to Numbers", titlefont);
-        paragraph.setAlignment(1); //设置文字居中 0靠左   1，居中     2，靠右
-        paragraph.setIndentationLeft(12); //设置左缩进
-        paragraph.setIndentationRight(12); //设置右缩进
-        paragraph.setFirstLineIndent(24); //设置首行缩进
-        paragraph.setLeading(20f); //行间距
-        paragraph.setSpacingBefore(5f); //设置段落上空白
-        paragraph.setSpacingAfter(10f); //设置段落下空白
+        paragraph.setAlignment(1); //
+        paragraph.setIndentationLeft(12); //
+        paragraph.setIndentationRight(12); //
+        paragraph.setFirstLineIndent(24); //
+        paragraph.setLeading(20f); //
+        paragraph.setSpacingBefore(5f); //
+        paragraph.setSpacingAfter(10f); //
 
 
-        // 直线
+        // 
         Paragraph p1 = new Paragraph();
         p1.add(new Chunk(new LineSeparator()));
 
-        // 点线
+        // 
         Paragraph p2 = new Paragraph();
         p2.add(new Chunk(new DottedLineSeparator()));
 
-        //超链接
+        //
 
         Anchor anchor = new Anchor("baidu");
         anchor.setReference("www.baidu.com");
 
-        //定位
+        //
         Anchor gotoP = new Anchor("goto");
         gotoP.setReference("#top");
 
-        // 添加图片
+        // 
         /*Image image = Image.getInstance("facebook_cover_photo_1.png");
         image.setAlignment(Image.ALIGN_CENTER);
-        image.scalePercent(8); //依照比例缩放
+        image.scalePercent(8); //
         image.setAlignment(0);
 */
 
         BigDecimal bd;
         String v;
 
-        // 表格
+        // 
         PdfPTable table = createTable(new float[]{120, 80, 80, 80, 40, 80, 80});
         table.addCell(createCell("The Assumptions", headfont, Element.ALIGN_LEFT, 7, false));
-        //table.setSpacingBefore(30f); //设置段落上空白
+        //table.setSpacingBefore(30f); //
         table.addCell(createCell("", keyfont, Element.ALIGN_CENTER));
         table.addCell(createCell("Base year", keyfont, Element.ALIGN_CENTER));
         table.addCell(createCell("Years 1-5", keyfont, Element.ALIGN_CENTER));
@@ -333,7 +333,7 @@ public class PdfReport {
 
         PdfPTable table2 = createTable(new float[]{80, 80, 80, 80, 80, 80, 80});
         table2.addCell(createCell("The Cash Flows", headfont, Element.ALIGN_LEFT, 7, false));
-        table2.setSpacingBefore(10f); //设置段落上空白
+        table2.setSpacingBefore(10f); //
         ArrayList<Double> outputRevenuesList = OutPutMethod.outputRevenuesList();
         ArrayList<Double> outputebitMarginList = OutPutMethod.outputebitMarginList();
         ArrayList<Double> outputEBIT1_tList = OutPutMethod.outputEBIT1_tList();
@@ -376,7 +376,7 @@ public class PdfReport {
 
         PdfPTable table3 = createTable(new float[]{200, 160, 200});
         table3.addCell(createCell("The Value", headfont, Element.ALIGN_LEFT, 3, false));
-        table3.setSpacingBefore(10f); //设置段落上空白
+        table3.setSpacingBefore(10f); //
 
         table3.addCell(createCell("Terminal value", textfont));
         bd = isRounded(OutPutMethod2.output("D29"));
@@ -448,13 +448,13 @@ public class PdfReport {
 
 
         Paragraph paragraph2 = new Paragraph("Input sheet", titlefont);
-        paragraph2.setAlignment(1); //设置文字居中 0靠左   1，居中     2，靠右
-        paragraph2.setIndentationLeft(12); //设置左缩进
-        paragraph2.setIndentationRight(12); //设置右缩进
-        paragraph2.setFirstLineIndent(24); //设置首行缩进
-        paragraph2.setLeading(20f); //行间距
-        paragraph2.setSpacingBefore(100f); //设置段落上空白
-        paragraph2.setSpacingAfter(10f); //设置段落下空白
+        paragraph2.setAlignment(1); //
+        paragraph2.setIndentationLeft(12); //
+        paragraph2.setIndentationRight(12); //
+        paragraph2.setFirstLineIndent(24); //
+        paragraph2.setLeading(20f); //
+        paragraph2.setSpacingBefore(100f); //
+        paragraph2.setSpacingAfter(10f); //
 
         //input todo
         PdfPTable table4 = createTable(new float[]{320, 240});
@@ -464,7 +464,7 @@ public class PdfReport {
         table4.addCell(createCell(" ", textfont));
 
         PdfPTable table5 = createTable(new float[]{320, 240});
-        table5.setSpacingBefore(10f); //设置段落上空白
+        table5.setSpacingBefore(10f); //
         table5.addCell(createCell("Numbers from your base year below ( in consistent units)", headfont, Element.ALIGN_LEFT, 2, false));
         table5.addCell(createCell(" ", keyfont));
         table5.addCell(createCell("This year", keyfont));
@@ -509,7 +509,7 @@ public class PdfReport {
 
         PdfPTable table6 = createTable(new float[]{320, 240});
         table6.addCell(createCell("The value drivers", headfont, Element.ALIGN_LEFT, 2, false));
-        table6.setSpacingBefore(10f); //设置段落上空白
+        table6.setSpacingBefore(10f); //
         table6.addCell(createCell("Revenue growth rate for next year", textfont));
         v=isPercentage(InputData.getB23());
         table6.addCell(createCell(v, textfont));
@@ -530,7 +530,7 @@ public class PdfReport {
 
         PdfPTable table7 = createTable(new float[]{320, 240});
         table7.addCell(createCell("Market numbers", headfont, Element.ALIGN_LEFT, 2, false));
-        table7.setSpacingBefore(10f); //设置段落上空白
+        table7.setSpacingBefore(10f); //
         table7.addCell(createCell("Riskfree rate", textfont));
         v=isPercentage(InputData.getB30());
         table7.addCell(createCell(v, textfont));
@@ -541,7 +541,7 @@ public class PdfReport {
 
         PdfPTable table8 = createTable(new float[]{320, 240});
         table8.addCell(createCell("Other inputs", headfont, Element.ALIGN_LEFT, 2, false));
-        table8.setSpacingBefore(10f); //设置段落上空白
+        table8.setSpacingBefore(10f); //
         table8.addCell(createCell("Do you have employee options outstanding?", textfont));
         table8.addCell(createCell(InputData.isB33() ? "yes" : "no", textfont));
         table8.addCell(createCell("Number of options outstanding =", textfont));
@@ -555,7 +555,7 @@ public class PdfReport {
         table8.addCell(createCell(v, textfont));
 
         PdfPTable table9 = createTable(new float[]{400, 160});
-        table9.setSpacingBefore(10f); //设置段落上空白
+        table9.setSpacingBefore(10f); //
         table9.addCell(createCell("Default assumptions. ", headfont, Element.ALIGN_LEFT, 2, false));
         table9.addCell(createCell("In stable growth, I will assume that your firm will have a cost of capital similar to that of typical mature companies (riskfree rate + 4.5%)", keyfont));
         table9.addCell(createCell("", textfont));
@@ -628,16 +628,16 @@ public class PdfReport {
 
 
         Paragraph paragraph3 = new Paragraph("Valuation output", titlefont);
-        paragraph3.setAlignment(1); //设置文字居中 0靠左   1，居中     2，靠右
-        paragraph3.setIndentationLeft(12); //设置左缩进
-        paragraph3.setIndentationRight(12); //设置右缩进
-        paragraph3.setFirstLineIndent(24); //设置首行缩进
-        paragraph3.setLeading(20f); //行间距
-        paragraph3.setSpacingBefore(100f); //设置段落上空白
-        paragraph3.setSpacingAfter(10f); //设置段落下空白
+        paragraph3.setAlignment(1); //
+        paragraph3.setIndentationLeft(12); //
+        paragraph3.setIndentationRight(12); //
+        paragraph3.setFirstLineIndent(24); //
+        paragraph3.setLeading(20f); //
+        paragraph3.setSpacingBefore(100f); //
+        paragraph3.setSpacingAfter(10f); //
 
         PdfPTable table10 = createTable(new float[]{60, 100, 100, 100, 100, 100});
-        //table11.setSpacingBefore(10f); //设置段落上空白
+        //table11.setSpacingBefore(10f); //
         table10.addCell(createCell("", textfont));
         table10.addCell(createCell("Revenue growth rate", keyfont));
         table10.addCell(createCell("Revenues", keyfont));
@@ -669,7 +669,7 @@ public class PdfReport {
 
 
         PdfPTable table11 = createTable(new float[]{60, 100, 100, 100, 100, 100});
-        table11.setSpacingBefore(30f); //设置段落上空白
+        table11.setSpacingBefore(30f); //
         table11.addCell(createCell("", textfont));
         table11.addCell(createCell("EBIT(1-t)", keyfont));
         table11.addCell(createCell(" - Reinvestment", keyfont));
@@ -701,7 +701,7 @@ public class PdfReport {
 
 
         PdfPTable table12 = createTable(new float[]{60, 100, 100, 100, 100, 100});
-        table12.setSpacingBefore(30f); //设置段落上空白
+        table12.setSpacingBefore(30f); //
         table12.addCell(createCell("", textfont));
         table12.addCell(createCell("Cumulated discount factor", keyfont));
         table12.addCell(createCell("PV(FCFF)", keyfont));
@@ -735,7 +735,7 @@ public class PdfReport {
         table12.addCell(createCell(String.valueOf(roic.getTerminaLROIC()), textfont));
 
         PdfPTable table13 = createTable(new float[]{320, 240});
-        table13.setSpacingBefore(30f); //设置段落上空白
+        table13.setSpacingBefore(30f); //
 
         table13.addCell(createCell("Terminal cash flow", textfont));
         bd=isRounded(terminalCashFlow.getTerminalCashFlow());
@@ -844,7 +844,7 @@ public class PdfReport {
         return bd + "%";
     }
 
-/**------------------------创建表格单元格的方法start----------------------------*/
+/**------------------------start----------------------------*/
     /**
      * 创建单元格(指定字体)
      *
@@ -861,7 +861,7 @@ public class PdfReport {
     }
 
     /**
-     * 创建单元格（指定字体、水平..）
+     * 
      *
      * @param value
      * @param font
@@ -877,7 +877,7 @@ public class PdfReport {
     }
 
     /**
-     * 创建单元格（指定字体、水平居..、单元格跨x列合并）
+     * 
      *
      * @param value
      * @param font
@@ -895,7 +895,7 @@ public class PdfReport {
     }
 
     /**
-     * 创建单元格（指定字体、水平居..、单元格跨x列合并、设置单元格内边距）
+     * 
      *
      * @param value
      * @param font
@@ -924,7 +924,7 @@ public class PdfReport {
     }
 
     /**
-     * 创建单元格（指定字体、水平..、边框宽度：0表示无边框、内边距）
+     * 
      *
      * @param value
      * @param font
@@ -950,12 +950,12 @@ public class PdfReport {
         }
         return cell;
     }
-/**------------------------创建表格单元格的方法end----------------------------*/
+/**------------------------end----------------------------*/
 
 
-/**--------------------------创建表格的方法start------------------- ---------*/
+/**--------------------------start------------------- ---------*/
     /**
-     * 创建默认列宽，指定列数、水平(居中、右、左)的表格
+     * 
      *
      * @param colNumber
      * @param align
@@ -975,7 +975,7 @@ public class PdfReport {
     }
 
     /**
-     * 创建指定列宽、列数的表格
+     * 
      *
      * @param widths
      * @return
@@ -994,7 +994,7 @@ public class PdfReport {
     }
 
     /**
-     * 创建空白的表格
+     * 
      *
      * @return
      */
@@ -1007,7 +1007,7 @@ public class PdfReport {
         return table;
     }
 
-/**--------------------------创建表格的方法end------------------- ---------*/
+/**--------------------------end------------------- ---------*/
 
 
 }
