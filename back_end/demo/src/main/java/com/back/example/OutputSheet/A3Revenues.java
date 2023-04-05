@@ -1,3 +1,17 @@
+/**
+
+ The A3Revenues class calculates the revenues for each year based on the revenue growth rates and the initial revenue value.
+ It also stores the list of revenues over the years.
+ This class contains the following public methods:
+ setA3RevenuesList: calculates and sets the revenues list based on the input values.
+ getRevenuesList: retrieves the revenues list.
+ getTerminalRevenues: retrieves the terminal revenues.
+ The following instance variables are used in this class:
+ revenuesList: an ArrayList of doubles that stores the revenues.
+ Note: The revenue for each year is calculated using the formula: (1 + revenue growth rate) * (previous year's revenue).
+ * @author [KeYi LIU]
+ * @version [V1.1]
+ */
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
