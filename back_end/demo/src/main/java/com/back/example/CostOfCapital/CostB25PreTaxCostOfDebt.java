@@ -19,13 +19,13 @@ public class CostB25PreTaxCostOfDebt {
         if(Objects.equals(ApproachType, "Direct Input")){
             PreTaxCostOfDebt = InputForCapital.getB22DirectInputPreTaxCostOfDebt();
         } else if (Objects.equals(ApproachType, "Actual rating")) {
-            PreTaxCostOfDebt = InputData.getB30() + RatingSpread.ratingSpread.get(rating);
+            PreTaxCostOfDebt = InputData.getB30() + 0.01 * RatingSpread.ratingSpread.get(rating);
         } else if(Objects.equals(ApproachType, "Synthetic rating")){
             double interestConvergeRatio = EBIT/interestExpense;
             if(Objects.equals(syntheticRating, "1")){
-                PreTaxCostOfDebt = SyntheticRating.LargerSaferFirms(interestConvergeRatio);
+                PreTaxCostOfDebt = 0.01 * SyntheticRating.LargerSaferFirms(interestConvergeRatio);
             } else if(Objects.equals(syntheticRating, "2")){
-                PreTaxCostOfDebt = SyntheticRating.SmallerRiskierFirms(interestConvergeRatio);
+                PreTaxCostOfDebt = 0.01 * SyntheticRating.SmallerRiskierFirms(interestConvergeRatio);
             }
         }
     }

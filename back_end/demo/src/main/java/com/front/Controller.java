@@ -1694,14 +1694,22 @@ public class Controller {
 
 
             //output part
+            CostB48MarketEquity.setMarketEquity();// Should put front
+
+
+            CostB11UnleveredBeta.setUnLeveredBeta();
+            CostB15ERPInEquity.setERPInEquity();
+            CostB25PreTaxCostOfDebt.setPreTaxCostOfDebt();
             CostC41EstimatingMarketValueOfStraightDebt.setEstimatingMarketValueOfStraightDebt();
             CostC42EstimatedValueOfStraightDebtInConvertible.setEstimatedValueOfStraightDebtInConvertible();
             CostC44EstimatedValueOfEquityInConvertible.setEVInConvertible();
+
+            CostC48MarketDebt.setMarketDebt(); // C48 should be placed before C45
             CostC45LeveredBetaForEquity.setLeveredBetaForEquity();
-            CostB48MarketEquity.setMarketEquity();
-            CostC48MarketDebt.setMarketDebt();
+
             CostD48MarketPreferredStock.setMarketPreferredStock();
             CostE48MarketCapital.setMarketCapital();
+
             CostB49WeightOfEquity.setWeightOfEquity();
             CostC49WeightOfDebt.setWeightOfDebt();
             CostD49WeightOfPreferred.setWeightOfPreferredStock();

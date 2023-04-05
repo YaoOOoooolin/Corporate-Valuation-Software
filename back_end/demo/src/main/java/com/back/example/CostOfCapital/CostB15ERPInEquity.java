@@ -23,7 +23,7 @@ public class CostB15ERPInEquity {
      */
     public static void setERPInEquity() {
         String type = InputForCapital.getB13ApproachForERP();
-        if (Objects.equals(type, "Direct Input")) {
+        if (Objects.equals(type, "Will input")) {
             ERPInEquity = InputForCapital.getB14DirectInputForERP();
         } else if (Objects.equals(type, "Country of Incorporation")) {
             ERPInEquity = InputForCapital.getCountryERP();

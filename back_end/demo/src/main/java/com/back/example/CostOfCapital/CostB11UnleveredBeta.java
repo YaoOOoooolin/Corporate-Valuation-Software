@@ -20,7 +20,7 @@ public class CostB11UnleveredBeta {
      * <p>4. Multibusiness(US)</p>
      * <p>5. Multibusiness(Global)</p>
      */
-    public void setUnLeveredBeta() {
+    public static void setUnLeveredBeta() {
         String type = InputForCapital.getB9ApproachForEstimatingBeta();
         if(Objects.equals(type, "Single Business(US)")){
             unLeveredBeta = InputForCapital.getSingleUSBeta();
