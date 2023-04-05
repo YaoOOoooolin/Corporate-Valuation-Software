@@ -34,9 +34,10 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class Controller {
-    /*
-     * b标签与a标签一一对应
-     * 日期行业等先不用输入，只输入数据相关*/
+
+     /**
+     * These B__ variables represent the input of original Excel sheet data
+     */
     public static String B19Result;
     public DatePicker B1;
     public TextField B2;
@@ -54,6 +55,9 @@ public class Controller {
     public CheckBox B13Yes;
     public CheckBox B13No;
     public TextField B21;
+    /**
+     * Following B__ variables represent the input of Value Driver, the second sheet
+     */
     public TextField B24;
 //    public TextField B25;
     public TextField B26;
@@ -61,10 +65,16 @@ public class Controller {
 //    public TextField B28;
 //    public TextField B30;
     public TextField B31;
+    /**
+     * Following B__ variables represent the input of Other input, the third sheet
+     */
     public TextField B34;
     public TextField B35;
     public TextField B36;
     public TextField B37;
+    /**
+     * Following B__ variables represent the input of Assumption(1) and Assumption(2), the 4th and 5th sheet
+     */
     public CheckBox B33Yes;
     public CheckBox B33No;
     public TextField B42;
@@ -107,12 +117,18 @@ public class Controller {
     public Button TPtoInput6;
     public GridPane Sheet1;
     public Button changeButton;
+    /**
+     * Following variables represent the different sheet of pages
+     */
     public GridPane Sheet2;
     public GridPane Sheet4;
     public GridPane Sheet3;
     public GridPane Sheet5;
     public GridPane Sheet6;
     public GridPane Sheet7;
+    /**
+     * Following variables represent the New Requirement, which is visual chart of revenue growth
+     */
     public Button ChartOpen;
     public TextField captialRatioForNextYear;
     public TextField nextYearGrowthRate;
@@ -121,7 +137,10 @@ public class Controller {
     public TextField FinalYearCapitalRatio;
     public TextField capitalRatioUptoN;
     public Button ChartOpenForCapitalRatio;
-    //database 数据对应id
+    
+    /**
+     * Following data is bond with database(database 数据对应id)
+     */
     public ComboBox<String> comboBoxForCountry;
     public ComboBox<String> comboBoxForIndustry;
     public Button submit_id2;
@@ -131,7 +150,9 @@ public class Controller {
     public Text industry5;
     public Text country5;
 
-    //databse 输出数据id
+    /**
+     * Following data is output of Database
+     */
     public Text ResearchandDevelopmentExpenses;
     public TextField Symbol;
     public TextField Industry;
@@ -163,7 +184,9 @@ public class Controller {
     public Text name1;
     public Button saveDataBase;
     public Tab tab8;
-
+    /**
+     * Following variables represent the input of Cost of Capital, the last sheet
+     */
     public ComboBox<String> comboCoC1;
     public ComboBox<String> comboCoC2;
     public ComboBox<String> comboCoC3;
@@ -226,7 +249,9 @@ public class Controller {
     public TextField DebtInput8;
     public TextField DebtInput9;
     public TextField DebtInput10;
-    //output part
+    /**
+     * Following cocOuput__ variables represent the output of Cost of Capital, the last sheet
+     */
     public TextField cocOutput1;
     public TextField cocOutput2;
     public TextField cocOutput3;
@@ -250,10 +275,15 @@ public class Controller {
     public GridPane Sheet10;
     public GridPane Sheet11;
     public GridPane Sheet12;
-    //数据库路径
+    
+    /**
+     * The path of database
+     */
     public TextField filePath;
 
-
+    /**
+     * Following variables represent the Tabs in the left sidebar of software
+     */
     @FXML
     private Button TPtoInput1;
 
@@ -268,13 +298,16 @@ public class Controller {
 
     @FXML
     private Button TPtoInput5;
+    
+    /**
+     * Following variables represent the Tabs in the upper sidebar of software
+     */
     @FXML
     private Tab tab1;
     @FXML
     private Tab tab2;
     @FXML
     private Tab tab5;
-
     @FXML
     private Tab tab6;
     @FXML
@@ -287,7 +320,9 @@ public class Controller {
     @FXML
     private TabPane tabPane;
 
-
+    /**
+     * Following variables represent the comboBox which allow user to choose country and industry
+     */
     @FXML
     private ComboBox<String> comboBox1;
 
@@ -306,6 +341,7 @@ public class Controller {
     @FXML
     private Button submit_id;
 
+    
     @FXML
     private void B13CheckYes() {
         //b 为YES 和 NO 选择的返回值， yes为true  no为false
@@ -313,16 +349,12 @@ public class Controller {
         InputData.setB13(b);
     }
 
+    /**
+     * Following function will load when opening the software
+     */
     @FXML
     private void initialize() {
-        //ObservableList<String> observableList = FXCollections.observableArrayList("111", "222", "333");
-        //combo1.setItems(observableList);
-        comboBox1.getItems().addAll(
-                "United States",
-                "United Kingdom",
-                "China",
-                "Denmark",
-                "Japan","HongKong");
+
         Login login = new Login();
 
 
@@ -342,6 +374,7 @@ public class Controller {
         comboCoC1.setItems(observableList);
          */
 
+        // initialize comboBox of selection
         comboBox1.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
 //        comboBox4.getItems().addAll("United States", "United Kingdom", "China", "Denmark", "Japan","HongKong");
         comboCoC1.getItems().addAll("Direct input","Single Business(US)","Single Business(Global)");
@@ -373,6 +406,7 @@ public class Controller {
         Locale.setDefault(Locale.ENGLISH);
         changeAble(flag);
 
+        // initialize input with 0
         setAllZero(EquityInput1, EquityInput2, EquityInput3, EquityInput4, EquityInput5, StockInput2, StockInput3, StockInput4, DebtInput1, DebtInput2);
         setAllZero(DebtInput3, DebtInput4, DebtInput5, DebtInput6, DebtInput7, DebtInput8, DebtInput9, DebtInput10, DirectInput1, DirectInputERP);
         setZero(DirectInputDebt);
@@ -392,31 +426,29 @@ public class Controller {
         setZero(debtInput2);
     }
 
+    /**
+     * Following ToTab_ functions will change the page of sheets
+     */
     @FXML
     void ToTab1(ActionEvent event) {
         tabPane.getSelectionModel().select(tab1);
     }
-
     @FXML
     void ToTab2(ActionEvent event) {
         tabPane.getSelectionModel().select(tab2);
     }
-
     @FXML
     void ToTab3(ActionEvent event) {
         tabPane.getSelectionModel().select(tab3);
     }
-
     @FXML
     void ToTab4(ActionEvent event) {
         tabPane.getSelectionModel().select(tab4);
     }
-
     @FXML
     void ToTab5(ActionEvent event) {
         tabPane.getSelectionModel().select(tab5);
     }
-
     @FXML
     void ToTab6(ActionEvent event) {
         tabPane.getSelectionModel().select(tab6);
@@ -427,7 +459,7 @@ public class Controller {
 
     @FXML
     void result(ActionEvent event) {
-        //submit 按钮进行读入 后进行计算
+        //submit result, this will show to result(按钮进行读入 后进行计算)
 //        try {
             InputData.setB8(Double.parseDouble(B8.getText()));
             InputData.setB9(Double.parseDouble(B9.getText()));
@@ -1030,15 +1062,11 @@ public class Controller {
             }
         });
     }
+    
+    /**
+     * This function changes English to Chinese
+     */
     public void LightMode(ActionEvent actionEvent) {
-        /*
-        Scene scene = changeButton.getScene();
-
-        scene.getStylesheets().removeAll("interface.css");
-
-        scene.getStylesheets().add("interface.css");
-         */
-        //修改背景的
 
         String[] ChineseSheet1={"日期" ,"公司名" ,"国家" ,"行业" ,"行业(全球)" ,"营业额" ,"营业利润"
                 ,"利息费用" ,"股权账面价值" ,"债权账面价值" ,"是否有研发费用需要资本化?" ,"现金和适销证券"
@@ -1240,6 +1268,9 @@ public class Controller {
         System.out.println("");
     }
 
+    /**
+     * This function changes Chinese to English
+     */
     public void Eng_Version(ActionEvent actionEvent) {
         String[] EnglishSheet1={"Date of valuation", "Company name", "Country", "Industry", "Industry (Global)",
                 "Revenues", "EBIT", "Interest expense", "Book value of equity", "Book value of debt",
@@ -1518,6 +1549,9 @@ public class Controller {
         tabPane.getSelectionModel().select(tab1);
     }
 
+    /**
+     * This function handles the Cost of Capital input strategy
+     */
     public void CoCSelect1(ActionEvent actionEvent) {
         if(comboCoC1.getValue().equals("Direct input")){
             InputForCapital.setB9ApproachForEstimatingBeta("Direct input");
@@ -1535,6 +1569,9 @@ public class Controller {
         }
     }
 
+    /**
+     * This function handles the Cost of Capital input strategy
+     */
     public void CoCSelect2(ActionEvent actionEvent) {
         if(comboCoC2.getValue().equals("Will input")){
             DirectInputERP.setVisible(true);
@@ -1546,6 +1583,9 @@ public class Controller {
         }
     }
 
+    /**
+     * This function handles the Cost of Capital input strategy
+     */
     public void CoCSelect3(ActionEvent actionEvent) {
         if(comboCoC3.getValue().equals("Direct input")){
             DirectInputDebt.setVisible(true);
@@ -1576,6 +1616,9 @@ public class Controller {
         }
     }
 
+    /**
+     * This function handles the Cost of Capital input strategy
+     */
     public void CoCSelect4(ActionEvent actionEvent){
         if(comboCoC4.getValue().equals("1-safer")){
             InputForCapital.setB24SyntheticRatingType("1");
@@ -1584,10 +1627,16 @@ public class Controller {
         }
     }
 
+    /**
+     * This function handles the Cost of Capital input strategy
+     */
     public void CoCSelect5(ActionEvent actionEvent){
         InputForCapital.setB23ActualRating(comboCoC5.getValue());
     }
 
+    /**
+     * This function handles the Default Cost of Capital input strategy
+     */
     public void DefaultCoCSelect(){
         if(comboCoC1.getValue().equals("Direct input")){
             InputForCapital.setB9ApproachForEstimatingBeta("Direct input");
@@ -1640,22 +1689,33 @@ public class Controller {
         }
     }
 
-
+    /**
+     * This function changes the page of Cost of Capital sheet
+     */
     public void ToTab8(ActionEvent actionEvent) {
         tabPane.getSelectionModel().select(tab9);
     }
 
+    /**
+     * This function changes the page of Cost of Capital sheet
+     */
     public void ToTab81(ActionEvent actionEvent) {
         tabPane.getSelectionModel().select(tab9);
         CostTabPane.getSelectionModel().select(tab81);
     }
 
 
+    /**
+     * This function changes the page of Cost of Capital sheet
+     */
     public void ToTab83(ActionEvent actionEvent) {
         tabPane.getSelectionModel().select(tab9);
         CostTabPane.getSelectionModel().select(tab82);
     }
 
+    /**
+     * This function changes the page of Cost of Capital sheet
+     */
     public void ToTab84(ActionEvent actionEvent) {
         tabPane.getSelectionModel().select(tab9);
         CostTabPane.getSelectionModel().select(tab83);
@@ -1664,6 +1724,9 @@ public class Controller {
         textField.setText("0");
     }
 
+    /**
+     * This function will submit Cost of Captial sheet and calculate
+     */
     public void submitCostOfCapital(ActionEvent actionEvent) {
             //cost of capital part: Equity
             InputData.setB18(Double.parseDouble(EquityInput1.getText()));
