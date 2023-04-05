@@ -1,3 +1,16 @@
+/**
+
+This class calculates the terminal cash flow and stores it in a double variable.
+The terminal cash flow is calculated as the difference between the terminal year EBIT and
+the terminal year reinvestment, both of which are obtained from A7EBIT1t and A8Reinvestment classes respectively.
+This class has the following public methods:
+setTerminalCashFlow(A7EBIT1t ebit1t, A8Reinvestment reinvestment)
+This method takes in an object of A7EBIT1t class which contains the terminal year EBIT value,
+and an object of A8Reinvestment class which contains the terminal year reinvestment value.
+The method then calculates the terminal cash flow and stores it in a double variable.
+getTerminalCashFlow()
+This method returns the terminal cash flow value calculated by setTerminalCashFlow() method.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
