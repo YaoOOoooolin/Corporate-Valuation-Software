@@ -1,3 +1,9 @@
+/**
+
+This class calculates the net operating loss (NOL) for each year.
+It takes into account whether there was a carryforward of NOL from previous years and the EBIT income for each year.
+The result is stored in an ArrayList called nolList.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
