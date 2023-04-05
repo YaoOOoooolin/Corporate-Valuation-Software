@@ -1,3 +1,10 @@
+/**
+
+ This class calculates the reinvestment for each year and the terminal reinvestment
+ based on the input values from the user.
+ @author [KeYi LIU]
+ @version [V1.1]
+ */
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
