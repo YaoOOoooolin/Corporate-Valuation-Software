@@ -1392,23 +1392,24 @@ public class Controller {
     public void saveToDataBase(ActionEvent actionEvent) {
         CSVupdateRow csVupdateRow = new CSVupdateRow();
         csVupdateRow.setSearchValue(Symbol.getText());
+
         try {
             csVupdateRow.Update(Symbol.getText(),
+                    "",
                     Industry.getText(),
                     Year.getText(),
                     Revenue.getText(),
+                    "",
                     OperatingExpenses.getText(),
                     researchAndDevelopmentExpenses.getText(),
-                    WeightedAverageSharesOutstanding.getText(),
                     CostandExpenses.getText(),
                     OperatingIncome.getText(),
                     InterestExpense.getText(),
                     EBITMargin.getText(),
-                    BookVaueofEquity.getText(),
+                    "0",
                     BookValueofdebt.getText(),
-                    Currentstockprice.getText(),
-                    "More value1",
-                    "More value2");
+                    WeightedAverageSharesOutstanding.getText(),
+                    Currentstockprice.getText());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -1462,21 +1463,21 @@ public class Controller {
 
         try {
             csVaddData.Add(Symbol.getText(),
+                    "",
                     Industry.getText(),
                     Year.getText(),
                     Revenue.getText(),
+                    "",
                     OperatingExpenses.getText(),
                     researchAndDevelopmentExpenses.getText(),
-                    WeightedAverageSharesOutstanding.getText(),
                     CostandExpenses.getText(),
                     OperatingIncome.getText(),
                     InterestExpense.getText(),
                     EBITMargin.getText(),
-                    BookVaueofEquity.getText(),
+                    "0",
                     BookValueofdebt.getText(),
-                    Currentstockprice.getText(),
-                    "More value1",
-                    "More value2");
+                    WeightedAverageSharesOutstanding.getText(),
+                    Currentstockprice.getText());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
