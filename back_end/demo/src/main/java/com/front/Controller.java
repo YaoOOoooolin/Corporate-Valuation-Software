@@ -1135,7 +1135,7 @@ public class Controller {
     CSVreadData csVreadData = new CSVreadData();
 
     public void DatabaseResult1(ActionEvent actionEvent) {
-        csVreadData.setPath(String.valueOf(filePath));
+        csVreadData.setPath(Login.filepath);
         csVreadData.setIndustryName("");
         csVreadData.setCompanyName("");
         csVreadData.setCountryName("");
@@ -1671,6 +1671,7 @@ public class Controller {
             InputForCapital.setB10leveredBeta(Double.parseDouble(DirectInput1.getText()));
             InputData.setB30(Double.parseDouble(EquityInput4.getText()));
             InputForCapital.setB14DirectInputForERP(Double.parseDouble(DirectInputERP.getText()));
+            InputForCapital.setCountryERP(0.068);
             CostB15ERPInEquity.setERPInEquity();
             EquityInput5.setText(String.valueOf(CostB15ERPInEquity.getERPInEquity()));
 
