@@ -1,3 +1,16 @@
+/**
+
+This class calculates the present value of the terminal value and stores it in a double variable.
+The present value is calculated as the product of the terminal value obtained from A18TerminalValue class
+and the cumulated discount factor at the 10th year, which is obtained from A13CumulatedDiscountFactor class.
+This class has the following public methods:
+setpVTerminalValue(A18TerminalValue terminalValue, A13CumulatedDiscountFactor cumulatedDiscountFactor)
+This method takes in an object of A18TerminalValue class which contains the terminal value,
+and an object of A13CumulatedDiscountFactor class which contains the cumulated discount factor list.
+The method then calculates the present value of the terminal value and stores it in a double variable.
+getpVTerminalValue()
+This method returns the present value of the terminal value calculated by setpVTerminalValue() method.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
