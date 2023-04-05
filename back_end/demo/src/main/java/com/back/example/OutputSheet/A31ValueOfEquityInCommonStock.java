@@ -1,3 +1,15 @@
+/**
+
+The A31ValueOfEquityInCommonStock class represents the value of equity in common stock for a company.
+
+It calculates the value of equity in common stock based on the following formula:
+
+Value of Equity in Common Stock = Value of Equity - Value of Options
+
+The class accepts two input parameters, A29ValueOfEquity and A30ValueOfOptions, to calculate the value of equity
+
+in common stock. The class also provides a getter method to retrieve the calculated value of equity in common stock.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
