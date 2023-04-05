@@ -9,6 +9,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.front.Login">
@@ -29,26 +32,40 @@
    <right>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="401.0" style="-fx-background-color: #59606D;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="65.0" prefHeight="43.0" prefWidth="113.0" text="Username:" textFill="#70abb0">
-               <font>
-                  <Font name="Apple LiGothic Medium" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="145.0" prefHeight="43.0" prefWidth="113.0" text="Password:" textFill="#70abb0">
-               <font>
-                  <Font name="Apple LiGothic Medium" size="30.0" />
-               </font>
-            </Label>
-            <TextField fx:id="username_id" layoutX="141.0" layoutY="74.0" promptText="Username" />
-            <Button fx:id="SignIn_id" layoutX="148.0" layoutY="281.0" mnemonicParsing="false" onAction="#ToCal" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #59606D;" text="Login " textFill="#70abb0">
-               <font>
-                  <Font name="Apple LiGothic Medium" size="21.0" />
-               </font>
-            </Button>
             <Label fx:id="wrongUsernameOrPassword_id" layoutX="99.0" layoutY="87.0" prefHeight="22.0" prefWidth="168.0" text="User name or password wrong" textFill="#f20000" visible="false" />
-            <PasswordField fx:id="password_id" layoutX="141.0" layoutY="154.0" promptText="Password" />
-            <Label layoutX="17.0" layoutY="227.0" prefHeight="30.0" prefWidth="149.0" text="Choose the database path" textFill="#70abb0" />
-            <Button layoutX="194.0" layoutY="230.0" mnemonicParsing="false" onAction="#SelectFile" prefHeight="26.0" prefWidth="105.0" text="Open the file" />
+            <GridPane layoutX="-2.0" layoutY="4.0" prefHeight="330.0" prefWidth="353.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.0" minWidth="10.0" prefWidth="181.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="216.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="43.0" prefWidth="113.0" text="Username:" textFill="#70abb0">
+                     <font>
+                        <Font name="Apple LiGothic Medium" size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="username_id" promptText="Username" GridPane.columnIndex="1" />
+                  <Label prefHeight="43.0" prefWidth="113.0" text="Password:" textFill="#70abb0" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Apple LiGothic Medium" size="30.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="password_id" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="43.0" prefWidth="148.0" text="Choose the database path" textFill="#70abb0" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#SelectFile" prefHeight="26.0" prefWidth="105.0" text="Open the file" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="SignIn_id" mnemonicParsing="false" onAction="#ToCal" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #59606D;" text="Login " textFill="#70abb0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Apple LiGothic Medium" size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
    </right>
