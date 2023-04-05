@@ -1,3 +1,19 @@
+/**
+
+This class calculates the present value of free cash flow to firm (FCFF)
+and stores them in an ArrayList.
+The present value is calculated as the product of the corresponding FCFF
+and the cumulated discount factor at each year, which is obtained from
+the A13CumulatedDiscountFactor class.
+This class has the following public methods:
+setPvFcffList(A9FCFF fcff, A13CumulatedDiscountFactor cumulatedDiscountFactor,int yearOfList)
+This method takes in an object of A9FCFF class which contains the FCFF list,
+an object of A13CumulatedDiscountFactor class which contains the cumulated discount factor list,
+and the number of years for which the present value needs to be calculated.
+The method then calculates the present value of FCFF for each year and stores it in an ArrayList.
+getPvFcffList()
+This method returns the ArrayList of present values of FCFF calculated by setPvFcffList() method.
+*/
 package com.back.example.OutputSheet;
 
 import java.math.BigDecimal;
