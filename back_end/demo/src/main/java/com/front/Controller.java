@@ -1242,7 +1242,7 @@ public class Controller {
 
     public void Eng_Version(ActionEvent actionEvent) {
         String[] EnglishSheet1={"Date of valuation", "Company name", "Country", "Industry", "Industry (Global)",
-                "Revenues", "EBIT", "Interest expense", "Book value of equity", "Book value of debt",
+                "Revenues", "EBIT or Operating income", "Interest expense", "Book value of equity", "Book value of debt",
                 "R&D expense to capitalize?", "Cash and Marketable Securities",
                 "Crossing holdings", "Minority interests", "Number of shares outstanding",
                 "Current stock price", "Effective tax rate", "Marginal tax rate",

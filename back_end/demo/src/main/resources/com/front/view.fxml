@@ -105,7 +105,7 @@
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="B8" prefHeight="23.0" prefWidth="146.0" promptText="Enter revenues ($)" styleClass="input-group" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="EBIT" wrappingWidth="241.37757873535156" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="EBIT or Operating income" wrappingWidth="241.37757873535156" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -670,21 +670,22 @@
                                                 <ComboBox id="CompanyName" fx:id="comboBoxForIndustry" prefHeight="23.0" prefWidth="214.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                 <Button fx:id="submit_id2" mnemonicParsing="false" onAction="#DatabaseResult1" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" />
                                                 <Button fx:id="submit_id3" mnemonicParsing="false" onAction="#DatabaseResult2" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a company name" wrappingWidth="197.4527587890625" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a company" wrappingWidth="197.4527587890625" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
                                                 </Text>
                                                 <Button fx:id="submit_id4" mnemonicParsing="false" onAction="#DatabaseResult3" styleClass="submit-btn" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <TextField fx:id="selectedCountry" promptText="Please enter a company name" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="selectedCountry" promptText="Please enter a company" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                              </children>
                                           </GridPane>
                                           <GridPane layoutX="18.0" layoutY="269.0" prefHeight="283.0" prefWidth="503.0" styleClass="grid">
                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="36.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="127.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="156.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="178.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="12.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="36.999951171875" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="132.99998779296874" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="158.60001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="163.79998779296875" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -695,117 +696,117 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="133.0795440673828" GridPane.columnIndex="1">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="133.0795440673828" GridPane.columnIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" wrappingWidth="166.87953186035156" GridPane.columnIndex="2">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" wrappingWidth="166.87953186035156" GridPane.columnIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Industry" wrappingWidth="177.27955627441406" GridPane.columnIndex="3">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Industry" wrappingWidth="177.27955627441406" GridPane.columnIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.rowIndex="1">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="37.87953186035156" GridPane.rowIndex="2">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="37.87953186035156" GridPane.rowIndex="3">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="37.87953186035156" GridPane.rowIndex="4">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="37.87953186035156" GridPane.rowIndex="5">
+                                                <Text fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="37.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industry5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="178.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                                <Text fx:id="industry5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="178.87953186035156" GridPane.columnIndex="4" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="country5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="155.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                <Text fx:id="country5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="155.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industry4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="179.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                <Text fx:id="industry4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="179.87953186035156" GridPane.columnIndex="4" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="country4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                <Text fx:id="country4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="name5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="123.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                <Text fx:id="name5" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="123.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="name4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="129.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                <Text fx:id="name4" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="129.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industry3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="177.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                <Text fx:id="industry3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="177.87953186035156" GridPane.columnIndex="4" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="country3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                <Text fx:id="country3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="name3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="126.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                <Text fx:id="name3" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="126.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industry2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="178.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                <Text fx:id="industry2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="178.87953186035156" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="industry1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="176.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                <Text fx:id="industry1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="176.87953186035156" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="country2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                <Text fx:id="country2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="name2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="126.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <Text fx:id="name2" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="126.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="country1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                <Text fx:id="country1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="156.87953186035156" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="name1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="127.87953186035156" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <Text fx:id="name1" fill="#f58a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" wrappingWidth="127.87953186035156" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font>

@@ -45,21 +45,21 @@
                   <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="43.0" prefWidth="113.0" text="Username:" textFill="#70abb0">
+                  <Label prefHeight="43.0" prefWidth="160.0" text="Username:" textFill="#70abb0">
                      <font>
                         <Font name="Apple LiGothic Medium" size="30.0" />
                      </font>
                   </Label>
                   <TextField fx:id="username_id" promptText="Username" GridPane.columnIndex="1" />
-                  <Label prefHeight="43.0" prefWidth="113.0" text="Password:" textFill="#70abb0" GridPane.rowIndex="1">
+                  <Label prefHeight="43.0" prefWidth="158.0" text="Password:" textFill="#70abb0" GridPane.rowIndex="1">
                      <font>
                         <Font name="Apple LiGothic Medium" size="30.0" />
                      </font>
                   </Label>
                   <PasswordField fx:id="password_id" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label prefHeight="43.0" prefWidth="148.0" text="Choose the database path" textFill="#70abb0" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#SelectFile" prefHeight="26.0" prefWidth="105.0" text="Open the file" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button fx:id="SignIn_id" mnemonicParsing="false" onAction="#ToCal" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #59606D;" text="Login " textFill="#70abb0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Label prefHeight="71.0" prefWidth="164.0" text="Choose the database path" textFill="#70abb0" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#SelectFile" prefHeight="26.0" prefWidth="128.0" text="Open the file" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="SignIn_id" mnemonicParsing="false" onAction="#ToCal" prefHeight="42.0" prefWidth="212.0" style="-fx-background-color: #59606D;" text="Login " textFill="#70abb0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Apple LiGothic Medium" size="21.0" />
                      </font>
