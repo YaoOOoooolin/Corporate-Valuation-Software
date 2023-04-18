@@ -1514,7 +1514,7 @@ public class Controller {
         B18.setText(WeightedAverageSharesOutstanding.getText());
         B19.setText(Currentstockprice.getText());
         B11.setText(BookVaueofEquity.getText());
-        B12.setText(bookValueOfDebt.getText());
+        B12.setText("0");
         tabPane.getSelectionModel().select(tab1);
     }
 
