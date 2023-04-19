@@ -1074,7 +1074,7 @@ public class Controller {
                 "您想覆盖这个假设吗？",
                 "输入被困住的现金（如果是税）或整个余额（如果是不信任）",
                 "被困住的现金所在国外市场的平均税率"};
-        String[] ChineseSheet6={"请选择一个国家","请选择一个行业","请输入国家"};
+        String[] ChineseSheet6={"请选择一个国家","请选择一个行业","请输入国公司"};
         String[] ChineseSheet7={"股票代码:", "营业收入:", "行业:", "年份:", "营收:", "营业费用:", "研发费用:", "成本及费用:",
                 "利息费用:", "EBIT 利润率:", "股东权益账面价值:", "负债账面价值:", "加权平均股本:", "当前股价:",};
         String[] ChineseSheet8={"流通股数量 =", "每股当前市场价格 =", "估算β的方法", "无杠杆β =", "无风险利率 =",
@@ -1242,7 +1242,7 @@ public class Controller {
 
     public void Eng_Version(ActionEvent actionEvent) {
         String[] EnglishSheet1={"Date of valuation", "Company name", "Country", "Industry", "Industry (Global)",
-                "Revenues", "EBIT", "Interest expense", "Book value of equity", "Book value of debt",
+                "Revenues", "EBIT or Operating income", "Interest expense", "Book value of equity", "Book value of debt",
                 "R&D expense to capitalize?", "Cash and Marketable Securities",
                 "Crossing holdings", "Minority interests", "Number of shares outstanding",
                 "Current stock price", "Effective tax rate", "Marginal tax rate",
@@ -1291,7 +1291,7 @@ public class Controller {
                 "Average tax rate of the foreign markets where the cash is trapped",
         };
         String[] EnglishSheet6={"Please choose a country",
-                "Please choose an industry","Please enter a country"};
+                "Please choose an industry","Please enter a company"};
         String[] EnglishSheet7={"Symbol:", "Operating Income:", "Industry:", "Year:", "Revenue:", "Operating Expenses:",
                 "Research and Development Expenses:", "Cost and Expenses:", "Interest Expense:", "EBIT Margin:",
                 "Book Value of Equity:", "Book Value of debt:", "Weighted Average Shares Outstanding:",
